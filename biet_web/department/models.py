@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.exceptions import ValidationError
 
 # Create your models here.
 
@@ -127,6 +128,28 @@ class civil_dept_accreditation(models.Model):
     def __str__(self):
         return self.name + " : " + self.member_type
 
+class civil_dept_placement(models.Model):
+    year_choices_array = []
+    for year in range(2010, cur_year+1):
+        year_choices_array.append((year, year))
+    year_choices = tuple(year_choices_array)
+    
+    sno = models.IntegerField()
+    company_name = models.CharField(max_length=500)
+    latest_year = models.IntegerField(choices=year_choices, default=cur_year)
+    students_selected_for_latest_year = models.IntegerField()
+    second_latest_year = models.IntegerField(choices=year_choices, default=cur_year-1)
+    students_selected_for_2nd_latest_year = models.IntegerField()
+    third_latest_year = models.IntegerField(choices=year_choices, default=cur_year-2)
+    students_selected_for_3rd_latest_year = models.IntegerField()
+    fourth_latest_year = models.IntegerField(choices=year_choices, default=cur_year-3)
+    students_selected_for_4th_latest_year = models.IntegerField()
+    fifth_latest_year = models.IntegerField(choices=year_choices, default=cur_year-4)
+    students_selected_for_5th_latest_year = models.IntegerField()
+    
+    def __str__(self):
+        return self.company_name
+
 class civil_dept_alumni(models.Model):
     name = models.CharField(max_length=500)
     designation = models.CharField(max_length=500)
@@ -180,6 +203,26 @@ class civil_dept_learning_materials(models.Model):
 
     def __str__(self):
         return 'SEM-' + str(self.semester) + ' : ' + self.subject_code
+
+class civil_dept_result_analysis(models.Model):
+    
+    def validate_image(image):
+        req_width = 750
+        req_height = 450
+        height = image.height 
+        width = image.width
+        if width != req_width and height != req_height:
+            raise ValidationError("Height and Width of image should be 750x450")
+
+    sem_choices = ((3,'3rd'),(4,'4th'),(5,'5th'),(6,'6th'),(7,'7th'),(8,'8th'),)
+    semester = models.IntegerField(choices=sem_choices)
+    result_analysis_pdf = models.FileField(upload_to='department/CV/result-analysis/')
+    result_analysis_image = models.ImageField(upload_to='department/CV/result-analysis/',
+                                validators=[validate_image],
+                                help_text='Upload image of result analysis bar graph or pie chart')
+    
+    def __str__(self):
+        return "Semester: " + str(self.semester)
         
 class civil_dept_gallery(models.Model):
     image = models.ImageField(upload_to='department/gallery/CV/')
@@ -302,6 +345,28 @@ class mechanical_dept_accreditation(models.Model):
     def __str__(self):
         return self.name + " : " + self.member_type
 
+class mechanical_dept_placement(models.Model):
+    year_choices_array = []
+    for year in range(2010, cur_year+1):
+        year_choices_array.append((year, year))
+    year_choices = tuple(year_choices_array)
+    
+    sno = models.IntegerField()
+    company_name = models.CharField(max_length=500)
+    latest_year = models.IntegerField(choices=year_choices, default=cur_year)
+    students_selected_for_latest_year = models.IntegerField()
+    second_latest_year = models.IntegerField(choices=year_choices, default=cur_year-1)
+    students_selected_for_2nd_latest_year = models.IntegerField()
+    third_latest_year = models.IntegerField(choices=year_choices, default=cur_year-2)
+    students_selected_for_3rd_latest_year = models.IntegerField()
+    fourth_latest_year = models.IntegerField(choices=year_choices, default=cur_year-3)
+    students_selected_for_4th_latest_year = models.IntegerField()
+    fifth_latest_year = models.IntegerField(choices=year_choices, default=cur_year-4)
+    students_selected_for_5th_latest_year = models.IntegerField()
+    
+    def __str__(self):
+        return self.company_name
+
 class mechanical_dept_alumni(models.Model):
     name = models.CharField(max_length=500)
     designation = models.CharField(max_length=500)
@@ -367,6 +432,26 @@ class mechanical_dept_gallery(models.Model):
 
     def __str__(self):
         return '{}'.format(self.image)
+        
+class mechanical_dept_result_analysis(models.Model):
+    
+    def validate_image(image):
+        req_width = 750
+        req_height = 450
+        height = image.height 
+        width = image.width
+        if width != req_width and height != req_height:
+            raise ValidationError("Height and Width of image should be 750x450")
+
+    sem_choices = ((3,'3rd'),(4,'4th'),(5,'5th'),(6,'6th'),(7,'7th'),(8,'8th'),)
+    semester = models.IntegerField(choices=sem_choices)
+    result_analysis_pdf = models.FileField(upload_to='department/ME/result-analysis/')
+    result_analysis_image = models.ImageField(upload_to='department/ME/result-analysis/',
+                                validators=[validate_image],
+                                help_text='Upload image of result analysis bar graph or pie chart')
+    
+    def __str__(self):
+        return "Semester: " + str(self.semester)
         
 class electrical_and_electronics_dept(models.Model):
     name = models.CharField(max_length=200)
@@ -487,6 +572,28 @@ class electrical_and_electronics_dept_accreditation(models.Model):
 
     def __str__(self):
         return self.name + " : " + self.member_type
+        
+class electrical_and_electronics_dept_placement(models.Model):
+    year_choices_array = []
+    for year in range(2010, cur_year+1):
+        year_choices_array.append((year, year))
+    year_choices = tuple(year_choices_array)
+    
+    sno = models.IntegerField()
+    company_name = models.CharField(max_length=500)
+    latest_year = models.IntegerField(choices=year_choices, default=cur_year)
+    students_selected_for_latest_year = models.IntegerField()
+    second_latest_year = models.IntegerField(choices=year_choices, default=cur_year-1)
+    students_selected_for_2nd_latest_year = models.IntegerField()
+    third_latest_year = models.IntegerField(choices=year_choices, default=cur_year-2)
+    students_selected_for_3rd_latest_year = models.IntegerField()
+    fourth_latest_year = models.IntegerField(choices=year_choices, default=cur_year-3)
+    students_selected_for_4th_latest_year = models.IntegerField()
+    fifth_latest_year = models.IntegerField(choices=year_choices, default=cur_year-4)
+    students_selected_for_5th_latest_year = models.IntegerField()
+    
+    def __str__(self):
+        return self.company_name        
 
 class electrical_and_electronics_dept_alumni(models.Model):
     name = models.CharField(max_length=500)
@@ -541,6 +648,26 @@ class electrical_and_electronics_dept_learning_materials(models.Model):
 
     def __str__(self):
         return 'SEM-' + str(self.semester) + ' : ' + self.subject_code
+
+class electrical_and_electronics_dept_result_analysis(models.Model):
+    
+    def validate_image(image):
+        req_width = 750
+        req_height = 450
+        height = image.height 
+        width = image.width
+        if width != req_width and height != req_height:
+            raise ValidationError("Height and Width of image should be 750x450")
+
+    sem_choices = ((3,'3rd'),(4,'4th'),(5,'5th'),(6,'6th'),(7,'7th'),(8,'8th'),)
+    semester = models.IntegerField(choices=sem_choices)
+    result_analysis_pdf = models.FileField(upload_to='department/EE/result-analysis/')
+    result_analysis_image = models.ImageField(upload_to='department/EE/result-analysis/',
+                                validators=[validate_image],
+                                help_text='Upload image of result analysis bar graph or pie chart')
+    
+    def __str__(self):
+        return "Semester: " + str(self.semester)
 
 class electrical_and_electronics_dept_gallery(models.Model):
     image = models.ImageField(upload_to='department/gallery/EE/')
@@ -668,6 +795,28 @@ class electronics_and_communication_dept_accreditation(models.Model):
     def __str__(self):
         return self.name + " : " + self.member_type
 
+class electronics_and_communication_dept_placement(models.Model):
+    year_choices_array = []
+    for year in range(2010, cur_year+1):
+        year_choices_array.append((year, year))
+    year_choices = tuple(year_choices_array)
+    
+    sno = models.IntegerField()
+    company_name = models.CharField(max_length=500)
+    latest_year = models.IntegerField(choices=year_choices, default=cur_year)
+    students_selected_for_latest_year = models.IntegerField()
+    second_latest_year = models.IntegerField(choices=year_choices, default=cur_year-1)
+    students_selected_for_2nd_latest_year = models.IntegerField()
+    third_latest_year = models.IntegerField(choices=year_choices, default=cur_year-2)
+    students_selected_for_3rd_latest_year = models.IntegerField()
+    fourth_latest_year = models.IntegerField(choices=year_choices, default=cur_year-3)
+    students_selected_for_4th_latest_year = models.IntegerField()
+    fifth_latest_year = models.IntegerField(choices=year_choices, default=cur_year-4)
+    students_selected_for_5th_latest_year = models.IntegerField()
+    
+    def __str__(self):
+        return self.company_name
+
 class electronics_and_communication_dept_alumni(models.Model):
     name = models.CharField(max_length=500)
     designation = models.CharField(max_length=500)
@@ -721,6 +870,26 @@ class electronics_and_communication_dept_learning_materials(models.Model):
 
     def __str__(self):
         return 'SEM-' + str(self.semester) + ' : ' + self.subject_code
+
+class electronics_and_communication_dept_result_analysis(models.Model):
+    
+    def validate_image(image):
+        req_width = 750
+        req_height = 450
+        height = image.height 
+        width = image.width
+        if width != req_width and height != req_height:
+            raise ValidationError("Height and Width of image should be 750x450")
+
+    sem_choices = ((3,'3rd'),(4,'4th'),(5,'5th'),(6,'6th'),(7,'7th'),(8,'8th'),)
+    semester = models.IntegerField(choices=sem_choices)
+    result_analysis_pdf = models.FileField(upload_to='department/EC/result-analysis/')
+    result_analysis_image = models.ImageField(upload_to='department/EC/result-analysis/',
+                                validators=[validate_image],
+                                help_text='Upload image of result analysis bar graph or pie chart')
+    
+    def __str__(self):
+        return "Semester: " + str(self.semester)
 
 class electronics_and_communication_dept_gallery(models.Model):
     image = models.ImageField(upload_to='department/gallery/EC/')
@@ -848,6 +1017,28 @@ class chemical_dept_accreditation(models.Model):
     def __str__(self):
         return self.name + " : " + self.member_type
 
+class chemical_dept_placement(models.Model):
+    year_choices_array = []
+    for year in range(2010, cur_year+1):
+        year_choices_array.append((year, year))
+    year_choices = tuple(year_choices_array)
+    
+    sno = models.IntegerField()
+    company_name = models.CharField(max_length=500)
+    latest_year = models.IntegerField(choices=year_choices, default=cur_year)
+    students_selected_for_latest_year = models.IntegerField()
+    second_latest_year = models.IntegerField(choices=year_choices, default=cur_year-1)
+    students_selected_for_2nd_latest_year = models.IntegerField()
+    third_latest_year = models.IntegerField(choices=year_choices, default=cur_year-2)
+    students_selected_for_3rd_latest_year = models.IntegerField()
+    fourth_latest_year = models.IntegerField(choices=year_choices, default=cur_year-3)
+    students_selected_for_4th_latest_year = models.IntegerField()
+    fifth_latest_year = models.IntegerField(choices=year_choices, default=cur_year-4)
+    students_selected_for_5th_latest_year = models.IntegerField()
+    
+    def __str__(self):
+        return self.company_name
+
 class chemical_dept_alumni(models.Model):
     name = models.CharField(max_length=500)
     designation = models.CharField(max_length=500)
@@ -901,6 +1092,26 @@ class chemical_dept_learning_materials(models.Model):
 
     def __str__(self):
         return 'SEM-' + str(self.semester) + ' : ' + self.subject_code
+
+class chemical_dept_result_analysis(models.Model):
+    
+    def validate_image(image):
+        req_width = 750
+        req_height = 450
+        height = image.height 
+        width = image.width
+        if width != req_width and height != req_height:
+            raise ValidationError("Height and Width of image should be 750x450")
+
+    sem_choices = ((3,'3rd'),(4,'4th'),(5,'5th'),(6,'6th'),(7,'7th'),(8,'8th'),)
+    semester = models.IntegerField(choices=sem_choices)
+    result_analysis_pdf = models.FileField(upload_to='department/CH/result-analysis/')
+    result_analysis_image = models.ImageField(upload_to='department/CH/result-analysis/',
+                                validators=[validate_image],
+                                help_text='Upload image of result analysis bar graph or pie chart')
+    
+    def __str__(self):
+        return "Semester: " + str(self.semester)
 
 class chemical_dept_gallery(models.Model):
     image = models.ImageField(upload_to='department/gallery/CH/')
@@ -1028,6 +1239,28 @@ class electronics_and_instrumentation_dept_accreditation(models.Model):
     def __str__(self):
         return self.name + " : " + self.member_type
 
+class electronics_and_instrumentation_dept_placement(models.Model):
+    year_choices_array = []
+    for year in range(2010, cur_year+1):
+        year_choices_array.append((year, year))
+    year_choices = tuple(year_choices_array)
+    
+    sno = models.IntegerField()
+    company_name = models.CharField(max_length=500)
+    latest_year = models.IntegerField(choices=year_choices, default=cur_year)
+    students_selected_for_latest_year = models.IntegerField()
+    second_latest_year = models.IntegerField(choices=year_choices, default=cur_year-1)
+    students_selected_for_2nd_latest_year = models.IntegerField()
+    third_latest_year = models.IntegerField(choices=year_choices, default=cur_year-2)
+    students_selected_for_3rd_latest_year = models.IntegerField()
+    fourth_latest_year = models.IntegerField(choices=year_choices, default=cur_year-3)
+    students_selected_for_4th_latest_year = models.IntegerField()
+    fifth_latest_year = models.IntegerField(choices=year_choices, default=cur_year-4)
+    students_selected_for_5th_latest_year = models.IntegerField()
+    
+    def __str__(self):
+        return self.company_name
+
 class electronics_and_instrumentation_dept_alumni(models.Model):
     name = models.CharField(max_length=500)
     designation = models.CharField(max_length=500)
@@ -1081,6 +1314,26 @@ class electronics_and_instrumentation_dept_learning_materials(models.Model):
 
     def __str__(self):
         return 'SEM-' + str(self.semester) + ' : ' + self.subject_code
+
+class electronics_and_instrumentation_dept_result_analysis(models.Model):
+    
+    def validate_image(image):
+        req_width = 750
+        req_height = 450
+        height = image.height 
+        width = image.width
+        if width != req_width and height != req_height:
+            raise ValidationError("Height and Width of image should be 750x450")
+
+    sem_choices = ((3,'3rd'),(4,'4th'),(5,'5th'),(6,'6th'),(7,'7th'),(8,'8th'),)
+    semester = models.IntegerField(choices=sem_choices)
+    result_analysis_pdf = models.FileField(upload_to='department/EI/result-analysis/')
+    result_analysis_image = models.ImageField(upload_to='department/EI/result-analysis/',
+                                validators=[validate_image],
+                                help_text='Upload image of result analysis bar graph or pie chart')
+    
+    def __str__(self):
+        return "Semester: " + str(self.semester)
 
 class electronics_and_instrumentation_dept_gallery(models.Model):
     image = models.ImageField(upload_to='department/gallery/EI/')
@@ -1207,6 +1460,28 @@ class computer_science_dept_accreditation(models.Model):
 
     def __str__(self):
         return self.name + " : " + self.member_type
+        
+class computer_science_dept_placement(models.Model):
+    year_choices_array = []
+    for year in range(2010, cur_year+1):
+        year_choices_array.append((year, year))
+    year_choices = tuple(year_choices_array)
+    
+    sno = models.IntegerField()
+    company_name = models.CharField(max_length=500)
+    latest_year = models.IntegerField(choices=year_choices, default=cur_year)
+    students_selected_for_latest_year = models.IntegerField()
+    second_latest_year = models.IntegerField(choices=year_choices, default=cur_year-1)
+    students_selected_for_2nd_latest_year = models.IntegerField()
+    third_latest_year = models.IntegerField(choices=year_choices, default=cur_year-2)
+    students_selected_for_3rd_latest_year = models.IntegerField()
+    fourth_latest_year = models.IntegerField(choices=year_choices, default=cur_year-3)
+    students_selected_for_4th_latest_year = models.IntegerField()
+    fifth_latest_year = models.IntegerField(choices=year_choices, default=cur_year-4)
+    students_selected_for_5th_latest_year = models.IntegerField()
+    
+    def __str__(self):
+        return self.company_name
 
 class computer_science_dept_alumni(models.Model):
     name = models.CharField(max_length=500)
@@ -1261,6 +1536,26 @@ class computer_science_dept_learning_materials(models.Model):
 
     def __str__(self):
         return 'SEM-' + str(self.semester) + ' : ' + self.subject_code
+
+class computer_science_dept_result_analysis(models.Model):
+    
+    def validate_image(image):
+        req_width = 750
+        req_height = 450
+        height = image.height 
+        width = image.width
+        if width != req_width and height != req_height:
+            raise ValidationError("Height and Width of image should be 750x450")
+
+    sem_choices = ((3,'3rd'),(4,'4th'),(5,'5th'),(6,'6th'),(7,'7th'),(8,'8th'),)
+    semester = models.IntegerField(choices=sem_choices)
+    result_analysis_pdf = models.FileField(upload_to='department/CS/result-analysis/')
+    result_analysis_image = models.ImageField(upload_to='department/CS/result-analysis/',
+                                validators=[validate_image],
+                                help_text='Upload image of result analysis bar graph or pie chart')
+    
+    def __str__(self):
+        return "Semester: " + str(self.semester)
 
 class computer_science_dept_gallery(models.Model):
     image = models.ImageField(upload_to='department/gallery/PhotoGallery/')
@@ -1388,6 +1683,28 @@ class information_science_dept_accreditation(models.Model):
     def __str__(self):
         return self.name + " : " + self.member_type
 
+class information_science_dept_placement(models.Model):
+    year_choices_array = []
+    for year in range(2010, cur_year+1):
+        year_choices_array.append((year, year))
+    year_choices = tuple(year_choices_array)
+    
+    sno = models.IntegerField()
+    company_name = models.CharField(max_length=500)
+    latest_year = models.IntegerField(choices=year_choices, default=cur_year)
+    students_selected_for_latest_year = models.IntegerField()
+    second_latest_year = models.IntegerField(choices=year_choices, default=cur_year-1)
+    students_selected_for_2nd_latest_year = models.IntegerField()
+    third_latest_year = models.IntegerField(choices=year_choices, default=cur_year-2)
+    students_selected_for_3rd_latest_year = models.IntegerField()
+    fourth_latest_year = models.IntegerField(choices=year_choices, default=cur_year-3)
+    students_selected_for_4th_latest_year = models.IntegerField()
+    fifth_latest_year = models.IntegerField(choices=year_choices, default=cur_year-4)
+    students_selected_for_5th_latest_year = models.IntegerField()
+    
+    def __str__(self):
+        return self.company_name
+
 class information_science_dept_alumni(models.Model):
     name = models.CharField(max_length=500)
     designation = models.CharField(max_length=500)
@@ -1441,6 +1758,26 @@ class information_science_dept_learning_materials(models.Model):
 
     def __str__(self):
         return 'SEM-' + str(self.semester) + ' : ' + self.subject_code
+
+class information_science_dept_result_analysis(models.Model):
+    
+    def validate_image(image):
+        req_width = 750
+        req_height = 450
+        height = image.height 
+        width = image.width
+        if width != req_width and height != req_height:
+            raise ValidationError("Height and Width of image should be 750x450")
+
+    sem_choices = ((3,'3rd'),(4,'4th'),(5,'5th'),(6,'6th'),(7,'7th'),(8,'8th'),)
+    semester = models.IntegerField(choices=sem_choices)
+    result_analysis_pdf = models.FileField(upload_to='department/IS/result-analysis/')
+    result_analysis_image = models.ImageField(upload_to='department/IS/result-analysis/',
+                                validators=[validate_image],
+                                help_text='Upload image of result analysis bar graph or pie chart')
+    
+    def __str__(self):
+        return "Semester: " + str(self.semester)
 
 class information_science_dept_gallery(models.Model):
     image = models.ImageField(upload_to='department/gallery/IS/')
@@ -1568,6 +1905,28 @@ class textile_technology_dept_accreditation(models.Model):
     def __str__(self):
         return self.name + " : " + self.member_type
 
+class textile_technology_dept_placement(models.Model):
+    year_choices_array = []
+    for year in range(2010, cur_year+1):
+        year_choices_array.append((year, year))
+    year_choices = tuple(year_choices_array)
+    
+    sno = models.IntegerField()
+    company_name = models.CharField(max_length=500)
+    latest_year = models.IntegerField(choices=year_choices, default=cur_year)
+    students_selected_for_latest_year = models.IntegerField()
+    second_latest_year = models.IntegerField(choices=year_choices, default=cur_year-1)
+    students_selected_for_2nd_latest_year = models.IntegerField()
+    third_latest_year = models.IntegerField(choices=year_choices, default=cur_year-2)
+    students_selected_for_3rd_latest_year = models.IntegerField()
+    fourth_latest_year = models.IntegerField(choices=year_choices, default=cur_year-3)
+    students_selected_for_4th_latest_year = models.IntegerField()
+    fifth_latest_year = models.IntegerField(choices=year_choices, default=cur_year-4)
+    students_selected_for_5th_latest_year = models.IntegerField()
+    
+    def __str__(self):
+        return self.company_name
+
 class textile_technology_dept_alumni(models.Model):
     name = models.CharField(max_length=500)
     designation = models.CharField(max_length=500)
@@ -1621,6 +1980,26 @@ class textile_technology_dept_learning_materials(models.Model):
 
     def __str__(self):
         return 'SEM-' + str(self.semester) + ' : ' + self.subject_code
+
+class textile_technology_dept_result_analysis(models.Model):
+    
+    def validate_image(image):
+        req_width = 750
+        req_height = 450
+        height = image.height 
+        width = image.width
+        if width != req_width and height != req_height:
+            raise ValidationError("Height and Width of image should be 750x450")
+
+    sem_choices = ((3,'3rd'),(4,'4th'),(5,'5th'),(6,'6th'),(7,'7th'),(8,'8th'),)
+    semester = models.IntegerField(choices=sem_choices)
+    result_analysis_pdf = models.FileField(upload_to='department/TX/result-analysis/')
+    result_analysis_image = models.ImageField(upload_to='department/TX/result-analysis/',
+                                validators=[validate_image],
+                                help_text='Upload image of result analysis bar graph or pie chart')
+    
+    def __str__(self):
+        return "Semester: " + str(self.semester)
 
 class textile_technology_dept_gallery(models.Model):
     image = models.ImageField(upload_to='department/gallery/TX/')
@@ -1748,6 +2127,28 @@ class bio_technology_dept_accreditation(models.Model):
     def __str__(self):
         return self.name + " : " + self.member_type
 
+class bio_technology_dept_placement(models.Model):
+    year_choices_array = []
+    for year in range(2010, cur_year+1):
+        year_choices_array.append((year, year))
+    year_choices = tuple(year_choices_array)
+    
+    sno = models.IntegerField()
+    company_name = models.CharField(max_length=500)
+    latest_year = models.IntegerField(choices=year_choices, default=cur_year)
+    students_selected_for_latest_year = models.IntegerField()
+    second_latest_year = models.IntegerField(choices=year_choices, default=cur_year-1)
+    students_selected_for_2nd_latest_year = models.IntegerField()
+    third_latest_year = models.IntegerField(choices=year_choices, default=cur_year-2)
+    students_selected_for_3rd_latest_year = models.IntegerField()
+    fourth_latest_year = models.IntegerField(choices=year_choices, default=cur_year-3)
+    students_selected_for_4th_latest_year = models.IntegerField()
+    fifth_latest_year = models.IntegerField(choices=year_choices, default=cur_year-4)
+    students_selected_for_5th_latest_year = models.IntegerField()
+    
+    def __str__(self):
+        return self.company_name
+
 class bio_technology_dept_alumni(models.Model):
     name = models.CharField(max_length=500)
     designation = models.CharField(max_length=500)
@@ -1801,6 +2202,26 @@ class bio_technology_dept_learning_materials(models.Model):
 
     def __str__(self):
         return 'SEM-' + str(self.semester) + ' : ' + self.subject_code
+
+class bio_technology_dept_result_analysis(models.Model):
+    
+    def validate_image(image):
+        req_width = 750
+        req_height = 450
+        height = image.height 
+        width = image.width
+        if width != req_width and height != req_height:
+            raise ValidationError("Height and Width of image should be 750x450")
+
+    sem_choices = ((3,'3rd'),(4,'4th'),(5,'5th'),(6,'6th'),(7,'7th'),(8,'8th'),)
+    semester = models.IntegerField(choices=sem_choices)
+    result_analysis_pdf = models.FileField(upload_to='department/BT/result-analysis/')
+    result_analysis_image = models.ImageField(upload_to='department/BT/result-analysis/',
+                                validators=[validate_image],
+                                help_text='Upload image of result analysis bar graph or pie chart')
+    
+    def __str__(self):
+        return "Semester: " + str(self.semester)
 
 class bio_technology_dept_gallery(models.Model):
     image = models.ImageField(upload_to='department/gallery/BT/')
@@ -1972,6 +2393,26 @@ class physics_dept_learning_materials(models.Model):
     def __str__(self):
         return 'SEM-' + str(self.semester) + ' : ' + self.subject_code
 
+class physics_dept_result_analysis(models.Model):
+    
+    def validate_image(image):
+        req_width = 750
+        req_height = 450
+        height = image.height 
+        width = image.width
+        if width != req_width and height != req_height:
+            raise ValidationError("Height and Width of image should be 750x450")
+
+    sem_choices = ((3,'3rd'),(4,'4th'),(5,'5th'),(6,'6th'),(7,'7th'),(8,'8th'),)
+    semester = models.IntegerField(choices=sem_choices)
+    result_analysis_pdf = models.FileField(upload_to='department/PHY/result-analysis/')
+    result_analysis_image = models.ImageField(upload_to='department/PHY/result-analysis/',
+                                validators=[validate_image],
+                                help_text='Upload image of result analysis bar graph or pie chart')
+    
+    def __str__(self):
+        return "Semester: " + str(self.semester)
+
 class physics_dept_gallery(models.Model):
     image = models.ImageField(upload_to='department/gallery/PHY/')
 
@@ -2141,6 +2582,26 @@ class chemistry_dept_learning_materials(models.Model):
 
     def __str__(self):
         return 'SEM-' + str(self.semester) + ' : ' + self.subject_code
+
+class chemistry_dept_result_analysis(models.Model):
+    
+    def validate_image(image):
+        req_width = 750
+        req_height = 450
+        height = image.height 
+        width = image.width
+        if width != req_width and height != req_height:
+            raise ValidationError("Height and Width of image should be 750x450")
+
+    sem_choices = ((3,'3rd'),(4,'4th'),(5,'5th'),(6,'6th'),(7,'7th'),(8,'8th'),)
+    semester = models.IntegerField(choices=sem_choices)
+    result_analysis_pdf = models.FileField(upload_to='department/CHEM/result-analysis/')
+    result_analysis_image = models.ImageField(upload_to='department/CHEM/result-analysis/',
+                                validators=[validate_image],
+                                help_text='Upload image of result analysis bar graph or pie chart')
+    
+    def __str__(self):
+        return "Semester: " + str(self.semester)
 
 class chemistry_dept_gallery(models.Model):
     image = models.ImageField(upload_to='department/gallery/CHEM/')
@@ -2312,6 +2773,26 @@ class mathematics_dept_learning_materials(models.Model):
     def __str__(self):
         return 'SEM-' + str(self.semester) + ' : ' + self.subject_code
 
+class mathematics_dept_result_analysis(models.Model):
+    
+    def validate_image(image):
+        req_width = 750
+        req_height = 450
+        height = image.height 
+        width = image.width
+        if width != req_width and height != req_height:
+            raise ValidationError("Height and Width of image should be 750x450")
+
+    sem_choices = ((3,'3rd'),(4,'4th'),(5,'5th'),(6,'6th'),(7,'7th'),(8,'8th'),)
+    semester = models.IntegerField(choices=sem_choices)
+    result_analysis_pdf = models.FileField(upload_to='department/MAT/result-analysis/')
+    result_analysis_image = models.ImageField(upload_to='department/MAT/result-analysis/',
+                                validators=[validate_image],
+                                help_text='Upload image of result analysis bar graph or pie chart')
+    
+    def __str__(self):
+        return "Semester: " + str(self.semester)
+
 class mathematics_dept_gallery(models.Model):
     image = models.ImageField(upload_to='department/gallery/MAT/')
 
@@ -2438,6 +2919,28 @@ class bio_medical_dept_accreditation(models.Model):
     def __str__(self):
         return self.name + " : " + self.member_type
 
+class bio_medical_dept_placement(models.Model):
+    year_choices_array = []
+    for year in range(2010, cur_year+1):
+        year_choices_array.append((year, year))
+    year_choices = tuple(year_choices_array)
+    
+    sno = models.IntegerField()
+    company_name = models.CharField(max_length=500)
+    latest_year = models.IntegerField(choices=year_choices, default=cur_year)
+    students_selected_for_latest_year = models.IntegerField()
+    second_latest_year = models.IntegerField(choices=year_choices, default=cur_year-1)
+    students_selected_for_2nd_latest_year = models.IntegerField()
+    third_latest_year = models.IntegerField(choices=year_choices, default=cur_year-2)
+    students_selected_for_3rd_latest_year = models.IntegerField()
+    fourth_latest_year = models.IntegerField(choices=year_choices, default=cur_year-3)
+    students_selected_for_4th_latest_year = models.IntegerField()
+    fifth_latest_year = models.IntegerField(choices=year_choices, default=cur_year-4)
+    students_selected_for_5th_latest_year = models.IntegerField()
+    
+    def __str__(self):
+        return self.company_name
+
 class bio_medical_dept_alumni(models.Model):
     name = models.CharField(max_length=500)
     designation = models.CharField(max_length=500)
@@ -2492,6 +2995,26 @@ class bio_medical_dept_learning_materials(models.Model):
     def __str__(self):
         return 'SEM-' + str(self.semester) + ' : ' + self.subject_code
 
+class bio_medical_dept_result_analysis(models.Model):
+    
+    def validate_image(image):
+        req_width = 750
+        req_height = 450
+        height = image.height 
+        width = image.width
+        if width != req_width and height != req_height:
+            raise ValidationError("Height and Width of image should be 750x450")
+
+    sem_choices = ((3,'3rd'),(4,'4th'),(5,'5th'),(6,'6th'),(7,'7th'),(8,'8th'),)
+    semester = models.IntegerField(choices=sem_choices)
+    result_analysis_pdf = models.FileField(upload_to='department/BM/result-analysis/')
+    result_analysis_image = models.ImageField(upload_to='department/BM/result-analysis/',
+                                validators=[validate_image],
+                                help_text='Upload image of result analysis bar graph or pie chart')
+    
+    def __str__(self):
+        return "Semester: " + str(self.semester)
+
 class bio_medical_dept_gallery(models.Model):
     image = models.ImageField(upload_to='department/gallery/BM/')
 
@@ -2528,3 +3051,4 @@ class environmental_dept_gallery(models.Model):
 
     def __str__(self):
         return '{}'.format(self.image)
+

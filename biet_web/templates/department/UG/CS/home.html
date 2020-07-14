@@ -1152,267 +1152,48 @@
                                                                     <tr>
                                                                         <th>Sl.No.</th>
                                                                         <th>Company</th>
-                                                                        <th>2019</th>
-                                                                        <th>2018</th>
-                                                                        <th>2017</th>
-                                                                        <th>2016</th>
-                                                                        <th>2015</th>
+									{% for placement in placement_data|slice:":1" %}
+                                                                        <th>{{placement.latest_year}}</th>
+                                                                        <th>{{placement.second_latest_year}}</th>
+                                                                        <th>{{placement.third_latest_year}}</th>
+                                                                        <th>{{placement.fourth_latest_year}}</th>
+                                                                        <th>{{placement.fifth_latest_year}}</th>
+                                                                        {% endfor %}
                                                                     </tr>
 
                                                                 </thead>
                                                                 <tbody>
-                                                                    <!-- {% for lab_facility in lab_facilities_data %}
+                                                                    {% for placement in placement_data %}
                                                                     <tr>
-                                                                        <td><b>{{lab_facility.sno}}.</b></td>
-                                                                        <td>{{lab_facility.name}}</td>
-                                                                        <td>{{lab_facility.qty}}</td>
-                                                                        <td style = "white-space: pre-wrap;">{{lab_facility.config_specs}}</td>
-                                                                        <td style = "white-space: pre-wrap;">{{lab_facility.softwares}}</td>
+                                                                        <td>{{placement.sno}}.</td>
+                                                                        <td>{{placement.company_name}}</td>
+                                                                        {% if placement.students_selected_for_latest_year == 0 %}
+                                                                        <td>--</td>
+                                                                        {% else %}
+                                                                        <td>{{placement.students_selected_for_latest_year}}</td>
+                                                                        {% endif %}
+                                                                        {% if placement.students_selected_for_2nd_latest_year == 0 %}
+                                                                        <td>--</td>
+                                                                        {% else %}
+                                                                        <td>{{placement.students_selected_for_2nd_latest_year}}</td>
+                                                                        {% endif %}
+                                                                        {% if placement.students_selected_for_3rd_latest_year == 0 %}
+                                                                        <td>--</td>
+                                                                        {% else %}
+                                                                        <td>{{placement.students_selected_for_3rd_latest_year}}</td>
+                                                                        {% endif %}
+                                                                        {% if placement.students_selected_for_4th_latest_year == 0 %}
+                                                                        <td>--</td>
+                                                                        {% else %}
+                                                                        <td>{{placement.students_selected_for_4th_latest_year}}</td>
+                                                                        {% endif %}
+                                                                        {% if placement.students_selected_for_5th_latest_year == 0 %}
+                                                                        <td>--</td>
+                                                                        {% else %}
+                                                                        <td>{{placement.students_selected_for_5th_latest_year}}</td>
+                                                                        {% endif %}
                                                                     </tr>
-                                                                {% endfor %} -->
-                                                                    <tr>
-                                                                        <td>1</td>
-                                                                        <td>TCS</td>
-                                                                        <td>22</td>
-                                                                        <td>56</td>
-                                                                        <td>47</td>
-                                                                        <td>28</td>
-                                                                        <td>29</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>2</td>
-                                                                        <td>Mind tree</td>
-                                                                        <td>-</td>
-                                                                        <td>-</td>
-                                                                        <td>-</td>
-                                                                        <td>1</td>
-                                                                        <td>6</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>3</td>
-                                                                        <td>Tech Mahindra</td>
-                                                                        <td>1</td>
-                                                                        <td>-</td>
-                                                                        <td>-</td>
-                                                                        <td>2</td>
-                                                                        <td>3</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>4</td>
-                                                                        <td>NTT Data</td>
-                                                                        <td>1</td>
-                                                                        <td>2</td>
-                                                                        <td>1</td>
-                                                                        <td>1</td>
-                                                                        <td>1</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>5</td>
-                                                                        <td>Mphasis</td>
-                                                                        <td>-</td>
-                                                                        <td>-</td>
-                                                                        <td>-</td>
-                                                                        <td>-</td>
-                                                                        <td>1</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>6</td>
-                                                                        <td>FACE</td>
-                                                                        <td>-</td>
-                                                                        <td>-</td>
-                                                                        <td>-</td>
-                                                                        <td>-</td>
-                                                                        <td>2</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>7</td>
-                                                                        <td>Agies</td>
-                                                                        <td>-</td>
-                                                                        <td>-</td>
-                                                                        <td>-</td>
-                                                                        <td>1</td>
-                                                                        <td>-</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>8</td>
-                                                                        <td>Vee Technologies</td>
-                                                                        <td>2</td>
-                                                                        <td>3</td>
-                                                                        <td>2</td>
-                                                                        <td>-</td>
-                                                                        <td>-</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>9</td>
-                                                                        <td>Syscon</td>
-                                                                        <td>-</td>
-                                                                        <td>-</td>
-                                                                        <td>-</td>
-                                                                        <td>-</td>
-                                                                        <td>1</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>10</td>
-                                                                        <td>EDS Technologies</td>
-                                                                        <td>-</td>
-                                                                        <td>-</td>
-                                                                        <td>-</td>
-                                                                        <td>2</td>
-                                                                        <td>-</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>11</td>
-                                                                        <td>Global Edge</td>
-                                                                        <td>-</td>
-                                                                        <td>-</td>
-                                                                        <td>2</td>
-                                                                        <td>-</td>
-                                                                        <td>-</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>12</td>
-                                                                        <td>Aries global</td>
-                                                                        <td>-</td>
-                                                                        <td>-</td>
-                                                                        <td>-</td>
-                                                                        <td>-</td>
-                                                                        <td>2</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>13</td>
-                                                                        <td>Mistral Solutions</td>
-                                                                        <td>-</td>
-                                                                        <td>1</td>
-                                                                        <td>3</td>
-                                                                        <td>-</td>
-                                                                        <td>-</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>14</td>
-                                                                        <td>Sri Ram Transports</td>
-                                                                        <td>-</td>
-                                                                        <td>-</td>
-                                                                        <td>-</td>
-                                                                        <td>-</td>
-                                                                        <td>-</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>15</td>
-                                                                        <td>4 developers</td>
-                                                                        <td>-</td>
-                                                                        <td>-</td>
-                                                                        <td>-</td>
-                                                                        <td>-</td>
-                                                                        <td>-</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>16</td>
-                                                                        <td>TekSystems</td>
-                                                                        <td>-</td>
-                                                                        <td>1</td>
-                                                                        <td>-</td>
-                                                                        <td>-</td>
-                                                                        <td>-</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>17</td>
-                                                                        <td>BYJU's</td>
-                                                                        <td>-</td>
-                                                                        <td>1</td>
-                                                                        <td>-</td>
-                                                                        <td>-</td>
-                                                                        <td>-</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>18</td>
-                                                                        <td>BEL</td>
-                                                                        <td>-</td>
-                                                                        <td>1</td>
-                                                                        <td>-</td>
-                                                                        <td>-</td>
-                                                                        <td>-</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>19</td>
-                                                                        <td>State Street</td>
-                                                                        <td>-</td>
-                                                                        <td>2</td>
-                                                                        <td>-</td>
-                                                                        <td>-</td>
-                                                                        <td>-</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>20</td>
-                                                                        <td>First American Company</td>
-                                                                        <td>-</td>
-                                                                        <td>1</td>
-                                                                        <td>-</td>
-                                                                        <td>-</td>
-                                                                        <td>-</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>21</td>
-                                                                        <td>App N M</td>
-                                                                        <td>-</td>
-                                                                        <td>1</td>
-                                                                        <td>-</td>
-                                                                        <td>-</td>
-                                                                        <td>-</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>22</td>
-                                                                        <td>Infosys</td>
-                                                                        <td>22</td>
-                                                                        <td>-</td>
-                                                                        <td>-</td>
-                                                                        <td>-</td>
-                                                                        <td>-</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>23</td>
-                                                                        <td>Wipro</td>
-                                                                        <td>10</td>
-                                                                        <td>-</td>
-                                                                        <td>-</td>
-                                                                        <td>-</td>
-                                                                        <td>-</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>24</td>
-                                                                        <td>Digit Insurance </td>
-                                                                        <td>2</td>
-                                                                        <td>-</td>
-                                                                        <td>-</td>
-                                                                        <td>-</td>
-                                                                        <td>-</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>25</td>
-                                                                        <td>Cleo </td>
-                                                                        <td>2</td>
-                                                                        <td>-</td>
-                                                                        <td>-</td>
-                                                                        <td>-</td>
-                                                                        <td>-</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>26</td>
-                                                                        <td>iNube Software Solutions</td>
-                                                                        <td>10</td>
-                                                                        <td>-</td>
-                                                                        <td>-</td>
-                                                                        <td>-</td>
-                                                                        <td>-</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>27</td>
-                                                                        <td>Starmarker </td>
-                                                                        <td>2</td>
-                                                                        <td>-</td>
-                                                                        <td>-</td>
-                                                                        <td>-</td>
-                                                                        <td>-</td>
-                                                                    </tr>
+                                                                    {% endfor %}
 
                                                                 </tbody>
                                                             </table>
@@ -2109,7 +1890,7 @@
                                             <!--//panel-colapse-->
                                         </div>
 
-                                        <div class="panel panel-default">
+					<div class="panel panel-default">
                                             <div class="panel-heading">
                                                 <h4 class="panel-title">
                                                     <a data-toggle="collapse" data-parent="#accordion" class="collapsed"
@@ -2121,123 +1902,86 @@
                                             <!--//pane-heading-->
                                             <div id="collapse-11" class="panel-collapse collapse">
                                                 <div class="panel-body">
-                                                    <div class="panel-body">
-                                                        <h3 class="no-margin-top has-divider text-highlight">B.E Result
-                                                            Analysis-2019</h1>
-                                                            <!-- <div class="row page-row"> -->
-                                                            <article class="welcome col-md-12 col-sm-11">
-                                                                <!-- {% for calender in academic_calender %}
-                                                                    <section class="widget has-divider">
-                                                                        <h3 class="title">Download Academic Calender</h3>
-                                                                        <p>Click the link below to download the Academic Calender</p>
-                                                                        <a class="btn btn-theme" href="{{calender.calender.url}}" target="_blank"><i
-                                                                                class="fa fa-download"></i>Download now</a>
-                                                                        <a href="{{calender.calender.url}}" class="btn btn-theme view-pdf"><i class="fa fa-eye"></i>View
-                                                                            now</a>
-                                                                    </section>
-                                                                    {% endfor %} -->
-                                                                <section class="widget has-divider">
-                                                                    <div class="row">
-                                                                        <div class="col-md-12">
-                                                                            <div class="col-md-6">
-                                                                                <h4 class="title">B.E Eighth Semester
-                                                                                    Result
-                                                                                    Analysis</h4>
-                                                                                <p>Click the link below to download the
-                                                                                    Result
-                                                                                    Analysis</p>
-                                                                                <a class="btn btn-theme"
-                                                                                    href="{% static 'assets/results/cse/Results_8th.pdf' %}"
-                                                                                    target="_blank"><i
-                                                                                        class="fa fa-download"></i>Download
-                                                                                    now</a>
-                                                                                <a href="{% static 'assets/results/cse/Results_8th.pdf' %}"
-                                                                                    class="btn btn-theme view-pdf"><i
-                                                                                        class="fa fa-eye"></i>View
-                                                                                    now</a>
-                                                                            </div>
-                                                                            <div class="col-md-6">
-                                                                                <a class="prettyphoto col-md-10 col-sm-10 col-xs-10"
-                                                                                    rel="prettyPhoto[gallery]" title=""
-                                                                                    href="{% static 'assets/results/cse/8th sem result graph.jpg' %}"><img
-                                                                                        class="img-responsive img-thumbnail"
-                                                                                        src="{% static 'assets/results/cse/8th sem result graph.jpg' %}"
-                                                                                        alt="" /></a>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </section>
-                                                                <section class="widget has-divider">
-                                                                    <div class="row">
-                                                                        <div class="col-md-6">
-                                                                            <h4 class="title">B.E Sixth Semester Result
-                                                                                Analysis
-                                                                            </h4>
-                                                                            <p>Click the link below to download the
-                                                                                Result
-                                                                                Analysis</p>
-                                                                            <a class="btn btn-theme"
-                                                                                href="{% static 'assets/results/cse/Results_6th.pdf' %}"
-                                                                                target="_blank"><i
-                                                                                    class="fa fa-download"></i>Download
-                                                                                now</a>
-                                                                            <a href="{% static 'assets/results/cse/Results_6th.pdf' %}"
-                                                                                class="btn btn-theme view-pdf"><i
-                                                                                    class="fa fa-eye"></i>View
-                                                                                now</a>
-                                                                        </div>
-                                                                        <div class="col-md-6">
-                                                                            <a class="prettyphoto col-md-10 col-sm-10 col-xs-10"
-                                                                                rel="prettyPhoto[gallery]" title=""
-                                                                                href="{% static 'assets/results/cse/6th sem result graph.png' %}"><img
-                                                                                    class="img-responsive img-thumbnail"
-                                                                                    src="{% static 'assets/results/cse/6th sem result graph.png' %}"
-                                                                                    alt="" /></a>
-                                                                        </div>
-                                                                    </div>
-                                                                </section>
-                                                                <section class="widget has-divider">
-                                                                    <div class="row">
-                                                                        <div class="col-md-6">
-                                                                            <h4 class="title">B.E Fourth Semester Result
-                                                                                Analysis
-                                                                            </h4>
-                                                                            <p>Click the link below to download the
-                                                                                Result
-                                                                                Analysis</p>
-                                                                            <a class="btn btn-theme"
-                                                                                href="{% static 'assets/results/cse/Results_4th.pdf' %}"
-                                                                                target="_blank"><i
-                                                                                    class="fa fa-download"></i>Download
-                                                                                now</a>
-                                                                            <a href="{% static 'assets/results/cse/Results_4th.pdf' %}"
-                                                                                class="btn btn-theme view-pdf"><i
-                                                                                    class="fa fa-eye"></i>View
-                                                                                now</a>
-                                                                        </div>
-                                                                        <div class="col-md-6">
-                                                                            <a class="prettyphoto col-md-10 col-sm-10 col-xs-10"
-                                                                                rel="prettyPhoto[gallery]" title=""
-                                                                                href="{% static 'assets/results/cse/4th sem result graph.png' %}"><img
-                                                                                    class="img-responsive img-thumbnail"
-                                                                                    src="{% static 'assets/results/cse/4th sem result graph.png' %}"
-                                                                                    alt="" /></a>
-                                                                        </div>
-                                                                    </div>
-                                                                </section>
+                                                    <ul class="nav nav-tabs">
+                                                        <li class="active"><a href="#tabe" data-toggle="tab"><strong>
+                                                                    Even
+                                                                    Semester</strong></a></li>
+                                                        <li><a href="#tabo" data-toggle="tab"><strong>
+                                                                    Odd Semester</strong></a></li>
 
-                                                            </article>
-                                                            <!--//page-content-->
+                                                    </ul>
+                                                    <div class="tab-content">
+                                                        <div class="tab-pane active" id="tabe">
+                                                            <div class="row medical">
+                                                                {% for result in results_data %}
+                                                                {% if result.semester|divisibleby:2 %}
+                                                                <section class="widget has-divider">
+                                                                <div class="col-md-6">
+                                                                    <h3>{{result.get_semester_display}} Semester Result Analysis
+                                                                    </h3>
+                                                                    <p>Click the link below to download the
+                                                                        Result Analysis</p>
+                                                                    <a class="btn btn-theme" href="{{result.result_analysis_pdf.url}}"
+                                                                        target="_blank"><i
+                                                                            class="fa fa-download"></i>Download</a>
+                                                                    <a href="{{result.result_analysis_pdf.url}}"
+                                                                        class="btn btn-theme view-pdf"><i
+                                                                            class="fa fa-eye"></i>View
+                                                                    </a>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <a class="prettyphoto col-md-10 col-sm-10 col-xs-10"
+                                                                        rel="prettyPhoto[gallery]" title=""
+                                                                        href="{{result.result_analysis_image.url}}"><img
+                                                                            class="img-responsive img-thumbnail"
+                                                                            src="{{result.result_analysis_image.url}}"
+                                                                            alt="" /></a>
+                                                                </div>
+                                                                </section>
+                                                                {% endif %}
+                                                                {% endfor %}
+                                                            </div>
+                                                            <!--//row-->
+                                                        </div>
+                                                        <div class="tab-pane" id="tabo">
+                                                            <div class="row medical">
+                                                                {% for result in results_data %}
+                                                                {% with oddsem=result.semester|add:1 %}
+                                                                {% if oddsem|divisibleby:2 %}
+                                                                <div class="col-md-6">
+                                                                    <h3>{{result.get_semester_display}} Semester Result Analysis
+                                                                    </h3>
+                                                                    <p>Click the link below to download the
+                                                                        Result Analysis</p>
+                                                                    <a class="btn btn-theme" href="{{result.result_analysis_pdf.url}}"
+                                                                        target="_blank"><i
+                                                                            class="fa fa-download"></i>Download</a>
+                                                                    <a href="{{result.result_analysis_pdf.url}}"
+                                                                        class="btn btn-theme view-pdf"><i
+                                                                            class="fa fa-eye"></i>View
+                                                                    </a>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <a class="prettyphoto col-md-10 col-sm-10 col-xs-10"
+                                                                        rel="prettyPhoto[gallery]" title=""
+                                                                        href="{{result.result_analysis_image.url}}"><img
+                                                                            class="img-responsive img-thumbnail"
+                                                                            src="{{result.result_analysis_image.url}}"
+                                                                            alt="" /></a>
+                                                                </div>
+                                                                {% endif %}
+                                                                {% endwith %}
+                                                                {% endfor %}
+                                                            </div>
+                                                            <!--//row-->
+                                                        </div>
 
-                                                            <!-- </div> -->
                                                     </div>
-                                                    <!--//panel-body-->
                                                 </div>
                                                 <!--//panel-body-->
                                             </div>
                                             <!--//panel-colapse-->
                                         </div>
-                                        <!--//panel-->
 
                                         <div class="panel panel-default">
                                             <div class="panel-heading">

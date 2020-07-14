@@ -893,15 +893,48 @@
                                                                     <tr>
                                                                         <th>Sl.No.</th>
                                                                         <th>Company</th>
-                                                                        <th>2019</th>
-                                                                        <th>2018</th>
-                                                                        <th>2017</th>
-                                                                        <th>2016</th>
-                                                                        <th>2015</th>
+                                                                       {% for placement in placement_data|slice:":1" %}
+                                                                        <th>{{placement.latest_year}}</th>
+                                                                        <th>{{placement.second_latest_year}}</th>
+                                                                        <th>{{placement.third_latest_year}}</th>
+                                                                        <th>{{placement.fourth_latest_year}}</th>
+                                                                        <th>{{placement.fifth_latest_year}}</th>
+                                                                        {% endfor %}
                                                                     </tr>
 
                                                                 </thead>
                                                                 <tbody>
+                                                                    {% for placement in placement_data %}
+                                                                    <tr>
+                                                                        <td>{{placement.sno}}.</td>
+                                                                        <td>{{placement.company_name}}</td>
+                                                                        {% if placement.students_selected_for_latest_year == 0 %}
+                                                                        <td>--</td>
+                                                                        {% else %}
+                                                                        <td>{{placement.students_selected_for_latest_year}}</td>
+                                                                        {% endif %}
+                                                                        {% if placement.students_selected_for_2nd_latest_year == 0 %}
+                                                                        <td>--</td>
+                                                                        {% else %}
+                                                                        <td>{{placement.students_selected_for_2nd_latest_year}}</td>
+                                                                        {% endif %}
+                                                                        {% if placement.students_selected_for_3rd_latest_year == 0 %}
+                                                                        <td>--</td>
+                                                                        {% else %}
+                                                                        <td>{{placement.students_selected_for_3rd_latest_year}}</td>
+                                                                        {% endif %}
+                                                                        {% if placement.students_selected_for_4th_latest_year == 0 %}
+                                                                        <td>--</td>
+                                                                        {% else %}
+                                                                        <td>{{placement.students_selected_for_4th_latest_year}}</td>
+                                                                        {% endif %}
+                                                                        {% if placement.students_selected_for_5th_latest_year == 0 %}
+                                                                        <td>--</td>
+                                                                        {% else %}
+                                                                        <td>{{placement.students_selected_for_5th_latest_year}}</td>
+                                                                        {% endif %}
+                                                                    </tr>
+                                                                    {% endfor %}
 
                                                                 </tbody>
                                                             </table>
@@ -1448,7 +1481,7 @@
                                             <!--//panel-colapse-->
                                         </div>
 
-                                        <div class="panel panel-default">
+					<div class="panel panel-default">
                                             <div class="panel-heading">
                                                 <h4 class="panel-title">
                                                     <a data-toggle="collapse" data-parent="#accordion" class="collapsed"
@@ -1460,116 +1493,87 @@
                                             <!--//pane-heading-->
                                             <div id="collapse-11" class="panel-collapse collapse">
                                                 <div class="panel-body">
-                                                    <div class="panel-body">
-                                                        <h3 class="no-margin-top has-divider text-highlight">B.E Result
-                                                            Analysis-2019</h1>
-                                                            <!-- <div class="row page-row"> -->
-                                                            <article class="welcome col-md-12 col-sm-11">
-                                                               
-                                                                <section class="widget has-divider">
-                                                                    <div class="row">
-                                                                        <div class="col-md-12">
-                                                                            <div class="col-md-6">
-                                                                                <h4 class="title">B.E Eighth Semester
-                                                                                    Result
-                                                                                    Analysis</h4>
-                                                                                <p>Click the link below to download the
-                                                                                    Result
-                                                                                    Analysis</p>
-                                                                                <a class="btn btn-theme"
-                                                                                    href="{% static 'assets/results/cve/Results_8th.pdf' %}"
-                                                                                    target="_blank"><i
-                                                                                        class="fa fa-download"></i>Download
-                                                                                    now</a>
-                                                                                <a href="{% static 'assets/results/cve/Results_8th.pdf' %}"
-                                                                                    class="btn btn-theme view-pdf"><i
-                                                                                        class="fa fa-eye"></i>View
-                                                                                    now</a>
-                                                                            </div>
-                                                                            <div class="col-md-6">
-                                                                                <a class="prettyphoto col-md-10 col-sm-10 col-xs-10"
-                                                                                    rel="prettyPhoto[gallery]" title=""
-                                                                                    href="{% static 'assets/results/cve/8th sem result graph.jpg' %}"><img
-                                                                                        class="img-responsive img-thumbnail"
-                                                                                        src="{% static 'assets/results/cve/8th sem result graph.jpg' %}"
-                                                                                        alt="" /></a>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </section>
-                                                                <section class="widget has-divider">
-                                                                    <div class="row">
-                                                                        <div class="col-md-6">
-                                                                            <h4 class="title">B.E Sixth Semester Result
-                                                                                Analysis
-                                                                            </h4>
-                                                                            <p>Click the link below to download the
-                                                                                Result
-                                                                                Analysis</p>
-                                                                            <a class="btn btn-theme"
-                                                                                href="{% static 'assets/results/cve/Results_6th.pdf' %}"
-                                                                                target="_blank"><i
-                                                                                    class="fa fa-download"></i>Download
-                                                                                now</a>
-                                                                            <a href="{% static 'assets/results/cve/Results_6th.pdf' %}"
-                                                                                class="btn btn-theme view-pdf"><i
-                                                                                    class="fa fa-eye"></i>View
-                                                                                now</a>
-                                                                        </div>
-                                                                        <div class="col-md-6">
-                                                                            <a class="prettyphoto col-md-10 col-sm-10 col-xs-10"
-                                                                                rel="prettyPhoto[gallery]" title=""
-                                                                                href="{% static 'assets/results/cve/6th sem result graph.png' %}"><img
-                                                                                    class="img-responsive img-thumbnail"
-                                                                                    src="{% static 'assets/results/cve/6th sem result graph.png' %}"
-                                                                                    alt="" /></a>
-                                                                        </div>
-                                                                    </div>
-                                                                </section>
-                                                                <section class="widget has-divider">
-                                                                    <div class="row">
-                                                                        <div class="col-md-6">
-                                                                            <h4 class="title">B.E Fourth Semester Result
-                                                                                Analysis
-                                                                            </h4>
-                                                                            <p>Click the link below to download the
-                                                                                Result
-                                                                                Analysis</p>
-                                                                            <a class="btn btn-theme"
-                                                                                href="{% static 'assets/results/cve/Results_4th.pdf' %}"
-                                                                                target="_blank"><i
-                                                                                    class="fa fa-download"></i>Download
-                                                                                now</a>
-                                                                            <a href="{% static 'assets/results/cve/Results_4th.pdf' %}"
-                                                                                class="btn btn-theme view-pdf"><i
-                                                                                    class="fa fa-eye"></i>View
-                                                                                now</a>
-                                                                        </div>
-                                                                        <div class="col-md-6">
-                                                                            <a class="prettyphoto col-md-10 col-sm-10 col-xs-10"
-                                                                                rel="prettyPhoto[gallery]" title=""
-                                                                                href="{% static 'assets/results/cve/4th sem result graph.png' %}"><img
-                                                                                    class="img-responsive img-thumbnail"
-                                                                                    src="{% static 'assets/results/cve/4th sem result graph.png' %}"
-                                                                                    alt="" /></a>
-                                                                        </div>
-                                                                    </div>
-                                                                </section>
+                                                    <ul class="nav nav-tabs">
+                                                        <li class="active"><a href="#tabe" data-toggle="tab"><strong>
+                                                                    Even
+                                                                    Semester</strong></a></li>
+                                                        <li><a href="#tabo" data-toggle="tab"><strong>
+                                                                    Odd Semester</strong></a></li>
 
+                                                    </ul>
+                                                    <div class="tab-content">
+                                                        <div class="tab-pane active" id="tabe">
+                                                            <div class="row medical">
+                                                                {% for result in results_data %}
+                                                                {% if result.semester|divisibleby:2 %}
+                                                                <section class="widget has-divider">
+                                                                <div class="col-md-6">
+                                                                    <h3>{{result.get_semester_display}} Semester Result Analysis
+                                                                    </h3>
+                                                                    <p>Click the link below to download the
+                                                                        Result Analysis</p>
+                                                                    <a class="btn btn-theme" href="{{result.result_analysis_pdf.url}}"
+                                                                        target="_blank"><i
+                                                                            class="fa fa-download"></i>Download</a>
+                                                                    <a href="{{result.result_analysis_pdf.url}}"
+                                                                        class="btn btn-theme view-pdf"><i
+                                                                            class="fa fa-eye"></i>View
+                                                                    </a>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <a class="prettyphoto col-md-10 col-sm-10 col-xs-10"
+                                                                        rel="prettyPhoto[gallery]" title=""
+                                                                        href="{{result.result_analysis_image.url}}"><img
+                                                                            class="img-responsive img-thumbnail"
+                                                                            src="{{result.result_analysis_image.url}}"
+                                                                            alt="" /></a>
+                                                                </div>
+                                                                </section>
+                                                                {% endif %}
+                                                                {% endfor %}
+                                                            </div>
+                                                            <!--//row-->
+                                                        </div>
+                                                        <div class="tab-pane" id="tabo">
+                                                            <div class="row medical">
+                                                                {% for result in results_data %}
+                                                                {% with oddsem=result.semester|add:1 %}
+                                                                {% if oddsem|divisibleby:2 %}
+                                                                <div class="col-md-6">
+                                                                    <h3>{{result.get_semester_display}} Semester Result Analysis
+                                                                    </h3>
+                                                                    <p>Click the link below to download the
+                                                                        Result Analysis</p>
+                                                                    <a class="btn btn-theme" href="{{result.result_analysis_pdf.url}}"
+                                                                        target="_blank"><i
+                                                                            class="fa fa-download"></i>Download</a>
+                                                                    <a href="{{result.result_analysis_pdf.url}}"
+                                                                        class="btn btn-theme view-pdf"><i
+                                                                            class="fa fa-eye"></i>View
+                                                                    </a>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <a class="prettyphoto col-md-10 col-sm-10 col-xs-10"
+                                                                        rel="prettyPhoto[gallery]" title=""
+                                                                        href="{{result.result_analysis_image.url}}"><img
+                                                                            class="img-responsive img-thumbnail"
+                                                                            src="{{result.result_analysis_image.url}}"
+                                                                            alt="" /></a>
+                                                                </div>
+                                                                {% endif %}
+                                                                {% endwith %}
+                                                                {% endfor %}
+                                                            </div>
+                                                            <!--//row-->
+                                                        </div>
 
-                                                            </article>
-                                                            <!--//page-content-->
-
-                                                            <!-- </div> -->
                                                     </div>
-                                                    <!--//panel-body-->
                                                 </div>
                                                 <!--//panel-body-->
                                             </div>
                                             <!--//panel-colapse-->
-                                        </div>
-                                        <!--//panel-->
-
+                                        </div>				
+	
                                         <div class="panel panel-default">
                                             <div class="panel-heading">
                                                 <h4 class="panel-title">

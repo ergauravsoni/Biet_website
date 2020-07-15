@@ -285,7 +285,7 @@
                                                             <div class="col-md-8 text-center">
                                                                 <div class="" style="  text-align: justify;">
                                                                     <p>
-                                                                        
+                                                                       	{{faculty_data.description}} 
                                                                     </p>
                                                                 </div>
                                                                 <a href="{{faculty_data.detail.url}}"
@@ -1078,18 +1078,9 @@
                                                             <div class="page-wrapper">
                                                                 <div class="page-content">
                                                                     <!-- <article class="welcome col-md-12 col-sm-7">                          -->
-                                                                    <p>Mauris eu faucibus sem, ac pharetra justo. Pellentesque habitant
-                                                                        morbi tristique senectus et netus et malesuada fames ac turpis
-                                                                        egestas. Curabitur blandit euismod ipsum, ac commodo eros
-                                                                        tincidunt et. Aenean tincidunt vestibulum adipiscing. Ut eu enim
-                                                                        velit. Ut lectus leo, interdum sodales nibh nec, dictum pulvinar
-                                                                        nisl. In consequat fringilla turpis id porta. Cras eget lacus ac
-                                                                        orci facilisis aliquam. Fusce a lobortis purus. Integer sed odio
-                                                                        et ipsum interdum volutpat at nec nisl. Sed pulvinar ante orci,
-                                                                        id tristique sapien cursus et. Nullam ut augue et magna ornare
-                                                                        aliquam ut vulputate dui. Vivamus fringilla eu ipsum ut mattis.
-                                                                        Nulla a varius velit. Phasellus at lectus ut felis posuere
-                                                                        lacinia in id purus.</p>
+								    {% for desc in forum_desc %}
+                                                                    <p>{{desc.description}}</p>
+                                                                    {% endfor %}
                                                                     <p>The following events are conducted regularly
                                                                         by MEForum:</p>
                                                                     <!-- </article> -->
@@ -1133,8 +1124,7 @@
                                                             <h3 class="no-margin-top has-divider text-highlight">
                                                                 Department Activities</h3>
 
-                                                            <p>The following department activities were conducted during
-                                                                July 2019 to Dec 2019:</p>
+                                                            <p>The following department activities were conducted:</p>
 
                                                             <ul class="custom-list-style medical">
 

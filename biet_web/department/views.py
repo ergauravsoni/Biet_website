@@ -39,6 +39,7 @@ def home(request, course, dept):
         placement_data = civil_dept_placement.objects.all().order_by('sno')
         results_data = civil_dept_result_analysis.objects.all()
         dept_library = civil_dept_library.objects.all()
+        forum_desc = civil_dept_forum.objects.all()
 
         content = {'faculties_data': faculties_data,
                     'achievements_data': achievements_data,
@@ -60,7 +61,8 @@ def home(request, course, dept):
                     'learning_materials_data': learning_materials_data,
                     'placement_data': placement_data,
                     'results_data' : results_data,
-                    'dept_library': dept_library
+                    'dept_library': dept_library,
+                    'forum_desc': forum_desc
                 }
 
     elif course == 'UG' and dept == 'ME':
@@ -96,6 +98,7 @@ def home(request, course, dept):
         placement_data = mechanical_dept_placement.objects.all().order_by('sno')
         results_data = mechanical_dept_result_analysis.objects.all()
         dept_library = mechanical_dept_library.objects.all()
+        forum_desc = mechanical_dept_forum.objects.all()
         
         content = {'faculties_data': faculties_data,
                     'achievements_data': achievements_data,
@@ -117,7 +120,8 @@ def home(request, course, dept):
                     'learning_materials_data': learning_materials_data,
                     'placement_data': placement_data,
                     'results_data' : results_data,
-                    'dept_library': dept_library
+                    'dept_library': dept_library,
+                    'forum_desc': forum_desc
                 }
 
     elif course == 'UG' and dept == 'EE':
@@ -153,6 +157,7 @@ def home(request, course, dept):
         placement_data = electrical_and_electronics_dept_placement.objects.all().order_by('sno')
         results_data = electrical_and_electronics_dept_result_analysis.objects.all()
         dept_library = electrical_and_electronics_dept_library.objects.all()
+        forum_desc = electrical_and_electronics_dept_forum.objects.all()
         
         content = {'faculties_data': faculties_data,
                     'achievements_data': achievements_data,
@@ -174,7 +179,8 @@ def home(request, course, dept):
                     'learning_materials_data': learning_materials_data,
                     'placement_data': placement_data,
                     'results_data' : results_data,
-                    'dept_library': dept_library
+                    'dept_library': dept_library,
+                    'forum_desc': forum_desc
                 }
 
     elif course == 'UG' and dept == 'EC':
@@ -210,6 +216,7 @@ def home(request, course, dept):
         placement_data = electronics_and_communication_dept_placement.objects.all().order_by('sno')
         results_data = electronics_and_communication_dept_result_analysis.objects.all()
         dept_library = electronics_and_communication_dept_library.objects.all()
+        forum_desc = electronics_and_communication_dept_forum.objects.all()
         
         content = {'faculties_data': faculties_data,
                     'achievements_data': achievements_data,
@@ -231,7 +238,8 @@ def home(request, course, dept):
                     'learning_materials_data': learning_materials_data,
                     'placement_data': placement_data,
                     'results_data' : results_data,
-                    'dept_library': dept_library
+                    'dept_library': dept_library,
+                    'forum_desc': forum_desc
                 }
 
     elif course == 'UG' and dept == 'CH':
@@ -267,6 +275,7 @@ def home(request, course, dept):
         placement_data = chemical_dept_placement.objects.all().order_by('sno')
         results_data = chemical_dept_result_analysis.objects.all()
         dept_library = chemical_dept_library.objects.all()
+        forum_desc = chemical_dept_forum.objects.all()
         
         content = {'faculties_data': faculties_data,
                     'achievements_data': achievements_data,
@@ -288,7 +297,8 @@ def home(request, course, dept):
                     'learning_materials_data': learning_materials_data,
                     'placement_data': placement_data,
                     'results_data' : results_data,
-                    'dept_library': dept_library
+                    'dept_library': dept_library,
+                    'forum_desc': forum_desc
                 }
 
     elif course == 'UG' and dept == 'EI':
@@ -324,6 +334,7 @@ def home(request, course, dept):
         placement_data = electronics_and_instrumentation_dept_placement.objects.all().order_by('sno')
         results_data = electronics_and_instrumentation_dept_result_analysis.objects.all()
         dept_library = electronics_and_instrumentation_dept_library.objects.all()
+        forum_desc = electronics_and_instrumentation_dept_forum.objects.all()
         
         content = {'faculties_data': faculties_data,
                     'achievements_data': achievements_data,
@@ -345,7 +356,8 @@ def home(request, course, dept):
                     'learning_materials_data': learning_materials_data,
                     'placement_data': placement_data,
                     'results_data' : results_data,
-                    'dept_library': dept_library
+                    'dept_library': dept_library,
+                    'forum_desc': forum_desc
                 }
 
     elif course == 'UG' and dept == 'CS':
@@ -381,6 +393,7 @@ def home(request, course, dept):
         placement_data = computer_science_dept_placement.objects.all().order_by('sno')
         results_data = computer_science_dept_result_analysis.objects.all()
         dept_library = computer_science_dept_library.objects.all()
+        forum_desc = computer_science_dept_forum.objects.all()
         
         content = {'faculties_data': faculties_data,
                     'achievements_data': achievements_data,
@@ -402,7 +415,8 @@ def home(request, course, dept):
                     'learning_materials_data': learning_materials_data,
                     'placement_data': placement_data,
                     'results_data' : results_data,
-                    'dept_library': dept_library
+                    'dept_library': dept_library,
+                    'forum_desc': forum_desc
                 }
 
     elif course == 'UG' and dept == 'IS':
@@ -438,6 +452,7 @@ def home(request, course, dept):
         placement_data = information_science_dept_placement.objects.all().order_by('sno')
         results_data = information_science_dept_result_analysis.objects.all()
         dept_library = information_science_dept_library.objects.all()
+        forum_desc = information_science_dept_forum.objects.all()
         
         content = {'faculties_data': faculties_data,
                     'achievements_data': achievements_data,
@@ -459,7 +474,8 @@ def home(request, course, dept):
                     'learning_materials_data': learning_materials_data,
                     'placement_data': placement_data,
                     'results_data' : results_data,
-                    'dept_library': dept_library
+                    'dept_library': dept_library,
+                    'forum_desc': forum_desc
                 }
 
     elif course == 'UG' and dept == 'TX':
@@ -495,6 +511,7 @@ def home(request, course, dept):
         placement_data = textile_technology_dept_placement.objects.all().order_by('sno')
         results_data = textile_technology_dept_result_analysis.objects.all()
         dept_library = textile_technology_dept_library.objects.all()
+        forum_desc = textile_technology_dept_forum.objects.all()
         
         content = {'faculties_data': faculties_data,
                     'achievements_data': achievements_data,
@@ -516,7 +533,8 @@ def home(request, course, dept):
                     'learning_materials_data': learning_materials_data,
                     'placement_data': placement_data,
                     'results_data' : results_data,
-                    'dept_library': dept_library
+                    'dept_library': dept_library,
+                    'forum_desc': forum_desc
                 }
 
     elif course == 'UG' and dept == 'BT':
@@ -552,6 +570,7 @@ def home(request, course, dept):
         placement_data = bio_technology_dept_placement.objects.all().order_by('sno')
         results_data = bio_technology_dept_result_analysis.objects.all()
         dept_library = bio_technology_dept_library.objects.all()
+        forum_desc = bio_technology_dept_forum.objects.all()
         
         content = {'faculties_data': faculties_data,
                     'achievements_data': achievements_data,
@@ -573,7 +592,8 @@ def home(request, course, dept):
                     'learning_materials_data': learning_materials_data,
                     'placement_data': placement_data,
                     'results_data' : results_data,
-                    'dept_library': dept_library
+                    'dept_library': dept_library,
+                    'forum_desc': forum_desc
                 }
 
     elif course == 'UG' and dept == 'PHY':
@@ -607,6 +627,7 @@ def home(request, course, dept):
         accreditation_data = physics_dept_accreditation.objects.all().order_by('sno')
         results_data = physics_dept_result_analysis.objects.all()
         dept_library = physics_dept_library.objects.all()
+        forum_desc = physics_dept_forum.objects.all()
         
         content = {'faculties_data': faculties_data,
                     'achievements_data': achievements_data,
@@ -626,7 +647,8 @@ def home(request, course, dept):
                     'accreditation_data': accreditation_data,
                     'learning_materials_data': learning_materials_data,
                     'results_data' : results_data,
-                    'dept_library': dept_library
+                    'dept_library': dept_library,
+                    'forum_desc': forum_desc
                 }
 
     elif course == 'UG' and dept == 'CHE':
@@ -660,6 +682,7 @@ def home(request, course, dept):
         accreditation_data = chemistry_dept_accreditation.objects.all().order_by('sno')
         results_data = chemistry_dept_result_analysis.objects.all()
         dept_library = chemistry_dept_library.objects.all()
+        forum_desc = chemistry_dept_forum.objects.all()
         
         content = {'faculties_data': faculties_data,
                     'achievements_data': achievements_data,
@@ -679,7 +702,8 @@ def home(request, course, dept):
                     'accreditation_data': accreditation_data,
                     'learning_materials_data': learning_materials_data,
                     'results_data' : results_data,
-                    'dept_library': dept_library
+                    'dept_library': dept_library,
+                    'forum_desc': forum_desc
                 }
 
     elif course == 'UG' and dept == 'MAT':
@@ -713,6 +737,7 @@ def home(request, course, dept):
         accreditation_data = mathematics_dept_accreditation.objects.all().order_by('sno')
         results_data = mathematics_dept_result_analysis.objects.all()
         dept_library = mathematics_dept_library.objects.all()
+        forum_desc = mathematics_dept_forum.objects.all()
         
         content = {'faculties_data': faculties_data,
                     'achievements_data': achievements_data,
@@ -732,7 +757,8 @@ def home(request, course, dept):
                     'accreditation_data': accreditation_data,
                     'learning_materials_data': learning_materials_data,
                     'results_data' : results_data,
-                    'dept_library': dept_library
+                    'dept_library': dept_library,
+                    'forum_desc': forum_desc
                 }
 
     elif course == 'UG' and dept == 'BM':
@@ -768,6 +794,7 @@ def home(request, course, dept):
         placement_data = bio_medical_dept_placement.objects.all().order_by('sno')
         results_data = bio_medical_dept_result_analysis.objects.all()
         dept_library = bio_medical_dept_library.objects.all()
+        forum_desc = bio_medical_dept_forum.objects.all()
         
         content = {'faculties_data': faculties_data,
                     'achievements_data': achievements_data,
@@ -789,7 +816,8 @@ def home(request, course, dept):
                     'learning_materials_data': learning_materials_data,
                     'placement_data': placement_data,
                     'results_data' : results_data,
-                    'dept_library': dept_library
+                    'dept_library': dept_library,
+                    'forum_desc': forum_desc
                 }
 
 

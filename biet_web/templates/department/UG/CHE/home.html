@@ -284,7 +284,7 @@
                                                             <div class="col-md-8 text-center">
                                                                 <div class="" style="  text-align: justify;">
                                                                     <p>
-                                                                        
+                                                                    	{{faculty_data.description}}    
                                                                     </p>
                                                                 </div>
                                                                 <a href="{{faculty_data.detail.url}}"
@@ -957,9 +957,12 @@
                                                         <article class="welcome col-md-11 col-sm-10">
                                                             <h3 class="no-margin-top has-divider text-highlight">
                                                                 Department Activities</h3>
-
-                                                            <p>The following department activities were conducted during
-                                                                July 2019 to Dec 2019:</p>
+							    
+							    {% for desc in forum_desc %}
+                                                            <p>{{desc.description}}</p>
+                                                            {% endfor %}
+                                                            
+							    <p>The following department activities were conducted:</p>
 
                                                             <ul class="custom-list-style medical">
 

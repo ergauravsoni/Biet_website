@@ -19,6 +19,8 @@ class civil_dept(models.Model):
         ('FACULTY', 'Faculty Member'),
         ('TECHNICAL', 'Technical Staff'),
         ('SUPPORTING', 'Supporting Staff')), default='FACULTY')
+    description = models.TextField(blank=True,
+     help_text='Enter description only for HOD. For others this field can be skipped.')
 
     def __str__(self):
         return '{}'.format(self.name) + " : " + self.staff_type
@@ -182,12 +184,18 @@ class civil_dept_achievements(models.Model):
     def __str__(self):
          return self.achievement_description[:50] + "... : " + self.achievement_type 
 
+class civil_dept_forum(models.Model):
+    description = models.TextField(help_text="Enter a short description about your department's forum.")
+    
+    def __str__(self):
+        return self.description[:70] + '...'
+
 class civil_dept_activities(models.Model):
     sno = models.IntegerField()
     activity_name = models.CharField(max_length=200)
     activity_description = models.TextField()
     activity_type = models.CharField(max_length=500, choices=(
-        ('RE', 'Regular Event'), ('STC', 'Short-term Course')), default='RE')
+        ('RE', 'Forum Activity'), ('STC', 'Department Activity')), default='RE')
 
     def __str__(self):
         return self.activity_name
@@ -255,6 +263,8 @@ class mechanical_dept(models.Model):
         ('FACULTY', 'Faculty Member'),
         ('TECHNICAL', 'Technical Staff'),
         ('SUPPORTING', 'Supporting Staff')), default='FACULTY')
+    description = models.TextField(blank=True,
+     help_text='Enter description only for HOD. For others this field can be skipped.')
 
     def __str__(self):
         return '{}'.format(self.name) + " : " + self.staff_type
@@ -399,13 +409,19 @@ class mechanical_dept_achievements(models.Model):
 
     def __str__(self):
          return self.achievement_description[:50] + "... : " + self.achievement_type
+
+class mechanical_dept_forum(models.Model):
+    description = models.TextField(help_text="Enter a short description about your department's forum.")
+    
+    def __str__(self):
+        return self.description[:70] + '...'
         
 class mechanical_dept_activities(models.Model):
     sno = models.IntegerField()
     activity_name = models.CharField(max_length=200)
     activity_description = models.TextField()
     activity_type = models.CharField(max_length=500, choices=(
-        ('RE', 'Regular Event'), ('STC', 'Short-term Course')), default='RE')
+        ('RE', 'Forum Activity'), ('STC', 'Department Activity')), default='RE')
 
     def __str__(self):
         return self.activity_name
@@ -492,6 +508,8 @@ class electrical_and_electronics_dept(models.Model):
         ('FACULTY', 'Faculty Member'),
         ('TECHNICAL', 'Technical Staff'),
         ('SUPPORTING', 'Supporting Staff')), default='FACULTY')
+    description = models.TextField(blank=True,
+     help_text='Enter description only for HOD. For others this field can be skipped.')
 
     def __str__(self):
         return '{}'.format(self.name) + " : " + self.staff_type
@@ -655,12 +673,18 @@ class electrical_and_electronics_dept_achievements(models.Model):
     def __str__(self):
          return self.achievement_description[:50] + "... : " + self.achievement_type
 
+class electrical_and_electronics_dept_forum(models.Model):
+    description = models.TextField(help_text="Enter a short description about your department's forum.")
+    
+    def __str__(self):
+        return self.description[:70] + '...'
+
 class electrical_and_electronics_dept_activities(models.Model):
     sno = models.IntegerField()
     activity_name = models.CharField(max_length=200)
     activity_description = models.TextField()
     activity_type = models.CharField(max_length=500, choices=(
-        ('RE', 'Regular Event'), ('STC', 'Short-term Course')), default='RE')
+        ('RE', 'Forum Activity'), ('STC', 'Department Activity')), default='RE')
 
     def __str__(self):
         return self.activity_name
@@ -728,6 +752,8 @@ class electronics_and_communication_dept(models.Model):
         ('FACULTY', 'Faculty Member'),
         ('TECHNICAL', 'Technical Staff'),
         ('SUPPORTING', 'Supporting Staff')), default='FACULTY')
+    description = models.TextField(blank=True,
+     help_text='Enter description only for HOD. For others this field can be skipped.')
 
     def __str__(self):
         return '{}'.format(self.name) + " : " + self.staff_type
@@ -891,12 +917,18 @@ class electronics_and_communication_dept_achievements(models.Model):
     def __str__(self):
          return self.achievement_description[:50] + "... : " + self.achievement_type
 
+class electronics_and_communication_dept_forum(models.Model):
+    description = models.TextField(help_text="Enter a short description about your department's forum.")
+    
+    def __str__(self):
+        return self.description[:70] + '...'
+
 class electronics_and_communication_dept_activities(models.Model):
     sno = models.IntegerField()
     activity_name = models.CharField(max_length=200)
     activity_description = models.TextField()
     activity_type = models.CharField(max_length=500, choices=(
-        ('RE', 'Regular Event'), ('STC', 'Short-term Course')), default='RE')
+        ('RE', 'Forum Activity'), ('STC', 'Department Activity')), default='RE')
 
     def __str__(self):
         return self.activity_name
@@ -964,6 +996,8 @@ class chemical_dept(models.Model):
         ('FACULTY', 'Faculty Member'),
         ('TECHNICAL', 'Technical Staff'),
         ('SUPPORTING', 'Supporting Staff')), default='FACULTY')
+    description = models.TextField(blank=True,
+     help_text='Enter description only for HOD. For others this field can be skipped.')
 
     def __str__(self):
         return '{}'.format(self.name) + " : " + self.staff_type
@@ -1127,12 +1161,18 @@ class chemical_dept_achievements(models.Model):
     def __str__(self):
          return self.achievement_description[:50] + "... : " + self.achievement_type
 
+class chemical_dept_forum(models.Model):
+    description = models.TextField(help_text="Enter a short description about your department's forum.")
+    
+    def __str__(self):
+        return self.description[:70] + '...'
+
 class chemical_dept_activities(models.Model):
     sno = models.IntegerField()
     activity_name = models.CharField(max_length=200)
     activity_description = models.TextField()
     activity_type = models.CharField(max_length=500, choices=(
-        ('RE', 'Regular Event'), ('STC', 'Short-term Course')), default='RE')
+        ('RE', 'Forum Activity'), ('STC', 'Department Activity')), default='RE')
 
     def __str__(self):
         return self.activity_name
@@ -1200,6 +1240,8 @@ class electronics_and_instrumentation_dept(models.Model):
         ('FACULTY', 'Faculty Member'),
         ('TECHNICAL', 'Technical Staff'),
         ('SUPPORTING', 'Supporting Staff')), default='FACULTY')
+    description = models.TextField(blank=True,
+     help_text='Enter description only for HOD. For others this field can be skipped.')
 
     def __str__(self):
         return '{}'.format(self.name) + " : " + self.staff_type
@@ -1363,12 +1405,18 @@ class electronics_and_instrumentation_dept_achievements(models.Model):
     def __str__(self):
          return self.achievement_description[:50] + "... : " + self.achievement_type
 
+class electronics_and_instrumentation_dept_forum(models.Model):
+    description = models.TextField(help_text="Enter a short description about your department's forum.")
+    
+    def __str__(self):
+        return self.description[:70] + '...'
+
 class electronics_and_instrumentation_dept_activities(models.Model):
     sno = models.IntegerField()
     activity_name = models.CharField(max_length=200)
     activity_description = models.TextField()
     activity_type = models.CharField(max_length=500, choices=(
-        ('RE', 'Regular Event'), ('STC', 'Short-term Course')), default='RE')
+        ('RE', 'Forum Activity'), ('STC', 'Department Activity')), default='RE')
 
     def __str__(self):
         return self.activity_name
@@ -1436,6 +1484,8 @@ class computer_science_dept(models.Model):
         ('FACULTY', 'Faculty Member'),
         ('TECHNICAL', 'Technical Staff'),
         ('SUPPORTING', 'Supporting Staff')), default='FACULTY')
+    description = models.TextField(blank=True,
+     help_text='Enter description only for HOD. For others this field can be skipped.')
 
     def __str__(self):
         return '{}'.format(self.name) + " : " + self.staff_type
@@ -1599,12 +1649,18 @@ class computer_science_dept_achievements(models.Model):
     def __str__(self):
         return self.achievement_description[:50] + "... : " + self.achievement_type 
 
+class computer_science_dept_forum(models.Model):
+    description = models.TextField(help_text="Enter a short description about your department's forum.")
+    
+    def __str__(self):
+        return self.description[:70] + '...'
+
 class computer_science_dept_activities(models.Model):
     sno = models.IntegerField()
     activity_name = models.CharField(max_length=200)
     activity_description = models.TextField()
     activity_type = models.CharField(max_length=500, choices=(
-        ('RE', 'Regular Event'), ('STC', 'Short-term Course')), default='RE')
+        ('RE', 'Forum Activity'), ('STC', 'Department Activity')), default='RE')
 
     def __str__(self):
         return self.activity_name
@@ -1672,6 +1728,8 @@ class information_science_dept(models.Model):
         ('FACULTY', 'Faculty Member'),
         ('TECHNICAL', 'Technical Staff'),
         ('SUPPORTING', 'Supporting Staff')), default='FACULTY')
+    description = models.TextField(blank=True,
+     help_text='Enter description only for HOD. For others this field can be skipped.')
 
     def __str__(self):
         return '{}'.format(self.name) + " : " + self.staff_type
@@ -1835,12 +1893,18 @@ class information_science_dept_achievements(models.Model):
     def __str__(self):
          return self.achievement_description[:50] + "... : " + self.achievement_type
 
+class information_science_dept_forum(models.Model):
+    description = models.TextField(help_text="Enter a short description about your department's forum.")
+    
+    def __str__(self):
+        return self.description[:70] + '...'
+
 class information_science_dept_activities(models.Model):
     sno = models.IntegerField()
     activity_name = models.CharField(max_length=200)
     activity_description = models.TextField()
     activity_type = models.CharField(max_length=500, choices=(
-        ('RE', 'Regular Event'), ('STC', 'Short-term Course')), default='RE')
+        ('RE', 'Forum Activity'), ('STC', 'Department Activity')), default='RE')
 
     def __str__(self):
         return self.activity_name
@@ -1908,6 +1972,8 @@ class textile_technology_dept(models.Model):
         ('FACULTY', 'Faculty Member'),
         ('TECHNICAL', 'Technical Staff'),
         ('SUPPORTING', 'Supporting Staff')), default='FACULTY')
+    description = models.TextField(blank=True,
+     help_text='Enter description only for HOD. For others this field can be skipped.')
 
     def __str__(self):
         return '{}'.format(self.name) + " : " + self.staff_type
@@ -2071,12 +2137,18 @@ class textile_technology_dept_achievements(models.Model):
     def __str__(self):
          return self.achievement_description[:50] + "... : " + self.achievement_type
 
+class textile_technology_dept_forum(models.Model):
+    description = models.TextField(help_text="Enter a short description about your department's forum.")
+    
+    def __str__(self):
+        return self.description[:70] + '...'
+
 class textile_technology_dept_activities(models.Model):
     sno = models.IntegerField()
     activity_name = models.CharField(max_length=200)
     activity_description = models.TextField()
     activity_type = models.CharField(max_length=500, choices=(
-        ('RE', 'Regular Event'), ('STC', 'Short-term Course')), default='RE')
+        ('RE', 'Forum Activity'), ('STC', 'Department Activity')), default='RE')
 
     def __str__(self):
         return self.activity_name
@@ -2144,6 +2216,8 @@ class bio_technology_dept(models.Model):
         ('FACULTY', 'Faculty Member'),
         ('TECHNICAL', 'Technical Staff'),
         ('SUPPORTING', 'Supporting Staff')), default='FACULTY')
+    description = models.TextField(blank=True,
+     help_text='Enter description only for HOD. For others this field can be skipped.')
 
     def __str__(self):
         return '{}'.format(self.name) + " : " + self.staff_type
@@ -2307,12 +2381,18 @@ class bio_technology_dept_achievements(models.Model):
     def __str__(self):
          return self.achievement_description[:50] + "... : " + self.achievement_type
 
+class bio_technology_dept_forum(models.Model):
+    description = models.TextField(help_text="Enter a short description about your department's forum.")
+    
+    def __str__(self):
+        return self.description[:70] + '...'
+
 class bio_technology_dept_activities(models.Model):
     sno = models.IntegerField()
     activity_name = models.CharField(max_length=200)
     activity_description = models.TextField()
     activity_type = models.CharField(max_length=500, choices=(
-        ('RE', 'Regular Event'), ('STC', 'Short-term Course')), default='RE')
+        ('RE', 'Forum Activity'), ('STC', 'Department Activity')), default='RE')
 
     def __str__(self):
         return self.activity_name
@@ -2380,6 +2460,8 @@ class physics_dept(models.Model):
         ('FACULTY', 'Faculty Member'),
         ('TECHNICAL', 'Technical Staff'),
         ('SUPPORTING', 'Supporting Staff')), default='FACULTY')
+    description = models.TextField(blank=True,
+     help_text='Enter description only for HOD. For others this field can be skipped.')
 
     def __str__(self):
         return '{}'.format(self.name) + " : " + self.staff_type
@@ -2511,12 +2593,18 @@ class physics_dept_achievements(models.Model):
     def __str__(self):
          return self.achievement_description[:50] + "... : " + self.achievement_type
 
+class physics_dept_forum(models.Model):
+    description = models.TextField(help_text="Enter a short description about your department's forum.")
+    
+    def __str__(self):
+        return self.description[:70] + '...'
+
 class physics_dept_activities(models.Model):
     sno = models.IntegerField()
     activity_name = models.CharField(max_length=200)
     activity_description = models.TextField()
     activity_type = models.CharField(max_length=500, choices=(
-        ('RE', 'Regular Event'), ('STC', 'Short-term Course')), default='RE')
+        ('STC', 'Department Activity'),), default='STC')
 
     def __str__(self):
         return self.activity_name
@@ -2584,6 +2672,8 @@ class chemistry_dept(models.Model):
         ('FACULTY', 'Faculty Member'),
         ('TECHNICAL', 'Technical Staff'),
         ('SUPPORTING', 'Supporting Staff')), default='FACULTY')
+    description = models.TextField(blank=True,
+     help_text='Enter description only for HOD. For others this field can be skipped.')
 
     def __str__(self):
         return '{}'.format(self.name) + " : " + self.staff_type
@@ -2715,12 +2805,18 @@ class chemistry_dept_achievements(models.Model):
     def __str__(self):
          return self.achievement_description[:50] + "... : " + self.achievement_type
 
+class chemistry_dept_forum(models.Model):
+    description = models.TextField(help_text="Enter a short description about your department's forum.")
+    
+    def __str__(self):
+        return self.description[:70] + '...'
+
 class chemistry_dept_activities(models.Model):
     sno = models.IntegerField()
     activity_name = models.CharField(max_length=200)
     activity_description = models.TextField()
     activity_type = models.CharField(max_length=500, choices=(
-        ('RE', 'Regular Event'), ('STC', 'Short-term Course')), default='RE')
+        ('STC', 'Department Activity'),), default='STC')
 
     def __str__(self):
         return self.activity_name
@@ -2788,6 +2884,8 @@ class mathematics_dept(models.Model):
         ('FACULTY', 'Faculty Member'),
         ('TECHNICAL', 'Technical Staff'),
         ('SUPPORTING', 'Supporting Staff')), default='FACULTY')
+    description = models.TextField(blank=True,
+     help_text='Enter description only for HOD. For others this field can be skipped.')
 
     def __str__(self):
         return '{}'.format(self.name) + " : " + self.staff_type
@@ -2919,12 +3017,18 @@ class mathematics_dept_achievements(models.Model):
     def __str__(self):
          return self.achievement_description[:50] + "... : " + self.achievement_type
 
+class mathematics_dept_forum(models.Model):
+    description = models.TextField(help_text="Enter a short description about your department's forum.")
+    
+    def __str__(self):
+        return self.description[:70] + '...'
+
 class mathematics_dept_activities(models.Model):
     sno = models.IntegerField()
     activity_name = models.CharField(max_length=200)
     activity_description = models.TextField()
     activity_type = models.CharField(max_length=500, choices=(
-        ('RE', 'Regular Event'), ('STC', 'Short-term Course')), default='RE')
+        ('STC', 'Department Activity'),), default='STC')
 
     def __str__(self):
         return self.activity_name
@@ -2992,6 +3096,8 @@ class bio_medical_dept(models.Model):
         ('FACULTY', 'Faculty Member'),
         ('TECHNICAL', 'Technical Staff'),
         ('SUPPORTING', 'Supporting Staff')), default='FACULTY')
+    description = models.TextField(blank=True,
+     help_text='Enter description only for HOD. For others this field can be skipped.')
 
     def __str__(self):
         return '{}'.format(self.name) + " : " + self.staff_type
@@ -3155,12 +3261,18 @@ class bio_medical_dept_achievements(models.Model):
     def __str__(self):
          return self.achievement_description[:50] + "... : " + self.achievement_type
 
+class bio_medical_dept_forum(models.Model):
+    description = models.TextField(help_text="Enter a short description about your department's forum.")
+    
+    def __str__(self):
+        return self.description[:70] + '...'
+
 class bio_medical_dept_activities(models.Model):
     sno = models.IntegerField()
     activity_name = models.CharField(max_length=200)
     activity_description = models.TextField()
     activity_type = models.CharField(max_length=500, choices=(
-        ('RE', 'Regular Event'), ('STC', 'Short-term Course')), default='RE')
+        ('RE', 'Forum Activity'), ('STC', 'Department Activity')), default='RE')
 
     def __str__(self):
         return self.activity_name

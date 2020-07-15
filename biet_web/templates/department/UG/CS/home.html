@@ -329,50 +329,7 @@
                                                             <div class="col-md-8 text-center">
                                                                 <div class="" style="  text-align: justify;">
                                                                     <p>
-                                                                        Dr. Nirmala C R, working as professor and head ,
-                                                                        department of Computer Science and Engineering
-                                                                        of BIET , Davangere has got 25 years of teaching
-                                                                        experience in teaching, mentoring and guiding
-                                                                        the students of UG, PG and research programs of
-                                                                        CS & E department. She received her doctorate
-                                                                        degree from Visvesvaray Technological
-                                                                        University, Belgaum and carried out her research
-                                                                        at BIET. She has completed her master’s degree
-                                                                        from National Institute of Technology Karnataka,
-                                                                        Surthkal in the year 2001 and specialization in
-                                                                        Computer Engineering and B.E in Electronics and
-                                                                        Communication from Bapuji Institute of
-                                                                        Engineering and Technology, Davangere in the
-                                                                        year 1992. She started her career at Bharath
-                                                                        Electronics Ltd, Bangalore as Trainee Engineer,
-                                                                        then joined Bapuji Institute of Engineering and
-                                                                        Technology as a lecturer in the department of E
-                                                                        & C from 1995 and in CS and E dept from 2001.
-                                                                        Acting as a single point of contact for Infosys
-                                                                        Campus Connect, IBM Academic Activities, VMWARE
-                                                                        IT Academy and ICT Academy India activities .
-                                                                        IBM India Ltd, Awarded her with prestigious
-                                                                        “Drona” award, for 5 times for mentoring award
-                                                                        winning student projects in the annual national
-                                                                        level software development contest- “The Great
-                                                                        Mind Challenge” and for showing outstanding
-                                                                        performance in the IBM academic initiative
-                                                                        Activities in the institute. Infosys has
-                                                                        felicitated with certificate of appreciation for
-                                                                        outstanding performance in the Infosys campus
-                                                                        Connect activities. Wipro Mission 10X team has
-                                                                        recognized “Champion Trainer”. And from the
-                                                                        institute she obtained the best teacher award
-                                                                        for 10 times. Published and presented more than
-                                                                        30 papers in the International Conferences and
-                                                                        SCI journals . 2 research scholars have been
-                                                                        awarded with PhD Degree and 5 research scholars
-                                                                        are carrying out research under her guidance. 1
-                                                                        Indian patent has been filed in the area of
-                                                                        wireless sensor networks and waiting for
-                                                                        publishing. She has recieved 40 lakhs Grant's
-                                                                        from VGST, Govt. Of Karnataka for the proposal
-                                                                        on precision agriculture.
+								    	{{faculty_data.description}}
                                                                     </p>
                                                                 </div>
                                                                 <a href="{{faculty_data.detail.url}}"
@@ -1369,15 +1326,9 @@
                                                             <div class="page-wrapper">
                                                                 <div class="page-content">
                                                                     <!-- <article class="welcome col-md-12 col-sm-7">                          -->
-                                                                    <p>UniCS provides a platform for the students to
-                                                                        exhibit their talents and skills. UniCS
-                                                                        conducts variuos technical and non-technical
-                                                                        events. UniCS conducts several short term
-                                                                        courses and technical talks by inviting
-                                                                        experts from industry and academia, organize
-                                                                        industry and research centre visits and
-                                                                        conduct personality development programs
-                                                                        which may help in the placement.</p>
+								    {% for desc in forum_desc %}
+                                                                    <p>{{desc.description}}</p>
+                                                                    {% endfor %}
                                                                     <p>The following events are conducted regularly
                                                                         by UniCS:</p>
                                                                     <!-- </article> -->
@@ -1476,8 +1427,7 @@
                                                             <h3 class="no-margin-top has-divider text-highlight">
                                                                 Department Activities</h3>
 
-                                                            <p>The following department activities were conducted during
-                                                                July 2019 to Dec 2019:</p>
+                                                            <p>The following department activities were conducted:</p>
 
                                                             <ul class="custom-list-style medical">
 

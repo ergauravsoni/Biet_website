@@ -37,6 +37,10 @@
 	font: italic georgia;
 }
 
+.container-photo-overlay {
+	position: relative;
+}
+
 .image-photo-overlay {
   opacity: 1;
   transition: .5s ease;

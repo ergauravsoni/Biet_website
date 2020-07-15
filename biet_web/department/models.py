@@ -90,6 +90,7 @@ class civil_dept_grants_and_patents(models.Model):
          return self.description[:50] + "... : " + self.grant_or_patent
 
 class civil_dept_laboratory_facilities_gallary(models.Model):
+    room_no = models.CharField(max_length=10, default='A321')
     image = models.ImageField(upload_to='department/gallery/CV/laboratory/')
 
     def __str__(self):
@@ -110,8 +111,15 @@ class civil_dept_major_equipments(models.Model):
 
     def __str__(self):
         return self.equipment_description[:50] + "..."
+
+class civil_dept_classroom_description(models.Model):
+    description = models.TextField()
+
+    def __str__(self):
+        return self.description[:70] + "..."
         
 class civil_dept_classroom(models.Model):
+    room_no = models.CharField(max_length=10, default='A321')
     classroom = models.FileField(upload_to='department/CV/data/classroom/')
 
     def __str__(self):
@@ -318,6 +326,7 @@ class mechanical_dept_grants_and_patents(models.Model):
          return self.description[:50] + "... : " + self.grant_or_patent
 
 class mechanical_dept_laboratory_facilities_gallary(models.Model):
+    room_no = models.CharField(max_length=10, default='A321')
     image = models.ImageField(upload_to='department/gallery/ME/laboratory/')
 
     def __str__(self):
@@ -419,7 +428,14 @@ class mechanical_dept_events(models.Model):
     def __str__(self):
         return '{}'.format(self.events)
 
+class mechanical_dept_classroom_description(models.Model):
+    description = models.TextField()
+
+    def __str__(self):
+        return self.description[:70] + "..."
+
 class mechanical_dept_classroom(models.Model):
+    room_no = models.CharField(max_length=10, default='A321')
     classroom = models.FileField(upload_to='department/ME/data/classroom/')
 
     def __str__(self):
@@ -547,6 +563,7 @@ class electrical_and_electronics_dept_grants_and_patents(models.Model):
          return self.description[:50] + "... : " + self.grant_or_patent
 
 class electrical_and_electronics_dept_laboratory_facilities_gallary(models.Model):
+    room_no = models.CharField(max_length=10, default='A321')
     image = models.ImageField(upload_to='department/gallery/EE/laboratory/')
 
     def __str__(self):
@@ -568,7 +585,14 @@ class electrical_and_electronics_dept_major_equipments(models.Model):
     def __str__(self):
         return self.equipment_description[:50] + "..."
 
+class electrical_and_electronics_dept_classroom_description(models.Model):
+    description = models.TextField()
+
+    def __str__(self):
+        return self.description[:70] + "..."
+
 class electrical_and_electronics_dept_classroom(models.Model):
+    room_no = models.CharField(max_length=10, default='A321')
     classroom = models.FileField(upload_to='department/EE/data/classroom/')
 
     def __str__(self):
@@ -775,6 +799,7 @@ class electronics_and_communication_dept_grants_and_patents(models.Model):
          return self.description[:50] + "... : " + self.grant_or_patent
 
 class electronics_and_communication_dept_laboratory_facilities_gallary(models.Model):
+    room_no = models.CharField(max_length=10, default='A321')
     image = models.ImageField(upload_to='department/gallery/EC/laboratory/')
 
     def __str__(self):
@@ -796,7 +821,14 @@ class electronics_and_communication_dept_major_equipments(models.Model):
     def __str__(self):
         return self.equipment_description[:50] + "..."
 
+class electronics_and_communication_dept_classroom_description(models.Model):
+    description = models.TextField()
+
+    def __str__(self):
+        return self.description[:70] + "..."
+
 class electronics_and_communication_dept_classroom(models.Model):
+    room_no = models.CharField(max_length=10, default='A321')
     classroom = models.FileField(upload_to='department/EC/data/classroom/')
 
     def __str__(self):
@@ -1003,6 +1035,7 @@ class chemical_dept_grants_and_patents(models.Model):
          return self.description[:50] + "... : " + self.grant_or_patent
 
 class chemical_dept_laboratory_facilities_gallary(models.Model):
+    room_no = models.CharField(max_length=10, default='A321')
     image = models.ImageField(upload_to='department/gallery/CH/laboratory/')
 
     def __str__(self):
@@ -1024,7 +1057,14 @@ class chemical_dept_major_equipments(models.Model):
     def __str__(self):
         return self.equipment_description[:50] + "..."
 
+class chemical_dept_classroom_description(models.Model):
+    description = models.TextField()
+
+    def __str__(self):
+        return self.description[:70] + "..."
+
 class chemical_dept_classroom(models.Model):
+    room_no = models.CharField(max_length=10, default='A321')
     classroom = models.FileField(upload_to='department/CH/data/classroom/')
 
     def __str__(self):
@@ -1231,6 +1271,7 @@ class electronics_and_instrumentation_dept_grants_and_patents(models.Model):
          return self.description[:50] + "... : " + self.grant_or_patent
 
 class electronics_and_instrumentation_dept_laboratory_facilities_gallary(models.Model):
+    room_no = models.CharField(max_length=10, default='A321')
     image = models.ImageField(upload_to='department/gallery/EI/laboratory/')
 
     def __str__(self):
@@ -1252,7 +1293,14 @@ class electronics_and_instrumentation_dept_major_equipments(models.Model):
     def __str__(self):
         return self.equipment_description[:50] + "..."
 
+class electronics_and_instrumentation_dept_classroom_description(models.Model):
+    description = models.TextField()
+
+    def __str__(self):
+        return self.description[:70] + "..."
+
 class electronics_and_instrumentation_dept_classroom(models.Model):
+    room_no = models.CharField(max_length=10, default='A321')
     classroom = models.FileField(upload_to='department/EI/data/classroom/')
 
     def __str__(self):
@@ -1459,6 +1507,7 @@ class computer_science_dept_grants_and_patents(models.Model):
          return self.description[:50] + "... : " + self.grant_or_patent
 
 class computer_science_dept_laboratory_facilities_gallary(models.Model):
+    room_no = models.CharField(max_length=10, default='A321')
     image = models.ImageField(upload_to='department/gallery/CS/laboratory/')
 
     def __str__(self):
@@ -1480,7 +1529,14 @@ class computer_science_dept_major_equipments(models.Model):
     def __str__(self):
         return self.equipment_description[:50] + "..."
 
+class computer_science_dept_classroom_description(models.Model):
+    description = models.TextField()
+
+    def __str__(self):
+        return self.description[:70] + "..."
+        
 class computer_science_dept_classroom(models.Model):
+    room_no = models.CharField(max_length=10, default='A321')
     classroom = models.FileField(upload_to='department/CS/data/classroom/')
 
     def __str__(self):
@@ -1687,6 +1743,7 @@ class information_science_dept_grants_and_patents(models.Model):
          return self.description[:50] + "... : " + self.grant_or_patent
 
 class information_science_dept_laboratory_facilities_gallary(models.Model):
+    room_no = models.CharField(max_length=10, default='A321')
     image = models.ImageField(upload_to='department/gallery/IS/laboratory/')
 
     def __str__(self):
@@ -1708,7 +1765,14 @@ class information_science_dept_major_equipments(models.Model):
     def __str__(self):
         return self.equipment_description[:50] + "..."
 
+class information_science_dept_classroom_description(models.Model):
+    description = models.TextField()
+
+    def __str__(self):
+        return self.description[:70] + "..."
+
 class information_science_dept_classroom(models.Model):
+    room_no = models.CharField(max_length=10, default='A321')
     classroom = models.FileField(upload_to='department/IS/data/classroom/')
 
     def __str__(self):
@@ -1915,6 +1979,7 @@ class textile_technology_dept_grants_and_patents(models.Model):
          return self.description[:50] + "... : " + self.grant_or_patent
 
 class textile_technology_dept_laboratory_facilities_gallary(models.Model):
+    room_no = models.CharField(max_length=10, default='A321')
     image = models.ImageField(upload_to='department/gallery/TX/laboratory/')
 
     def __str__(self):
@@ -1936,7 +2001,14 @@ class textile_technology_dept_major_equipments(models.Model):
     def __str__(self):
         return self.equipment_description[:50] + "..."
 
+class textile_technology_dept_classroom_description(models.Model):
+    description = models.TextField()
+
+    def __str__(self):
+        return self.description[:70] + "..."
+
 class textile_technology_dept_classroom(models.Model):
+    room_no = models.CharField(max_length=10, default='A321')
     classroom = models.FileField(upload_to='department/TX/data/classroom/')
 
     def __str__(self):
@@ -2143,6 +2215,7 @@ class bio_technology_dept_grants_and_patents(models.Model):
          return self.description[:50] + "... : " + self.grant_or_patent
 
 class bio_technology_dept_laboratory_facilities_gallary(models.Model):
+    room_no = models.CharField(max_length=10, default='A321')
     image = models.ImageField(upload_to='department/gallery/BT/laboratory/')
 
     def __str__(self):
@@ -2164,7 +2237,14 @@ class bio_technology_dept_major_equipments(models.Model):
     def __str__(self):
         return self.equipment_description[:50] + "..."
 
+class bio_technology_dept_classroom_description(models.Model):
+    description = models.TextField()
+
+    def __str__(self):
+        return self.description[:70] + "..."
+
 class bio_technology_dept_classroom(models.Model):
+    room_no = models.CharField(max_length=10, default='A321')
     classroom = models.FileField(upload_to='department/BT/data/classroom/')
 
     def __str__(self):
@@ -2371,6 +2451,7 @@ class physics_dept_grants_and_patents(models.Model):
          return self.description[:50] + "... : " + self.grant_or_patent
 
 class physics_dept_laboratory_facilities_gallary(models.Model):
+    room_no = models.CharField(max_length=10, default='A321')
     image = models.ImageField(upload_to='department/gallery/PHY/laboratory/')
 
     def __str__(self):
@@ -2392,7 +2473,14 @@ class physics_dept_major_equipments(models.Model):
     def __str__(self):
         return self.equipment_description[:50] + "..."
 
+class physics_dept_classroom_description(models.Model):
+    description = models.TextField()
+
+    def __str__(self):
+        return self.description[:70] + "..."
+
 class physics_dept_classroom(models.Model):
+    room_no = models.CharField(max_length=10, default='A321')
     classroom = models.FileField(upload_to='department/PHY/data/classroom/')
 
     def __str__(self):
@@ -2567,6 +2655,7 @@ class chemistry_dept_grants_and_patents(models.Model):
          return self.description[:50] + "... : " + self.grant_or_patent
 
 class chemistry_dept_laboratory_facilities_gallary(models.Model):
+    room_no = models.CharField(max_length=10, default='A321')
     image = models.ImageField(upload_to='department/gallery/CHEM/laboratory/')
 
     def __str__(self):
@@ -2588,7 +2677,14 @@ class chemistry_dept_major_equipments(models.Model):
     def __str__(self):
         return self.equipment_description[:50] + "..."
 
+class chemistry_dept_classroom_description(models.Model):
+    description = models.TextField()
+
+    def __str__(self):
+        return self.description[:70] + "..."
+
 class chemistry_dept_classroom(models.Model):
+    room_no = models.CharField(max_length=10, default='A321')
     classroom = models.FileField(upload_to='department/CHEM/data/classroom/')
 
     def __str__(self):
@@ -2763,6 +2859,7 @@ class mathematics_dept_grants_and_patents(models.Model):
          return self.description[:50] + "... : " + self.grant_or_patent
 
 class mathematics_dept_laboratory_facilities_gallary(models.Model):
+    room_no = models.CharField(max_length=10, default='A321')
     image = models.ImageField(upload_to='department/gallery/MAT/laboratory/')
 
     def __str__(self):
@@ -2784,7 +2881,14 @@ class mathematics_dept_major_equipments(models.Model):
     def __str__(self):
         return self.equipment_description[:50] + "..."
 
+class mathematics_dept_classroom_description(models.Model):
+    description = models.TextField()
+
+    def __str__(self):
+        return self.description[:70] + "..."
+
 class mathematics_dept_classroom(models.Model):
+    room_no = models.CharField(max_length=10, default='A321')
     classroom = models.FileField(upload_to='department/MAT/data/classroom/')
 
     def __str__(self):
@@ -2959,6 +3063,7 @@ class bio_medical_dept_grants_and_patents(models.Model):
          return self.description[:50] + "... : " + self.grant_or_patent
 
 class bio_medical_dept_laboratory_facilities_gallary(models.Model):
+    room_no = models.CharField(max_length=10, default='A321')
     image = models.ImageField(upload_to='department/gallery/BM/laboratory/')
 
     def __str__(self):
@@ -2980,7 +3085,14 @@ class bio_medical_dept_major_equipments(models.Model):
     def __str__(self):
         return self.equipment_description[:50] + "..."
 
+class bio_medical_dept_classroom_description(models.Model):
+    description = models.TextField()
+
+    def __str__(self):
+        return self.description[:70] + "..."
+
 class bio_medical_dept_classroom(models.Model):
+    room_no = models.CharField(max_length=10, default='A321')
     classroom = models.FileField(upload_to='department/BM/data/classroom/')
 
     def __str__(self):

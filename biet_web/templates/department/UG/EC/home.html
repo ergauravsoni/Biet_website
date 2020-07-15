@@ -638,7 +638,7 @@ Karnataka State Council for Science & Technology, (KSCST), Bangalore, has sponso
                                                                     src="{{image.image.url}}" alt=""
                                                                     style=" height: 170px;" />    
                                                                 <div class="middle-photo-overlay">
-                                                                  <div class="text-photo-overlay">Laboratory: A321</div>
+                                                                  <div class="text-photo-overlay">Laboratory: {{image.room_no}}</div>
                                                                 </div>
                                                               </div>
                                                     </a>
@@ -700,20 +700,9 @@ Karnataka State Council for Science & Technology, (KSCST), Bangalore, has sponso
                                                 <!--//panel-body-->
                                                 <div class="panel-body">
                                                     <h3 class="no-margin-top text-highlight">Classroom</h3>
-                                                    <p>Mauris eu faucibus sem, ac pharetra justo. Pellentesque habitant
-                                                        morbi tristique senectus et netus et malesuada fames ac turpis
-                                                        egestas. Curabitur blandit euismod ipsum, ac commodo eros
-                                                        tincidunt et. Aenean tincidunt vestibulum adipiscing. Ut eu enim
-                                                        velit. Ut lectus leo, interdum sodales nibh nec, dictum pulvinar
-                                                        nisl. In consequat fringilla turpis id porta. Cras eget lacus ac
-                                                        orci facilisis aliquam. Fusce a lobortis purus. Integer sed odio
-                                                        et ipsum interdum volutpat at nec nisl. Sed pulvinar ante orci,
-                                                        id tristique sapien cursus et. Nullam ut augue et magna ornare
-                                                        aliquam ut vulputate dui. Vivamus fringilla eu ipsum ut mattis.
-                                                        Nulla a varius velit. Phasellus at lectus ut felis posuere
-                                                        lacinia in id purus.</p>
-
-
+						    {% for desc in classrooms_desc %}
+                                                    <p>desc.description</p>
+                                                    {% endfor %}
 
                                                     {% for classroom in classrooms %}
 
@@ -725,7 +714,7 @@ Karnataka State Council for Science & Technology, (KSCST), Bangalore, has sponso
                                                                 src="{{classroom.classroom.url}}" alt=""
                                                                 style=" height: 170px;" />    
                                                                 <div class="middle-photo-overlay">
-                                                                  <div class="text-photo-overlay">Classroom: A321</div>
+                                                                  <div class="text-photo-overlay">Classroom: {{classroom.room_no}}</div>
                                                                 </div>
                                                             </div>
                                                     </a>

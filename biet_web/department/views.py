@@ -19,6 +19,7 @@ def home(request, course, dept):
 
         events = civil_dept_events.objects.all()
         classrooms = civil_dept_classroom.objects.all()
+        classrooms_desc = civil_dept_classroom_description.objects.all()
         laboratory_facilities_gallary = civil_dept_laboratory_facilities_gallary.objects.all()
 
         research_scholar_data = civil_dept_research_scholars.objects.all().order_by('guide')
@@ -38,7 +39,7 @@ def home(request, course, dept):
         placement_data = civil_dept_placement.objects.all().order_by('sno')
         results_data = civil_dept_result_analysis.objects.all()
         dept_library = civil_dept_library.objects.all()
-        
+
         content = {'faculties_data': faculties_data,
                     'achievements_data': achievements_data,
                     'activities_data': activities_data,
@@ -48,6 +49,7 @@ def home(request, course, dept):
                     'timetable_data': timetable_data,
                     'events': events,
                     'classrooms': classrooms,
+                    'classrooms_desc': classrooms_desc,
                     'research_data': research_data,
                     'laboratory_facilities_gallary' : laboratory_facilities_gallary,
                     'book_chapters_data': book_chapters_data,
@@ -74,6 +76,7 @@ def home(request, course, dept):
 
         events = mechanical_dept_events.objects.all()
         classrooms = mechanical_dept_classroom.objects.all()
+        classrooms_desc = mechanical_dept_classroom_description.objects.all()
         laboratory_facilities_gallary = mechanical_dept_laboratory_facilities_gallary.objects.all()
 
         research_scholar_data = mechanical_dept_research_scholars.objects.all().order_by('guide')
@@ -103,6 +106,7 @@ def home(request, course, dept):
                     'timetable_data': timetable_data,
                     'events': events,
                     'classrooms': classrooms,
+                    'classrooms_desc': classrooms_desc,
                     'research_data': research_data,
                     'laboratory_facilities_gallary' : laboratory_facilities_gallary,
                     'book_chapters_data': book_chapters_data,
@@ -129,6 +133,7 @@ def home(request, course, dept):
 
         events = electrical_and_electronics_dept_events.objects.all()
         classrooms = electrical_and_electronics_dept_classroom.objects.all()
+        classrooms_desc = electrical_and_electronics_dept_classroom_description.objects.all()
         laboratory_facilities_gallary = electrical_and_electronics_dept_laboratory_facilities_gallary.objects.all()
 
         research_scholar_data = electrical_and_electronics_dept_research_scholars.objects.all().order_by('guide')
@@ -158,6 +163,7 @@ def home(request, course, dept):
                     'timetable_data': timetable_data,
                     'events': events,
                     'classrooms': classrooms,
+                    'classrooms_desc': classrooms_desc,
                     'research_data': research_data,
                     'laboratory_facilities_gallary' : laboratory_facilities_gallary,
                     'book_chapters_data': book_chapters_data,
@@ -184,6 +190,7 @@ def home(request, course, dept):
 
         events = electronics_and_communication_dept_events.objects.all()
         classrooms = electronics_and_communication_dept_classroom.objects.all()
+        classrooms_desc = electronics_and_communication_dept_classroom_description.objects.all()
         laboratory_facilities_gallary = electronics_and_communication_dept_laboratory_facilities_gallary.objects.all()
 
         research_scholar_data = electronics_and_communication_dept_research_scholars.objects.all().order_by('guide')
@@ -213,6 +220,7 @@ def home(request, course, dept):
                     'timetable_data': timetable_data,
                     'events': events,
                     'classrooms': classrooms,
+                    'classrooms_desc': classrooms_desc,
                     'research_data': research_data,
                     'laboratory_facilities_gallary' : laboratory_facilities_gallary,
                     'book_chapters_data': book_chapters_data,
@@ -239,6 +247,7 @@ def home(request, course, dept):
 
         events = chemical_dept_events.objects.all()
         classrooms = chemical_dept_classroom.objects.all()
+        classrooms_desc = chemical_dept_classroom_description.objects.all()
         laboratory_facilities_gallary = chemical_dept_laboratory_facilities_gallary.objects.all()
 
         research_scholar_data = chemical_dept_research_scholars.objects.all().order_by('guide')
@@ -268,6 +277,7 @@ def home(request, course, dept):
                     'timetable_data': timetable_data,
                     'events': events,
                     'classrooms': classrooms,
+                    'classrooms_desc': classrooms_desc,
                     'research_data': research_data,
                     'laboratory_facilities_gallary' : laboratory_facilities_gallary,
                     'book_chapters_data': book_chapters_data,
@@ -294,6 +304,7 @@ def home(request, course, dept):
 
         events = electronics_and_instrumentation_dept_events.objects.all()
         classrooms = electronics_and_instrumentation_dept_classroom.objects.all()
+        classrooms_desc = electronics_and_instrumentation_dept_classroom_description.objects.all()
         laboratory_facilities_gallary = electronics_and_instrumentation_dept_laboratory_facilities_gallary.objects.all()
 
         research_scholar_data = electronics_and_instrumentation_dept_research_scholars.objects.all().order_by('guide')
@@ -323,6 +334,7 @@ def home(request, course, dept):
                     'timetable_data': timetable_data,
                     'events': events,
                     'classrooms': classrooms,
+                    'classrooms_desc': classrooms_desc,
                     'research_data': research_data,
                     'laboratory_facilities_gallary' : laboratory_facilities_gallary,
                     'book_chapters_data': book_chapters_data,
@@ -349,6 +361,7 @@ def home(request, course, dept):
 
         events = computer_science_dept_events.objects.all()
         classrooms = computer_science_dept_classroom.objects.all()
+        classrooms_desc = computer_science_dept_classroom_description.objects.all()
         laboratory_facilities_gallary = computer_science_dept_laboratory_facilities_gallary.objects.all()
 
         research_scholar_data = computer_science_dept_research_scholars.objects.all().order_by('guide')
@@ -378,6 +391,7 @@ def home(request, course, dept):
                     'timetable_data': timetable_data,
                     'events': events,
                     'classrooms': classrooms,
+                    'classrooms_desc': classrooms_desc,
                     'research_data': research_data,
                     'laboratory_facilities_gallary' : laboratory_facilities_gallary,
                     'book_chapters_data': book_chapters_data,
@@ -404,6 +418,7 @@ def home(request, course, dept):
 
         events = information_science_dept_events.objects.all()
         classrooms = information_science_dept_classroom.objects.all()
+        classrooms_desc = information_science_dept_classroom_description.objects.all()
         laboratory_facilities_gallary = information_science_dept_laboratory_facilities_gallary.objects.all()
 
         research_scholar_data = information_science_dept_research_scholars.objects.all().order_by('guide')
@@ -433,6 +448,7 @@ def home(request, course, dept):
                     'timetable_data': timetable_data,
                     'events': events,
                     'classrooms': classrooms,
+                    'classrooms_desc': classrooms_desc,
                     'research_data': research_data,
                     'laboratory_facilities_gallary' : laboratory_facilities_gallary,
                     'book_chapters_data': book_chapters_data,
@@ -459,6 +475,7 @@ def home(request, course, dept):
 
         events = textile_technology_dept_events.objects.all()
         classrooms = textile_technology_dept_classroom.objects.all()
+        classrooms_desc = information_science_dept_classroom_description.objects.all()
         laboratory_facilities_gallary = textile_technology_dept_laboratory_facilities_gallary.objects.all()
 
         research_scholar_data = textile_technology_dept_research_scholars.objects.all().order_by('guide')
@@ -488,6 +505,7 @@ def home(request, course, dept):
                     'timetable_data': timetable_data,
                     'events': events,
                     'classrooms': classrooms,
+                    'classrooms_desc': classrooms_desc,
                     'research_data': research_data,
                     'laboratory_facilities_gallary' : laboratory_facilities_gallary,
                     'book_chapters_data': book_chapters_data,
@@ -514,6 +532,7 @@ def home(request, course, dept):
 
         events = bio_technology_dept_events.objects.all()
         classrooms = bio_technology_dept_classroom.objects.all()
+        classrooms_desc = bio_technology_dept_classroom_description.objects.all()
         laboratory_facilities_gallary = bio_technology_dept_laboratory_facilities_gallary.objects.all()
 
         research_scholar_data = bio_technology_dept_research_scholars.objects.all().order_by('guide')
@@ -543,6 +562,7 @@ def home(request, course, dept):
                     'timetable_data': timetable_data,
                     'events': events,
                     'classrooms': classrooms,
+                    'classrooms_desc': classrooms_desc,
                     'research_data': research_data,
                     'laboratory_facilities_gallary' : laboratory_facilities_gallary,
                     'book_chapters_data': book_chapters_data,
@@ -569,6 +589,7 @@ def home(request, course, dept):
 
         events = physics_dept_events.objects.all()
         classrooms = physics_dept_classroom.objects.all()
+        classrooms_desc = physics_dept_classroom_description.objects.all()
         laboratory_facilities_gallary = physics_dept_laboratory_facilities_gallary.objects.all()
 
         research_scholar_data = physics_dept_research_scholars.objects.all().order_by('guide')
@@ -596,6 +617,7 @@ def home(request, course, dept):
                     'timetable_data': timetable_data,
                     'events': events,
                     'classrooms': classrooms,
+                    'classrooms_desc': classrooms_desc,
                     'research_data': research_data,
                     'laboratory_facilities_gallary' : laboratory_facilities_gallary,
                     'book_chapters_data': book_chapters_data,
@@ -620,6 +642,7 @@ def home(request, course, dept):
 
         events = chemistry_dept_events.objects.all()
         classrooms = chemistry_dept_classroom.objects.all()
+        classrooms_desc = chemistry_dept_classroom_description.objects.all()
         laboratory_facilities_gallary = chemistry_dept_laboratory_facilities_gallary.objects.all()
 
         research_scholar_data = chemistry_dept_research_scholars.objects.all().order_by('guide')
@@ -647,6 +670,7 @@ def home(request, course, dept):
                     'timetable_data': timetable_data,
                     'events': events,
                     'classrooms': classrooms,
+                    'classrooms_desc': classrooms_desc,
                     'research_data': research_data,
                     'laboratory_facilities_gallary' : laboratory_facilities_gallary,
                     'book_chapters_data': book_chapters_data,
@@ -671,6 +695,7 @@ def home(request, course, dept):
 
         events = mathematics_dept_events.objects.all()
         classrooms = mathematics_dept_classroom.objects.all()
+        classrooms_desc = mathematics_dept_classroom_description.objects.all()
         laboratory_facilities_gallary = mathematics_dept_laboratory_facilities_gallary.objects.all()
 
         research_scholar_data = mathematics_dept_research_scholars.objects.all().order_by('guide')
@@ -698,6 +723,7 @@ def home(request, course, dept):
                     'timetable_data': timetable_data,
                     'events': events,
                     'classrooms': classrooms,
+                    'classrooms_desc': classrooms_desc,
                     'research_data': research_data,
                     'laboratory_facilities_gallary' : laboratory_facilities_gallary,
                     'book_chapters_data': book_chapters_data,
@@ -722,6 +748,7 @@ def home(request, course, dept):
 
         events = bio_medical_dept_events.objects.all()
         classrooms = bio_medical_dept_classroom.objects.all()
+        classrooms_desc = bio_medical_dept_classroom_description.objects.all()
         laboratory_facilities_gallary = bio_medical_dept_laboratory_facilities_gallary.objects.all()
 
         research_scholar_data = bio_medical_dept_research_scholars.objects.all().order_by('guide')
@@ -751,6 +778,7 @@ def home(request, course, dept):
                     'timetable_data': timetable_data,
                     'events': events,
                     'classrooms': classrooms,
+                    'classrooms_desc': classrooms_desc,
                     'research_data': research_data,
                     'laboratory_facilities_gallary' : laboratory_facilities_gallary,
                     'book_chapters_data': book_chapters_data,

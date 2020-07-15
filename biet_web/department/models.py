@@ -117,6 +117,12 @@ class civil_dept_classroom(models.Model):
     def __str__(self):
         return '{}'.format(self.classroom)
 
+class civil_dept_library(models.Model):
+    description = models.TextField()
+    
+    def __str__(self):
+        return self.description[:100] + '...'
+
 class civil_dept_accreditation(models.Model):
     sno = models.IntegerField()
     name = models.CharField(max_length=200)
@@ -419,6 +425,12 @@ class mechanical_dept_classroom(models.Model):
     def __str__(self):
         return '{}'.format(self.classroom)
 
+class mechanical_dept_library(models.Model):
+    description = models.TextField()
+    
+    def __str__(self):
+        return self.description[:100] + '...'
+
 class mechanical_dept_learning_materials(models.Model):
     semester = models.IntegerField(choices=list(zip(range(3, 9), range(3, 9))))
     subject_code = models.CharField(max_length=100)
@@ -561,6 +573,12 @@ class electrical_and_electronics_dept_classroom(models.Model):
 
     def __str__(self):
         return '{}'.format(self.classroom)
+
+class electrical_and_electronics_dept_library(models.Model):
+    description = models.TextField()
+    
+    def __str__(self):
+        return self.description[:100] + '...'
 
 class electrical_and_electronics_dept_accreditation(models.Model):
     sno = models.IntegerField()
@@ -784,6 +802,12 @@ class electronics_and_communication_dept_classroom(models.Model):
     def __str__(self):
         return '{}'.format(self.classroom)
 
+class electronics_and_communication_dept_library(models.Model):
+    description = models.TextField()
+    
+    def __str__(self):
+        return self.description[:100] + '...'
+
 class electronics_and_communication_dept_accreditation(models.Model):
     sno = models.IntegerField()
     name = models.CharField(max_length=200)
@@ -1005,6 +1029,12 @@ class chemical_dept_classroom(models.Model):
 
     def __str__(self):
         return '{}'.format(self.classroom)
+
+class chemical_dept_library(models.Model):
+    description = models.TextField()
+    
+    def __str__(self):
+        return self.description[:100] + '...'
 
 class chemical_dept_accreditation(models.Model):
     sno = models.IntegerField()
@@ -1228,6 +1258,12 @@ class electronics_and_instrumentation_dept_classroom(models.Model):
     def __str__(self):
         return '{}'.format(self.classroom)
 
+class electronics_and_instrumentation_dept_library(models.Model):
+    description = models.TextField()
+    
+    def __str__(self):
+        return self.description[:100] + '...'
+
 class electronics_and_instrumentation_dept_accreditation(models.Model):
     sno = models.IntegerField()
     name = models.CharField(max_length=200)
@@ -1449,6 +1485,12 @@ class computer_science_dept_classroom(models.Model):
 
     def __str__(self):
         return '{}'.format(self.classroom)
+
+class computer_science_dept_library(models.Model):
+    description = models.TextField()
+    
+    def __str__(self):
+        return self.description[:100] + '...'
 
 class computer_science_dept_accreditation(models.Model):
     sno = models.IntegerField()
@@ -1672,6 +1714,12 @@ class information_science_dept_classroom(models.Model):
     def __str__(self):
         return '{}'.format(self.classroom)
 
+class information_science_dept_library(models.Model):
+    description = models.TextField()
+    
+    def __str__(self):
+        return self.description[:100] + '...'
+
 class information_science_dept_accreditation(models.Model):
     sno = models.IntegerField()
     name = models.CharField(max_length=200)
@@ -1893,6 +1941,12 @@ class textile_technology_dept_classroom(models.Model):
 
     def __str__(self):
         return '{}'.format(self.classroom)
+
+class textile_technology_dept_library(models.Model):
+    description = models.TextField()
+    
+    def __str__(self):
+        return self.description[:100] + '...'
 
 class textile_technology_dept_accreditation(models.Model):
     sno = models.IntegerField()
@@ -2116,6 +2170,12 @@ class bio_technology_dept_classroom(models.Model):
     def __str__(self):
         return '{}'.format(self.classroom)
 
+class bio_technology_dept_library(models.Model):
+    description = models.TextField()
+    
+    def __str__(self):
+        return self.description[:100] + '...'
+
 class bio_technology_dept_accreditation(models.Model):
     sno = models.IntegerField()
     name = models.CharField(max_length=200)
@@ -2338,6 +2398,12 @@ class physics_dept_classroom(models.Model):
     def __str__(self):
         return '{}'.format(self.classroom)
 
+class physics_dept_library(models.Model):
+    description = models.TextField()
+    
+    def __str__(self):
+        return self.description[:100] + '...'
+
 class physics_dept_accreditation(models.Model):
     sno = models.IntegerField()
     name = models.CharField(max_length=200)
@@ -2403,7 +2469,7 @@ class physics_dept_result_analysis(models.Model):
         if width != req_width and height != req_height:
             raise ValidationError("Height and Width of image should be 750x450")
 
-    sem_choices = ((3,'3rd'),(4,'4th'),(5,'5th'),(6,'6th'),(7,'7th'),(8,'8th'),)
+    sem_choices = ((1,'1st'),(2,'2nd'),)
     semester = models.IntegerField(choices=sem_choices)
     result_analysis_pdf = models.FileField(upload_to='department/PHY/result-analysis/')
     result_analysis_image = models.ImageField(upload_to='department/PHY/result-analysis/',
@@ -2528,6 +2594,12 @@ class chemistry_dept_classroom(models.Model):
     def __str__(self):
         return '{}'.format(self.classroom)
 
+class chemistry_dept_library(models.Model):
+    description = models.TextField()
+    
+    def __str__(self):
+        return self.description[:100] + '...'
+
 class chemistry_dept_accreditation(models.Model):
     sno = models.IntegerField()
     name = models.CharField(max_length=200)
@@ -2593,7 +2665,7 @@ class chemistry_dept_result_analysis(models.Model):
         if width != req_width and height != req_height:
             raise ValidationError("Height and Width of image should be 750x450")
 
-    sem_choices = ((3,'3rd'),(4,'4th'),(5,'5th'),(6,'6th'),(7,'7th'),(8,'8th'),)
+    sem_choices = ((1,'1st'),(2,'2nd'),)
     semester = models.IntegerField(choices=sem_choices)
     result_analysis_pdf = models.FileField(upload_to='department/CHEM/result-analysis/')
     result_analysis_image = models.ImageField(upload_to='department/CHEM/result-analysis/',
@@ -2718,6 +2790,12 @@ class mathematics_dept_classroom(models.Model):
     def __str__(self):
         return '{}'.format(self.classroom)
 
+class mathematics_dept_library(models.Model):
+    description = models.TextField()
+    
+    def __str__(self):
+        return self.description[:100] + '...'
+
 class mathematics_dept_accreditation(models.Model):
     sno = models.IntegerField()
     name = models.CharField(max_length=200)
@@ -2783,7 +2861,7 @@ class mathematics_dept_result_analysis(models.Model):
         if width != req_width and height != req_height:
             raise ValidationError("Height and Width of image should be 750x450")
 
-    sem_choices = ((3,'3rd'),(4,'4th'),(5,'5th'),(6,'6th'),(7,'7th'),(8,'8th'),)
+    sem_choices = ((1,'1st'),(2,'2nd'),(3,'3rd'),(4,'4th'),)
     semester = models.IntegerField(choices=sem_choices)
     result_analysis_pdf = models.FileField(upload_to='department/MAT/result-analysis/')
     result_analysis_image = models.ImageField(upload_to='department/MAT/result-analysis/',
@@ -2907,6 +2985,12 @@ class bio_medical_dept_classroom(models.Model):
 
     def __str__(self):
         return '{}'.format(self.classroom)
+
+class bio_medical_dept_library(models.Model):
+    description = models.TextField()
+    
+    def __str__(self):
+        return self.description[:100] + '...'
 
 class bio_medical_dept_accreditation(models.Model):
     sno = models.IntegerField()

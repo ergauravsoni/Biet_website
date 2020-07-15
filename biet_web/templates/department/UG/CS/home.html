@@ -1016,20 +1016,13 @@
 
                                                 </div>
                                                 <!--//panel-body-->
-                                                <div class="panel-body">
+						<div class="panel-body">
+                                                    {% if dept_library.all %}
                                                     <h3 class="no-margin-top text-highlight">Department Library</h3>
-                                                    <p>The library at department level is for the Students and Faculty
-                                                        of Computer Science & Engg. which houses good number of
-                                                        textbooks, reference books, and project & seminar reports. At
-                                                        present over 3564 books with <b>250 titles, project reports,
-                                                            seminar reports & CD'S</b> are available in the Department
-                                                        library. The National and International conference proceedings,
-                                                        workshop and seminar reports, product & textbook catalogues are
-                                                        kept for student's reference. Apart from the departmental
-                                                        library facility we have Central Library and Information Center.
-                                                        At Central Library, along with the standard books we have the
-                                                        facility of accessing various International & National Journals.
-                                                    </p>
+                                                    {% for lib in dept_library %} 
+                                                    <p>{{lib.description}}</p>
+                                                    {% endfor %}
+                                                    {% endif %}
                                                 </div>
                                                 <!--//panel-body-->
                                             </div>

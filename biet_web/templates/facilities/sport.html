@@ -2,25 +2,52 @@
 
 {% load static %}
 {% block content %}
+<div class="content container bgdata content-text">
+    <div class="page-wrapper">
+        <header class="page-heading clearfix">
+            <h1 class="heading-title pull-left">Sports</h1>
+        </header> 
+        <div class="page-content">
+            <div class="row page-row">
+                <div class="courses-wrapper col-md-12 col-sm-7">           
+                    <div class="featured-courses tabbed-info page-row">
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#tab1" data-toggle="tab"><strong>Sports Annual Reports</strong></a></li>
+                            <li><a href="#tab2" data-toggle="tab"><strong>Sports Gallery</strong></a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="tab1">
+                                <div class="row medical">
+                                    {% for report in result %}
+                                    
+                                    <div class="col-md-6">
+                                        <h3 class="text-highlight"> {{report.title}}</h3>
+                                        <dl class="dl-horizontal">                                          
+                                            <h4 class="title">Download Annual Report</h4>
+                                            <a class="btn btn-theme" href="../media/{{report.url}}"><i class="fa fa-download"></i>Download/View PDF</a>
+                                        </dl>
+                                    </div>
 
-<div class="content container bgdata">
-    {% for report in result %}
-    
-    <div class="col-md-6">
-        <h2 class="has-divider text-highlight"> {{report.title}}</h2>
-        <dl class="dl-horizontal">                                          
-            <h3 class="title">Download Prospectus</h3>
-            <p>Donec pulvinar arcu lacus, vel aliquam libero scelerisque a. Cras mi tellus, vulputate eu eleifend at, consectetur fringilla lacus. Nulla ut purus.</p>
-            <a class="btn btn-theme" href="../media/{{report.url}}"><i class="fa fa-download"></i>View PDF</a>
-        </dl>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="tab2">
+                                <div class="row medical">
+                                    {% for image in sports_images %}
+                    
+                                    <a class="prettyphoto col-md-3 col-sm-3 col-xs-6" rel="prettyPhoto[gallery]" title=""
+                                        href="{{image.images.url}}"><img class="img-responsive img-thumbnail" src="{{image.images.url}}"
+                                            alt="" style="height: 150px;" /></a>
+                    
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-
-    {% endfor %}
-
 </div>
-    
-
-
-
 
 {% endblock %}

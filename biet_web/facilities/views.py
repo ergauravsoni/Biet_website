@@ -1,11 +1,11 @@
 from django.shortcuts import render
-from .models import Sport, auditoriumGallary
+from .models import Sport, auditoriumGallary, sportsGallary
 
 # Create your views here.
 
 def sport(request):
     report = Sport.objects.all().order_by('reports')
-
+    sports_images = sportsGallary.objects.all()
     result = []
 
     for i in report:
@@ -15,7 +15,7 @@ def sport(request):
         reports_sports['title'] = str(i).split('/')[-1].split('.')[0]
         result.append(reports_sports)
 
-    return render(request,'facilities/sport.html',{'result' : result })
+    return render(request,'facilities/sport.html',{'result' : result, 'sports_images' : sports_images })
 
 def hostel(request):
     return render(request,'facilities/hostel.html')
@@ -43,6 +43,9 @@ def elearning(request):
 
 def language_lab(request):
     return render(request,'facilities/language_lab.html')
+    
+def ncc_nss(request):
+    return render(request,'facilities/ncc_nss.html')
 
 def ladies_rest_room(request):
     return render(request,'facilities/ladies_rest_room.html')
@@ -50,6 +53,7 @@ def ladies_rest_room(request):
 def auditorium(request):
     images = auditoriumGallary.objects.all()
     return render(request,'facilities/auditorium.html',{'images' : images})
+
 
 
 

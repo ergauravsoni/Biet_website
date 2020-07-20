@@ -7,5 +7,12 @@ class Sport(models.Model):
     def __str__(self):
         return '{}'.format(self.reports)
 
+class sportsGallary(models.Model):
+    images = models.ImageField(upload_to='facilities/sportsGallary')
+    
+    def __str__(self):
+        return str(self.images)
+
 class auditoriumGallary(models.Model):
     images = models.ImageField(upload_to='facilities/auditoriumGallary')
+

@@ -15,4 +15,6 @@ urlpatterns = [
     path('facilities/transportation',views.transportation, name='transportation'),
     path('facilities/elearning',views.elearning, name='elearning'),
     path('facilities/language_lab',views.language_lab, name='language_lab'),
+    path('facilities/ncc_nss',views.ncc_nss, name='ncc_nss'),
 ]
+

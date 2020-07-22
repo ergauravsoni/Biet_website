@@ -18804,7 +18804,6 @@ COPY public.department_civil_dept (id, name, designation, image, detail, sno, st
 18	Sri Vagish M	Assistant Professor	department/CV/image/14_Vagish_M_Assistant_Professor.jpg	department/CV/data/14_Vagish_M.pdf	13	FACULTY	
 19	Sri. Praveen Kumar G B	Assistant Professor	department/CV/image/13_Praveen_Kumar_G_B_Assistant_Professor.jpg	department/CV/data/13_Praveen_Kumar_G_B.pdf	14	FACULTY	
 20	Smt. Arpita D J	Assistant Professor	department/CV/image/15_Smt_Arpitha_D_JAssistant_Professor.jpg	department/CV/data/15_Arpitha_D_J.pdf	15	FACULTY	
-21	Sri. Shashidhara H M	Assistant Professor	department/CV/image/16_Shashidhara_H_M_Assistant_Professor.jpg	department/CV/data/16_Shashidhara_H_M.pdf	16	FACULTY	
 22	Sri. Chethan Gonni	Assistant Professor	department/CV/image/17_Chethan_Gonni_S_Assistant_Professor.jpg	department/CV/data/17_Chethan_Gonni.pdf	16	FACULTY	
 23	Miss. Ramya B V	Assistant Professor	department/CV/image/18_Ramya_B_V_Assistant_Professor.jpg	department/CV/data/18_Ramya_R_V.pdf	17	FACULTY	
 25	Smt. Amulya G V	Assistant Professor	department/CV/image/20_Amulya_G_V_Assistant_Professor.jpg	department/CV/data/20_Amulya_G_V.pdf	18	FACULTY	
@@ -18970,7 +18969,6 @@ COPY public.department_civil_dept_publications (id, name_of_faculty, y15, y16, y
 --
 
 COPY public.department_civil_dept_research_guide (sno, guide_name) FROM stdin;
-1	Dr. H B Aravinda
 2	Dr. S. Suresh
 3	Dr. C P Anila Kumar
 4	Dr. M. D. Vijayananda
@@ -18978,6 +18976,7 @@ COPY public.department_civil_dept_research_guide (sno, guide_name) FROM stdin;
 6	Dr. Chidananda G
 7	Dr. Veena Kumara Adi
 8	Dr. Suresh B
+1	Dr. H B Aravinda
 \.
 
 
@@ -18986,10 +18985,13 @@ COPY public.department_civil_dept_research_guide (sno, guide_name) FROM stdin;
 --
 
 COPY public.department_civil_dept_research_scholars (id, research_scholar_name, department, year_of_regn, "phD", course_work_completed, "pre_phD_viva_voce", submitted_final_thesis, "phD_awarded_year", guide_id) FROM stdin;
-1	Raghu B E	Civil Engineering Bapuji Institute of Engineering	2015	(PHD)	N	N	N	0	3
 2	Chethan Gonni S	Civil Engineering Bapuji Institute of Engineering	2019	(PHD)	N	N	N	0	3
 3	Renuka R	Civil Engineering Bapuji Institute of Engineering	2019	(PHD)	N	N	N	0	3
 4	Sumana Y B	Civil Engineering Bapuji Institute of Engineering	2015	(PHD)	Y	N	N	0	2
+6	Mohammed Yaseen	Civil Engineering Bapuji Institute of Engineering	2011	(PHD)	Y	Y	Y	2019	2
+1	Raghu M E	Civil Engineering Bapuji Institute of Engineering	2015	(PHD)	N	N	N	0	3
+7	Prasanna Kumara J K	Civil Engineering Bapuji Institute of Engineering	2017	(PHD)	Y	N	N	0	8
+5	Madhu Jalaki	Civil Engineering Bapuji Institute of Engineering	2019	(PHD)	N	N	N	0	1
 \.
 
 
@@ -24681,6 +24683,13 @@ COPY public.django_admin_log (id, action_time, object_id, object_repr, action_fl
 2794	2020-07-22 03:33:05.833379-06	2	Chethan Gonni S	1	[{"added": {}}]	124	17
 2795	2020-07-22 03:33:32.100298-06	3	Renuka R	1	[{"added": {}}]	124	17
 2796	2020-07-22 03:34:54.894377-06	4	Sumana Y B	1	[{"added": {}}]	124	17
+2797	2020-07-22 03:36:48.70191-06	5	Madhu Jalaki	1	[{"added": {}}]	124	17
+2798	2020-07-22 03:38:19.141208-06	6	Mohammed Yaseen	1	[{"added": {}}]	124	17
+2799	2020-07-22 03:39:03.70106-06	1	Raghu M E	2	[{"changed": {"fields": ["Research scholar name"]}}]	124	17
+2800	2020-07-22 03:40:53.454819-06	7	Prasanna Kumara J K	1	[{"added": {}}]	124	17
+2801	2020-07-22 03:41:23.383403-06	1	Dr. H B Aravinda	2	[]	88	17
+2802	2020-07-22 03:42:03.591687-06	5	Madhu Jalaki	2	[]	124	17
+2803	2020-07-22 03:42:54.04766-06	21	Sri. Shashidhara H M : FACULTY	3		7	17
 \.
 
 
@@ -25134,7 +25143,6 @@ tihlqkpppmy9n6jbejff7c9hme9gjgpv	MDUxMTRlNWE3NjYzNDBhNzUzOWE2ZTNjZDhlMmZiZTVmYWM
 rg8lohvrgdqe1hm4lkxrfb5tpzvo00tv	NDZiYzNhNzM5NmUxMzVmNDc1MDZiZWE4N2Q2NGRkOGIyYTY5YTQwMjp7Il9hdXRoX3VzZXJfaWQiOiIzMSIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIiwiX2F1dGhfdXNlcl9oYXNoIjoiY2NhZjVkOTA4MDJiYTIyY2VkNDc4MTM2M2QxNmU3OTgwYTMwYjA4OSJ9	2020-07-30 04:44:34.583444-06
 0542ra5kujitf3lezx3241bjshpnal5p	NWRhYzUwODk2MjkwNWRlZmM5MjVkYzBiY2UxNDZjNDNjZmM3MzA2ODp7Il9hdXRoX3VzZXJfaWQiOiIyNSIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIiwiX2F1dGhfdXNlcl9oYXNoIjoiMGJlNWVhZTcxY2MwMmJhNDkwMDE3MGI5ZjNlNjlhZjdkOGZkYmY3OSJ9	2020-07-30 04:51:31.374488-06
 6hi22n89wu6n9uejcbatkg905sir4smn	MzJjNzMxYWYzNmM3N2JkNTFkNTQ2ZjYyZDcxZmVmOTRhZTM1NzFmNjp7Il9hdXRoX3VzZXJfaWQiOiIyMSIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIiwiX2F1dGhfdXNlcl9oYXNoIjoiYjcyMzllZWQ4NmZiMGM4MTI0MzVkNzczMTA0NjRjMWJmOGI5YzlkMCJ9	2020-08-05 00:05:25.117475-06
-cy6oqbdaider7qd3d12a4bfv1g86m96e	NDlkYmYwMDg0YThjNDU0OWUwY2JhYWNiNWM2MTk5MTE2YTg2Mzc2NDp7Il9hdXRoX3VzZXJfaWQiOiIxNyIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIiwiX2F1dGhfdXNlcl9oYXNoIjoiOTZkMGQzMTAyZTc1YjY4YWU4ZGRjMmYyMzcxY2MxNzY3YzU1Y2JjMyJ9	2020-07-28 06:37:10.732667-06
 yvhx8f0pvrj30yx26uvw3fwnvphphiik	MzI2ODFlNmJiZGMzN2FhMTc3ODQ3MDg2MjZmZmQwN2Q0MTRjMjJmZjp7Il9hdXRoX3VzZXJfaWQiOiIyNiIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIiwiX2F1dGhfdXNlcl9oYXNoIjoiOWYxODBhNTJjNTc5NjIwYzBlNmFmM2FlMmM4MTIwOTk0NGI1NzFmYiJ9	2020-08-05 00:11:26.835149-06
 5icizk99kh4npomj4bm137qod31nlxqx	NWRhYzUwODk2MjkwNWRlZmM5MjVkYzBiY2UxNDZjNDNjZmM3MzA2ODp7Il9hdXRoX3VzZXJfaWQiOiIyNSIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIiwiX2F1dGhfdXNlcl9oYXNoIjoiMGJlNWVhZTcxY2MwMmJhNDkwMDE3MGI5ZjNlNjlhZjdkOGZkYmY3OSJ9	2020-07-28 00:12:02.215969-06
 jwedkuzdooiunht92p7jm65x1k9e0zyj	NDlkYmYwMDg0YThjNDU0OWUwY2JhYWNiNWM2MTk5MTE2YTg2Mzc2NDp7Il9hdXRoX3VzZXJfaWQiOiIxNyIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIiwiX2F1dGhfdXNlcl9oYXNoIjoiOTZkMGQzMTAyZTc1YjY4YWU4ZGRjMmYyMzcxY2MxNzY3YzU1Y2JjMyJ9	2020-07-28 00:59:18.370928-06
@@ -26129,7 +26137,7 @@ SELECT pg_catalog.setval('public.department_civil_dept_publications_id_seq', 1, 
 -- Name: department_civil_dept_research_scholars_id_seq; Type: SEQUENCE SET; Schema: public; Owner: bietda
 --
 
-SELECT pg_catalog.setval('public.department_civil_dept_research_scholars_id_seq', 4, true);
+SELECT pg_catalog.setval('public.department_civil_dept_research_scholars_id_seq', 7, true);
 
 
 --
@@ -27536,7 +27544,7 @@ SELECT pg_catalog.setval('public.department_textile_technology_dept_timetable_id
 -- Name: django_admin_log_id_seq; Type: SEQUENCE SET; Schema: public; Owner: bietda
 --
 
-SELECT pg_catalog.setval('public.django_admin_log_id_seq', 2796, true);
+SELECT pg_catalog.setval('public.django_admin_log_id_seq', 2803, true);
 
 
 --

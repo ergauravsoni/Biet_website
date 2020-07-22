@@ -29,4 +29,10 @@ urlpatterns = [
     path('research/honors_and_awards',views.honors_and_awards, name='research/honors_and_awards'),
     path('other_committees/grievance_redressal',views.grievance_redressal, name='other_committees/grievance_redressal'),
     path('other_committees/anti_ragging',views.anti_ragging, name='other_committees/anti_ragging'),
+    path('other_committees/sc_st_obc_cell',views.sc_st_obc_cell, name='other_committees/sc_st_obc_cell'),
+    path('other_committees/skill_cell',views.skill_cell, name='other_committees/skill_cell'),
+    path('other_committees/ipr_cell',views.ipr_cell, name='other_committees/ipr_cell'),
+    path('other_committees/startup_cell',views.startup_cell, name='other_committees/startup_cell'),
+    path('other_committees/media_cell',views.media_cell, name='other_committees/media_cell'),
 ]
+

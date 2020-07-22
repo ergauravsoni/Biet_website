@@ -12,7 +12,6 @@ class Office_Staff(models.Model):
     name = models.CharField(max_length=200)
     designation = models.CharField(max_length=200)
     image = models.ImageField(upload_to='about_biet/office/image/')
-    detail = models.FileField(upload_to='about_biet/office/data/')
     sno = models.IntegerField()
 
     def __str__(self):

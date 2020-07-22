@@ -86,3 +86,19 @@ def grievance_redressal(request):
     
 def anti_ragging(request):
     return render(request,'about_biet/other_committees/anti_ragging.html')
+    
+def sc_st_obc_cell(request):
+    return render(request,'about_biet/other_committees/sc_st_obc_cell.html')
+
+def skill_cell(request):
+    return render(request,'about_biet/other_committees/skill_development_cell.html')
+    
+def ipr_cell(request):
+    return render(request,'about_biet/other_committees/ipr_cell.html')
+
+def startup_cell(request):
+    return render(request,'about_biet/other_committees/fablab.html')
+    
+def media_cell(request):
+    return render(request,'about_biet/other_committees/media_cell.html')
+

@@ -20,5 +20,6 @@ urlpatterns = [
     path('library/gallery',views.gallery, name='library/gallery'),
     path('library/user_manual',views.user_manual, name='library/user_manual'),
     path('facilities/perography',views.perography, name='facilities/perography'),
+    path('academics/rules',views.biet_rules, name='academics/rules'),
     # path('major_events',views.major_events, name='major_events'),
 ]

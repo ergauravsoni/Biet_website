@@ -26,6 +26,9 @@ def membership(request):
 
 def rules(request):
     return render(request,'academics/library/rules.html')
+    
+def biet_rules(request):
+    return render(request,'academics/rules.html')
 
 def services(request):
     return render(request,'academics/library/services.html')
@@ -52,5 +55,6 @@ def user_manual(request):
 
 def perography(request):
     return render(request,'academics/library/perography.html')
+
 
 

@@ -6,7 +6,7 @@ urlpatterns = [
     # path('Bapuji_educational_association',views.Bapuji_educational_association, name='Bapuji_educational_association'),
     path('library',views.library, name='library'),
     path('academic_calender',views.academic_calender, name='academic_calender'),
-    path('ranks',views.ranks, name='ranks'),
+    path('academics/ranks',views.ranks, name='ranks'),
     path('library/layout',views.layout, name='layout'),
     path('library/staff',views.staff, name='staff'),
     path('library/resources',views.resources, name='resources'),
@@ -23,3 +23,4 @@ urlpatterns = [
     path('academics/rules',views.biet_rules, name='academics/rules'),
     # path('major_events',views.major_events, name='major_events'),
 ]
+

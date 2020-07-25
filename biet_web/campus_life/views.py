@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Graduation_Day, NAAC, Btech_Technowav
+from .models import Graduation_Year, Graduation_Day, NAAC, Btech_Technowav
 
 # Create your views here.
 def naac(request):
@@ -17,9 +17,11 @@ def green_campus(request):
     return render(request,'campus_life/green_campus.html')
 
 def graduation_day(request):
-    images = Graduation_Day.objects.all()
-    print(images)
-    return render(request,'campus_life/graduation_day.html',{'images' : images})
+    
+    year = Graduation_Year.objects.all()
+    image = Graduation_Day.objects.all()
+    graduation_data = {'year': year, 'image': image}
+    return render(request,'campus_life/graduation_day.html',graduation_data)
 
 
 def to_be_updated(request):
@@ -32,3 +34,4 @@ def btech_technowav(request):
     btech_technowav_data = Btech_Technowav.objects.all()
     print(btech_technowav_data)
     return render(request, 'campus_life/btech_technowav.html',{'btech_technowav_data' : btech_technowav_data})
+

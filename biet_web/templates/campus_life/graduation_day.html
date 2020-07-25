@@ -2,22 +2,58 @@
 
 {% load static %}
 {% block content %}
-
-
-<div class="content container bgdata">
-        <div class="page-wrapper">
-            <div class="page-content">     
-                <div class="row page-row">
-                    {% for image in images %}
-                        
-                        <a class="prettyphoto col-md-3 col-sm-3 col-xs-6" rel="prettyPhoto[gallery]" title="" href="{{image.image.url}}"><img class="img-responsive img-thumbnail" src="{{image.image.url}}" alt="" /></a>
-                    
-                    {% endfor %} 
-                   
-                </div><!--//page-row-->
-            </div><!--//page-content--> 
-        </div><!--//page--> 
+<div class="content container bgdata content-text">
+    <div class="page-wrapper">
+        <header class="page-heading clearfix">
+            <h1 class="heading-title pull-left">Graduands' Day</h1>
+        </header> 
+        <div class="page-content">
+            <div class="row page-row">
+                <div class="courses-wrapper col-md-12 col-sm-7">           
+                    <div class="featured-courses tabbed-info page-row">
+                        <ul class="nav nav-tabs">
+                            {% for year in year %}
+                            {% if forloop.first %}
+                            <li class="active"><a href="#tab{{year.year}}" data-toggle="tab"><strong>{{year.year}}</strong></a></li>
+                            {% else %}
+                            <li><a href="#tab{{year.year}}" data-toggle="tab"><strong>{{year.year}}</strong></a></li>
+                            {% endif %}
+                            {% endfor %}
+                        </ul>
+                        <div class="tab-content">
+                            {% for year in year %}
+                            {% if forloop.first %}
+                            <div class="tab-pane active" id="tab{{year.year}}">
+                                <div class="row medical">
+                                    {% for image in image %}
+                                    {% if image.year.year == year.year %}
+                                    <a class="prettyphoto col-md-3 col-sm-3 col-xs-6" rel="prettyPhoto[gallery]" title=""
+                                        href="{{image.image.url}}"><img class="img-responsive img-thumbnail" src="{{image.image.url}}"
+                                            alt="" style="height: 150px;" /></a>
+                                    {% endif %}    
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            {% else %}
+                            <div class="tab-pane" id="tab{{year.year}}">
+                                <div class="row medical">
+                                    {% for image in image %}
+                                    {% if image.year.year == year.year %}
+                                    <a class="prettyphoto col-md-3 col-sm-3 col-xs-6" rel="prettyPhoto[gallery]" title=""
+                                        href="{{image.image.url}}"><img class="img-responsive img-thumbnail" src="{{image.image.url}}"
+                                            alt="" style="height: 150px;" /></a>
+                                    {% endif %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-
+</div>
 
 {% endblock %}

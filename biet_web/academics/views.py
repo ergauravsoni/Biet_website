@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Library_User_Manual, Gallary
+from .models import Library_User_Manual, Ranks, Gallary
 
 # Create your views here.
 
@@ -10,7 +10,13 @@ def academic_calender(request):
     return render(request,'aboutacademics_biet/academic_calender.html')
 
 def ranks(request):
-    return render(request,'academics/ranks.html')
+    ranks_data=Ranks.objects.all().order_by('sno')
+    setyr=set()
+    setct=set()
+    for record in ranks_data:
+        setyr.add(record.year_range)
+        setct.add(record.course_type)
+    return render(request,'academics/ranks.html',{'ranks_data':ranks_data, 'setyr':sorted(setyr, reverse=True), 'setct':sorted(setct, reverse=True)})
 
 def layout(request):
     return render(request,'academics/library/layout.html')
@@ -55,6 +61,7 @@ def user_manual(request):
 
 def perography(request):
     return render(request,'academics/library/perography.html')
+
 
 
 

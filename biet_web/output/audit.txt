@@ -1,0 +1,15 @@
+Foremost version 1.5.7 by Jesse Kornblum, Kris Kendall, and Nick Mikus
+Audit File
+
+Foremost started at Sat Jul 25 03:34:48 2020
+Invocation: foremost -i ./department/migrations/ 
+Output directory: /var/www/Biet_website/biet_web/output
+Configuration file: /etc/foremost.conf
+------------------------------------------------------------------
+File: stdin
+Start: Sat Jul 25 03:34:48 2020
+Length: Unknown
+ 
+Num	 Name (bs=512)	       Size	 File Offset	 Comment 
+
+Interrupt received at Sat Jul 25 06:38:20 2020

@@ -47,6 +47,9 @@ def language_lab(request):
 def ncc_nss(request):
     return render(request,'facilities/ncc_nss.html')
 
+def redcross(request):
+    return render(request, 'facilities/red_cross.html')
+
 def ladies_rest_room(request):
     return render(request,'facilities/ladies_rest_room.html')
 

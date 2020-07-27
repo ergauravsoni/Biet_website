@@ -9,7 +9,6 @@ def naac(request):
 def nirf(request):
     return render(request,'campus_life/nirf.html')
 
-
 def nain(request):
     return render(request,'campus_life/nain.html')
 
@@ -23,12 +22,8 @@ def graduation_day(request):
     graduation_data = {'year': year, 'image': image}
     return render(request,'campus_life/graduation_day.html',graduation_data)
 
-
 def to_be_updated(request):
     return render(request, 'to_be_updated.html')
-
-def redcross(request):
-    return render(request, 'campus_life/redcross.html')
 
 def btech_technowav(request):
     btech_technowav_data = Btech_Technowav.objects.all()

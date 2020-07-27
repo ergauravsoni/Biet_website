@@ -3089,10 +3089,239 @@ class mca_dept(models.Model):
     name = models.CharField(max_length=200)
     designation = models.CharField(max_length=200)
     image = models.ImageField(upload_to='department/MCA/image/')
-    detail = models.FileField(upload_to='department/MCA/data/')
+    detail = models.FileField(upload_to='department/MCA/data/',blank='True')
+    sno = models.IntegerField(default='1')
+    staff_type = models.CharField(max_length=100, choices=(
+        ('HOD', 'Head Of Department'),
+        ('FACULTY', 'Faculty Member'),
+        ('TECHNICAL', 'Technical Staff'),
+        ('SUPPORTING', 'Supporting Staff')), default='FACULTY')
+    description = models.TextField(blank=True,
+     help_text='Enter description only for HOD. For others this field can be skipped.')
 
     def __str__(self):
-        return '{}'.format(self.name)
+        return '{}'.format(self.name) + " : " + self.staff_type
+
+class mca_dept_research_guide(models.Model):
+    sno = models.IntegerField(primary_key=True)
+    guide_name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.guide_name
+
+class mca_dept_research_scholars(models.Model):
+
+    year_choices_array = []
+    for year in range(1979, cur_year):
+        year_choices_array.append((year, year))
+    year_choices_array.append((0, 'NA'))
+    year_choices = tuple(year_choices_array)
+    research_scholar_name = models.CharField(max_length=100)
+    department = models.CharField(max_length=100)
+    year_of_regn = models.IntegerField(choices=year_choices, default=0)
+    phD = models.CharField(max_length=10, choices=(
+        ('PHD', 'Ph.D.'), ('(PHD)', '(Ph.D.)')), default='(PHD)')
+    course_work_completed = models.CharField(
+        max_length=1, choices=(('Y', 'Yes'), ('N', 'No')), default='Y')
+    pre_phD_viva_voce = models.CharField(
+        max_length=1, choices=(('Y', 'Yes'), ('N', 'No')), default='Y')
+    submitted_final_thesis = models.CharField(
+        max_length=1, choices=(('Y', 'Yes'), ('N', 'No')), default='Y')
+    phD_awarded_year = models.IntegerField(choices=year_choices, default=0)
+    guide = models.ForeignKey(computer_science_dept_research_guide, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.research_scholar_name
+
+class mca_dept_publications(models.Model):
+    name_of_faculty = models.CharField(max_length=100)
+    y15 = models.IntegerField(blank=True,null=True)
+    y16 = models.IntegerField(blank=True,null=True)
+    y17 = models.IntegerField(blank=True,null=True)
+    y18 = models.IntegerField(blank=True,null=True)
+    y19 = models.IntegerField(blank=True,null=True)
+    national_or_inter = models.CharField(max_length=13)
+    indexing = models.CharField(max_length=500, blank=True,null=True)
+    citations = models.IntegerField(blank=True,null=True)
+    impact_factor = models.CharField(max_length=80, blank=True,null=True)
+    i10_index = models.IntegerField(blank=True,null=True)
+    h_index = models.IntegerField(blank=True,null=True)
+
+    def __str__(self):
+        return self.name_of_faculty
+
+class mca_dept_book_chapters(models.Model):
+    sl_no = models.IntegerField()
+    name_of_book_chapter = models.CharField(max_length=500)
+    names_of_authors = models.CharField(max_length=500)
+    year_of_pub = models.IntegerField()
+    name_of_pub = models.CharField(max_length=500)
+
+    def __str__(self):
+        return self.name_of_book_chapter
+
+class mca_dept_grants_and_patents(models.Model):
+    description = models.TextField()
+    grant_or_patent = models.CharField(max_length=500, choices=(
+        ('GRANT', 'Grant'), ('PATENT', 'Patent')), default='GRANT')
+
+    def __str__(self):
+         return self.description[:50] + "... : " + self.grant_or_patent
+
+class mca_dept_laboratory_facilities_gallary(models.Model):
+    room_no = models.CharField(max_length=10, default='A321')
+    image = models.ImageField(upload_to='department/gallery/MCA/laboratory/')
+
+    def __str__(self):
+        return '{}'.format(self.image)
+
+class mca_dept_lab_facilities(models.Model):
+    sno = models.IntegerField()
+    name = models.CharField(max_length=200)
+    qty = models.IntegerField()
+    config_specs = models.TextField()
+    softwares = models.TextField()
+
+    def __str__(self):
+        return self.name
+
+class mca_dept_major_equipments(models.Model):
+    equipment_description = models.TextField()
+
+    def __str__(self):
+        return self.equipment_description[:50] + "..."
+
+class mca_dept_classroom_description(models.Model):
+    description = models.TextField()
+
+    def __str__(self):
+        return self.description[:70] + "..."
+        
+class mca_dept_classroom(models.Model):
+    room_no = models.CharField(max_length=10, default='A321')
+    classroom = models.FileField(upload_to='department/MCA/data/classroom/')
+
+    def __str__(self):
+        return '{}'.format(self.classroom)
+
+class mca_dept_library(models.Model):
+    description = models.TextField()
+    
+    def __str__(self):
+        return self.description[:100] + '...'
+
+class mca_dept_accreditation(models.Model):
+    sno = models.IntegerField()
+    name = models.CharField(max_length=200)
+    designation = models.TextField(blank=True)
+    member_type = models.CharField(max_length=100, choices=(
+        ('PAC', 'Program Assessment Committee (PAC)'),
+        ('DAB', 'Department Advisory Board (DAB)')), default='DAB')
+
+    def __str__(self):
+        return self.name + " : " + self.member_type
+        
+class mca_dept_placement(models.Model):
+    year_choices_array = []
+    for year in range(2010, cur_year+1):
+        year_choices_array.append((year, year))
+    year_choices = tuple(year_choices_array)
+    
+    sno = models.IntegerField()
+    company_name = models.CharField(max_length=500)
+    latest_year = models.IntegerField(choices=year_choices, default=cur_year)
+    students_selected_for_latest_year = models.IntegerField()
+    second_latest_year = models.IntegerField(choices=year_choices, default=cur_year-1)
+    students_selected_for_2nd_latest_year = models.IntegerField()
+    third_latest_year = models.IntegerField(choices=year_choices, default=cur_year-2)
+    students_selected_for_3rd_latest_year = models.IntegerField()
+    fourth_latest_year = models.IntegerField(choices=year_choices, default=cur_year-3)
+    students_selected_for_4th_latest_year = models.IntegerField()
+    fifth_latest_year = models.IntegerField(choices=year_choices, default=cur_year-4)
+    students_selected_for_5th_latest_year = models.IntegerField()
+    
+    def __str__(self):
+        return self.company_name
+
+class mca_dept_alumni(models.Model):
+    name = models.CharField(max_length=500)
+    designation = models.CharField(max_length=500)
+    description = models.TextField()
+    image = models.ImageField(upload_to='department/alumni/MCA/')
+    sno = models.IntegerField(default='1')
+    
+    def __str__(self):
+        return self.name + ":" + self.designation
+
+class mca_dept_achievements(models.Model):
+    achievement_description = models.TextField()
+    achievement_type = models.CharField(max_length=500, choices=(
+        ('STUDENT', 'Student Achievement'), ('STAFF', 'Staff Achievement')), default='STAFF')
+
+    def __str__(self):
+        return self.achievement_description[:50] + "... : " + self.achievement_type 
+
+class mca_dept_forum(models.Model):
+    description = models.TextField(help_text="Enter a short description about your department's forum.")
+    
+    def __str__(self):
+        return self.description[:70] + '...'
+
+class mca_dept_activities(models.Model):
+    sno = models.IntegerField()
+    activity_name = models.CharField(max_length=200)
+    activity_description = models.TextField()
+    activity_type = models.CharField(max_length=500, choices=(
+        ('RE', 'Forum Activity'), ('STC', 'Department Activity')), default='RE')
+
+    def __str__(self):
+        return self.activity_name
+
+class mca_dept_timetable(models.Model):
+    course = models.CharField(max_length=100, choices=(
+        ('BE', 'B.E.'), ('MT', 'M.Tech')), default='BE')
+    semester = models.IntegerField()
+    section = models.CharField(max_length=1)
+    timetable = models.FileField(upload_to='department/MCA/data/timetable/')
+
+    def __str__(self):
+        return self.course + ": " + str(self.semester) + "-" + self.section
+
+class mca_dept_events(models.Model):
+    events = models.FileField(upload_to='department/MCA/data/events/')
+    semester = models.CharField(max_length=10)
+    name = models.CharField(max_length=30)
+
+    def __str__(self):
+        return '{}'.format(self.events)
+
+class mca_dept_learning_materials(models.Model):
+    semester = models.IntegerField(choices=list(zip(range(3, 9), range(3, 9))))
+    subject_code = models.CharField(max_length=100)
+    material = models.FileField(upload_to='department/MCA/data/learning-materials')
+
+    def __str__(self):
+        return 'SEM-' + str(self.semester) + ' : ' + self.subject_code
+
+class mca_dept_result_analysis(models.Model):
+    
+    def validate_image(image):
+        req_width = 750
+        req_height = 450
+        height = image.height 
+        width = image.width
+        if width != req_width and height != req_height:
+            raise ValidationError("Height and Width of image should be 750x450")
+
+    sem_choices = ((3,'3rd'),(4,'4th'),(5,'5th'),(6,'6th'),(7,'7th'),(8,'8th'),)
+    semester = models.IntegerField(choices=sem_choices)
+    result_analysis_pdf = models.FileField(upload_to='department/MCA/result-analysis/')
+    result_analysis_image = models.ImageField(upload_to='department/MCA/result-analysis/',
+                                validators=[validate_image],
+                                help_text='Upload image of result analysis bar graph or pie chart')
+    
+    def __str__(self):
+        return "Semester: " + str(self.semester)
 
 class mca_dept_gallery(models.Model):
     image = models.ImageField(upload_to='department/gallery/MCA/')
@@ -3104,15 +3333,242 @@ class environmental_dept(models.Model):
     name = models.CharField(max_length=200)
     designation = models.CharField(max_length=200)
     image = models.ImageField(upload_to='department/ENV/image/')
-    detail = models.FileField(upload_to='department/ENV/data/')
-    sno = models.IntegerField()
+    detail = models.FileField(upload_to='department/ENV/data/',blank='True')
+    sno = models.IntegerField(default='1')
+    staff_type = models.CharField(max_length=100, choices=(
+        ('HOD', 'Head Of Department'),
+        ('FACULTY', 'Faculty Member'),
+        ('TECHNICAL', 'Technical Staff'),
+        ('SUPPORTING', 'Supporting Staff')), default='FACULTY')
+    description = models.TextField(blank=True,
+     help_text='Enter description only for HOD. For others this field can be skipped.')
 
     def __str__(self):
-        return '{}'.format(self.name)
+        return '{}'.format(self.name) + " : " + self.staff_type
+
+class environmental_dept_research_guide(models.Model):
+    sno = models.IntegerField(primary_key=True)
+    guide_name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.guide_name
+
+class environmental_dept_research_scholars(models.Model):
+
+    year_choices_array = []
+    for year in range(1979, cur_year):
+        year_choices_array.append((year, year))
+    year_choices_array.append((0, 'NA'))
+    year_choices = tuple(year_choices_array)
+    research_scholar_name = models.CharField(max_length=100)
+    department = models.CharField(max_length=100)
+    year_of_regn = models.IntegerField(choices=year_choices, default=0)
+    phD = models.CharField(max_length=10, choices=(
+        ('PHD', 'Ph.D.'), ('(PHD)', '(Ph.D.)')), default='(PHD)')
+    course_work_completed = models.CharField(
+        max_length=1, choices=(('Y', 'Yes'), ('N', 'No')), default='Y')
+    pre_phD_viva_voce = models.CharField(
+        max_length=1, choices=(('Y', 'Yes'), ('N', 'No')), default='Y')
+    submitted_final_thesis = models.CharField(
+        max_length=1, choices=(('Y', 'Yes'), ('N', 'No')), default='Y')
+    phD_awarded_year = models.IntegerField(choices=year_choices, default=0)
+    guide = models.ForeignKey(computer_science_dept_research_guide, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.research_scholar_name
+
+class environmental_dept_publications(models.Model):
+    name_of_faculty = models.CharField(max_length=100)
+    y15 = models.IntegerField(blank=True,null=True)
+    y16 = models.IntegerField(blank=True,null=True)
+    y17 = models.IntegerField(blank=True,null=True)
+    y18 = models.IntegerField(blank=True,null=True)
+    y19 = models.IntegerField(blank=True,null=True)
+    national_or_inter = models.CharField(max_length=13)
+    indexing = models.CharField(max_length=500, blank=True,null=True)
+    citations = models.IntegerField(blank=True,null=True)
+    impact_factor = models.CharField(max_length=80, blank=True,null=True)
+    i10_index = models.IntegerField(blank=True,null=True)
+    h_index = models.IntegerField(blank=True,null=True)
+
+    def __str__(self):
+        return self.name_of_faculty
+
+class environmental_dept_book_chapters(models.Model):
+    sl_no = models.IntegerField()
+    name_of_book_chapter = models.CharField(max_length=500)
+    names_of_authors = models.CharField(max_length=500)
+    year_of_pub = models.IntegerField()
+    name_of_pub = models.CharField(max_length=500)
+
+    def __str__(self):
+        return self.name_of_book_chapter
+
+class environmental_dept_grants_and_patents(models.Model):
+    description = models.TextField()
+    grant_or_patent = models.CharField(max_length=500, choices=(
+        ('GRANT', 'Grant'), ('PATENT', 'Patent')), default='GRANT')
+
+    def __str__(self):
+         return self.description[:50] + "... : " + self.grant_or_patent
+
+class environmental_dept_laboratory_facilities_gallary(models.Model):
+    room_no = models.CharField(max_length=10, default='A321')
+    image = models.ImageField(upload_to='department/gallery/ENV/laboratory/')
+
+    def __str__(self):
+        return '{}'.format(self.image)
+
+class environmental_dept_lab_facilities(models.Model):
+    sno = models.IntegerField()
+    name = models.CharField(max_length=200)
+    qty = models.IntegerField()
+    config_specs = models.TextField()
+    softwares = models.TextField()
+
+    def __str__(self):
+        return self.name
+
+class environmental_dept_major_equipments(models.Model):
+    equipment_description = models.TextField()
+
+    def __str__(self):
+        return self.equipment_description[:50] + "..."
+
+class environmental_dept_classroom_description(models.Model):
+    description = models.TextField()
+
+    def __str__(self):
+        return self.description[:70] + "..."
+        
+class environmental_dept_classroom(models.Model):
+    room_no = models.CharField(max_length=10, default='A321')
+    classroom = models.FileField(upload_to='department/ENV/data/classroom/')
+
+    def __str__(self):
+        return '{}'.format(self.classroom)
+
+class environmental_dept_library(models.Model):
+    description = models.TextField()
+    
+    def __str__(self):
+        return self.description[:100] + '...'
+
+class environmental_dept_accreditation(models.Model):
+    sno = models.IntegerField()
+    name = models.CharField(max_length=200)
+    designation = models.TextField(blank=True)
+    member_type = models.CharField(max_length=100, choices=(
+        ('PAC', 'Program Assessment Committee (PAC)'),
+        ('DAB', 'Department Advisory Board (DAB)')), default='DAB')
+
+    def __str__(self):
+        return self.name + " : " + self.member_type
+        
+class environmental_dept_placement(models.Model):
+    year_choices_array = []
+    for year in range(2010, cur_year+1):
+        year_choices_array.append((year, year))
+    year_choices = tuple(year_choices_array)
+    
+    sno = models.IntegerField()
+    company_name = models.CharField(max_length=500)
+    latest_year = models.IntegerField(choices=year_choices, default=cur_year)
+    students_selected_for_latest_year = models.IntegerField()
+    second_latest_year = models.IntegerField(choices=year_choices, default=cur_year-1)
+    students_selected_for_2nd_latest_year = models.IntegerField()
+    third_latest_year = models.IntegerField(choices=year_choices, default=cur_year-2)
+    students_selected_for_3rd_latest_year = models.IntegerField()
+    fourth_latest_year = models.IntegerField(choices=year_choices, default=cur_year-3)
+    students_selected_for_4th_latest_year = models.IntegerField()
+    fifth_latest_year = models.IntegerField(choices=year_choices, default=cur_year-4)
+    students_selected_for_5th_latest_year = models.IntegerField()
+    
+    def __str__(self):
+        return self.company_name
+
+class environmental_dept_alumni(models.Model):
+    name = models.CharField(max_length=500)
+    designation = models.CharField(max_length=500)
+    description = models.TextField()
+    image = models.ImageField(upload_to='department/alumni/ENV/')
+    sno = models.IntegerField(default='1')
+    
+    def __str__(self):
+        return self.name + ":" + self.designation
+
+class environmental_dept_achievements(models.Model):
+    achievement_description = models.TextField()
+    achievement_type = models.CharField(max_length=500, choices=(
+        ('STUDENT', 'Student Achievement'), ('STAFF', 'Staff Achievement')), default='STAFF')
+
+    def __str__(self):
+        return self.achievement_description[:50] + "... : " + self.achievement_type 
+
+class environmental_dept_forum(models.Model):
+    description = models.TextField(help_text="Enter a short description about your department's forum.")
+    
+    def __str__(self):
+        return self.description[:70] + '...'
+
+class environmental_dept_activities(models.Model):
+    sno = models.IntegerField()
+    activity_name = models.CharField(max_length=200)
+    activity_description = models.TextField()
+    activity_type = models.CharField(max_length=500, choices=(
+        ('RE', 'Forum Activity'), ('STC', 'Department Activity')), default='RE')
+
+    def __str__(self):
+        return self.activity_name
+
+class environmental_dept_timetable(models.Model):
+    course = models.CharField(max_length=100, choices=(
+        ('BE', 'B.E.'), ('MT', 'M.Tech')), default='BE')
+    semester = models.IntegerField()
+    section = models.CharField(max_length=1)
+    timetable = models.FileField(upload_to='department/ENV/data/timetable/')
+
+    def __str__(self):
+        return self.course + ": " + str(self.semester) + "-" + self.section
+
+class environmental_dept_events(models.Model):
+    events = models.FileField(upload_to='department/ENV/data/events/')
+    semester = models.CharField(max_length=10)
+    name = models.CharField(max_length=30)
+
+    def __str__(self):
+        return '{}'.format(self.events)
+
+class environmental_dept_learning_materials(models.Model):
+    semester = models.IntegerField(choices=list(zip(range(3, 9), range(3, 9))))
+    subject_code = models.CharField(max_length=100)
+    material = models.FileField(upload_to='department/ENV/data/learning-materials')
+
+    def __str__(self):
+        return 'SEM-' + str(self.semester) + ' : ' + self.subject_code
+
+class environmental_dept_result_analysis(models.Model):
+    
+    def validate_image(image):
+        req_width = 750
+        req_height = 450
+        height = image.height 
+        width = image.width
+        if width != req_width and height != req_height:
+            raise ValidationError("Height and Width of image should be 750x450")
+
+    sem_choices = ((3,'3rd'),(4,'4th'),(5,'5th'),(6,'6th'),(7,'7th'),(8,'8th'),)
+    semester = models.IntegerField(choices=sem_choices)
+    result_analysis_pdf = models.FileField(upload_to='department/ENV/result-analysis/')
+    result_analysis_image = models.ImageField(upload_to='department/ENV/result-analysis/',
+                                validators=[validate_image],
+                                help_text='Upload image of result analysis bar graph or pie chart')
+    
+    def __str__(self):
+        return "Semester: " + str(self.semester)
 
 class environmental_dept_gallery(models.Model):
     image = models.ImageField(upload_to='department/gallery/ENV/')
 
     def __str__(self):
         return '{}'.format(self.image)
-

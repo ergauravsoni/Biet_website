@@ -1,0 +1,874 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load custom_tags %}
+{% block content %}
+
+<!-- ******CONTENT****** -->
+<div class="content container">
+    <div class="page-wrapper">
+        <header class="page-heading clearfix">
+            <h1 class="heading-title pull-left">Department of Placement</h1>
+        </header>
+        <div class="page-content">
+            <div class="row page-row">
+                <div class="content-wrapper col-md-12 col-sm-8">
+                    <article class="welcome col-md-12 col-sm-8">
+			<div class="col-md-8">
+                            <!-- Slideshow container -->
+                            <div class="slideshow-container" style="height: 380px;">
+
+                                <!-- Full-width images with number and caption text -->
+                                {% for image in slider_image_data %}
+                                <div class="mySlides autoSlides fade">
+                                <div class="numbertext">{{ image.sno }} / {{ slider_image_data|length }}</div>
+                                <img class="img-responsive" src="{{image.image.url}}"
+                                alt="" style="width:750px; height: 397px; object-fit: cover;"/>
+                                <div class="text" style="bottom: 0px; background-color: rgba(0,0,0,0.8);">
+                                    {{image.image_caption}}
+                                </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                            <br>
+                        </div>
+                        <div class="col-md-4">
+                            <section class="events">
+                                <div
+                                    class="col-md-12 card shadow-lg p-3 mb-5 bg-white rounded contain textcolor-header bgcolor" style="text-align: center;">
+                                    <div class="col-md-12">
+                                        <h1 class=""><b>Quick Facts</b></h1>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <h3 class="" ><b>64</b></h3>
+                                        <h6>
+                                            No. of Companies Visited
+                                        </h6>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <h3 class=""><b>Best</b></h3>
+                                        <h6>Job Offers</h6>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <h3 class="">
+                                            <b>12 LPA</b>
+                                        </h3>
+                                        <h6>Highest Package</h6>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <h3 class=""><b>3.5 LPA</b></h3>
+                                        <h6>Avgerage Package</h6>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <h3 class=""><b>95%</b></h3>
+                                        <h6>Placement Percentage</h6>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </article>
+                </div>
+                <div class="content-wrapper col-md-12 col-sm-8">
+                    <article class="welcome col-md-12 col-sm-8">
+                        <div class="" style="text-align: justify;">
+                            <p>
+                                Training and Placement Cell is a backbone of any institute which is committed to develop dynamism, strong human values technocratic and good leadership qualities as per the need of rapidly changing technology working with a strategy oriented planning. The Placement Cell plays a crucial role in locating job opportunities for Under Graduates and Post Graduates passing out from the college by keeping in touch with reputed firms and industrial establishments.
+                            </p>
+                            <p>
+                                The Placement Cell operates round the year to facilitate contacts between companies and graduates. The number of students placed through the campus interviews is continuously rising. On invitation, many reputed industries visit the institute to conduct interviews.
+                            </p>
+                            <p>
+                                This cell apart from the normal placement activities have a frequent personal interaction with the students and understand and realize their problems better and try to solve effectively and boost their confidence in every aspect.
+                            </p>
+                            <p>
+                                The Placement Cell organizes career guidance programs for all the students starting from first year. The cell arranges training programs like Mock Interviews, Group Discussions, Communication Skills Workshop etc and it also organizes Public Sector Exam Training for students who are interested to join Government Sectors. It also invites HR Managers from different industries to conduct training programmes for final year students.
+                            </p>
+                            <p>
+                                In addition to the above-mentioned activities, the cell arranges expert lectures of Corporate Managers in both Technical and HRD streams for the students and faculty of the Institute. There are various Workshops and Seminars organized for the benefit of students regarding the latest trend and technology in the industry.
+                            </p>
+                            <p>
+                                TATA CONSULTANCY SERVICES has accredited our college in the year 1998, from which they are visiting our college every year for conducting Placement Training programmes and Campus Interviews.
+                            </p>
+                            <p>
+                                The Cell is well equipped with ample infrastructure in Terms of Testing halls, Seminar hall for Pre Placement Talk & Presentations, Conference room, Board Room  etc. and Computer labs for online tests also the cell has video conference facility available for the students.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+                <!--//content-wrapper-->
+                <div class="content container">
+                    <div class="page-wrapper">
+                        <div class="page-content">
+                            <div class="row page-row">
+                                <div class="faq-wrapper col-md-12 col-sm-7">
+                                    <div class="panel-group" id="accordion">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+                                                    <a data-toggle="collapse" data-parent="#accordion"
+                                                        href="#collapse-1">
+                                                        Vision, Mission, Goals and Objectives
+                                                    </a>
+                                                </h4>
+                                            </div>
+                                            <!--//pane-heading-->
+                                            <div id="collapse-1" class="panel-collapse collapse in">
+                                                <div class="panel-body">
+                                                    <div class="content-wrapper col-md-12 col-sm-8">
+                                                        <div class="content container">
+                                                            <div class="page-wrapper">
+                                                                <div class="page-content">
+                                                                    <div class="row page-row">
+                                                                        <article
+                                                                            class="welcome col-md-11 col-sm-7 content-text">
+                                                                            <h3 class="no-margin-top text-highlight">
+                                                                                Vision</h3>
+                                                                            <p>
+                                                                                To increase the employability skills of our students at institutional level; to furnish our students with conceptualized professional skills and guiding them towards the bright future and career all around the globe with hard work and justice.
+                                                                            </p>
+                                                                        </article>
+                                                                        <!--//page-content-->
+                                                                    </div>
+                                                                    <!--//page-row-->
+                                                                </div>
+                                                                <!--//page-content-->
+                                                            </div>
+                                                            <!--//page-->
+                                                        </div>
+                                                        <div class="content container">
+                                                            <div class="page-wrapper">
+                                                                <div class="page-content">
+                                                                    <div class="row page-row content-text">
+                                                                        <article class="welcome col-md-11 col-sm-7">
+                                                                            <h3 class="no-margin-top text-highlight">
+                                                                                Mission</h3>
+                                                                                <ol class="custom-list-style medical">
+                                                                                    <li>
+                                                                                        To create maximum opportunities for the placements by establishing a rapport with the   employers multinational companies.
+                                                                                    </li>
+                                                                                    <br>
+                                                                                    <li>
+                                                                                        To impart personality development training to the students to face the competitive era.
+                                                                                    </li>
+                                                                                    <br>
+                                                                                    <li>
+                                                                                        To motivate and guide students to make smart career choices.
+                                                                                    </li>
+                                                                                    <br>
+                                                                                    <li>
+                                                                                        To enable them to become ethical professionals with diverse skills.
+                                                                                    </li>
+                                                                                </ol>
+                                                                        </article>
+                                                                        <!--//page-content-->
+                                                                    </div>
+                                                                    <!--//page-row-->
+                                                                </div>
+                                                                <!--//page-content-->
+                                                            </div>
+                                                            <!--//page-->
+                                                        </div>
+                                                        <div class="content container">
+                                                            <div class="page-wrapper">
+                                                                <div class="page-content">
+                                                                    <div class="row page-row content-text">
+                                                                        <article class="welcome col-md-11 col-sm-7">
+                                                                            <h3 class="no-margin-top text-highlight">
+                                                                                Goals
+                                                                            </h3>
+                                                                            <ol class="custom-list-style medical">
+                                                                                <li>
+                                                                                    To enhance the employability skills among the students to meet out the corporate expectations.
+                                                                                </li>
+                                                                                <br>
+                                                                                <li>
+                                                                                    To place all the students in the prospective IT, Management Companies and core companies.
+                                                                                </li>
+                                                                                <br>
+                                                                                <li>
+                                                                                    To improve the industry – institute relationships.
+                                                                                </li>
+                                                                            </ol>
+                                                                        </article>
+                                                                        <!--//page-content-->
+                                                                    </div>
+                                                                    <!--//page-row-->
+                                                                </div>
+                                                                <!--//page-content-->
+                                                            </div>
+                                                            <!--//page-->
+                                                        </div>
+                                                        <div class="content container">
+                                                            <div class="page-wrapper">
+                                                                <div class="page-content">
+                                                                    <div class="row page-row content-text">
+                                                                        <article class="welcome col-md-11 col-sm-7">
+                                                                            <h3 class="no-margin-top text-highlight">
+                                                                                Objectives</h3>
+                                                                                <ol class="custom-list-style medical">
+                                                                                    <li>
+                                                                                        To provide class training for the students through a continuous training module.
+                                                                                    </li>
+                                                                                    <br>
+                                                                                    <li>
+                                                                                        To counsel the students to improve their career exposure across the global.
+                                                                                    </li>
+                                                                                    <br>
+                                                                                    <li>
+                                                                                        To produce the most competitive students to fit in all scenario of the job market.
+                                                                                    </li>
+                                                                                    <br>
+                                                                                    <li>
+                                                                                        To approach top multinational companies for arranging the campus recruitment.
+                                                                                    </li>
+                                                                                </ol>
+                                                                        </article>
+                                                                        <!--//page-content-->
+                                                                    </div>
+                                                                    <!--//page-row-->
+                                                                </div>
+                                                                <!--//page-content-->
+                                                            </div>
+                                                            <!--//page-->
+                                                        </div>
+                                                    </div>
+                                                    <!--//content-wrapper-->
+                                                </div>
+                                                <!--//panel-body-->
+                                            </div>
+                                            <!--//panel-colapse-->
+                                        </div>
+                                        <!--//panel-->
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+                                                    <a data-toggle="collapse" data-parent="#accordion" class="collapsed"
+                                                        href="#collapse-2">
+                                                        Dean Message
+                                                    </a>
+                                                </h4>
+                                            </div>
+                                            <!--//pane-heading-->
+                                            <div id="collapse-2" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    <!-- <h3>HOD Profile</h3> -->
+                                                    <div class="row page-row">
+
+                                                        {% for dean in coordinators_data %}
+
+                                                        {%  if dean.staff_type == 'DEAN'  %}
+
+
+                                                        <div class="col-md-12">
+
+                                                            <div class="col-md-4 text-center">
+                                                                <div class="album-cover">
+                                                                    <!-- <a href="#"> -->
+                                                                    <img class="img-thumbnail"
+                                                                        src="{{dean.image.url}}" alt=""
+                                                                        style="width:330px;height:360px;">
+
+
+                                                                    <!-- </a> -->
+                                                                    <div class="desc">
+                                                                        <h5>{{dean.name}}</h5>
+                                                                        <h6>Dean - Training & Placement</h6>
+                                                                        <h4><small>{{dean.designation}}<br>{{dean.department}}</small>
+                                                                        </h4>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-md-8 text-center">
+                                                                <div class="" style="  text-align: justify;">
+                                                                    <p>
+                                                                    	{{dean.description}}   
+                                                                    </p>
+                                                                </div>
+                                                                <a href="{{faculty_data.detail.url}}"
+                                                                    class="btn btn-theme view-pdf">Read More</a>
+                                                            </div>
+                                                        </div>
+
+                                                        {%  elif dean.staff_type == 'PB' %}
+
+
+                                                        <div class="col-md-12">
+
+                                                            <div class="col-md-4 text-center">
+                                                                <div class="album-cover">
+                                                                    <!-- <a href="#"> -->
+                                                                    <img class="img-thumbnail"
+                                                                        src="{{dean.image.url}}" alt=""
+                                                                        style="width:330px;height:360px;">
+
+
+                                                                    <!-- </a> -->
+                                                                    <div class="desc">
+                                                                        <h5>{{dean.name}}</h5>
+                                                                        <h6>Dean - Public Relation</h6>
+                                                                        <h4><small>{{dean.designation}}<br>{{dean.department}}</small>
+                                                                        </h4>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-md-8 text-center">
+                                                                <div class="" style="  text-align: justify;">
+                                                                    <p>
+                                                                    	{{dean.description}}   
+                                                                    </p>
+                                                                </div>
+                                                                <a href="{{faculty_data.detail.url}}"
+                                                                    class="btn btn-theme view-pdf">Read More</a>
+                                                            </div>
+                                                        </div>
+
+
+                                                        {% else %}
+
+
+                                                        {% endif %}
+                                                        {% endfor %}
+                                                    </div>
+                                                </div>
+                                                <!--//panel-body-->
+
+                                                <!--//panel-body-->
+                                            </div>
+                                            <!--//panel-colapse-->
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+                                                    <a data-toggle="collapse" data-parent="#accordion" class="collapsed"
+                                                        href="#collapse-3">
+                                                        Department Profile
+                                                    </a>
+                                                </h4>
+                                            </div>
+                                            <!--//pane-heading-->
+                                            <div id="collapse-3" class="panel-collapse collapse">
+
+                                                <!--//panel-body-->
+                                                <div class="panel-body">
+                                                    <h3>Placement Coordinators</h3>
+                                                    <div class="row page-row col-md-12">
+                                                        <div class="table-responsive">
+                                                            <table class="table table-striped table-boxed">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>S.No.</th>
+                                                                        <th>Name</th>
+                                                                        <th>Designation</th>
+                                                                        <th>Department</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    {% for staff in coordinators_data %}
+                                                                    {% if staff.staff_type == 'OTHER' %}
+                                                                    <tr>
+                                                                        <td>{{staff.sno}}.</td>
+                                                                        <td>{{staff.name}}</td>
+                                                                        <td>{{staff.designation}}</td>
+                                                                        <td>{{staff.department}}</td>
+                                                                    </tr>
+                                                                    {% endif %}
+                                                                    {% endfor %}
+                                                                </tbody>
+                                                            </table>
+                                                            <!--//table-->
+                                                        </div>
+                                                        <!--//table-responsive-->
+                                                    </div>
+                                                </div>
+                                                <!--//panel-body-->
+                                            </div>
+                                            <!--//panel-colapse-->
+                                        </div>
+                                        <!--//panel-->
+
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+                                                    <a data-toggle="collapse" data-parent="#accordion" class="collapsed"
+                                                        href="#collapse-4">
+                                                        Placement Process
+                                                    </a>
+                                                </h4>
+                                            </div>
+                                            <!--//pane-heading-->
+                                            <div id="collapse-4" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    <ul class="nav nav-tabs">
+                                                        <li class="active"><a href="#tab1" data-toggle="tab"><strong>For Students</strong></a></li>
+                                                        <li><a href="#tab2" data-toggle="tab"><strong>For Recruiters</strong></a></li>
+                                                    </ul>
+                                                    <div class="tab-content">
+                                                        <div class="tab-pane active" id="tab1">
+                                                            <div class="row medical" style="padding: 10px;">
+                                                                <p>
+                                                                    The placement process is the process by which a recruiter helps a client fill one of its open positions through the successful matching of the job’s requirements to what a potential candidate offers in the form of skills.
+                                                                </p>
+                                                                <h3>
+                                                                    Student's Data Preparation
+                                                                </h3>
+                                                                <p>
+                                                                    During sixth semester, all the students are informed to enter their details as per the format supplied to them. The department coordinator in turn validates the data of each and every student of their department. The final data sheet of each department is submitted to the placement cell. The placement cell consolidates the data sheet of all the branches. The student’s data sheet is updated by entering the result of the previous semester.
+                                                                </p>
+                                                                <h3>
+                                                                    Invitation
+                                                                </h3>
+                                                                <p>
+                                                                    Placement cell send the fresh formal invitation to all the companies which are visiting the campus for the drive regularly. In addition, placement cell identify the new companies and invite them through social media like LinkedIn, FaceBook and so on. In turn, HR from all the companies inform their schedule of drive in our campus.
+                                                                </p>
+                                                                <h3>
+                                                                    Drive Process
+                                                                </h3>
+                                                                <p>
+                                                                    Human Resource from the respective companies inform the placement cell well in advance. Based on the requirement of the company, we prepare the circular mentioning the eligibility criteria and the essential details to students. This circular is brought to the notice of each and every student and finally displayed in the concerned department notice board.
+                                                                </p>
+                                                                <p>
+                                                                    Following are the events during the day of placement drive:
+                                                                </p>
+                                                                <ol class="custom-list-style medical">
+                                                                    <li>
+                                                                        Pre placement talk
+                                                                    </li>
+                                                                    <br>
+                                                                    <li>
+                                                                        Aptitude test
+                                                                    </li>
+                                                                    <br>
+                                                                    <li>
+                                                                        Group Discussion, if any
+                                                                    </li>
+                                                                    <br>
+                                                                    <li>
+                                                                        Interview (Technical + HR)
+                                                                    </li>
+                                                                    <br>
+                                                                    <li>
+                                                                        Announcement of final selection
+                                                                    </li>
+                                                                </ol>
+                                                                <h3>
+                                                                    Eligibility Criteria
+                                                                </h3>
+                                                                <ul class="medical">
+                                                                    <li>
+                                                                        General eligibility criterion for most of the companies is aggregate of 60% or 6.75 CGPA, i.e., your average percentage score in all semesters.
+                                                                    </li>
+                                                                    <br>
+                                                                    <li>
+                                                                        However, some companies like Quickcilwer, Xoriant, Teksystem, Microsoft… demand a 7.75 CGPA aggregate. So it is advisable to score at least above 6.75 CGPA right from the first semester and above 7.75 CGPA for better opportunities.
+                                                                    </li>
+                                                                    <br>
+                                                                    <li>
+                                                                        For TCS NINJA drive, the students who maintained 7.75 CGPA consistently are exempted from the written test.
+                                                                    </li>
+                                                                    <br>
+                                                                    <li>
+                                                                        Another important criterion is that students should not have any backlogs.
+                                                                    </li>
+                                                                    <br>
+                                                                    <li>
+                                                                        Although a few companies may allow up to ONE backlog. A handful of companies do not tolerate any backlogs at all.
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <div class="tab-pane" id="tab2">
+                                                            <div class="row medical">
+                                                                <ul class="medical">
+                                                                    <li>
+                                                                        The Placement activities are initiated in the month of July & August every year by sending invites to all the recruiting companies.
+                                                                    </li>
+                                                                    <br>
+                                                                    <li>
+                                                                        Interested companies are required to send us the participation confirmation along with necessary prerequisites (Tentative Drive Date, Eligibility Criteria, Job Description & Salary Package, etc.).
+                                                                    </li>
+                                                                    <br>
+                                                                    <li>
+                                                                        The T&P Department scrutinizes the requirements and Campus Recruitment dates are allocated to the participating companies on mutual confirmations.
+                                                                    </li>
+                                                                    <br>
+                                                                    <li>
+                                                                        Eligible students are informed to register and participate in the drive.
+                                                                    </li>
+                                                                    <br>
+                                                                    <li>
+                                                                        Companies visit the campus on the allotted date(s) and conduct tests/interviews as per their recruitment process. It is appreciated if the company can announce the final results on the same day of the recruitment.
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div> 
+                                            </div>
+                                            <!--//panel-colapse-->
+                                        </div>
+                                        <!--//panel-->
+
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+                                                    <a data-toggle="collapse" data-parent="#accordion" class="collapsed"
+                                                        href="#collapse-5">
+                                                        Infrastructure
+                                                    </a>
+                                                </h4>
+                                            </div>
+
+
+
+                                            <!--//pane-heading-->
+                                            <div id="collapse-5" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    
+                                                    <div class="col-md-12">
+                                                        <h3 class="no-margin-top text-highlight">
+                                                            Placement Infrastructure to Support Campus Recruitment Activities
+                                                        </h3>
+                                                        <ul class="custom-list-style medical">
+
+                                                            {% for infrastructure in infrastructure_data %}
+                                                            <li><i
+                                                                    class="fa fa-star"></i>{{infrastructure.facility_description}}
+                                                            </li>
+                                                            <br>
+                                                            {% endfor %}
+                                                        
+                                                        </ul>
+                                                    </div>
+                                                    
+                                                    <div class="col-md-12">
+                                                        {% with first=1 %}
+                                                        {% for image in facilities_gallery %}
+                                                        {% if image.image_type == 'PH' %}
+                                                        {% if first == 1 %}
+                                                        <h3 class="no-margin-top text-highlight">
+                                                            {{image.get_image_type_display}}
+                                                        </h3>
+                                                        {% update_variable 2 as first %}
+                                                        {% endif %}
+                                                        <a class="prettyphoto col-md-3 col-sm-3" rel="prettyPhoto[gallery]"
+                                                            title="" href="{{image.image.url}}">
+                                                                <div class="container-photo-overlay">
+                                                                    <img class="image-photo-overlay img-responsive img-thumbnail"
+                                                                        src="{{image.image.url}}" alt=""
+                                                                        style=" height: 170px;" />    
+                                                                    <div class="middle-photo-overlay">
+                                                                    <div class="text-photo-overlay">{{image.room_no}}</div>
+                                                                    </div>
+                                                                </div>
+                                                        </a>
+                                                        {% endif %}
+                                                        {% endfor %}
+                                                        {% endwith %}        
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        {% with first=1 %}
+                                                        {% for image in facilities_gallery %}
+                                                        {% if image.image_type == 'AUD' %}
+                                                        {% if first == 1 %}
+                                                        <h3 class="no-margin-top text-highlight">
+                                                            {{image.get_image_type_display}}
+                                                        </h3>
+                                                        {% update_variable 2 as first %}
+                                                        {% endif %}
+                                                        <a class="prettyphoto col-md-3 col-sm-3" rel="prettyPhoto[gallery]"
+                                                            title="" href="{{image.image.url}}">
+                                                                <div class="container-photo-overlay">
+                                                                    <img class="image-photo-overlay img-responsive img-thumbnail"
+                                                                        src="{{image.image.url}}" alt=""
+                                                                        style=" height: 170px;" />    
+                                                                    <div class="middle-photo-overlay">
+                                                                    <div class="text-photo-overlay">{{image.room_no}}</div>
+                                                                    </div>
+                                                                </div>
+                                                        </a>
+                                                        {% endif %}
+                                                        {% endfor %}
+                                                        {% endwith %}        
+                                                    </div><div class="col-md-12">
+                                                        {% with first=1 %}
+                                                        {% for image in facilities_gallery %}
+                                                        {% if image.image_type == 'PBR' %}
+                                                        {% if first == 1 %}
+                                                        <h3 class="no-margin-top text-highlight">
+                                                            {{image.get_image_type_display}}
+                                                        </h3>
+                                                        {% update_variable 2 as first %}
+                                                        {% endif %}
+                                                        <a class="prettyphoto col-md-3 col-sm-3" rel="prettyPhoto[gallery]"
+                                                            title="" href="{{image.image.url}}">
+                                                                <div class="container-photo-overlay">
+                                                                    <img class="image-photo-overlay img-responsive img-thumbnail"
+                                                                        src="{{image.image.url}}" alt=""
+                                                                        style=" height: 170px;" />    
+                                                                    <div class="middle-photo-overlay">
+                                                                    <div class="text-photo-overlay">{{image.room_no}}</div>
+                                                                    </div>
+                                                                </div>
+                                                        </a>
+                                                        {% endif %}
+                                                        {% endfor %}
+                                                        {% endwith %}        
+                                                    </div><div class="col-md-12">
+                                                        {% with first=1 %}
+                                                        {% for image in facilities_gallery %}
+                                                        {% if image.image_type == 'DR' %}
+                                                        {% if first == 1 %}
+                                                        <h3 class="no-margin-top text-highlight">
+                                                            {{image.get_image_type_display}}
+                                                        </h3>
+                                                        {% update_variable 2 as first %}
+                                                        {% endif %}
+                                                        <a class="prettyphoto col-md-3 col-sm-3" rel="prettyPhoto[gallery]"
+                                                            title="" href="{{image.image.url}}">
+                                                                <div class="container-photo-overlay">
+                                                                    <img class="image-photo-overlay img-responsive img-thumbnail"
+                                                                        src="{{image.image.url}}" alt=""
+                                                                        style=" height: 170px;" />    
+                                                                    <div class="middle-photo-overlay">
+                                                                    <div class="text-photo-overlay">{{image.room_no}}</div>
+                                                                    </div>
+                                                                </div>
+                                                        </a>
+                                                        {% endif %}
+                                                        {% endfor %}
+                                                        {% endwith %}        
+                                                    </div><div class="col-md-12">
+                                                        {% with first=1 %}
+                                                        {% for image in facilities_gallery %}
+                                                        {% if image.image_type == 'LAB' %}
+                                                        {% if first == 1 %}
+                                                        <h3 class="no-margin-top text-highlight">
+                                                            {{image.get_image_type_display}}
+                                                        </h3>
+                                                        {% update_variable 2 as first %}
+                                                        {% endif %}
+                                                        <a class="prettyphoto col-md-3 col-sm-3" rel="prettyPhoto[gallery]"
+                                                            title="" href="{{image.image.url}}">
+                                                                <div class="container-photo-overlay">
+                                                                    <img class="image-photo-overlay img-responsive img-thumbnail"
+                                                                        src="{{image.image.url}}" alt=""
+                                                                        style=" height: 170px;" />    
+                                                                    <div class="middle-photo-overlay">
+                                                                    <div class="text-photo-overlay">{{image.room_no}}</div>
+                                                                    </div>
+                                                                </div>
+                                                        </a>
+                                                        {% endif %}
+                                                        {% endfor %}
+                                                        {% endwith %}        
+                                                    </div>
+
+                                                </div>
+                                                <!--//panel-body-->
+                                            </div>
+                                            <!--//panel-colapse-->
+                                        </div>
+                                        <!--//panel-->
+
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+                                                    <a data-toggle="collapse" data-parent="#accordion" class="collapsed"
+                                                        href="#collapse-6">
+                                                        Hiring Statistics
+                                                    </a>
+                                                </h4>
+                                            </div>
+                                            <!--//pane-heading-->
+                                            <div id="collapse-6" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    {% for image in hiring_images %}
+						    {% if image.sno == 3 %}
+                                                    <div class="col-md-3"></div>
+                                                    {% endif %}
+                                                    <a class="prettyphoto col-md-6 col-sm-6 col-xs-12" rel="prettyPhoto[gallery]" title=""
+                                                            href="{{image.image.url}}" style="text-align: center;"><img class="img-responsive img-thumbnail" src="{{image.image.url}}"
+                                                                    alt="" style="height: 350px;" /></a>
+                                    
+                                                    {% endfor %}
+                                                </div>
+                                                <!--//panel-body-->
+                                            </div>
+                                            <!--//panel-colapse-->
+                                        </div>				
+	
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+                                                    <a data-toggle="collapse" data-parent="#accordion" class="collapsed"
+                                                        href="#collapse-7">
+                                                        Industrial Collaborations and MOUs
+                                                    </a>
+                                                </h4>
+                                            </div>
+                                            <!--//pane-heading-->
+                                            <div id="collapse-7" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                    				    <div class="table-responsive">
+                                                        <table class="table table-striped table-boxed">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th><center>S.No.</center></th>
+                                                                    <th><center>Title of MOU</center></th>
+                                                                    <th><center>MOU signed with<br>(Academia/Industry/Government)</center></th>
+                                                                    <th><center>Signing Date</center></th>
+                                                                </tr>
+
+                                                            </thead>
+                                                            <tbody>
+                                                                {% for mou in mou_data %}
+                                                                <tr>
+                                                                    <td>{{mou.sno}}</td>
+                                                                    <td>{{mou.title_of_MOU}}</td>
+                                                                    <td>{{mou.mOU_signed_with}}</td>
+                                                                    <td>{{mou.signing_date}}</td>
+                                                                </tr>
+                                                                {% endfor %}
+
+                                                            </tbody>
+                                                        </table>
+                                                        <!--//table-->
+                                                    </div>
+                                                    <!--//table-responsive-->
+                                                </div>
+                                                <!--//panel-body-->
+                                            </div>
+                                            <!--//panel-colapse-->
+                                        </div>
+                                        <!--//panel-->
+
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+                                                    <a data-toggle="collapse" data-parent="#accordion" class="collapsed"
+                                                        href="#collapse-8">
+                                                        Esteemed Recruiters
+                                                    </a>
+                                                </h4>
+                                            </div>
+                                            <!--//pane-heading-->
+                                            <div id="collapse-8" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                    
+                                                </div>
+                                                <!--//panel-body-->
+                                            </div>
+                                            <!--//panel-colapse-->
+                                        </div>
+                                        <!--//panel-->
+
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+                                                    <a data-toggle="collapse" data-parent="#accordion" class="collapsed"
+                                                        href="#collapse-9">
+                                                        Contact Details
+                                                    </a>
+                                                </h4>
+                                            </div>
+                                            <!--//pane-heading-->
+                                            <div id="collapse-9" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    <div class="row page-row">
+
+                                                        {% for contact in contacts_data %}
+
+                                                        <section class="widget has-divider">
+                                                            <div class="section-content">
+                                                                <p><b>{{contact.name}}</b><br>
+                                                                    <b>{{contact.training_and_placement_designation}}</b><br>
+                                                                    {% if contact.department_designation == '' %}
+                                                                    {% else %}
+                                                                    {{contact.department_designation}}<br>
+                                                                    {% endif %}
+                                                                    {{contact.department}}<br>
+                                                                    Contact No. : {{contact.contact_no}}<br>
+                                                                    {% if contact.email == '' %}           
+                                                                    {% else %}       
+                                                                    Email : {{contact.email}}<br>
+                                                                    {% endif %}
+                                                                </p>
+                                                            </div>
+                                                        </section>
+                                                        
+                                                        {% endfor %}
+                                                    </div>
+                                                </div>
+                                                <!--//panel-body-->
+                                            </div>
+                                            <!--//panel-colapse-->
+                                        </div>
+                                        <!--//panel-->
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+                                                    <a data-toggle="collapse" data-parent="#accordion" class="collapsed"
+                                                        href="#collapse-10">
+                                                        Glimpses
+                                                    </a>
+                                                </h4>
+                                            </div>
+                                            <!--//pane-heading-->
+                                            <div id="collapse-10" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    <ul class="nav nav-tabs">
+                                                        <li class="active"><a href="#tab3" data-toggle="tab"><strong>Placement</strong></a></li>
+                                                        <li><a href="#tab4" data-toggle="tab"><strong>Pre-Placement Talks</strong></a></li>
+                                                    </ul>
+                                                    <div class="tab-content">
+                                                        <div class="tab-pane active" id="tab3">
+                                                            <div class="row medical">
+                                                                {% for image in placement_images %}
+                                                                <a class="prettyphoto col-md-3 col-sm-3 col-xs-6" rel="prettyPhoto[gallery]" title=""
+                                                                        href="{{image.image.url}}"><img class="img-responsive img-thumbnail" src="{{image.image.url}}"
+                                                                                alt="" style="height: 150px;" /></a>
+                                                                {% endfor %}
+                                                            </div>
+                                                        </div>
+                                                        <div class="tab-pane" id="tab4">
+                                                            <div class="row medical">
+                                                                {% for image in pre_placement_images %}
+                                                                <a class="prettyphoto col-md-3 col-sm-3 col-xs-6" rel="prettyPhoto[gallery]" title=""
+                                                                        href="{{image.image.url}}"><img class="img-responsive img-thumbnail" src="{{image.image.url}}"
+                                                                                alt="" style="height: 150px;" /></a>
+                                                                {% endfor %}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--//panel-body-->
+                                            </div>
+                                            <!--//panel-colapse-->
+                                        </div>
+                                        <!--//panel-->
+                                    </div>
+                                    <!--//panel-group-->
+                                </div>
+                                <!--//faq-wrapper-->
+                            </div>
+                            <!--//page-row-->
+                        </div>
+                        <!--//page-content-->
+                    </div>
+                    <!--//page-->
+                </div>
+                <!--//content-->
+            </div>
+            <!--//page-row-->
+        </div>
+        <!--//page-content-->
+    </div>
+    <!--//page-->
+</div>
+<!--//content-->
+
+
+{% endblock %}
+

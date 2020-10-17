@@ -7,14 +7,14 @@
 */
 /* ======= Base ======= */
 :root {
-  --main-bg-color: #8A5A44;
-  --main-bg-color-2: #633c2c;
-  --main-bg-color-nav-3: #543021;
-  --main-bg-color-nav-4: #402a21;
+  --main-bg-color: #002946;
+  --main-bg-color-2: #307672;
+  --main-bg-color-nav-3: #002038;
+  --main-bg-color-nav-4: #002038;
   --main-bg-color-7: #192A56;
   --main-bg-color-8: #ffffff;
-  --main-bg-color-9: #C38E70;
-  --main-bg-color-10: #faebe3;
+  --main-bg-color-9: #307672;
+  --main-bg-color-10: #d5e3e2;
 }
 
 .active {
@@ -29,7 +29,7 @@
 html,
 body {
   height: 100%;
-  background-color:#ededed
+  background-color:#ffffff;
 }
 body {
   font-size: 13px;
@@ -907,11 +907,11 @@ ul.custom-list-style li {
 }
 /* ======= Footer ======= */
 .footer {
-  background: #444;
+  background: #000;
   color: #fff;
 }
 .footer p {
-  color: #dcdcdc;
+  color: #fff;
 }
 .footer ul {
   padding-left: 0;
@@ -934,7 +934,7 @@ ul.custom-list-style li {
 .footer .footer-content .footer-col .fa {
   margin-right: 10px;
   display: inline-block;
-  color: #767676;
+  color: #fff;
 }
 .footer .footer-content .footer-col .fa.fa-phone {
   font-size: 16px;
@@ -944,7 +944,7 @@ ul.custom-list-style li {
   font-size: 12px;
 }
 .footer .footer-content .footer-col a {
-  color: #dcdcdc;
+  color: #fff;
 }
 .footer .footer-content .footer-col a:hover {
   color: var(--main-bg-color-9);
@@ -977,12 +977,12 @@ ul.custom-list-style li {
   background: #fff;
 }
 .footer .bottom-bar {
-  background: #2b2b2b;
+  background: #002946;
   padding: 5px 0;
 }
 .footer .bottom-bar .copyright {
   font-size: 11px;
-  color: #dcdcdc;
+  color: #fff;
   line-height: 3;
 }
 .footer .bottom-bar .copyright a:hover {
@@ -999,11 +999,11 @@ ul.custom-list-style li {
   line-height: 2;
 }
 .footer .bottom-bar .social li a {
-  color: #a9a9a9;
+  color: #fff;
   padding: 0 5px;
 }
 .footer .bottom-bar .social li a:hover {
-  color: var(--main-bg-color);
+  color: var(--main-bg-color-9);
 }
 /* ======= FlexSlider ======= */
 .flexslider {
@@ -2048,3 +2048,4 @@ ul.custom-list-style li {
     width: 255px;
   }
 }
+

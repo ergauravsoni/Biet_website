@@ -1,13 +1,11 @@
 from django.shortcuts import render
 from .models import Library_User_Manual, Ranks, Gallary
+from placement.models import industrial_collabrations_and_mou
 
 # Create your views here.
 
 def library(request):
     return render(request,'academics/library.html')
-
-def academic_calender(request):
-    return render(request,'aboutacademics_biet/academic_calender.html')
 
 def ranks(request):
     ranks_data=Ranks.objects.all().order_by('sno')
@@ -62,6 +60,8 @@ def user_manual(request):
 def perography(request):
     return render(request,'academics/library/perography.html')
 
-
-
-
+def industry_collab(request):
+    mou_data = industrial_collabrations_and_mou.objects.all().order_by('sno')
+    content={'mou_data':mou_data}
+    
+    return render(request,'academics/industry_collab.html',content)

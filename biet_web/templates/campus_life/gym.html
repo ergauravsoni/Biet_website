@@ -1,0 +1,25 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<div class="content container bgdata">
+	<div class="page-wrapper">
+		<header class="page-heading clearfix">
+				<h1 class="heading-title pull-left">Gym</h1>
+		</header>
+		<div class="page-content">
+			<div class="row page-row">
+				{% for image in images %}
+
+				<a class="prettyphoto col-md-3 col-sm-3 col-xs-6" rel="prettyPhoto[gallery]" title=""
+						href="{{image.images.url}}"><img class="img-responsive img-thumbnail" src="{{image.images.url}}"
+								alt="" style="height: 150px;" /></a>
+
+				{% endfor %}
+			</div>
+			<!--//page-row-->
+		</div>
+		<!--//page-content-->
+	</div>
+	<!--//page-->
+</div>
+	
+{% endblock %}

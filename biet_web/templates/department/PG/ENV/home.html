@@ -715,7 +715,7 @@
                                                 <div class="panel-body">
                                                     <h3 class="no-margin-top text-highlight">Classroom</h3>
                                                     {% for desc in classrooms_desc %}
-                                                    <p>desc.description</p>
+                                                    <p>{{desc.description}}</p>
                                                     {% endfor %}
 
                                                     {% for classroom in classrooms %}
@@ -1153,7 +1153,7 @@
                                             <div id="collapse-10" class="panel-collapse collapse">
                                                 
                                                 <div class="panel-body">
-                                                    <h3 class="no-margin-top has-divider text-highlight">B.E. Time
+                                                    <h3 class="no-margin-top has-divider text-highlight">M.Tech Time
                                                         Table</h3>
                                                     <ul class="nav nav-tabs">
                                                         <li class="active"><a href="#tab1"
@@ -1167,7 +1167,7 @@
                                                         <div class="tab-pane active" id="tab1">
                                                             <div class="row medical">
                                                                 {% for timetable in timetable_data %}
-                                                                {% if timetable.course == "BE" and timetable.semester|divisibleby:2 != 0 %}
+                                                                {% if timetable.course == "MT" and timetable.semester|divisibleby:2 != 0 %}
                                                                 <div class="welcome col-md-3 col-sm-2"
                                                                     style="display: inline-block; margin-top: 15px;">
                                                                     <h3>Semester: {{timetable.semester}} Section:
@@ -1189,7 +1189,7 @@
                                                         <div class="tab-pane" id="tab2">
                                                             <div class="row medical">
                                                                 {% for timetable in timetable_data %}
-                                                                {% if timetable.course == "BE" and timetable.semester|divisibleby:2 == 0 %}
+                                                                {% if timetable.course == "MT" and timetable.semester|divisibleby:2 == 0 %}
                                                                 <div class="welcome col-md-3 col-sm-2"
                                                                     style="display: inline-block; margin-top: 15px;">
                                                                     <h3>Semester: {{timetable.semester}} Section:
@@ -1278,24 +1278,20 @@
                                                     <h3 class="no-margin-top has-divider text-highlight">Learning
                                                         Materials</h3>
                                                     <ul class="nav nav-tabs">
-                                                        <li class="active"><a href="#tab5" data-toggle="tab"><strong>3rd
+                                                        <li class="active"><a href="#tab5" data-toggle="tab"><strong>1st
                                                                     Sem</strong></a></li>
-                                                        <li><a href="#tab6" data-toggle="tab"><strong>4th
-                                                                    sem</strong></a></li>
-                                                        <li><a href="#tab7" data-toggle="tab"><strong>5th
-                                                                    sem</strong></a></li>
-                                                        <li><a href="#tab8" data-toggle="tab"><strong>6th
-                                                                    sem</strong></a></li>
-                                                        <li><a href="#tab9" data-toggle="tab"><strong>7th
-                                                                    sem</strong></a></li>
-                                                        <li><a href="#tab10" data-toggle="tab"><strong>8th
-                                                                    sem</strong></a></li>
+                                                        <li><a href="#tab6" data-toggle="tab"><strong>2nd
+                                                                    Sem</strong></a></li>
+                                                        <li><a href="#tab7" data-toggle="tab"><strong>3rd
+                                                                    Sem</strong></a></li>
+                                                        <li><a href="#tab8" data-toggle="tab"><strong>4th
+                                                                    Sem</strong></a></li>
                                                     </ul>
                                                     <div class="tab-content">
                                                         <div class="tab-pane active" id="tab5">
                                                             <div class="row medical">
                                                                 {% for notes in learning_materials_data %}
-                                                                {% if notes.semester == 3 %}
+                                                                {% if notes.semester == 1 %}
                                                                 <div class="welcome col-md-3 col-sm-2"
                                                                     style="display: inline-block; margin-top: 15px;">
                                                                     <h3>{{notes.subject_code}} Notes</h3>
@@ -1312,7 +1308,7 @@
                                                         <div class="tab-pane " id="tab6">
                                                             <div class="row medical">
                                                                 {% for notes in learning_materials_data %}
-                                                                {% if notes.semester == 4 %}
+                                                                {% if notes.semester == 2 %}
                                                                 <div class="welcome col-md-3 col-sm-2"
                                                                     style="display: inline-block; margin-top: 15px;">
                                                                     <h3>{{notes.subject_code}} Notes</h3>
@@ -1329,7 +1325,7 @@
                                                         <div class="tab-pane " id="tab7">
                                                             <div class="row medical">
                                                                 {% for notes in learning_materials_data %}
-                                                                {% if notes.semester == 5 %}
+                                                                {% if notes.semester == 3 %}
                                                                 <div class="welcome col-md-3 col-sm-2"
                                                                     style="display: inline-block; margin-top: 15px;">
                                                                     <h3>{{notes.subject_code}} Notes</h3>
@@ -1346,41 +1342,7 @@
                                                         <div class="tab-pane " id="tab8">
                                                             <div class="row medical">
                                                                 {% for notes in learning_materials_data %}
-                                                                {% if notes.semester == 6 %}
-                                                                <div class="welcome col-md-3 col-sm-2"
-                                                                    style="display: inline-block; margin-top: 15px;">
-                                                                    <h3>{{notes.subject_code}} Notes</h3>
-                                                                    <a class="btn btn-theme" href="{{notes.material.url}}" target="_blank"><i
-                                                                            class="fa fa-download"></i>Download</a>
-                                                                    <a href="{{notes.material.url}}" class="btn btn-theme view-pdf"><i
-                                                                            class="fa fa-eye"></i>View</a>
-                                                                </div>
-                                                                {% endif %}
-                                                                {% endfor %}
-                                                            </div>
-                                                            <!--//row-->
-                                                        </div>
-                                                        <div class="tab-pane " id="tab9">
-                                                            <div class="row medical">
-                                                                {% for notes in learning_materials_data %}
-                                                                {% if notes.semester == 7 %}
-                                                                <div class="welcome col-md-3 col-sm-2"
-                                                                    style="display: inline-block; margin-top: 15px;">
-                                                                    <h3>{{notes.subject_code}} Notes</h3>
-                                                                    <a class="btn btn-theme" href="{{notes.material.url}}" target="_blank"><i
-                                                                            class="fa fa-download"></i>Download</a>
-                                                                    <a href="{{notes.material.url}}" class="btn btn-theme view-pdf"><i
-                                                                            class="fa fa-eye"></i>View</a>
-                                                                </div>
-                                                                {% endif %}
-                                                                {% endfor %}
-                                                            </div>
-                                                            <!--//row-->
-                                                        </div>
-                                                        <div class="tab-pane " id="tab10">
-                                                            <div class="row medical">
-                                                                {% for notes in learning_materials_data %}
-                                                                {% if notes.semester == 8 %}
+                                                                {% if notes.semester == 4 %}
                                                                 <div class="welcome col-md-3 col-sm-2"
                                                                     style="display: inline-block; margin-top: 15px;">
                                                                     <h3>{{notes.subject_code}} Notes</h3>

@@ -53,7 +53,7 @@
 									<div class="col-md-5 col-lg-5 col-sm-6 col-xs-12">
 										<div class="top_quate_text text-center">
 											<div class="quate_text_overlay" style="opacity: 0.8;"></div>
-											<h3>Mission Statement </h3>
+											<h3>Mission</h3>
 											<p style="color: white;">BIET contributes to the growth and development of
 												its students by imparting a broad based engineering education and
 												empowering them to be successful in their chosen field by inculcating in
@@ -79,9 +79,7 @@
 										<div class="top_quate_text text-center">
 											<div class="quate_text_overlay" style="opacity: 0.8;"></div>
 											<h3>Quality Policy</h3>
-											<p style="color: white;">Development of faculty through supporting policies
-												and procedures towards achieving higher qualifications, short-term
-												courses, participation and presentation in seminars and conferences...
+											<p style="color: white;">Inculcating the concepts of discipline, punctuality and ethics into the thought process of students to promote their overall growth...
 											</p>
 											<!-- <a class="top_quate_action" href="vision.html">READ MORE</a> -->
 										</div>
@@ -131,9 +129,9 @@
 											<div class="quate_text_overlay" style="opacity: 0.8;"></div>
 											<h3>Graduands Day 2019</h3>
 											<p style="color: white;">Bapuji Institute of Engineering and Technology,
-												Davangere, celebrated its graduation day on 15<sup>th</sup> May, 2019
+												Davangere, celebrates its graduads' day in the month of May every year since last 3 years
 												with grandeur amidst the dignitaries, the governing council members,
-												staff, students and their parents. ...</p>
+												staff, outgoing students and their proud parents.</p>
 											<!-- <a class="top_quate_action" href="gallery.html">READ MORE</a> -->
 										</div>
 									</div>
@@ -235,7 +233,7 @@
 			<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
 				<div class="single_blog">
 					<div class="blog_img">
-						<a href="news.html"><img src="{% static 'assets/img/1.jpg' %}" alt=""></a>
+						<a href="/notification"><img src="{% static 'assets/img/1.jpg' %}" alt=""></a>
 						<div class="blog_date">
 							<p class="Blog_month textcolor-announcements">News<span>Events</span></p>
 							<p class="blog_year textcolor-announcements">View All</p>
@@ -244,55 +242,13 @@
 					<div class="blog_content"> <br>
 						<MARQUEE style="BACKGROUND-COLOR: transparent" id=Marquee1 onmouseover="this.stop();"
 							onmouseout="this.start();" scrollAmount=3 direction=up height=280>
-
+							{% for news in notification %}
 							<p>
-
-								<h4 style="color:red">
-									<li> <a href="{% static 'assets/pdf/ncrtasce2019.pdf' %}" target="_blank">National
-											Conference on Recent Trends in Applied Sciences and Computing
-											Engineering
-								</h4> Date : 26<sup>th</sup> and 27<sup>th</sup> July 2019- organized by Dept. of
-								Mathematics, BIET, Shivamogga. </a>
-
-								<div class="service_details_bottom_content">
-									<br>
-									<img class="aligncenter" src="{% static 'assets/img/hr.png' %}" alt="">
-							</p>
-							<h4 style="color:red">
-								<li> <a href="{% static 'assets/pdf/Project_Exhibition_Invitation.pdf' %}"
-										target="_blank">Innovative Project Exhibition Competition-2019
-										<!-- <img src="img/jnnnew.gif"> -->
-							</h4> Inauguration Programme on 20 - 06 -2019 at Ananya Mantapa, BIET, Shivamogga. </a>
-
-							<p>
+								{{news.description|truncatechars:100}}
 								<div class="service_details_bottom_content"><img class="aligncenter"
-										src="{% static 'assets/img/hr.png' %}" alt="">
+										src="{% static 'assets/img/hr.png' %}" alt="" style="width:100%">
 							</p>
-
-							<h4 style="color:red">
-								<li> <a href='http://jnncart.blogspot.com/' target="_blank">CART - 2019
-										<!-- <img src="img/jnnnew.gif"> -->
-							</h4> CENTRE FOR AGRICULTURAL AND RURAL TECHNOLOGIES - Submit proposal in pdf format on or
-							before 05 - 08 - 2019 to "jnncart@BIET.ac.in</a>
-
-							<p>
-
-							</p>
-
-							<h4 style="color:red">
-								<li> <a href='http://BIET.ac.in/internship/' target="_blank">Internship at
-										BIET
-										<!-- <img src="img/jnnnew.gif"> -->
-							</h4>
-
-							Internship Date: - Four Weeks starting from 4<sup>th</sup> July 2019 <BR><BR>
-
-							Center of Innovation and Entrepreneurship at BIET in colloboration with Industries are
-							providing an oppurtunity....</a>
-							<p>
-								<div class="service_details_bottom_content"><img class="aligncenter"
-										src="{% static 'assets/img/hr.png' %}" alt="">
-							</p>
+							{% endfor %}
 						</marquee>
 					</div>
 				</div>
@@ -304,15 +260,15 @@
 					<div class="blog_img">
 						<a href="http://www.BIETalumni.org/events.html" target="_blank"><img
 								src="{% static 'assets/img/2.jpg' %}" alt=""></a>
-						<div class="blog_date">
-							<p class="Blog_month textcolor-announcements">FEB <span>03 - SUN</span></p>
+						<div class="blog_date" style="width:auto;">
+							<p class="Blog_month textcolor-announcements">ALUMNI<span>CORNER</span></p>
 							<p class="blog_year textcolor-announcements">2019</p>
 						</div>
 
 					</div>
 					<div class="blog_content">
 						<p class="blog_name">BIET AA-NA. 19, Feb 2019</p>
-						<h4><a href="http://www.BIETalumni.org/events.html" target="_blank">NENAPINA ANGALA - 2019</a>
+						<h4><a href="http://www.BIETalumni.org/events.html" target="_blank">PUNAR MILANA - 2019</a>
 						</h4>
 						<p>BIET Alumni Meet at Bengaluru and Inauguration of BIETAA Bengaluru Branch on 03<sup>rd</sup>
 							Feb, 2019, Sunday..<br><br><br> <br><a href="http://www.BIETalumni.org/events.html"
@@ -324,7 +280,7 @@
 			<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
 				<div class="single_blog">
 					<div class="blog_img">
-						<a href="{% static 'assets/img/vturankholders1718.jpg' %}" target="_blank"><img
+						<a href="academics/ranks"><img
 								src="{% static 'assets/img/3.jpg' %}" alt=""></a>
 						<div class="blog_date">
 							<p class="Blog_month textcolor-announcements">VTU<span>Ranks</span></p>
@@ -364,7 +320,6 @@
 					</div>
 					<div class="blog_content">
 						<p class="blog_name"><a href="nirf.html" target=_blank>NIRF-2020 Uploads...</a></p>
-						<img src="{% static 'assets/img/nirf.jpg' %}" alt=""></a>
 						<p>The National Institutional Ranking Framework (NIRF) was approved by the MHRD and launched by
 							Honourable...<br><br> <br><br>
 							<a href="/nirf">Read More </a></p>
@@ -383,8 +338,7 @@
 			<div class="col-md-6 col-lg-6 col-md-offset-6 col-lg-offset-6">
 				<div class="contact_now_text">
 					<div class="contact_now_display_table_cell">
-						<h3>Your Future of Excellence Begins here <br><br>Our commitment to quality <br>and Excellence
-							means that we only trained staff for Innovative Teaching and Realtime Learning Process.
+						<h3 style="text-transform:none;">@BIET, Transform Your Intelligence Into Achievements <br><br>Committed to inculcate <br>the rigor of engineering and power of technology with state-of-the-art employability skill to shape the student’s career.
 						</h3>
 						<a href="#" class="contact_button">CONTACT NOW</a>
 					</div>
@@ -461,13 +415,13 @@
 		<div class="row">
 			<div class="col-md-4 col-lg-4">
 				<div class="single_work">
-					<a href="/library"><img class="alignleft" src="{% static 'assets/img/libray.png' %}" alt=""></a>
+					<a href="/library" class="hover01"><img class="alignleft" src="{% static 'assets/img/libray.png' %}" alt=""></a>
 					<h4>Library and Information Center </h4>
 					<p style="text-align:justify;">One of the best places in our campus that we can boast of is our
 						Library..</p>
 				</div>
 				<div class="single_work">
-					<a href="/facilities/auditorium"><img class="alignleft"
+					<a href="/facilities/auditorium" class="hover01"><img class="alignleft"
 							src="{% static 'assets/img/architecture.png' %}" alt=""></a>
 					<h4>Hi-Tech Auditorium</h4>
 					<p style="text-align:justify;">The college has well furnished A/C Auditorium, which is equipped with
@@ -478,14 +432,14 @@
 			</div>
 			<div class="col-md-4 col-lg-4">
 				<div class="single_work">
-					<a href="#"><img class="alignleft" src="{% static 'assets/img/classrom.png' %}" alt=""></a>
+					<a href="#" class="hover01"><img class="alignleft" src="{% static 'assets/img/classrom.png' %}" alt=""></a>
 					<h4>Modern Class Rooms</h4>
 					<p style="text-align:justify;">BIET has well furnished lecture hall equipped with audiovisual
 						equipment like Smartboards,
 						Projectors etc,.</p>
 				</div>
 				<div class="single_work">
-					<a href="facilities/hostel"><img class="alignleft" src="{% static 'assets/img/electric-bus.png' %}"
+					<a href="facilities/hostel" class="hover01"><img class="alignleft" src="{% static 'assets/img/electric-bus.png' %}"
 							alt=""></a>
 					<h4>Hostel and Transport</h4>
 					<p style="text-align:justify;">Hostels are a home away from home. We at BIET provide you a decent
@@ -496,7 +450,7 @@
 			</div>
 			<div class="col-md-4 col-lg-4">
 				<div class="single_work">
-					<a href="#"><img class="alignleft" src="{% static 'assets/img/research.png' %}" alt=""></a>
+					<a href="#" class="hover01"><img class="alignleft" src="{% static 'assets/img/research.png' %}" alt=""></a>
 					<h4>Well Equipped Lab/Workshops</h4>
 					<p style="text-align:justify;  margin-top: -8px;">Well equipped spacious laboratories in all the
 						departments so that
@@ -504,7 +458,7 @@
 						development</p>
 				</div>
 				<div class="single_work">
-					<a href="facilities/sport"><img class="alignleft"
+					<a href="facilities/sport" class="hover01"><img class="alignleft"
 							src="{% static 'assets/img/football-player.png' %}" alt=""></a>
 					<h4>Sports and Cafeteria</h4>
 					<p style="text-align:justify;">BIET recognizes the importance of sports and recreation for the
@@ -572,7 +526,7 @@
 <section class="newsletter_area img-responsive" style="height: auto;">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-9" >
+			<div class="col-md-6" >
 				<div class="signup_newsletter" style="margin-top: -100px;">
 					<h3>HIGHLIGHTS</h3>
 					<p>
@@ -590,6 +544,34 @@
 						</ul>
 						<img src="{% static 'assets/img/accr.png' %}" alt="">
 					</p>
+				</div>
+			</div>
+			<div class="col-md-6" style="margin-top: 10px;">
+				<!-- Slideshow container -->
+				<div class="slideshow-container">
+
+					<!-- Full-width images with number and caption text -->
+					{% for video in video_data %}
+					<div class="mySlides fade">
+					<div class="numbertext">{{ video.sno }} / {{ video_data|length }}</div>
+					<video width="100%" height="auto" controls>
+						<source src="{{video.video_file.url}}" type="video/mp4">
+					</video>
+					<div class="text">{{video.video_caption}}</div>
+					</div>
+					{% endfor %}
+									
+					<!-- Next and previous buttons -->
+					<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+					<a class="next" onclick="plusSlides(1)">&#10095;</a>
+				</div>
+				<br>
+				
+				<!-- The dots/circles -->
+				<div style="text-align:center">
+					{% for video in video_data %}
+					<span class="dot" onclick="currentSlide({{video.sno}})"></span>
+					{% endfor %}
 				</div>
 			</div>
 		</div>

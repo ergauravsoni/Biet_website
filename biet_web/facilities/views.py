@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from .models import Sport, auditoriumGallary, sportsGallary
+from .models import Sport, auditoriumGallary, sportsGallary, ewasteGallary
+from .models import guestHouseGallary, drinkingWaterGallary, garbageGallary
 
 # Create your views here.
 
@@ -46,7 +47,7 @@ def language_lab(request):
     
 def ncc_nss(request):
     return render(request,'facilities/ncc_nss.html')
-
+    
 def redcross(request):
     return render(request, 'facilities/red_cross.html')
 
@@ -57,6 +58,19 @@ def auditorium(request):
     images = auditoriumGallary.objects.all()
     return render(request,'facilities/auditorium.html',{'images' : images})
 
+def guest_house(request):
+    images = guestHouseGallary.objects.all()
+    return render(request,'facilities/guest_house.html',{'images' : images})
+    
+def drinking_water(request):
+    images = drinkingWaterGallary.objects.all()
+    return render(request,'facilities/drinking_water.html',{'images' : images})
 
+def garbage(request):
+    images = garbageGallary.objects.all()
+    return render(request,'facilities/garbage.html',{'images' : images})
 
+def ewaste(request):
+    images = ewasteGallary.objects.all()
+    return render(request,'facilities/ewaste.html',{'images' : images})
 

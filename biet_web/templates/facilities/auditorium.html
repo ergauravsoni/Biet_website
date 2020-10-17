@@ -1,18 +1,17 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
 
-<div class="conatainer text-center">
-	<h1>Data Not Available</h1>
-</div>
-
 <div class="content container bgdata">
 	<div class="page-wrapper">
+		<header class="page-heading clearfix">
+				<h1 class="heading-title pull-left">Auditorium</h1>
+		</header>
 		<div class="page-content">
 			<div class="row page-row">
 				{% for image in images %}
 
 				<a class="prettyphoto col-md-3 col-sm-3 col-xs-6" rel="prettyPhoto[gallery]" title=""
-					href="{{image.images.url}}"><img class="img-responsive img-thumbnail" src="{{image.images.url}}"
-						alt="" /></a>
+						href="{{image.images.url}}"><img class="img-responsive img-thumbnail" src="{{image.images.url}}"
+								alt="" style="height: 150px;" /></a>
 
 				{% endfor %}
 			</div>
@@ -22,5 +21,5 @@
 	</div>
 	<!--//page-->
 </div>
-
+	
 {% endblock %}

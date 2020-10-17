@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Academic_Calender, Office_Staff, Deans, Governing_Body
-from .models import Governing_Council
+from .models import Governing_Council, Recognized_Research_Centres
+from placement.models import industrial_collabrations_and_mou
 
 # Create your views here.
 def Bapuji_educational_association(request):
@@ -61,8 +62,10 @@ def dean_message(request):
     return render(request,'about_biet/research/dean_message.html')
     
 def recognized_research_centers(request):
-    return render(request,'about_biet/research/recognized_research_centers.html')
-    
+    recog_research_data=Recognized_Research_Centres.objects.all().order_by('sno')
+
+    return render(request,'about_biet/research/recognized_research_centers.html',{'recog_research_data':recog_research_data})    
+
 def funded_projects(request):
     return render(request,'about_biet/research/funded_projects.html')
     
@@ -70,7 +73,10 @@ def kscst_projects(request):
     return render(request,'about_biet/research/kscst_projects.html')
     
 def industry_collaboration(request):
-    return render(request,'about_biet/research/industry_collaboration.html')
+    mou_data = industrial_collabrations_and_mou.objects.all().order_by('sno')
+    content={'mou_data':mou_data}
+
+    return render(request,'about_biet/research/industry_collaboration.html',content)
     
 def product_development(request):
     return render(request,'about_biet/research/product_development.html')
@@ -102,3 +108,5 @@ def startup_cell(request):
 def media_cell(request):
     return render(request,'about_biet/other_committees/media_cell.html')
 
+def organisational_chart(request):
+    return render(request,'about_biet/organisational_chart.html')

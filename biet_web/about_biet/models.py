@@ -47,3 +47,11 @@ class Governing_Council(models.Model):
 
     def __str__(self):
         return self.name + ": " + self.designation
+
+class Recognized_Research_Centres(models.Model):
+    sno = models.IntegerField()
+    name = models.CharField(max_length=200)
+
+    def __str__(self):
+        return str(self.sno) + ". " + self.name
+

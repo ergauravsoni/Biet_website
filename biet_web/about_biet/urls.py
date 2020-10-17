@@ -34,5 +34,6 @@ urlpatterns = [
     path('other_committees/ipr_cell',views.ipr_cell, name='other_committees/ipr_cell'),
     path('other_committees/startup_cell',views.startup_cell, name='other_committees/startup_cell'),
     path('other_committees/media_cell',views.media_cell, name='other_committees/media_cell'),
+    path('organisational_chart',views.organisational_chart, name='organisational_chart'),
 ]
 

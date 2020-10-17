@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Event, News, Gallary
+from .models import Event, News, Gallary, Video, Notification
 
 # Create your views here.
 
@@ -51,8 +51,12 @@ def index(request):
         news_data = {}
 
     # print(result_news)
+    
+    video_data = Video.objects.all().order_by('sno')
+    notification = Notification.objects.all().order_by('-date_added')
+    content = {'dates':dates, 'result_news':result_news, 'video_data':video_data, 'notification':notification}
 
-    return render(request,'index.html',{'dates' : dates, 'result_news' : result_news})
+    return render(request,'index.html',content)
 
 def home(request):
     print("comes here")
@@ -94,4 +98,10 @@ def allevent(request):
     # print(dates)
     return render(request,'allEvent.html',{'dates' : dates})
 
+def notification(request):
+    notification = Notification.objects.all().order_by('-date_added')
+    
+    return render(request,'notification.html',{'notification' : notification})
 
+def developers(request):
+    return render(request,'developers.html')

@@ -1,63 +1,330 @@
 {% extends 'base.html' %}
 
 {% load static %}
+{% load custom_tags %}
 {% block content %}
 
-
-<div class="container content bgdata">
-    <div id="container" class="clear">
+<!-- ******CONTENT****** -->
+<div class="content container">
+    <div class="page-wrapper">
         <header class="page-heading clearfix">
-            <strong>
-                <h1 class="textColorCustom" style="font-weight: 600">Training & Placement Cell</h1>
-            </strong>
+            <h1 class="heading-title pull-left">Department of Placement Training</h1>
         </header>
-        <dl class="dl-horizontal">
-            <h3 class="title">Training Programs:</h3>
-        </dl>
-        <!-- ####################################################################################################### -->
-        <div id="homepage" class="clear">
-            <!-- ###### -->
-            <div style="width: 90%;" id="latestnews">
+        <div class="page-content">
+            <div class="row page-row">
+                <div class="content-wrapper col-md-12 col-sm-8">
+                    <article class="welcome col-md-12 col-sm-8">
+                        <div class="col-md-8">
+                            <!-- Slideshow container -->
+                            <div class="slideshow-container" style="height: 380px;">
 
-                <p>
-                    <strong>1. Orientation Program:</strong>
-                </p>
-                <p>&nbsp; 21 days Orientation Programme for First Semester students.</p>
+                                <!-- Full-width images with number and caption text -->
+                                {% for image in slider_image_data %}
+                                <div class="mySlides autoSlides fade">
+                                <div class="numbertext">{{ image.sno }} / {{ slider_image_data|length }}</div>
+                                <img class="img-responsive" src="{{image.image.url}}"
+                                alt="" style="width:750px; height: 397px; object-fit: cover;"/>
+                                <div class="text" style="bottom: 0px; background-color: rgba(0,0,0,0.8);">
+                                    {{image.image_caption}}
+                                </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                            <br>
+                        </div>
+                        <div class="col-md-4">
+                            <section class="events">
+                                <div
+                                    class="col-md-12 card shadow-lg p-3 mb-5 bg-white rounded contain textcolor-header bgcolor" style="text-align: center;">
+                                    <div class="col-md-12">
+                                        <h1 class=""><b>Quick Facts</b></h1>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <h3 class="" ><b>64</b></h3>
+                                        <h6>
+                                            No. of Companies Visited
+                                        </h6>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <h3 class=""><b>Best</b></h3>
+                                        <h6>Job Offers</h6>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <h3 class="">
+                                            <b>12 LPA</b>
+                                        </h3>
+                                        <h6>Highest Package</h6>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <h3 class=""><b>3.5 LPA</b></h3>
+                                        <h6>Avgerage Package</h6>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <h3 class=""><b>95%</b></h3>
+                                        <h6>Placement Percentage</h6>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </article>
+                </div>
+                <div class="content-wrapper col-md-12 col-sm-8">
+                    <article class="welcome col-md-12 col-sm-8">
+                        <div class="" style="text-align: justify;">
+                            <p>
+                                Training & Placement Department initiates training programs on soft skills, and career planning to students in the first three years. The training programs are executed by experienced and prominent persons , who help the students to get acquainted with the current corporate needs, improve their personality development/communication skills, aptitude tests, mock-interviews , CV writing , group discussions that are required for acquiring a suitable job. We impart state-of-the-art training to students to fabricate them as competent and inventive engineers. The institute signalizes the power of knowledge, propagates and encourages innovative ideas and  also inculcates human values by creating  self awareness and the society.
+                            </p>
+                            <p>
+                                The training program encompasses the following skills required for the extensive development of students:
+                            </p>
+                            <p>
+                                <ul class="nav nav-tabs">
+                                    <li class="active"><a href="#tab1" data-toggle="tab"><strong>First Year</strong></a></li>
+                                    <li><a href="#tab2" data-toggle="tab"><strong>Second Year</strong></a></li>
+                                    <li><a href="#tab3" data-toggle="tab"><strong>Third Year</strong></a></li>
+                                    <li><a href="#tab4" data-toggle="tab"><strong>Fourth Year</strong></a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="tab1">
+                                        <div class="row medical" style="padding: 10px;">
+                                            <ul class="medical">
+                                                <li>
+                                                    Three week induction program focusing on Social awareness, Moral responsibilities, Role as an engineer
+                                                </li>
+                                                <br>
+                                                <li>
+                                                    Regular Technical English Classes
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="tab2">
+                                        <div class="row medical">
+                                            <ul class="medical">
+                                                <li>
+                                                    Department wise Industry-Interaction Programs
+                                                </li>
+                                                <br>
+                                                <li>
+                                                    Certification courses
+                                                </li>
+                                                <br>
+                                                <li>
+                                                    Internships
+                                                </li>
+                                                <br>
+                                                <li>
+                                                    Skill Development Programs
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="tab3">
+                                        <div class="row medical">
+                                            <ul class="medical">
+                                                <li>
+                                                    Technical Training on C, DBMS, OOPS, JAVA
+                                                </li>
+                                                <br>
+                                                <li>
+                                                    Industry Interaction Program
+                                                </li>
+                                                <br>
+                                                <li>
+                                                    Skill Development Programs
+                                                </li>
+                                                <br>
+                                                <li>
+                                                    Internships
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="tab4">
+                                        <div class="row medical">
+                                            <ul class="medical">
+                                                <li>
+                                                    Employability Appraisal
+                                                </li>
+                                                <br>
+                                                <li>
+                                                    Campus Drive Registrations
+                                                </li>
+                                                <br>
+                                                <li>
+                                                    Pre-Placement Training Programs
+                                                </li>
+                                                <br>
+                                                <li>
+                                                    Coding-Programming Competitions
+                                                </li>
+                                                <br>
+                                                <li>
+                                                    Industry-Interface Programs
+                                                </li>
+                                                <br>
+                                                <li>
+                                                    Campus Recruitment
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </p>
+                        </div>
+                    </article>
+                </div>
+                <!--//content-wrapper-->
+                <div class="content container">
+                    <div class="page-wrapper">
+                        <div class="page-content">
+                            <div class="row page-row">
+                                <div class="faq-wrapper col-md-12 col-sm-7">
+                                    <div class="panel-group" id="accordion">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+                                                    <a data-toggle="collapse" data-parent="#accordion" class="collapsed"
+                                                        href="#collapse-1">
+                                                        Pre-Placement Training
+                                                    </a>
+                                                </h4>
+                                            </div>
+                                            <!--//pane-heading-->
+                                            <div id="collapse-1" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    <div class="content-wrapper col-md-12 col-sm-8">
+                                                        <div class="content container">
+                                                            <div class="page-wrapper">
+                                                                <div class="page-content">
+                                                                    <div class="row page-row">
+                                                                        <article
+                                                                            class="welcome col-md-11 col-sm-7 content-text">
+                                                                            <p>
+                                                                                The Training & Placement Department organizes various Pre-Placement Training programs for students entering the final year to indulge them for nearing recruitment drives. The training programs are hosted for a duration of five-six days covering all the aspects of employability-skills.Finally, training programs are devised to simulate the real-time industry scenarios that furnish the students with hands-on practice for rapid learnings.
+                                                                            </p>
+                                                                        </article>
+                                                                        <!--//page-content-->
+                                                                    </div>
+                                                                    <!--//page-row-->
+                                                                </div>
+                                                                <!--//page-content-->
+                                                            </div>
+                                                            <!--//page-->
+                                                        </div>
+                                                        <div class="content container">
+                                                            <div class="page-wrapper">
+                                                                <div class="page-content">
+                                                                    <div class="row page-row content-text">
+                                                                        <article class="welcome col-md-11 col-sm-7">
+                                                                            <p>
+                                                                                The training program topics:
+                                                                            </p>
+                                                                            <ol class="custom-list-style medical">
+                                                                                <li>
+                                                                                    Activity-based learning on various segments of the Aptitude Test.
+                                                                                </li>
+                                                                                <br>
+                                                                                <li>
+                                                                                    Technical training on trending technologies for circuit branches.
+                                                                                </li>
+                                                                                <br>
+                                                                                <li>
+                                                                                    Sessions on Personality Development, Attitude, CV-Writing, Etiquettes, Group Discussion & Mock-Interviews.
+                                                                                </li>
+                                                                                <br>
+                                                                                <li>
+                                                                                    Post Employability-Assessment test.
+                                                                                </li>
+                                                                            </ol>
+                                                                        </article>
+                                                                        <!--//page-content-->
+                                                                    </div>
+                                                                    <!--//page-row-->
+                                                                </div>
+                                                                <!--//page-content-->
+                                                            </div>
+                                                            <!--//page-->
+                                                        </div>
+                                                    </div>
+                                                    <!--//content-wrapper-->
+                                                </div>
+                                                <!--//panel-body-->
+                                            </div>
+                                            <!--//panel-colapse-->
+                                        </div>
+                                        <!--//panel-->
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+                                                    <a data-toggle="collapse" data-parent="#accordion" class="collapsed"
+                                                        href="#collapse-2">
+                                                        Training Programs
+                                                    </a>
+                                                </h4>
+                                            </div>
+                                            <!--//pane-heading-->
+                                            <div id="collapse-2" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    <!-- <h3>HOD Profile</h3> -->
+                                                    <div class="row page-row">
+                                                        
+                                                    </div>
+                                                </div>
+                                                <!--//panel-body-->
 
-                <p>
-                    <strong>2. CREA –Soft Skill</strong>
-                </p>
-                <p>&nbsp;Coaching for Recruitment and Empowerment of Action by Innovations Unlimited,Bangalore .</p>
+                                                <!--//panel-body-->
+                                            </div>
+                                            <!--//panel-colapse-->
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+                                                    <a data-toggle="collapse" data-parent="#accordion" class="collapsed"
+                                                        href="#collapse-10">
+                                                        Glimpses
+                                                    </a>
+                                                </h4>
+                                            </div>
+                                            <!--//pane-heading-->
+                                            <div id="collapse-10" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    {% for image in training_images %}
 
-                <p>
-                    <strong>3. Campus Placement Aptitude Cracker</strong>
-                </p>
-                <p>&nbsp;Conducting Mock/Simulated exercises on continuous basis for final year students including
-                    Aptitude, Technical Skills and HR interviews and TCS Specific Aptitude Cracker by FACE. </p>
+                                                    <a class="prettyphoto col-md-3 col-sm-3" rel="prettyPhoto[gallery]"
+                                                        title="" href="{{image.image.url}}"><img
+                                                            class="img-responsive img-thumbnail"
+                                                            src="{{image.image.url}}" alt=""
+                                                            style=" height: 170px;" /></a>
 
-                <p>
-                    <strong>4. TCS Ion -Technical Competition</strong>
-                </p>
-                <p>&nbsp;Codevita &amp; Enginx online technical competition.</p>
-
-                <p>
-                    <strong>5. RaRo Technologies- Technical</strong>
-                </p>
-                <p>&nbsp;Industry ready talent development program for pre final year students.</p>
-
-
-
-
-                <br><br>
-                <!--<span style="font-size: 14px;"><b>&raquo; Every year MindTree conducts MindTree: Campus Engagement Event for MindTree placed students.</b></span>-->
-                <p></p>
-                <h2></h2>
+                                                    {% endfor %}
+                                                </div>
+                                                <!--//panel-body-->
+                                            </div>
+                                            <!--//panel-colapse-->
+                                        </div>
+                                        <!--//panel-->
+                                    </div>
+                                    <!--//panel-group-->
+                                </div>
+                                <!--//faq-wrapper-->
+                            </div>
+                            <!--//page-row-->
+                        </div>
+                        <!--//page-content-->
+                    </div>
+                    <!--//page-->
+                </div>
+                <!--//content-->
             </div>
+            <!--//page-row-->
         </div>
+        <!--//page-content-->
     </div>
+    <!--//page-->
 </div>
-
-
+<!--//content-->
 
 
 {% endblock %}
+

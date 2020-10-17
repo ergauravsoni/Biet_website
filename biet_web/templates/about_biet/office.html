@@ -12,11 +12,24 @@
 
         </header>
         <div class="page-content">
+            <div class="row page-row" style="text-align:justify;">
+				<article class="welcome col-md-12 col-sm-11">
+                    <p>
+                        BIET office administration has been functioning very efficiently from last 40 Years that from since its inception in the year 1979.The Administration monitors the entire Academic proceedings, financial transactions and maintains the proper records of the Institution.
+                    </p>
+                    <p>
+                        There are over 18  Staff members  working in office and there are two major divisions in Establishment, EST and EST 2 which looks after and maintains all the records related to the  Teaching and Non-Teaching Faculty members of various departments of the Institute. There are different sections which looks after various functionalities such as  Admission Section, Cash/Finance Section, Examination Section, Scholarship Section, Store Section, Salary Section, Accounts and Dispatch Section.
+                    </p>
+                    <p>
+                        The office administration is efficiently using the Digital Platform with the help of ERP Software for various Financial Transactions, Data Entry, Analytic work and Record Maintenance.
+                    </p>
+                </article>
+            </div>
             <div class='col-md-12'>
                 <div class="row page-row">
                     {% for faculty_data in office_member_data %}
 
-                    <div class="col-md-3 col-sm-3 text-center">
+                    <div class="col-md-3 col-sm-3 text-center" style="height:460px;">
                         <div class="album-cover">
                             <!-- <a href="#"> -->
                             <img class="img-thumbnail" src="{{faculty_data.image.url}}" alt="" height="" width="">
@@ -47,3 +60,4 @@
 
 
 {% endblock %}
+

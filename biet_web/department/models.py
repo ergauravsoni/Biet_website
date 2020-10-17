@@ -3279,7 +3279,7 @@ class mca_dept_activities(models.Model):
 
 class mca_dept_timetable(models.Model):
     course = models.CharField(max_length=100, choices=(
-        ('BE', 'B.E.'), ('MT', 'M.Tech')), default='BE')
+        ('BE', 'B.E.'), ('MT', 'M.Tech'),('MCA','MCA')), default='BE')
     semester = models.IntegerField()
     section = models.CharField(max_length=1)
     timetable = models.FileField(upload_to='department/MCA/data/timetable/')
@@ -3296,7 +3296,7 @@ class mca_dept_events(models.Model):
         return '{}'.format(self.events)
 
 class mca_dept_learning_materials(models.Model):
-    semester = models.IntegerField(choices=list(zip(range(3, 9), range(3, 9))))
+    semester = models.IntegerField(choices=list(zip(range(1, 7), range(1, 7))))
     subject_code = models.CharField(max_length=100)
     material = models.FileField(upload_to='department/MCA/data/learning-materials')
 
@@ -3313,7 +3313,7 @@ class mca_dept_result_analysis(models.Model):
         if width != req_width and height != req_height:
             raise ValidationError("Height and Width of image should be 750x450")
 
-    sem_choices = ((3,'3rd'),(4,'4th'),(5,'5th'),(6,'6th'),(7,'7th'),(8,'8th'),)
+    sem_choices = ((1,'1st'),(2,'2nd'),(3,'3rd'),(4,'4th'),(5,'5th'),(6,'6th'),)
     semester = models.IntegerField(choices=sem_choices)
     result_analysis_pdf = models.FileField(upload_to='department/MCA/result-analysis/')
     result_analysis_image = models.ImageField(upload_to='department/MCA/result-analysis/',
@@ -3540,7 +3540,7 @@ class environmental_dept_events(models.Model):
         return '{}'.format(self.events)
 
 class environmental_dept_learning_materials(models.Model):
-    semester = models.IntegerField(choices=list(zip(range(3, 9), range(3, 9))))
+    semester = models.IntegerField(choices=list(zip(range(1, 5), range(1, 5))))
     subject_code = models.CharField(max_length=100)
     material = models.FileField(upload_to='department/ENV/data/learning-materials')
 
@@ -3557,7 +3557,7 @@ class environmental_dept_result_analysis(models.Model):
         if width != req_width and height != req_height:
             raise ValidationError("Height and Width of image should be 750x450")
 
-    sem_choices = ((3,'3rd'),(4,'4th'),(5,'5th'),(6,'6th'),(7,'7th'),(8,'8th'),)
+    sem_choices = ((1,'1st'),(2,'2nd'),(3,'3rd'),(4,'4th'),)
     semester = models.IntegerField(choices=sem_choices)
     result_analysis_pdf = models.FileField(upload_to='department/ENV/result-analysis/')
     result_analysis_image = models.ImageField(upload_to='department/ENV/result-analysis/',

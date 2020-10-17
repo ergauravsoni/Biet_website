@@ -1,0 +1,32 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<div class="content container bgdata">
+	<div class="page-wrapper">
+		<header class="page-heading clearfix">
+				<h1 class="heading-title pull-left">Institute Notifications, News And Events</h1>
+		</header>
+		<div class="page-content">
+			<div class="row page-row">
+                {% for notice in notification %}
+                <div class="panel panel-default">
+                    <div class="panel-heading" style="background-color: #002946; color: #ffffff;">
+                        <h3>
+                            {{notice.date_added|date:'M d, Y H:i'}}
+                            <a href="{{notice.detail.url}}" class="btn btn-theme view-pdf pull-right" style="font-size: small;">Read More</a>
+                        </h3>
+                    </div>
+                    <div class="panel-body">
+                        {{notice.description|linebreaks}}
+                    </div>
+                </div>
+                <!--panel-->
+                {% endfor %}
+			</div>
+			<!--//page-row-->
+		</div>
+		<!--//page-content-->
+	</div>
+	<!--//page-->
+</div>
+	
+{% endblock %}

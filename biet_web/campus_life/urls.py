@@ -10,4 +10,6 @@ urlpatterns = [
     path('campus_life/green_campus',views.green_campus, name='green_campus'),
     path('campus_life/graduation_day',views.graduation_day, name='graduation_day'),
     path('campus_life/btech_technowav',views.btech_technowav, name='btech_technowav'),
+    path('campus_life/gym',views.gym, name='gym'),
 ]
+

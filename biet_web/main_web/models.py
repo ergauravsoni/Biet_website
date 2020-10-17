@@ -20,10 +20,25 @@ class News(models.Model):
     def __str__(self):
         return '{}'.format(self.title)
 
+class Notification(models.Model):
+    description = models.TextField()
+    detail = models.FileField(upload_to = 'main_web/notification/')
+    date_added = models.DateTimeField(auto_now_add=True)
+    
+    def __str__(self):
+        return '{}'.format(self.description[:80] + "...")
+
 class Gallary(models.Model):
     images = models.ImageField(upload_to='main_gallary')
     
     def __str__(self):
         return '{}'.format(self.images)
 
+class Video(models.Model):
+    sno = models.IntegerField()
+    video_file = models.FileField(upload_to='about_biet/video/')
+    video_caption = models.CharField(max_length=15)
+    
+    def __str__(self):
+        return str(self.sno) + " - " + self.video_caption
 

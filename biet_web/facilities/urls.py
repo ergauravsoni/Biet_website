@@ -5,6 +5,10 @@ from . import views
 urlpatterns = [
     path('facilities/sport',views.sport, name='sport'),
     path('facilities/auditorium',views.auditorium, name='auditorium'),
+    path('facilities/guest_house',views.guest_house, name='guest_house'),
+    path('facilities/drinking_water',views.drinking_water, name='drinking_water'),
+    path('facilities/garbage',views.garbage, name='garbage'),
+    path('facilities/ewaste',views.ewaste, name='ewaste'),
     path('facilities/hostel',views.hostel, name='hostel'),
     path('facilities/ladies_rest_room',views.ladies_rest_room, name='ladies_rest_room'),
     path('facilities/canteen',views.canteen, name='canteen'),

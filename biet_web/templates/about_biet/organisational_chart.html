@@ -1,0 +1,25 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<div class="content container bgdata">
+	<div class="page-wrapper">
+		<header class="page-heading clearfix">
+            <strong>
+                <h1 class="heading-title pull-left">Organisational Chart</h1>
+            </strong>
+        </header>
+		<div class="page-content">
+            <article class="welcome col-md-12 col-sm-11">
+                <div class="row page-row" style="text-align: center;">
+                    <figure class="thumb col-md-12">
+                        <img class="img-responsive img-thumbnail" src="{% static 'assets/images/about_biet/org_chart.jpg' %}" alt="">
+                    </figure>
+                </div>
+                <!--//page-row-->
+            </article>
+		</div>
+		<!--//page-content-->
+	</div>
+	<!--//page-->
+</div>
+	
+{% endblock %}

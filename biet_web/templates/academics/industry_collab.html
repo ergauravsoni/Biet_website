@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
+
+<div class="content container bgdata">
+    <div class="page-wrapper">
+        <header class="page-heading clearfix">
+            <h1 class="heading-title pull-left">Industry Collaborations & MOUs</h1>
+        </header>
+        <div class="page-content">
+            <div class="row page-row">
+                <article class="welcome col-md-12 col-sm-11">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-boxed">
+                            <thead>
+                                <tr>
+                                    <th><center>S.No.</center></th>
+                                    <th><center>Title of MOU</center></th>
+                                    <th><center>MOU signed with<br>(Academia/Industry/Government)</center></th>
+                                    <th><center>Signing Date</center></th>
+                                </tr>
+
+                            </thead>
+                            <tbody>
+                                {% for mou in mou_data %}
+                                <tr>
+                                    <td>{{mou.sno}}</td>
+                                    <td>{{mou.title_of_MOU}}</td>
+                                    <td>{{mou.mOU_signed_with}}</td>
+                                    <td>{{mou.signing_date}}</td>
+                                </tr>
+                                {% endfor %}
+
+                            </tbody>
+                        </table>
+                        <!--//table-->
+                    </div>
+                    <!--//table-responsive-->
+                </article>
+            </div>
+            <!--//page-row-->
+        </div>
+        <!--//page-content-->
+    </div>
+    <!--//page-->
+</div>
+<!--//content-->
+</div>
+<!--//wrapper-->
+
+{% endblock %}

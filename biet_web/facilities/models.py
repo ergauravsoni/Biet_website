@@ -16,3 +16,15 @@ class sportsGallary(models.Model):
 class auditoriumGallary(models.Model):
     images = models.ImageField(upload_to='facilities/auditoriumGallary')
 
+class guestHouseGallary(models.Model):
+    images = models.ImageField(upload_to='facilities/guestHouseGallary')
+
+class drinkingWaterGallary(models.Model):
+    images = models.ImageField(upload_to='facilities/drinkingWaterGallary')
+
+class garbageGallary(models.Model):
+    images = models.ImageField(upload_to='facilities/garbageGallary')
+
+class ewasteGallary(models.Model):
+    images = models.ImageField(upload_to='facilities/ewasteGallary')
+

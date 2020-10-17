@@ -36,3 +36,6 @@ class Btech_Technowav(models.Model):
     def __str__(self):
         return '{}'.format(self.btech_technowav)
 
+class gymGallery(models.Model):
+    images = models.ImageField(upload_to='campus_life/gymGallery')
+

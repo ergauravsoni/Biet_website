@@ -12,3 +12,6 @@ def pg_addmission(request):
 
 def reserach(request):
     return render(request,'admission/research.html')
+
+def contact(request):
+    return render(request,'admission/contact.html')

@@ -6,4 +6,5 @@ urlpatterns = [
     path('ug_addmission',views.ug_addmission, name='ug_addmission'),
     path('pg_addmission',views.pg_addmission, name='pg_addmission'),
     path('reserach',views.reserach, name='reserach'),
+    path('admission/contact',views.contact, name='admission/contact'),
 ]

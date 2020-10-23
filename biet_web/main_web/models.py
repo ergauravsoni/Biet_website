@@ -22,7 +22,7 @@ class News(models.Model):
 
 class Notification(models.Model):
     description = models.TextField()
-    detail = models.FileField(upload_to = 'main_web/notification/')
+    detail = models.FileField(upload_to = 'main_web/notification/', blank=True)
     date_added = models.DateTimeField(auto_now_add=True)
     
     def __str__(self):

@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Event, News, Gallary, Video, Notification
+from academics.models import Ranks
 
 # Create your views here.
 
@@ -54,7 +55,16 @@ def index(request):
     
     video_data = Video.objects.all().order_by('sno')
     notification = Notification.objects.all().order_by('-date_added')
-    content = {'dates':dates, 'result_news':result_news, 'video_data':video_data, 'notification':notification}
+
+    ranks_data=Ranks.objects.all().order_by('sno')
+    setyr=set()
+    setct=set()
+    for record in ranks_data:
+        setyr.add(record.year_range)
+        setct.add(record.course_type)
+        
+    content = {'dates':dates, 'result_news':result_news, 'video_data':video_data, 'notification':notification, 
+            'ranks_data':ranks_data, 'setyr':sorted(setyr, reverse=True), 'setct':sorted(setct, reverse=True)}
 
     return render(request,'index.html',content)
 

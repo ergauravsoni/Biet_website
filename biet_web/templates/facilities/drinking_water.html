@@ -7,13 +7,15 @@
 		</header>
 		<div class="page-content">
 			<div class="row page-row">
-				{% for image in images %}
-
-				<a class="prettyphoto col-md-3 col-sm-3 col-xs-6" rel="prettyPhoto[gallery]" title=""
-						href="{{image.images.url}}"><img class="img-responsive img-thumbnail" src="{{image.images.url}}"
-								alt="" style="height: 150px;" /></a>
-
-				{% endfor %}
+				<article class="welcome col-md-12 col-sm-11">
+					<img class="img-responsive img-thumbnail" src="{% static 'assets/images/facilitles/ro_unit.jpg' %}" alt="">
+					<div class="row has-divider"></div>
+					<div class="row has-divider"></div>
+					<h2 style="font : georgia; text-align: center;"> <i>Reverse Osmosis Water Treatment Units</i> </h2>
+					<p style="text-align: justify;">
+						Drinking water is basic human requirement for survival and supply of clean drinking water is a challenge in the present days due to depletion of fresh water sources and human activities. About 3500 students are studying in BIET and supplying clean drinking water is very much essential. In this regard, management of BIET has decided to provide drinking water to students and staff &installed two Reverse Osmosis units each with a capacity of 1000 LPH. One unit is installed near alumni guest house and the other unit near library block. The raw water is made to pass through sand filter which filters suspended solids. Then the water is passed through carbon filter which removes colour, odour and chlorides. Then the water flows to R.O. membranes which removes the dissolved solids present in water. Finally the treated water with low TDS and conductivity is collected in 1000 litre capacity tanks. The reject water from the membranes with high dissolved salt content goes to drain. Treated water from the 1000 litre storage tank is supplied to various departments through 20 litre water cans. The units are beautiful pilot scale models & suitable learning tools for engineering students.
+					</p>
+				</article>
 			</div>
 			<!--//page-row-->
 		</div>

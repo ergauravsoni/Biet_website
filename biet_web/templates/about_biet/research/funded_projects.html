@@ -12,7 +12,7 @@
                 <ul class="breadcrumbs-list">
                     <li class="breadcrumbs-label">You are here:</li>
                     <li><a href="/">Home</a><i class="fa fa-angle-right"></i></li>
-                    <li><a href="#">Research</a><i class="fa fa-angle-right"></i></li>
+                    <li><a href="/research">Research</a><i class="fa fa-angle-right"></i></li>
                     <li class="current">Funded Projects</li>
                 </ul>
             </div>
@@ -41,6 +41,35 @@
 
                     <div class="page-row content-text">
                         <h1 class="no-margin-top has-divider text-highlight">Funded Projects</h1>
+			{% for dept in projects_depts %}
+                        <div class="table-responsive" style="text-align: left;">
+                            <table class="table table-striped table-boxed">
+                                <caption style="display: table-caption;">{{dept.name}}</caption>
+                                <thead>
+                                    <tr>
+                                        <th><center>S.No.</center></th>
+                                        <th width=300><center>Title of the Project</center></th>
+                                        <th width=150><center>Funding Agency</center></th>
+                                        <th width=100><center>Amount Sanctioned</center></th>
+                                        <th width=100><center>Year</center></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                {% for project in projects %}
+                                {% if project.department == dept %}
+                                <tr>
+                                    <td>{{project.sno}}</td>
+                                    <td>{{project.title_of_project}}</td>
+                                    <td>{{project.funding_agency}}</td>
+                                    <td>{{project.amount_sanctioned}}</td>
+                                    <td>{{project.year}}</td>
+                                </tr>
+                                {% endif %}
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                        {% endfor %}
                     </div>
                     <!--//page-row-->
                 </div>

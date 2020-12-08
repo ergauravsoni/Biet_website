@@ -20,6 +20,8 @@ urlpatterns = [
     path('facilities/elearning',views.elearning, name='elearning'),
     path('facilities/language_lab',views.language_lab, name='language_lab'),
     path('facilities/ncc_nss',views.ncc_nss, name='ncc_nss'),
+    path('facilities/ncc',views.ncc, name='ncc'),
+    path('facilities/nss',views.nss, name='nss'),
     path('facilities/redcross',views.redcross, name='redcross'),
 ]
 

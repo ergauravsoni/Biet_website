@@ -47,6 +47,12 @@ def language_lab(request):
     
 def ncc_nss(request):
     return render(request,'facilities/ncc_nss.html')
+
+def ncc(request):
+    return render(request,'facilities/ncc.html')
+    
+def nss(request):
+    return render(request,'facilities/nss.html')
     
 def redcross(request):
     return render(request, 'facilities/red_cross.html')

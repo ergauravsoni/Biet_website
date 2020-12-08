@@ -1,6 +1,8 @@
 from django.shortcuts import render
-from .models import Academic_Calender, Office_Staff, Deans, Governing_Body
-from .models import Governing_Council, Recognized_Research_Centres
+from .models import Academic_Calender, Office_Staff, Deans, Governing_Body, Nain_Gallery
+from .models import Governing_Council, Recognized_Research_Centres, Honors_And_Awards
+from .models import Nain_Carousel, Research_Dean_Message, Funded_Projects_Department
+from .models import Funded_Projects, kscst
 from placement.models import industrial_collabrations_and_mou
 
 # Create your views here.
@@ -23,11 +25,20 @@ def governing_body(request):
 def major_events(request):
     return render(request,'about_biet/major_events.html')
 
+def aishe(request):
+    return render(request,'about_biet/aishe.html')
+
 def nba(request):
     return render(request,'about_biet/nba.html')
 
 def nain(request):
-    return render(request,'about_biet/nain.html')
+    images = Nain_Gallery.objects.all().order_by('sno')
+    top_images = Nain_Carousel.objects.all().order_by('sno')
+    content = {
+        'images': images,
+        'top_images': top_images
+    }
+    return render(request,'about_biet/nain.html',content)
 
 def naac(request):
     return render(request,'about_biet/naac.html')
@@ -59,7 +70,8 @@ def research(request):
     return render(request,'about_biet/research.html')
     
 def dean_message(request):
-    return render(request,'about_biet/research/dean_message.html')
+    research_dean_data = Research_Dean_Message.objects.all()
+    return render(request,'about_biet/research/dean_message.html',{'research_dean_data':research_dean_data})
     
 def recognized_research_centers(request):
     recog_research_data=Recognized_Research_Centres.objects.all().order_by('sno')
@@ -67,10 +79,18 @@ def recognized_research_centers(request):
     return render(request,'about_biet/research/recognized_research_centers.html',{'recog_research_data':recog_research_data})    
 
 def funded_projects(request):
-    return render(request,'about_biet/research/funded_projects.html')
+    projects_depts = Funded_Projects_Department.objects.all().order_by('sno')
+    projects = Funded_Projects.objects.all().order_by('sno')
+    content = {
+        'projects_depts': projects_depts,
+        'projects': projects
+    }
+
+    return render(request,'about_biet/research/funded_projects.html',content)
     
 def kscst_projects(request):
-    return render(request,'about_biet/research/kscst_projects.html')
+    projects_list = kscst.objects.all()
+    return render(request,'about_biet/research/kscst_projects.html',{'projects_list':projects_list})
     
 def industry_collaboration(request):
     mou_data = industrial_collabrations_and_mou.objects.all().order_by('sno')
@@ -85,7 +105,8 @@ def research_facilities(request):
     return render(request,'about_biet/research/research_facilities.html')
     
 def honors_and_awards(request):
-    return render(request,'about_biet/research/honors_and_awards.html')
+    awards_data = Honors_And_Awards.objects.all().order_by('sno')
+    return render(request,'about_biet/research/honors_and_awards.html',{'awards_data':awards_data})
 
 def grievance_redressal(request):
     return render(request,'about_biet/other_committees/grievance_redressal.html')

@@ -15,3 +15,15 @@ def reserach(request):
 
 def contact(request):
     return render(request,'admission/contact.html')
+
+def prospectus(request):
+    return render(request,'admission/prospectus.html')
+    
+def fee_structure(request):
+    ug_addmissions = UG_addmission.objects.all()
+    pg_addmissions = PG_addmission.objects.all()
+    content = {'ug_addmissions' : ug_addmissions,'pg_addmissions' : pg_addmissions}
+    return render(request,'admission/fee_structure.html',content)
+    
+def career(request):
+    return render(request,'admission/career.html')

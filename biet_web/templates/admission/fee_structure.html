@@ -1,0 +1,32 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<div class="content container bgdata">
+	<div class="page-wrapper">
+		<header class="page-heading clearfix">
+            <strong>
+                <h1 class="heading-title pull-left">Fee Structure</h1>
+            </strong>
+        </header>
+		<div class="page-content">
+            <article class="welcome col-md-12 col-sm-11">
+                <div class="row page-row">
+		    <div class="col-md-6">
+                        {% for addmission in ug_addmissions %}
+                        <dl class="dl-horizontal">
+                            <h3 class="title">Fee Structure for B.E Course</h3>
+                            <p></p>
+                            <a class="btn btn-theme view-pdf" href="{{addmission.addmission_fee.url}}"
+                                target="_blank"><i class="fa fa-download"></i>View PDF</a>
+                        </dl>
+                        {% endfor %}
+                    </div>
+                </div>
+                <!--//page-row-->
+            </article>
+		</div>
+		<!--//page-content-->
+	</div>
+	<!--//page-->
+</div>
+	
+{% endblock %}

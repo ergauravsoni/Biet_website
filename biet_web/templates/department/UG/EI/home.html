@@ -21,66 +21,34 @@
                                     <span class="line"><strong>Upcoming Events</strong></span>
                                 </h1>
                                 <div class="section-content">
-
-
+                                    <MARQUEE style="BACKGROUND-COLOR: transparent" id=Marquee1 onmouseover="this.stop();"
+					onmouseout="this.start();" scrollAmount=3 direction=up height=280>
+                                    {% for news in upevents %}
                                     <div class="event-item">
                                         <p class="date-label">
-                                            <span class="month">APR</span>
-                                            <span class="date-number">09</span>
+                                            <span class="month">{{news.start_date|date:'M'}}</span>
+                                            <span class="date-number">{{news.start_date|date:'d'}}</span>
                                         </p>
                                         <div class="details">
-                                            <h2 class="title">Campus Test</h2>
+                                            <h2 class="title">{{news.title}}</h2>
                                             <p class="time">
-                                                <i class="fa fa-clock-o"></i>10:30 AM -
-                                                04:30 PM
+                                                <i class="fa fa-clock-o"></i>{{news.start_date|date:'h:iA'}}
+                                                {% if news.end_date %}
+                                                 -
+                                                {{news.end_date|date:'h:iA'}}
+                                                {% endif %}
                                             </p>
                                             <p class="location">
-                                                <i class="fa fa-map-marker"></i>Chemical Dept
+                                                <i class="fa fa-map-marker"></i>{{news.location}}
                                             </p>
                                         </div>
                                         <!--//details-->
                                     </div>
-                                    <!--  -->
-                                    <!-- <div> -->
+                                    <!--event-item-->
                                     <br>
-                                    <!-- </div> -->
-                                    <div class="event-item">
-                                        <p class="date-label">
-                                            <span class="month">APR</span>
-                                            <span class="date-number">09</span>
-                                        </p>
-                                        <div class="details">
-                                            <h2 class="title">Campus Test</h2>
-                                            <p class="time">
-                                                <i class="fa fa-clock-o"></i>10:30 AM -
-                                                04:30 PM
-                                            </p>
-                                            <p class="location">
-                                                <i class="fa fa-map-marker"></i>Chemical Dept
-                                            </p>
-                                        </div>
-                                        <!--//details-->
-                                    </div>
-                                    <br>
-                                    <div class="event-item">
-                                        <p class="date-label">
-                                            <span class="month">APR</span>
-                                            <span class="date-number">09</span>
-                                        </p>
-                                        <div class="details">
-                                            <h2 class="title">Campus Test</h2>
-                                            <p class="time">
-                                                <i class="fa fa-clock-o"></i>10:30 AM -
-                                                04:30 PM
-                                            </p>
-                                            <p class="location">
-                                                <i class="fa fa-map-marker"></i>Chemical Dept
-                                            </p>
-                                        </div>
-                                        <!--//details-->
-                                    </div>
-
-                                    <a class="read-more" href="/allevent">All events<i
+                                    {% endfor %}
+                                    </MARQUEE>
+                                    <a class="read-more" href="/department/UG/EI/events">All events<i
                                             class="fa fa-chevron-right"></i></a>
                                 </div>
                                 <!--//section-content-->

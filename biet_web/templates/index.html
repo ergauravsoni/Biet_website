@@ -191,7 +191,7 @@
 					<br><br>
 						BIET has already been accredited thrice by National Board of Accreditation (NBA), New Delhi, during the year 2000, 2004 and 2008. 11 UG programs and 1 PG program were accredited during the last accreditation process between 2008 to 2013. BIET has always been lending itself to evaluation by national accrediting agencies and in 2017 December <b>NAAC</b> peer committee has yielded <b>‘A’</b> grade for BIET. Further, BIET is also recognized by UGC under 2(f) & 12(b).
 					<br><br>
-						Team BIET is headed by Professor Y. Vrushabhendrappa, Director and Dr. M.C Nataraja, Principal. They are assisted by Dr. H. B. Aravind, Dean-students affairs, Dr. B. E. Rangaswamy, Dean Research and Development, Dr. K Sadashivappa, Dean-Academics, Dr. M. S. Nagaraja, Dean-Training and Placement,  Dr. S. Kumarappa, Dean-Examinations, Dr. G.P Desai, Dean, public affairs, and all the Heads of the Departments.
+						Team BIET is headed by Professor Y. Vrushabhendrappa, Director and Dr. H.B. Aravind, Principal. They are assisted by Dr. S. Suresh, Dean-Student Welfare, Dr. B. E. Rangaswamy, Dean-Research and Development, Dr. K Sadashivappa, Dean-Academics, Dr. M. S. Nagaraja, Dean-Training and Placement,  Dr. S. Kumarappa, Dean-Examinations, Dr. G.P Desai, Dean-Public Relation, and all the Heads of the Departments.
 					<br><br>
 						We are sure, BIET will scale new heights in the years to come, as we have the commitment and capability to steer the institution to create an indelible impression in the domain of engineering education in this country. We firmly believe that the output from this institute will take on the onerous task of building a strong and a vibrant India.
 					</div>
@@ -246,20 +246,52 @@
 						<a href="/notification"><img src="{% static 'assets/img/1.jpg' %}" alt=""></a>
 						<div class="blog_date">
 							<p class="Blog_month textcolor-announcements">News<span>Events</span></p>
-							<p class="blog_year textcolor-announcements">View All</p>
+							<a href="/notification"><p class="blog_year textcolor-announcements">View All</p></a>
 						</div>
 					</div>
 					<div class="blog_content"> <br>
 						<MARQUEE style="BACKGROUND-COLOR: transparent" id=Marquee1 onmouseover="this.stop();"
-							onmouseout="this.start();" scrollAmount=3 direction=up height=280>
+							onmouseout="this.start();" scrollAmount=3 direction=up height=286>
 							{% for news in notification %}
-							<p>
+							<div class="event-item">
+								<p class="date-label">
+									<span class="month">{{news.start_date|date:'M'}}</span>
+									<span class="date-number">{{news.start_date|date:'d'}}</span>
+								</p>
+								{% if news.end_date %}
+								<h3 style="display:inline-block;"> &nbsp;-&nbsp; </h3>
+								<p class="date-label">
+									<span class="month">{{news.end_date|date:'M'}}</span>
+									<span class="date-number">{{news.end_date|date:'d'}}</span>
+								</p>
+								{% endif %}
+								<div class="details">
+									<p style="text-align: justify;">{{news.description|truncatechars:100}}</p>
+									<p class="time" style="display:inline-block;">
+										<i class="fa fa-clock-o"></i>{{news.start_date|date:'H:i'}}
+									</p>
+									{% if news.end_date %}
+									<p style="display:inline-block;"> - </p>
+									<p class="time" style="display:inline-block;">
+										{{news.end_date|date:'H:i'}}
+									</p>
+									{% endif %}
+								</div>
+								<!--//details-->
+							</div>
+							<!--  -->
+							<!-- <div> -->
+							<br>
+							<!-- </div> -->
+							<!-- <p>
 								{{news.description|truncatechars:100}}
 								<div class="service_details_bottom_content"><img class="aligncenter"
 										src="{% static 'assets/img/hr.png' %}" alt="" style="width:100%">
-							</p>
+							</p> -->
 							{% endfor %}
 						</marquee>
+						<a class="read-more" href="/notification" style="margin-top:20px; margin-bottom:20px;">View All<i
+                                            	   class="fa fa-chevron-right"></i></a>
 					</div>
 				</div>
 			</div>
@@ -268,7 +300,7 @@
 			<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
 				<div class="single_blog">
 					<div class="blog_img">
-						<a href="http://www.BIETalumni.org/events.html" target="_blank"><img
+						<a href="/alumini/alumni_corner_events"><img
 								src="{% static 'assets/img/2.jpg' %}" alt=""></a>
 						<div class="blog_date" style="width:auto;">
 							<p class="Blog_month textcolor-announcements">ALUMNI<span>CORNER</span></p>
@@ -278,41 +310,42 @@
 					</div>
 					<div class="blog_content">
 						<p class="blog_name"></p>
-						<h4><a href="http://www.BIETalumni.org/events.html" target="_blank">SNEHA SAMMILANA</a>
+						<h4><a href="/alumini/alumni_corner_events">SNEHA SAMMILANA</a>
 						</h4>
 						<MARQUEE style="BACKGROUND-COLOR: transparent" id=Marquee1 onmouseover="this.stop();"
-							onmouseout="this.start();" scrollAmount=3 direction=up height=190>
-							<p>
-								Date: 17/07/2020 The event “Guruvandana” and “Sneha Sammilana” of CS & E 1987-1991 batch was held virtually in the presence of Director, Principal and Alumni association members.
-								<div class="service_details_bottom_content"><img class="aligncenter"
-										src="{% static 'assets/img/hr.png' %}" alt="" style="width:100%">
-							</p>
-							<p>
-								Date: 29/07/2020 The event “Guruvandana” and “Sneha Sammilana” of CS & E 2015-2019 batch was held virtually in the presence of Director, Principal, Alumni association members and all the Staff members of CSE dept.
-								<div class="service_details_bottom_content"><img class="aligncenter"
-										src="{% static 'assets/img/hr.png' %}" alt="" style="width:100%">
-							</p>
-							<p>
-								Date: 25/07/2020 The alumni meet of BioTechnology department was held virtually in the presence of Director, Principal, Alumni association members and all the Staff members of BT dept.
-								<div class="service_details_bottom_content"><img class="aligncenter"
-										src="{% static 'assets/img/hr.png' %}" alt="" style="width:100%">
-							</p>
-							<p>
-								Date: 15/08/2020 The event “EC - Milana” of EC &E 2015-2019 batch was held virtually in the presence of Director, Principal, Alumni association members and all the Staff members of ECE dept.
-								<div class="service_details_bottom_content"><img class="aligncenter"
-										src="{% static 'assets/img/hr.png' %}" alt="" style="width:100%">
-							</p>
-							<p>
-								Date: 20/09/2020 The event “Tex - Milana” of the Textile Technology dept 2013-2017 batch was held virtually in the presence of Director, Principal, Alumni association members and all the Staff members of Textile Technology dept.
-								<div class="service_details_bottom_content"><img class="aligncenter"
-										src="{% static 'assets/img/hr.png' %}" alt="" style="width:100%">
-							</p>
-							<p>
-								Date: 10/10/2020 The event “Ratrouvaille” of the Textile Technology dept 2013-2017 batch was held virtually in the presence of Director, Principal, Alumni association members and all the Staff members of Textile Technology dept.
-								<div class="service_details_bottom_content"><img class="aligncenter"
-										src="{% static 'assets/img/hr.png' %}" alt="" style="width:100%">
-							</p>
+							onmouseout="this.start();" scrollAmount=3 direction=up height=230>
+							{% for news in alumni_corner_events %}
+							<div class="event-item">
+								<p class="date-label">
+									<span class="month">{{news.start_date|date:'M'}}</span>
+									<span class="date-number">{{news.start_date|date:'d'}}</span>
+								</p>
+								{% if news.end_date %}
+								<h3 style="display:inline-block;"> &nbsp;-&nbsp; </h3>
+								<p class="date-label">
+									<span class="month">{{news.end_date|date:'M'}}</span>
+									<span class="date-number">{{news.end_date|date:'d'}}</span>
+								</p>
+								{% endif %}
+								<div class="details">
+									<p style="text-align: justify;">{{news.description|truncatechars:100}}</p>
+									<p class="time" style="display:inline-block;">
+										<i class="fa fa-clock-o"></i>{{news.start_date|date:'H:i'}}
+									</p>
+									{% if news.end_date %}
+									<p style="display:inline-block;"> - </p>
+									<p class="time" style="display:inline-block;">
+										{{news.end_date|date:'H:i'}}
+									</p>
+									{% endif %}
+								</div>
+								<!--//details-->
+							</div>
+							<br>
+							{% endfor %}
 						</marquee>
+						<a class="read-more" href="/alumini/alumni_corner_events" style="margin-top:20px; margin-bottom: 20px;">View All<i
+                                    		class="fa fa-chevron-right"></i></a>
 					</div>
 				</div>
 			</div>
@@ -336,7 +369,7 @@
 									Students Securing Ranks VTU {{yr}}</a></h4>
 							
 							<MARQUEE style="BACKGROUND-COLOR: transparent" id=Marquee1 onmouseover="this.stop();"
-							onmouseout="this.start();" scrollAmount=3 direction=up height=160>
+							onmouseout="this.start();" scrollAmount=3 direction=up height=162>
 							{% for ct in setct %}
 							{% for student in ranks_data %}
                             				{% if student.year_range == yr and student.course_type == ct %}
@@ -352,13 +385,15 @@
 						</p>
 						{% endfor %}
 					</div>
+					<a class="read-more" href="/academics/ranks" style="margin-top:20px; margin-bottom: 20px;">View All<i
+                                    	class="fa fa-chevron-right"></i></a>
 				</div>
 			</div>
 
 			<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
 				<div class="single_blog">
 					<div class="blog_img">
-						<a href="/placement/placement_dept"><img src="{% static 'assets/img/new.jpg' %}" alt=""></a>
+						<a href="/placement/updates"><img src="{% static 'assets/img/new.jpg' %}" alt=""></a>
 						<div class="blog_date" style="width: auto;">
 							<p class="Blog_month textcolor-announcements ">PLACEMENT <span>Updates</span></p>
 							<p class="blog_year textcolor-announcements">2020</p>
@@ -366,23 +401,41 @@
 					</div>
 					<div class="blog_content"> <br>
 						<MARQUEE style="BACKGROUND-COLOR: transparent" id=Marquee1 onmouseover="this.stop();"
-							onmouseout="this.start();" scrollAmount=3 direction=up height=280>
-							<p>
-								Karthik GM from CSE Department got selected for an intership @CargoAI Singapore.
-								<div class="service_details_bottom_content"><img class="aligncenter"
-										src="{% static 'assets/img/hr.png' %}" alt="" style="width:100%">
-							</p>
-							<p>
-								Sonika Prakash and Spoorthy MN from CSE Department got placed in TCS Digital Campus Drive.
-								<div class="service_details_bottom_content"><img class="aligncenter"
-										src="{% static 'assets/img/hr.png' %}" alt="" style="width:100%">
-							</p>
-							<p>
-								Dheeraj Kumar from ISE Department got TCS offer via Code-Vita
-								<div class="service_details_bottom_content"><img class="aligncenter"
-										src="{% static 'assets/img/hr.png' %}" alt="" style="width:100%">
-							</p>
+							onmouseout="this.start();" scrollAmount=3 direction=up height=292>
+							{% for news in placement_updates_data %}
+							{% if news.start_date|date:'Y' == '2020' %}
+							<div class="event-item">
+								<p class="date-label">
+									<span class="month">{{news.start_date|date:'M'}}</span>
+									<span class="date-number">{{news.start_date|date:'d'}}</span>
+								</p>
+								{% if news.end_date %}
+								<h3 style="display:inline-block;"> &nbsp;-&nbsp; </h3>
+								<p class="date-label">
+									<span class="month">{{news.end_date|date:'M'}}</span>
+									<span class="date-number">{{news.end_date|date:'d'}}</span>
+								</p>
+								{% endif %}
+								<div class="details">
+									<p style="text-align: justify;">{{news.description|truncatechars:100}}</p>
+									<p class="time" style="display:inline-block;">
+										<i class="fa fa-clock-o"></i>{{news.start_date|date:'H:i'}}
+									</p>
+									{% if news.end_date %}
+									<p style="display:inline-block;"> - </p>
+									<p class="time" style="display:inline-block;">
+										{{news.end_date|date:'H:i'}}
+									</p>
+									{% endif %}
+								</div>
+								<!--//details-->
+							</div>
+							<br>
+							{% endif %}
+							{% endfor %}
 						</marquee>
+						<a class="read-more" href="/placement/updates" style="margin-top:20px; margin-bottom: 20px;">View All<i
+                                    		class="fa fa-chevron-right"></i></a>
 					</div>
 				</div>
 			</div>
@@ -541,37 +594,41 @@
 					<h2>Placement Partners</h2>
 				</div>
 				<div class="slider_bottom">
-					<div class="single_slide"><a href="placement.html"><img
+					<div class="single_slide"><a href="placement/placement_dept"><img
 								src="{% static 'assets/img/rsz_amazon-logo.png' %}" alt=""></a></div>
-					<div class="single_slide"><a href="placement.html"><img
+					<div class="single_slide"><a href="placement/placement_dept"><img
+								src="{% static 'assets/img/rsz_tcs-logo.png' %}" alt=""></a></div>
+					<div class="single_slide"><a href="placement/placement_dept"><img
 								src="{% static 'assets/img/rsz_gigsky-blue-logo-no-tag-e1541619696766.png' %}"
 								alt=""></a></div>
-					<div class="single_slide"><a href="placement.html"><img
+					<div class="single_slide"><a href="placement/placement_dept"><img
 								src="{% static 'assets/img/rsz_qwikcilver-solutions-pvt-ltd-koramangala-bangalore-loyalty-card-manufacturers-1lc4v1b.png' %}"
 								alt=""></a></div>
-					<div class="single_slide"><a href="placement.html"><img
+					<div class="single_slide"><a href="placement/placement_dept"><img
 								src="{% static 'assets/img/rsz_infosys-logo-1.png' %}" alt=""></a></div>
-					<div class="single_slide"><a href="placement.html"><img src="{% static 'assets/img/inube.png' %}"
+					<div class="single_slide"><a href="placement/placement_dept"><img src="{% static 'assets/img/inube.png' %}"
 								alt=""></a></div>
-					<div class="single_slide"><a href="placement.html"><img src="{% static 'assets/img/slide_5.png' %}"
+					<div class="single_slide"><a href="placement/placement_dept"><img src="{% static 'assets/img/slide_5.png' %}"
 								alt=""></a></div>
-					<div class="single_slide"><a href="placement.html"><img src="{% static 'assets/img/mindtree.png' %}"
+					<div class="single_slide"><a href="placement/placement_dept"><img src="{% static 'assets/img/mindtree.png' %}"
 								alt=""></a></div>
-					<div class="single_slide"><a href="placement.html"><img
+					<div class="single_slide"><a href="placement/placement_dept"><img
 								src="{% static 'assets/img/rsz_amazon-logo.png' %}" alt=""></a></div>
-					<div class="single_slide"><a href="placement.html"><img
+					<div class="single_slide"><a href="placement/placement_dept"><img
+								src="{% static 'assets/img/rsz_tcs-logo.png' %}" alt=""></a></div>
+					<div class="single_slide"><a href="placement/placement_dept"><img
 								src="{% static 'assets/img/rsz_gigsky-blue-logo-no-tag-e1541619696766.png' %}"
 								alt=""></a></div>
-					<div class="single_slide"><a href="placement.html"><img
+					<div class="single_slide"><a href="placement/placement_dept"><img
 								src="{% static 'assets/img/rsz_qwikcilver-solutions-pvt-ltd-koramangala-bangalore-loyalty-card-manufacturers-1lc4v1b.png' %}"
 								alt=""></a></div>
-					<div class="single_slide"><a href="placement.html"><img
+					<div class="single_slide"><a href="placement/placement_dept"><img
 								src="{% static 'assets/img/rsz_infosys-logo-1.png' %}" alt=""></a></div>
-					<div class="single_slide"><a href="placement.html"><img src="{% static 'assets/img/inube.png' %}"
+					<div class="single_slide"><a href="placement/placement_dept"><img src="{% static 'assets/img/inube.png' %}"
 								alt=""></a></div>
-					<div class="single_slide"><a href="placement.html"><img src="{% static 'assets/img/slide_5.png' %}"
+					<div class="single_slide"><a href="placement/placement_dept"><img src="{% static 'assets/img/slide_5.png' %}"
 								alt=""></a></div>
-					<div class="single_slide"><a href="placement.html"><img src="{% static 'assets/img/mindtree.png' %}"
+					<div class="single_slide"><a href="placement/placement_dept"><img src="{% static 'assets/img/mindtree.png' %}"
 								alt=""></a></div>
 				</div>
 

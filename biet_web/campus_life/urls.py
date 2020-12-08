@@ -11,5 +11,6 @@ urlpatterns = [
     path('campus_life/graduation_day',views.graduation_day, name='graduation_day'),
     path('campus_life/btech_technowav',views.btech_technowav, name='btech_technowav'),
     path('campus_life/gym',views.gym, name='gym'),
+    path('campus_life/sac',views.sac, name='campus_life/sac'),
 ]
 

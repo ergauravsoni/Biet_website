@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Library_User_Manual, Ranks, Gallary
+from .models import Library_User_Manual, Ranks, Gallary, consultancyOrganizations
 from placement.models import industrial_collabrations_and_mou
 
 # Create your views here.
@@ -65,3 +65,9 @@ def industry_collab(request):
     content={'mou_data':mou_data}
     
     return render(request,'academics/industry_collab.html',content)
+
+def consultancy(request):
+    org_data = consultancyOrganizations.objects.all().order_by('sno')
+    content={'org_data': org_data}
+    
+    return render(request,'academics/consultancy.html',content)

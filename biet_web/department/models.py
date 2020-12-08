@@ -25,6 +25,17 @@ class civil_dept(models.Model):
     def __str__(self):
         return '{}'.format(self.name) + " : " + self.staff_type
 
+class civil_dept_upcoming_events(models.Model):
+    title = models.CharField(max_length=60)
+    description = models.TextField()
+    detail = models.FileField(upload_to = 'department/CV/event/', blank=True)
+    start_date = models.DateTimeField()
+    end_date = models.DateTimeField(null=True,blank=True)
+    location = models.CharField(max_length=25)
+    
+    def __str__(self):
+        return '{}'.format(self.title)
+
 class civil_dept_research_guide(models.Model):
     sno = models.IntegerField(primary_key=True)
     guide_name = models.CharField(max_length=100)
@@ -268,6 +279,17 @@ class mechanical_dept(models.Model):
 
     def __str__(self):
         return '{}'.format(self.name) + " : " + self.staff_type
+
+class mechanical_dept_upcoming_events(models.Model):
+    title = models.CharField(max_length=60)
+    description = models.TextField()
+    detail = models.FileField(upload_to = 'department/ME/event/', blank=True)
+    start_date = models.DateTimeField()
+    end_date = models.DateTimeField(null=True,blank=True)
+    location = models.CharField(max_length=25)
+    
+    def __str__(self):
+        return '{}'.format(self.title)
         
 class mechanical_dept_research_guide(models.Model):
     sno = models.IntegerField(primary_key=True)
@@ -351,7 +373,6 @@ class mechanical_dept_lab_facilities(models.Model):
 
     def __str__(self):
         return self.name
-
 
 class mechanical_dept_major_equipments(models.Model):
     equipment_description = models.TextField()
@@ -513,6 +534,17 @@ class electrical_and_electronics_dept(models.Model):
 
     def __str__(self):
         return '{}'.format(self.name) + " : " + self.staff_type
+
+class electrical_and_electronics_dept_upcoming_events(models.Model):
+    title = models.CharField(max_length=60)
+    description = models.TextField()
+    detail = models.FileField(upload_to = 'department/EE/event/', blank=True)
+    start_date = models.DateTimeField()
+    end_date = models.DateTimeField(null=True,blank=True)
+    location = models.CharField(max_length=25)
+    
+    def __str__(self):
+        return '{}'.format(self.title)
 
 class electrical_and_electronics_dept_research_guide(models.Model):
     sno = models.IntegerField(primary_key=True)
@@ -758,6 +790,17 @@ class electronics_and_communication_dept(models.Model):
     def __str__(self):
         return '{}'.format(self.name) + " : " + self.staff_type
 
+class electronics_and_communication_dept_upcoming_events(models.Model):
+    title = models.CharField(max_length=60)
+    description = models.TextField()
+    detail = models.FileField(upload_to = 'department/EC/event/', blank=True)
+    start_date = models.DateTimeField()
+    end_date = models.DateTimeField(null=True,blank=True)
+    location = models.CharField(max_length=25)
+    
+    def __str__(self):
+        return '{}'.format(self.title)
+
 class electronics_and_communication_dept_research_guide(models.Model):
     sno = models.IntegerField(primary_key=True)
     guide_name = models.CharField(max_length=100)
@@ -1001,6 +1044,17 @@ class chemical_dept(models.Model):
 
     def __str__(self):
         return '{}'.format(self.name) + " : " + self.staff_type
+
+class chemical_dept_upcoming_events(models.Model):
+    title = models.CharField(max_length=60)
+    description = models.TextField()
+    detail = models.FileField(upload_to = 'department/CH/event/', blank=True)
+    start_date = models.DateTimeField()
+    end_date = models.DateTimeField(null=True,blank=True)
+    location = models.CharField(max_length=25)
+    
+    def __str__(self):
+        return '{}'.format(self.title)
 
 class chemical_dept_research_guide(models.Model):
     sno = models.IntegerField(primary_key=True)
@@ -1246,6 +1300,17 @@ class electronics_and_instrumentation_dept(models.Model):
     def __str__(self):
         return '{}'.format(self.name) + " : " + self.staff_type
 
+class electronics_and_instrumentation_dept_upcoming_events(models.Model):
+    title = models.CharField(max_length=60)
+    description = models.TextField()
+    detail = models.FileField(upload_to = 'department/EI/event/', blank=True)
+    start_date = models.DateTimeField()
+    end_date = models.DateTimeField(null=True,blank=True)
+    location = models.CharField(max_length=25)
+    
+    def __str__(self):
+        return '{}'.format(self.title)
+
 class electronics_and_instrumentation_dept_research_guide(models.Model):
     sno = models.IntegerField(primary_key=True)
     guide_name = models.CharField(max_length=100)
@@ -1489,6 +1554,17 @@ class computer_science_dept(models.Model):
 
     def __str__(self):
         return '{}'.format(self.name) + " : " + self.staff_type
+
+class computer_science_dept_upcoming_events(models.Model):
+    title = models.CharField(max_length=60)
+    description = models.TextField()
+    detail = models.FileField(upload_to = 'department/CS/event/', blank=True)
+    start_date = models.DateTimeField()
+    end_date = models.DateTimeField(null=True,blank=True)
+    location = models.CharField(max_length=25)
+    
+    def __str__(self):
+        return '{}'.format(self.title)
 
 class computer_science_dept_research_guide(models.Model):
     sno = models.IntegerField(primary_key=True)
@@ -1734,6 +1810,17 @@ class information_science_dept(models.Model):
     def __str__(self):
         return '{}'.format(self.name) + " : " + self.staff_type
 
+class information_science_dept_upcoming_events(models.Model):
+    title = models.CharField(max_length=60)
+    description = models.TextField()
+    detail = models.FileField(upload_to = 'department/IS/event/', blank=True)
+    start_date = models.DateTimeField()
+    end_date = models.DateTimeField(null=True,blank=True)
+    location = models.CharField(max_length=25)
+    
+    def __str__(self):
+        return '{}'.format(self.title)
+
 class information_science_dept_research_guide(models.Model):
     sno = models.IntegerField(primary_key=True)
     guide_name = models.CharField(max_length=100)
@@ -1977,6 +2064,17 @@ class textile_technology_dept(models.Model):
 
     def __str__(self):
         return '{}'.format(self.name) + " : " + self.staff_type
+
+class textile_technology_dept_upcoming_events(models.Model):
+    title = models.CharField(max_length=60)
+    description = models.TextField()
+    detail = models.FileField(upload_to = 'department/TX/event/', blank=True)
+    start_date = models.DateTimeField()
+    end_date = models.DateTimeField(null=True,blank=True)
+    location = models.CharField(max_length=25)
+    
+    def __str__(self):
+        return '{}'.format(self.title)
 
 class textile_technology_dept_research_guide(models.Model):
     sno = models.IntegerField(primary_key=True)
@@ -2222,6 +2320,17 @@ class bio_technology_dept(models.Model):
     def __str__(self):
         return '{}'.format(self.name) + " : " + self.staff_type
 
+class bio_technology_dept_upcoming_events(models.Model):
+    title = models.CharField(max_length=60)
+    description = models.TextField()
+    detail = models.FileField(upload_to = 'department/BT/event/', blank=True)
+    start_date = models.DateTimeField()
+    end_date = models.DateTimeField(null=True,blank=True)
+    location = models.CharField(max_length=25)
+    
+    def __str__(self):
+        return '{}'.format(self.title)
+
 class bio_technology_dept_research_guide(models.Model):
     sno = models.IntegerField(primary_key=True)
     guide_name = models.CharField(max_length=100)
@@ -2466,6 +2575,17 @@ class physics_dept(models.Model):
     def __str__(self):
         return '{}'.format(self.name) + " : " + self.staff_type
 
+class physics_dept_upcoming_events(models.Model):
+    title = models.CharField(max_length=60)
+    description = models.TextField()
+    detail = models.FileField(upload_to = 'department/PHY/event/', blank=True)
+    start_date = models.DateTimeField()
+    end_date = models.DateTimeField(null=True,blank=True)
+    location = models.CharField(max_length=25)
+    
+    def __str__(self):
+        return '{}'.format(self.title)
+
 class physics_dept_research_guide(models.Model):
     sno = models.IntegerField(primary_key=True)
     guide_name = models.CharField(max_length=100)
@@ -2677,6 +2797,17 @@ class chemistry_dept(models.Model):
 
     def __str__(self):
         return '{}'.format(self.name) + " : " + self.staff_type
+
+class chemistry_dept_upcoming_events(models.Model):
+    title = models.CharField(max_length=60)
+    description = models.TextField()
+    detail = models.FileField(upload_to = 'department/CHEM/event/', blank=True)
+    start_date = models.DateTimeField()
+    end_date = models.DateTimeField(null=True,blank=True)
+    location = models.CharField(max_length=25)
+    
+    def __str__(self):
+        return '{}'.format(self.title)
 
 class chemistry_dept_research_guide(models.Model):
     sno = models.IntegerField(primary_key=True)
@@ -2890,6 +3021,17 @@ class mathematics_dept(models.Model):
     def __str__(self):
         return '{}'.format(self.name) + " : " + self.staff_type
 
+class mathematics_dept_upcoming_events(models.Model):
+    title = models.CharField(max_length=60)
+    description = models.TextField()
+    detail = models.FileField(upload_to = 'department/MAT/event/', blank=True)
+    start_date = models.DateTimeField()
+    end_date = models.DateTimeField(null=True,blank=True)
+    location = models.CharField(max_length=25)
+    
+    def __str__(self):
+        return '{}'.format(self.title)
+
 class mathematics_dept_research_guide(models.Model):
     sno = models.IntegerField(primary_key=True)
     guide_name = models.CharField(max_length=100)
@@ -3101,6 +3243,17 @@ class mca_dept(models.Model):
 
     def __str__(self):
         return '{}'.format(self.name) + " : " + self.staff_type
+
+class mca_dept_upcoming_events(models.Model):
+    title = models.CharField(max_length=60)
+    description = models.TextField()
+    detail = models.FileField(upload_to = 'department/MCA/event/', blank=True)
+    start_date = models.DateTimeField()
+    end_date = models.DateTimeField(null=True,blank=True)
+    location = models.CharField(max_length=25)
+    
+    def __str__(self):
+        return '{}'.format(self.title)
 
 class mca_dept_research_guide(models.Model):
     sno = models.IntegerField(primary_key=True)
@@ -3345,6 +3498,17 @@ class environmental_dept(models.Model):
 
     def __str__(self):
         return '{}'.format(self.name) + " : " + self.staff_type
+
+class environmental_dept_upcoming_events(models.Model):
+    title = models.CharField(max_length=60)
+    description = models.TextField()
+    detail = models.FileField(upload_to = 'department/ENV/event/', blank=True)
+    start_date = models.DateTimeField()
+    end_date = models.DateTimeField(null=True,blank=True)
+    location = models.CharField(max_length=25)
+    
+    def __str__(self):
+        return '{}'.format(self.title)
 
 class environmental_dept_research_guide(models.Model):
     sno = models.IntegerField(primary_key=True)

@@ -40,6 +40,7 @@ def home(request, course, dept):
         results_data = civil_dept_result_analysis.objects.all()
         dept_library = civil_dept_library.objects.all()
         forum_desc = civil_dept_forum.objects.all()
+        upevents = civil_dept_upcoming_events.objects.all().order_by('-start_date')
 
         content = {'faculties_data': faculties_data,
                     'achievements_data': achievements_data,
@@ -62,7 +63,8 @@ def home(request, course, dept):
                     'placement_data': placement_data,
                     'results_data' : results_data,
                     'dept_library': dept_library,
-                    'forum_desc': forum_desc
+                    'forum_desc': forum_desc,
+                    'upevents': upevents
                 }
 
     elif course == 'UG' and dept == 'ME':
@@ -99,6 +101,7 @@ def home(request, course, dept):
         results_data = mechanical_dept_result_analysis.objects.all()
         dept_library = mechanical_dept_library.objects.all()
         forum_desc = mechanical_dept_forum.objects.all()
+        upevents = mechanical_dept_upcoming_events.objects.all().order_by('-start_date')
         
         content = {'faculties_data': faculties_data,
                     'achievements_data': achievements_data,
@@ -121,7 +124,8 @@ def home(request, course, dept):
                     'placement_data': placement_data,
                     'results_data' : results_data,
                     'dept_library': dept_library,
-                    'forum_desc': forum_desc
+                    'forum_desc': forum_desc,
+                    'upevents': upevents
                 }
 
     elif course == 'UG' and dept == 'EE':
@@ -158,6 +162,7 @@ def home(request, course, dept):
         results_data = electrical_and_electronics_dept_result_analysis.objects.all()
         dept_library = electrical_and_electronics_dept_library.objects.all()
         forum_desc = electrical_and_electronics_dept_forum.objects.all()
+        upevents = electrical_and_electronics_dept_upcoming_events.objects.all().order_by('-start_date')
         
         content = {'faculties_data': faculties_data,
                     'achievements_data': achievements_data,
@@ -180,7 +185,8 @@ def home(request, course, dept):
                     'placement_data': placement_data,
                     'results_data' : results_data,
                     'dept_library': dept_library,
-                    'forum_desc': forum_desc
+                    'forum_desc': forum_desc,
+                    'upevents': upevents
                 }
 
     elif course == 'UG' and dept == 'EC':
@@ -217,6 +223,7 @@ def home(request, course, dept):
         results_data = electronics_and_communication_dept_result_analysis.objects.all()
         dept_library = electronics_and_communication_dept_library.objects.all()
         forum_desc = electronics_and_communication_dept_forum.objects.all()
+        upevents = electronics_and_communication_dept_upcoming_events.objects.all().order_by('-start_date')
         
         content = {'faculties_data': faculties_data,
                     'achievements_data': achievements_data,
@@ -239,7 +246,8 @@ def home(request, course, dept):
                     'placement_data': placement_data,
                     'results_data' : results_data,
                     'dept_library': dept_library,
-                    'forum_desc': forum_desc
+                    'forum_desc': forum_desc,
+                    'upevents': upevents
                 }
 
     elif course == 'UG' and dept == 'CH':
@@ -276,6 +284,7 @@ def home(request, course, dept):
         results_data = chemical_dept_result_analysis.objects.all()
         dept_library = chemical_dept_library.objects.all()
         forum_desc = chemical_dept_forum.objects.all()
+        upevents = chemical_dept_upcoming_events.objects.all().order_by('-start_date')
         
         content = {'faculties_data': faculties_data,
                     'achievements_data': achievements_data,
@@ -298,7 +307,8 @@ def home(request, course, dept):
                     'placement_data': placement_data,
                     'results_data' : results_data,
                     'dept_library': dept_library,
-                    'forum_desc': forum_desc
+                    'forum_desc': forum_desc,
+                    'upevents': upevents
                 }
 
     elif course == 'UG' and dept == 'EI':
@@ -335,6 +345,7 @@ def home(request, course, dept):
         results_data = electronics_and_instrumentation_dept_result_analysis.objects.all()
         dept_library = electronics_and_instrumentation_dept_library.objects.all()
         forum_desc = electronics_and_instrumentation_dept_forum.objects.all()
+        upevents = electronics_and_instrumentation_dept_upcoming_events.objects.all().order_by('-start_date')
         
         content = {'faculties_data': faculties_data,
                     'achievements_data': achievements_data,
@@ -357,7 +368,8 @@ def home(request, course, dept):
                     'placement_data': placement_data,
                     'results_data' : results_data,
                     'dept_library': dept_library,
-                    'forum_desc': forum_desc
+                    'forum_desc': forum_desc,
+                    'upevents': upevents
                 }
 
     elif course == 'UG' and dept == 'CS':
@@ -394,6 +406,7 @@ def home(request, course, dept):
         results_data = computer_science_dept_result_analysis.objects.all()
         dept_library = computer_science_dept_library.objects.all()
         forum_desc = computer_science_dept_forum.objects.all()
+        upevents=computer_science_dept_upcoming_events.objects.all().order_by('-start_date')
         
         content = {'faculties_data': faculties_data,
                     'achievements_data': achievements_data,
@@ -416,7 +429,8 @@ def home(request, course, dept):
                     'placement_data': placement_data,
                     'results_data' : results_data,
                     'dept_library': dept_library,
-                    'forum_desc': forum_desc
+                    'forum_desc': forum_desc,
+                    'upevents': upevents
                 }
 
     elif course == 'UG' and dept == 'IS':
@@ -453,6 +467,7 @@ def home(request, course, dept):
         results_data = information_science_dept_result_analysis.objects.all()
         dept_library = information_science_dept_library.objects.all()
         forum_desc = information_science_dept_forum.objects.all()
+        upevents = information_science_dept_upcoming_events.objects.all().order_by('-start_date')
         
         content = {'faculties_data': faculties_data,
                     'achievements_data': achievements_data,
@@ -475,7 +490,8 @@ def home(request, course, dept):
                     'placement_data': placement_data,
                     'results_data' : results_data,
                     'dept_library': dept_library,
-                    'forum_desc': forum_desc
+                    'forum_desc': forum_desc,
+                    'upevents': upevents
                 }
 
     elif course == 'UG' and dept == 'TX':
@@ -512,6 +528,7 @@ def home(request, course, dept):
         results_data = textile_technology_dept_result_analysis.objects.all()
         dept_library = textile_technology_dept_library.objects.all()
         forum_desc = textile_technology_dept_forum.objects.all()
+        upevents = textile_technology_dept_upcoming_events.objects.all().order_by('-start_date')
         
         content = {'faculties_data': faculties_data,
                     'achievements_data': achievements_data,
@@ -534,7 +551,8 @@ def home(request, course, dept):
                     'placement_data': placement_data,
                     'results_data' : results_data,
                     'dept_library': dept_library,
-                    'forum_desc': forum_desc
+                    'forum_desc': forum_desc,
+                    'upevents': upevents
                 }
 
     elif course == 'UG' and dept == 'BT':
@@ -571,6 +589,7 @@ def home(request, course, dept):
         results_data = bio_technology_dept_result_analysis.objects.all()
         dept_library = bio_technology_dept_library.objects.all()
         forum_desc = bio_technology_dept_forum.objects.all()
+        upevents = bio_technology_dept_upcoming_events.objects.all().order_by('-start_date')
         
         content = {'faculties_data': faculties_data,
                     'achievements_data': achievements_data,
@@ -593,7 +612,8 @@ def home(request, course, dept):
                     'placement_data': placement_data,
                     'results_data' : results_data,
                     'dept_library': dept_library,
-                    'forum_desc': forum_desc
+                    'forum_desc': forum_desc,
+                    'upevents': upevents
                 }
 
     elif course == 'UG' and dept == 'PHY':
@@ -628,6 +648,7 @@ def home(request, course, dept):
         results_data = physics_dept_result_analysis.objects.all()
         dept_library = physics_dept_library.objects.all()
         forum_desc = physics_dept_forum.objects.all()
+        upevents = physics_dept_upcoming_events.objects.all().order_by('-start_date')
         
         content = {'faculties_data': faculties_data,
                     'achievements_data': achievements_data,
@@ -648,7 +669,8 @@ def home(request, course, dept):
                     'learning_materials_data': learning_materials_data,
                     'results_data' : results_data,
                     'dept_library': dept_library,
-                    'forum_desc': forum_desc
+                    'forum_desc': forum_desc,
+                    'upevents': upevents
                 }
 
     elif course == 'UG' and dept == 'CHE':
@@ -683,6 +705,7 @@ def home(request, course, dept):
         results_data = chemistry_dept_result_analysis.objects.all()
         dept_library = chemistry_dept_library.objects.all()
         forum_desc = chemistry_dept_forum.objects.all()
+        upevents = chemistry_dept_upcoming_events.objects.all().order_by('-start_date')
         
         content = {'faculties_data': faculties_data,
                     'achievements_data': achievements_data,
@@ -703,7 +726,8 @@ def home(request, course, dept):
                     'learning_materials_data': learning_materials_data,
                     'results_data' : results_data,
                     'dept_library': dept_library,
-                    'forum_desc': forum_desc
+                    'forum_desc': forum_desc,
+                    'upevents': upevents
                 }
 
     elif course == 'UG' and dept == 'MAT':
@@ -738,6 +762,7 @@ def home(request, course, dept):
         results_data = mathematics_dept_result_analysis.objects.all()
         dept_library = mathematics_dept_library.objects.all()
         forum_desc = mathematics_dept_forum.objects.all()
+        upevents = mathematics_dept_upcoming_events.objects.all().order_by('-start_date')
         
         content = {'faculties_data': faculties_data,
                     'achievements_data': achievements_data,
@@ -758,7 +783,8 @@ def home(request, course, dept):
                     'learning_materials_data': learning_materials_data,
                     'results_data' : results_data,
                     'dept_library': dept_library,
-                    'forum_desc': forum_desc
+                    'forum_desc': forum_desc,
+                    'upevents': upevents
                 }
 
     elif course == 'PG' and dept == 'MCA':
@@ -795,6 +821,7 @@ def home(request, course, dept):
         results_data = mca_dept_result_analysis.objects.all()
         dept_library = mca_dept_library.objects.all()
         forum_desc = mca_dept_forum.objects.all()
+        upevents = mca_dept_upcoming_events.objects.all().order_by('-start_date')
 
         content = {'faculties_data': faculties_data,
                     'achievements_data': achievements_data,
@@ -817,7 +844,8 @@ def home(request, course, dept):
                     'placement_data': placement_data,
                     'results_data' : results_data,
                     'dept_library': dept_library,
-                    'forum_desc': forum_desc
+                    'forum_desc': forum_desc,
+                    'upevents': upevents
                 }
                 
     elif course == 'PG' and dept == 'ENV':
@@ -854,6 +882,7 @@ def home(request, course, dept):
         results_data = environmental_dept_result_analysis.objects.all()
         dept_library = environmental_dept_library.objects.all()
         forum_desc = environmental_dept_forum.objects.all()
+        upevents = environmental_dept_upcoming_events.objects.all().order_by('-start_date')
 
         content = {'faculties_data': faculties_data,
                     'achievements_data': achievements_data,
@@ -876,8 +905,119 @@ def home(request, course, dept):
                     'placement_data': placement_data,
                     'results_data' : results_data,
                     'dept_library': dept_library,
-                    'forum_desc': forum_desc
+                    'forum_desc': forum_desc,
+                    'upevents': upevents
                 }
     
     return render(request, 'department/'+course+'/' + dept + '/home.html', content)
 
+def events(request, course, dept):
+    print(dept)
+    # print(dept)
+
+    if course == 'UG' and dept == 'CV':
+        
+        events=civil_dept_upcoming_events.objects.all().order_by('-start_date')
+        
+        content = {'events': events
+                }
+
+    elif course == 'UG' and dept == 'ME':
+        
+        events=mechanical_dept_upcoming_events.objects.all().order_by('-start_date')
+        
+        content = {'events': events
+                }
+
+    elif course == 'UG' and dept == 'EE':
+        
+        events=electrical_and_electronics_dept_upcoming_events.objects.all().order_by('-start_date')
+        
+        content = {'events': events
+                }
+
+    elif course == 'UG' and dept == 'EC':
+        
+        events=electronics_and_communication_dept_upcoming_events.objects.all().order_by('-start_date')
+        
+        content = {'events': events
+                }
+
+    elif course == 'UG' and dept == 'CH':
+        
+        events=chemical_dept_upcoming_events.objects.all().order_by('-start_date')
+        
+        content = {'events': events
+                }
+
+    elif course == 'UG' and dept == 'EI':
+        
+        events=electronics_and_instrumentation_dept_upcoming_events.objects.all().order_by('-start_date')
+        
+        content = {'events': events
+                }
+
+    elif course == 'UG' and dept == 'CS':
+
+        events=computer_science_dept_upcoming_events.objects.all().order_by('-start_date')
+
+        content = {'events': events
+                }
+
+    elif course == 'UG' and dept == 'IS':
+
+        events=information_science_dept_upcoming_events.objects.all().order_by('-start_date')
+
+        content = {'events': events
+                }        
+
+    elif course == 'UG' and dept == 'TX':
+
+        events=textile_technology_dept_upcoming_events.objects.all().order_by('-start_date')
+
+        content = {'events': events
+                }
+
+    elif course == 'UG' and dept == 'BT':
+
+        events=bio_technology_dept_upcoming_events.objects.all().order_by('-start_date')
+
+        content = {'events': events
+                }
+
+    elif course == 'UG' and dept == 'PHY':
+
+        events=physics_dept_upcoming_events.objects.all().order_by('-start_date')
+
+        content = {'events': events
+                }
+
+    elif course == 'UG' and dept == 'CHE':
+
+        events=chemistry_dept_upcoming_events.objects.all().order_by('-start_date')
+
+        content = {'events': events
+                }
+
+    elif course == 'UG' and dept == 'MAT':
+
+        events=mathematics_dept_upcoming_events.objects.all().order_by('-start_date')
+
+        content = {'events': events
+                }
+
+    elif course == 'PG' and dept == 'MCA':
+
+        events=mca_dept_upcoming_events.objects.all().order_by('-start_date')
+
+        content = {'events': events
+                }
+
+    elif course == 'PG' and dept == 'ENV':
+
+        events=environmental_dept_upcoming_events.objects.all().order_by('-start_date')
+
+        content = {'events': events
+                }
+
+    return render(request, 'department/'+course+'/' + dept + '/events.html', content)

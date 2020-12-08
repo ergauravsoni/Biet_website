@@ -26,3 +26,10 @@ class Gallary(models.Model):
     def __str__(self):
         return '{}'.format(self.image)
 
+class consultancyOrganizations(models.Model):
+    
+    sno=models.IntegerField()
+    name_of_firms=models.CharField(max_length=250)
+    
+    def __str__(self):
+        return str(self.sno) + ". " + str(self.name_of_firms[:80] + "...")

@@ -1,0 +1,60 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<div class="content container bgdata">
+	<div class="page-wrapper">
+		<header class="page-heading clearfix">
+            <strong>
+                <h1 class="heading-title pull-left">National Cadet Corps - NCC</h1>
+            </strong>
+        </header>
+		<div class="page-content">
+            <article class="welcome col-md-12 col-sm-11">
+                <div class="row page-row">
+                    <div class="row medical">
+                        <div class="col-md-4 text-center">
+                            <div class="album-cover">
+                                <!-- <a href="#"> -->
+                                <img class="img-thumbnail"
+                                    src="{% static 'assets/ncc_nss/Lt. Anjaneya.jpg' %}" alt=""
+                                    style="width:330px;height:360px;">
+    
+    
+                                <!-- </a> -->
+                                <div class="desc">
+                                    <h5>Lt. ANJANEYA L.H.</h5>
+                                    <h4><small>Associate NCC Officer</small></h4>
+    
+    
+                                    <!-- <button type="button" class="btn btn-theme">Theme Button</button> -->
+    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-8 text-center">
+                            <div class="has-divider" style="  text-align: justify;">
+                                <br>
+                                <h3>Vision</h3>
+                                <p>To develop a committed reservoir of cadets who are resourceful, responsible, resilient, loyal leaders to face the challenges of the changing world and plays a positive role in inculcating the spirit of selfless service and dignity of labour among the student community.</p>
+                                <h3>Mission</h3>
+                                <ul>
+                                    <li>To develop character, comradeship, discipline, secular outlook, spirit of adventure and the ideals of selfless service amongst the youth of the country.</li>
+                                    <li>To create a human resource of organized, trained and motivated youth, to provide leadership in all walks of life and always available for the service of the nation.</li>
+                                    <li>To provide a suitable environment to motivate the youth to take up a career in the Armed Forces.</li>
+                                </ul>
+                                <h3>Moto</h3>
+                                <p>Unity And Discipline</p><br>
+                            </div>
+                            <a href="{% static 'assets/ncc_nss/ncc_events.pdf' %}"
+                                class="btn btn-theme view-pdf">View NCC Events</a>
+                        </div>
+                    </div>
+                </div>
+                <!--//page-row-->
+            </article>
+		</div>
+		<!--//page-content-->
+	</div>
+	<!--//page-->
+</div>
+	
+{% endblock %}

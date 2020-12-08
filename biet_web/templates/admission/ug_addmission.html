@@ -133,58 +133,61 @@
                         <!--<h1 class="no-margin-top has-divider text-highlight">Descriptions</h1>-->
                         <div class="row">
                             {% for addmission in addmissions %}
-
+			    {% if addmission.addmission_fee %}
                             <div class="col-md-6">
                                 <h1 class="has-divider text-highlight">Fee Structure for B.E Course </h1>
                                 <dl class="dl-horizontal">
-                                    <h3 class="title">Download Prospectus</h3>
-                                    <p>Donec pulvinar arcu lacus, vel aliquam libero scelerisque a. Cras mi tellus,
-                                        vulputate eu eleifend at, consectetur fringilla lacus. Nulla ut purus.</p>
+                                    <h3 class="title"></h3>
+                                    <p></p>
                                     <a class="btn btn-theme view-pdf" href="{{addmission.addmission_fee.url}}"
                                         target="_blank"><i class="fa fa-download"></i>View PDF</a>
                                 </dl>
                             </div>
+			    {% endif %}
+			    {% if addmission.CourseWiseSeatMatrix %}
                             <div class="col-md-6">
                                 <h1 class="has-divider text-highlight">Course wise seat matrix</h1>
                                 <dl class="dl-horizontal">
-                                    <h3 class="title">Download Prospectus</h3>
-                                    <p>Donec pulvinar arcu lacus, vel aliquam libero scelerisque a. Cras mi tellus,
-                                        vulputate eu eleifend at, consectetur fringilla lacus. Nulla ut purus.</p>
+                                    <h3 class="title"></h3>
+				    <p></p>
                                     <a class="btn btn-theme view-pdf" href="{{addmission.CourseWiseSeatMatrix.url}}"
                                         target="_blank"><i class="fa fa-download"></i>View PDF</a>
                                 </dl>
                             </div>
+			    {% endif %}
+			    {% if addmission.notification %}
                             <div class="col-md-6">
                                 <h1 class="has-divider text-highlight">Notification 2019-2020</h1>
                                 <dl class="dl-horizontal">
-                                    <h3 class="title">Download Prospectus</h3>
-                                    <p>Donec pulvinar arcu lacus, vel aliquam libero scelerisque a. Cras mi tellus,
-                                        vulputate eu eleifend at, consectetur fringilla lacus. Nulla ut purus.</p>
+                                    <h3 class="title"></h3>
+				    <p></p>
                                     <a class="btn btn-theme view-pdf" href="{{addmission.notification.url}}"
                                         target="_blank"><i class="fa fa-download"></i>View PDF</a>
                                 </dl>
                             </div>
+			    {% endif %}
+			    {% if addmission.application_form %}
                             <div class="col-md-6">
                                 <h1 class="has-divider text-highlight">Application Form</h1>
                                 <dl class="dl-horizontal">
-                                    <h3 class="title">Download Prospectus</h3>
-                                    <p>Donec pulvinar arcu lacus, vel aliquam libero scelerisque a. Cras mi tellus,
-                                        vulputate eu eleifend at, consectetur fringilla lacus. Nulla ut purus.</p>
+                                    <h3 class="title"></h3>
+				    <p></p>
                                     <a class="btn btn-theme view-pdf" href="{{addmission.application_form.url}}"
                                         target="_blank"><i class="fa fa-download"></i>View PDF</a>
                                 </dl>
                             </div>
+			    {% endif %}
+			    {% if addmission.cut_off %}
                             <div class="col-md-6">
-                                <h1 class="has-divider text-highlight">CET Cut off Rank 2019-2020</h1>
+                                <h1 class="has-divider text-highlight">CET & COMED-K Cut off Rank</h1>
                                 <dl class="dl-horizontal">
-                                    <h3 class="title">Download Prospectus</h3>
-                                    <p>Donec pulvinar arcu lacus, vel aliquam libero scelerisque a. Cras mi tellus,
-                                        vulputate eu eleifend at, consectetur fringilla lacus. Nulla ut purus.</p>
-                                    <a class="btn btn-theme view-pdf" href="{{calender.cut_off.url}}"><i
+                                    <h3 class="title"></h3>
+				    <p></p>
+                                    <a class="btn btn-theme view-pdf" href="{{addmission.cut_off.url}}"><i
                                             class="fa fa-download"></i>View PDF</a>
                                 </dl>
                             </div>
-
+			    {% endif %}
                             {% endfor %}
 
                         </div>

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import staff, infrastructure, infrastructure_gallery, contact
+from .models import staff, infrastructure, infrastructure_gallery, contact, placement_updates
 from .models import placement_glimpses, pre_placement_glimpses, hiring_statistics
 from .models import Slider_Image, training_glimpses, industrial_collabrations_and_mou
 
@@ -26,6 +26,7 @@ def placementDepartment(request):
     pre_placement_images = pre_placement_glimpses.objects.all()
     slider_image_data = Slider_Image.objects.all().order_by('sno')
     mou_data = industrial_collabrations_and_mou.objects.all().order_by('sno')
+    placement_updates_data = placement_updates.objects.all().order_by('-start_date')
 
     content = {
         'coordinators_data' : coordinators_data,
@@ -37,6 +38,16 @@ def placementDepartment(request):
         'pre_placement_images' : pre_placement_images,
 	'slider_image_data' : slider_image_data,
         'mou_data' : mou_data,
+        'placement_updates_data' : placement_updates_data
     }
     
     return render(request,'placement/placement_dept.html',content)
+
+def placementUpdates(request):
+    placement_updates_data=placement_updates.objects.all().order_by('-start_date')
+        
+    content = {
+        'placement_updates_data' : placement_updates_data
+    }
+        
+    return render(request, 'placement/placement_updates.html', content)

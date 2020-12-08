@@ -23,8 +23,9 @@ class News(models.Model):
 class Notification(models.Model):
     description = models.TextField()
     detail = models.FileField(upload_to = 'main_web/notification/', blank=True)
-    date_added = models.DateTimeField(auto_now_add=True)
-    
+    start_date = models.DateTimeField()
+    end_date = models.DateTimeField(null=True,blank=True)
+
     def __str__(self):
         return '{}'.format(self.description[:80] + "...")
 

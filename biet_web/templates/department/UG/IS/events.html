@@ -1,0 +1,37 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<div class="content container bgdata">
+	<div class="page-wrapper">
+		<header class="page-heading clearfix">
+				<h1 class="heading-title pull-left">Upcoming Events (Department of Information Science & Engineering)</h1>
+		</header>
+		<div class="page-content">
+			<div class="row page-row">
+                {% for notice in events %}
+                <div class="panel panel-default">
+                    <div class="panel-heading" style="background-color: #002946; color: #ffffff;">
+                        <h3>
+                            {{notice.start_date|date:'M d, Y H:i'}}
+                            {% if notice.end_date %}
+                               &nbsp; - &nbsp;{{notice.end_date|date:'M d, Y H:i'}}
+                            {% endif %}
+                            {% if notice.detail.url|length > 0 %}
+                            <a href="{{notice.detail.url}}" class="btn btn-theme view-pdf pull-right" style="font-size: small;">Read More</a>
+                            {% endif %}
+                        </h3>
+                    </div>
+                    <div class="panel-body" style="text-align: justify;">
+                        {{notice.description|linebreaks}}
+                    </div>
+                </div>
+                <!--panel-->
+                {% endfor %}
+			</div>
+			<!--//page-row-->
+		</div>
+		<!--//page-content-->
+	</div>
+	<!--//page-->
+</div>
+	
+{% endblock %}

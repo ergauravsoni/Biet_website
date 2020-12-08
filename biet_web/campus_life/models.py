@@ -39,3 +39,37 @@ class Btech_Technowav(models.Model):
 class gymGallery(models.Model):
     images = models.ImageField(upload_to='campus_life/gymGallery')
 
+class sac_Intro_Text(models.Model):
+    text = models.TextField()
+    
+    def __str__(self):
+        return str(self.text[:100])
+
+class sacMembers(models.Model):
+    
+    member_category = models.CharField(max_length=100, choices=(
+        ('PRESIDENT', 'President'),
+        ('DEAN SAC', 'Dean SAC'),
+        ('ADVISORS', 'Advisors'),
+        ('CONVENERS', 'Conveners'),
+        ('EXECUTIVE COUNCIL', 'Executive Council'),
+        ('CULTURAL SECRETARIES', 'Cultural Secretaries'),
+        ('SPORT SECRETARIES', 'Sport Secretaries'),
+        ('MAGAZINE SECRETARIES', 'Magazine Secretaries'),
+        ('CANTEEN SECRETARIES', 'Canteen Secretaries'),
+        ('LADY REPRESENTATIVES', 'Lady Representatives'),
+        ('ADVISORY COMMITTEE', 'Advisory Committee')))
+    sno = models.IntegerField()
+    name = models.CharField(max_length=200)
+    designation = models.CharField(max_length=300)
+    
+    def __str__(self):
+        return str(self.member_category) + ": " + str(self.sno) + ". " + str(self.name) 
+    
+class sacGallery(models.Model):
+    
+    sno = models.IntegerField()
+    images = models.ImageField(upload_to='campus_life/sacGallery')
+    
+    def __str__(self):
+        return "Image " + str(self.sno)

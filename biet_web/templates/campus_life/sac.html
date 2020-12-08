@@ -1,0 +1,363 @@
+{% extends 'base.html' %} {% load static %} {% load custom_tags %} {% block content %}
+
+<div class="content container bgdata">
+	<div class="page-wrapper">
+		<header class="page-heading clearfix">
+            <strong>
+                <h1 class="heading-title pull-left">Student Academic Council</h1>
+            </strong>
+        </header>
+		<div class="page-content">
+            <article class="welcome col-md-12 col-sm-11">
+                <div class="row page-row">
+                    <section class="widget has-divider" style="text-align:justify">
+		    {% for intro in intro_text %}
+                        <p>
+                            {{intro.text|linebreaksbr}}
+                        </p>
+                    {% endfor %}
+                    </section>
+                    <section class="widget has-divider" style="text-align:justify">
+                        <h3 class="has-divider text-highlight">Members of SAC</h3>
+                        {% with first=1 %}
+                        {% for member in sac_members %}
+                        {% if member.member_category == 'PRESIDENT' %}
+                        {% if first == 1 %}
+                        <div class="table-responsive">
+                            <table class="table table-striped table-boxed">
+                                <caption style="display: table-caption;">{{member.member_category}}</caption>
+                                <thead>
+                                    <tr>
+                                        <th width="100">S.No.</th>
+                                        <th width="450">Name</th>
+                                        <th>Designation</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                        {% update_variable 2 as first %}
+                        {% endif %}
+                                    <tr>
+                                        <td>{{member.sno}}</td>
+                                        <td>{{member.name}}</td>
+                                        <td>{{member.designation}}</td>
+                                    </tr>
+                        {% endif %}
+                        {% if first == 2 and forloop.last %}
+                                </tbody>
+                            </table>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                        {% endwith %}
+                        {% with first=1 %}
+                        {% for member in sac_members %}
+                        {% if member.member_category == 'DEAN SAC' %}
+                        {% if first == 1 %}
+                        <div class="table-responsive">
+                            <table class="table table-striped table-boxed">
+                                <caption style="display: table-caption;">{{member.member_category}}</caption>
+                                <thead>
+                                    <tr>
+                                        <th width="100">S.No.</th>
+                                        <th width="450">Name</th>
+                                        <th>Designation</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                        {% update_variable 2 as first %}
+                        {% endif %}
+                                    <tr>
+                                        <td>{{member.sno}}</td>
+                                        <td>{{member.name}}</td>
+                                        <td>{{member.designation}}</td>
+                                    </tr>
+                        {% endif %}
+                        {% if first == 2 and forloop.last %}
+                                </tbody>
+                            </table>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                        {% endwith %}{% with first=1 %}
+                        {% for member in sac_members %}
+                        {% if member.member_category == 'ADVISORS' %}
+                        {% if first == 1 %}
+                        <div class="table-responsive">
+                            <table class="table table-striped table-boxed">
+                                <caption style="display: table-caption;">{{member.member_category}}</caption>
+                                <thead>
+                                    <tr>
+                                        <th width="100">S.No.</th>
+                                        <th width="450">Name</th>
+                                        <th>Designation</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                        {% update_variable 2 as first %}
+                        {% endif %}
+                                    <tr>
+                                        <td>{{member.sno}}</td>
+                                        <td>{{member.name}}</td>
+                                        <td>{{member.designation}}</td>
+                                    </tr>
+                        {% endif %}
+                        {% if first == 2 and forloop.last %}
+                                </tbody>
+                            </table>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                        {% endwith %}{% with first=1 %}
+                        {% for member in sac_members %}
+                        {% if member.member_category == 'CONVENERS' %}
+                        {% if first == 1 %}
+                        <div class="table-responsive">
+                            <table class="table table-striped table-boxed">
+                                <caption style="display: table-caption;">{{member.member_category}}</caption>
+                                <thead>
+                                    <tr>
+                                        <th width="100">S.No.</th>
+                                        <th width="450">Name</th>
+                                        <th>Designation</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                        {% update_variable 2 as first %}
+                        {% endif %}
+                                    <tr>
+                                        <td>{{member.sno}}</td>
+                                        <td>{{member.name}}</td>
+                                        <td>{{member.designation}}</td>
+                                    </tr>
+                        {% endif %}
+                        {% if first == 2 and forloop.last %}
+                                </tbody>
+                            </table>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                        {% endwith %}{% with first=1 %}
+                        {% for member in sac_members %}
+                        {% if member.member_category == 'EXECUTIVE COUNCIL' %}
+                        {% if first == 1 %}
+                        <div class="table-responsive">
+                            <table class="table table-striped table-boxed">
+                                <caption style="display: table-caption;">{{member.member_category}}</caption>
+                                <thead>
+                                    <tr>
+                                        <th width="100">S.No.</th>
+                                        <th width="450">Name</th>
+                                        <th>Designation</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                        {% update_variable 2 as first %}
+                        {% endif %}
+                                    <tr>
+                                        <td>{{member.sno}}</td>
+                                        <td>{{member.name}}</td>
+                                        <td>{{member.designation}}</td>
+                                    </tr>
+                        {% endif %}
+                        {% if first == 2 and forloop.last %}
+                                </tbody>
+                            </table>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                        {% endwith %}{% with first=1 %}
+                        {% for member in sac_members %}
+                        {% if member.member_category == 'CULTURAL SECRETARIES' %}
+                        {% if first == 1 %}
+                        <div class="table-responsive">
+                            <table class="table table-striped table-boxed">
+                                <caption style="display: table-caption;">{{member.member_category}}</caption>
+                                <thead>
+                                    <tr>
+                                        <th width="100">S.No.</th>
+                                        <th width="450">Name</th>
+                                        <th>Designation</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                        {% update_variable 2 as first %}
+                        {% endif %}
+                                    <tr>
+                                        <td>{{member.sno}}</td>
+                                        <td>{{member.name}}</td>
+                                        <td>{{member.designation}}</td>
+                                    </tr>
+                        {% endif %}
+                        {% if first == 2 and forloop.last %}
+                                </tbody>
+                            </table>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                        {% endwith %}{% with first=1 %}
+                        {% for member in sac_members %}
+                        {% if member.member_category == 'SPORT SECRETARIES' %}
+                        {% if first == 1 %}
+                        <div class="table-responsive">
+                            <table class="table table-striped table-boxed">
+                                <caption style="display: table-caption;">{{member.member_category}}</caption>
+                                <thead>
+                                    <tr>
+                                        <th width="100">S.No.</th>
+                                        <th width="450">Name</th>
+                                        <th>Designation</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                        {% update_variable 2 as first %}
+                        {% endif %}
+                                    <tr>
+                                        <td>{{member.sno}}</td>
+                                        <td>{{member.name}}</td>
+                                        <td>{{member.designation}}</td>
+                                    </tr>
+                        {% endif %}
+                        {% if first == 2 and forloop.last %}
+                                </tbody>
+                            </table>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                        {% endwith %}{% with first=1 %}
+                        {% for member in sac_members %}
+                        {% if member.member_category == 'MAGAZINE SECRETARIES' %}
+                        {% if first == 1 %}
+                        <div class="table-responsive">
+                            <table class="table table-striped table-boxed">
+                                <caption style="display: table-caption;">{{member.member_category}}</caption>
+                                <thead>
+                                    <tr>
+                                        <th width="100">S.No.</th>
+                                        <th width="450">Name</th>
+                                        <th>Designation</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                        {% update_variable 2 as first %}
+                        {% endif %}
+                                    <tr>
+                                        <td>{{member.sno}}</td>
+                                        <td>{{member.name}}</td>
+                                        <td>{{member.designation}}</td>
+                                    </tr>
+                        {% endif %}
+                        {% if first == 2 and forloop.last %}
+                                </tbody>
+                            </table>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                        {% endwith %}{% with first=1 %}
+                        {% for member in sac_members %}
+                        {% if member.member_category == 'CANTEEN SECRETARIES' %}
+                        {% if first == 1 %}
+                        <div class="table-responsive">
+                            <table class="table table-striped table-boxed">
+                                <caption style="display: table-caption;">{{member.member_category}}</caption>
+                                <thead>
+                                    <tr>
+                                        <th width="100">S.No.</th>
+                                        <th width="450">Name</th>
+                                        <th>Designation</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                        {% update_variable 2 as first %}
+                        {% endif %}
+                                    <tr>
+                                        <td>{{member.sno}}</td>
+                                        <td>{{member.name}}</td>
+                                        <td>{{member.designation}}</td>
+                                    </tr>
+                        {% endif %}
+                        {% if first == 2 and forloop.last %}
+                                </tbody>
+                            </table>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                        {% endwith %}{% with first=1 %}
+                        {% for member in sac_members %}
+                        {% if member.member_category == 'LADY REPRESENTATIVES' %}
+                        {% if first == 1 %}
+                        <div class="table-responsive">
+                            <table class="table table-striped table-boxed">
+                                <caption style="display: table-caption;">{{member.member_category}}</caption>
+                                <thead>
+                                    <tr>
+                                        <th width="100">S.No.</th>
+                                        <th width="450">Name</th>
+                                        <th>Designation</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                        {% update_variable 2 as first %}
+                        {% endif %}
+                                    <tr>
+                                        <td>{{member.sno}}</td>
+                                        <td>{{member.name}}</td>
+                                        <td>{{member.designation}}</td>
+                                    </tr>
+                        {% endif %}
+                        {% if first == 2 and forloop.last %}
+                                </tbody>
+                            </table>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                        {% endwith %}{% with first=1 %}
+                        {% for member in sac_members %}
+                        {% if member.member_category == 'ADVISORY COMMITTEE' %}
+                        {% if first == 1 %}
+                        <div class="table-responsive">
+                            <table class="table table-striped table-boxed">
+                                <caption style="display: table-caption;">{{member.member_category}}</caption>
+                                <thead>
+                                    <tr>
+                                        <th width="100">S.No.</th>
+                                        <th width="450">Name</th>
+                                        <th>Designation</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                        {% update_variable 2 as first %}
+                        {% endif %}
+                                    <tr>
+                                        <td>{{member.sno}}</td>
+                                        <td>{{member.name}}</td>
+                                        <td>{{member.designation}}</td>
+                                    </tr>
+                        {% endif %}
+                        {% if first == 2 and forloop.last %}
+                                </tbody>
+                            </table>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                        {% endwith %}
+                    </section>
+                    <section class="widget has-divider" style="text-align:justify">
+                        <h3 class="has-divider text-highlight">SAC Events Glimpses</h3>
+                        {% for image in sac_images %}
+        
+                        <a class="prettyphoto col-md-6 col-sm-12 col-xs-12" rel="prettyPhoto[gallery]" title=""
+                                href="{{image.images.url}}"><img class="img-responsive img-thumbnail" src="{{image.images.url}}"
+                                        alt="" style="height: 400px;" /></a>
+        
+                        {% endfor %}
+                    </section>
+                </div>
+                <!--//page-row-->
+            </article>
+		</div>
+		<!--//page-content-->
+	</div>
+	<!--//page-->
+</div>
+	
+{% endblock %}

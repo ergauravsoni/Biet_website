@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from .models import Event, News, Gallary, Video, Notification
 from academics.models import Ranks
+from alumini.models import alumni_corner
+from placement.models import placement_updates
 
 # Create your views here.
 
@@ -54,7 +56,9 @@ def index(request):
     # print(result_news)
     
     video_data = Video.objects.all().order_by('sno')
-    notification = Notification.objects.all().order_by('-date_added')
+    notification = Notification.objects.all().order_by('-start_date')
+    alumni_corner_events = alumni_corner.objects.all().order_by('-start_date')
+    placement_updates_data = placement_updates.objects.all().order_by('-start_date')
 
     ranks_data=Ranks.objects.all().order_by('sno')
     setyr=set()
@@ -63,8 +67,10 @@ def index(request):
         setyr.add(record.year_range)
         setct.add(record.course_type)
         
-    content = {'dates':dates, 'result_news':result_news, 'video_data':video_data, 'notification':notification, 
-            'ranks_data':ranks_data, 'setyr':sorted(setyr, reverse=True), 'setct':sorted(setct, reverse=True)}
+    content = {'dates':dates, 'result_news':result_news, 'video_data':video_data, 
+            'alumni_corner_events': alumni_corner_events, 'ranks_data':ranks_data,
+	    'placement_updates_data': placement_updates_data, 'notification':notification,
+	    'setyr':sorted(setyr, reverse=True), 'setct':sorted(setct, reverse=True)}
 
     return render(request,'index.html',content)
 
@@ -109,7 +115,7 @@ def allevent(request):
     return render(request,'allEvent.html',{'dates' : dates})
 
 def notification(request):
-    notification = Notification.objects.all().order_by('-date_added')
+    notification = Notification.objects.all().order_by('-start_date')
     
     return render(request,'notification.html',{'notification' : notification})
 

@@ -10,6 +10,17 @@ class Slider_Image(models.Model):
     def __str__(self):
         return str(self.sno) + " - " + self.image_caption[:80] + "..."
 
+class placement_updates(models.Model):
+    title = models.CharField(max_length=60)
+    description = models.TextField()
+    detail = models.FileField(upload_to = 'placement/updates/', blank=True)
+    start_date = models.DateTimeField()
+    end_date = models.DateTimeField(null=True,blank=True)
+    location = models.CharField(max_length=25)
+    
+    def __str__(self):
+        return '{}'.format(self.title)
+
 class staff(models.Model):
     name = models.CharField(max_length=200)
     designation = models.CharField(max_length=200)

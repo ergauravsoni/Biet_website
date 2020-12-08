@@ -22,5 +22,6 @@ urlpatterns = [
     path('academics/rules',views.biet_rules, name='academics/rules'),
     path('academics/industry_collab',views.industry_collab, name='academics/industry_collab'),
     # path('major_events',views.major_events, name='major_events'),
+    path('academics/consultancy',views.consultancy, name='academics/consultancy'),
 ]
 

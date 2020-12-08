@@ -1,0 +1,73 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<div class="content container bgdata">
+	<div class="page-wrapper">
+		<header class="page-heading clearfix">
+            <strong>
+                <h1 class="heading-title pull-left">Consultancy</h1>
+            </strong>
+        </header>
+		<div class="page-content">
+            <article class="welcome col-md-12 col-sm-11">
+                <div class="row page-row">
+                    <p>Department provides following services to the Government and non-Government Organizations</p>
+                    <ul class="medical">
+                        <li>Concrete Mix Design</li>
+                        <li>Pavement Design</li>
+                        <li>Hydraulic Design</li>
+                        <li>Structural Design</li>
+                        <li>Treatment Plant Design</li>
+                        <li>Environmental Quality Monitoring</li>
+                    </ul>
+                    <p><br><br></p>
+                    <h3 class="has-divider text-highlight">List of Organizations to which consultancy services are provided:</h3>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-boxed">
+                            <thead>
+                                <tr>
+                                    <th>S.No.</th>
+                                    <th>Name of Firms</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for org in org_data %}
+                                <tr>
+                                    <td>{{org.sno}}</td>
+                                    <td>{{org.name_of_firms}}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <p><br><br></p>
+                    <h3 class="has-divider text-highlight">Material Testing:</h3>
+                    <ul class="medical">
+                        <li>Testing of all civil engineering materials like, Cement, steel, tiles, Bricks, Fine aggregate, Coarse aggregate, Bitumen etc.</li>
+                        <li>Soil testing by procuring the soil sample at the site and tests on soil conducted including the soil classification.</li>
+                        <li>Quality of Water and Waste Water parameters are carried out.</li>
+                    </ul>
+                    <p><br><br></p>
+                    <h3 class="has-divider text-highlight">Third Party Inspection:</h3>
+                    <ul class="medical">
+                        <li>Third party inspection for quality checking of the works done by government organizations like PWD, Zilla Panchayath, Pollution control Board, KRIDL, etc., at different stages.in almost all taluks of Davangere District and other districts viz Chitradurga, Haveri and Koppal.</li>
+                    </ul>
+                    <p><br><br></p>
+                    <h3 class="has-divider text-highlight">Major works undertaken by the department:</h3>
+                    <ul class="medical">
+                        <li>Design and supervision of major drinking water scheme of Davangere city (Kundawada Lake).</li>
+                        <li>Surveying of the entire Davangere city.</li>
+                        <li>Restoration of tanks in Davangere district under which around 300 tanks were inspected and quality assessments were made.</li>
+                        <li>Repair and reconstruction of earthen bunds.</li>
+                        <li>Road projects, building works.</li>
+                        <li>Environmental Impact Studies for the Industries like, Sugar, Steel and Distilleries.</li>
+                    </ul>
+                </div>
+                <!--//page-row-->
+            </article>
+		</div>
+		<!--//page-content-->
+	</div>
+	<!--//page-->
+</div>
+	
+{% endblock %}

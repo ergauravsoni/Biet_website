@@ -12,7 +12,7 @@
                 <ul class="breadcrumbs-list">
                     <li class="breadcrumbs-label">You are here:</li>
                     <li><a href="/">Home</a><i class="fa fa-angle-right"></i></li>
-                    <li><a href="#">Research</a><i class="fa fa-angle-right"></i></li>
+                    <li><a href="/research">Research</a><i class="fa fa-angle-right"></i></li>
                     <li class="current">Dean Message</li>
                 </ul>
             </div>
@@ -37,10 +37,42 @@
                     <!--//widget-->
                 </aside>
                 <!--//page-sidebar-->
-                <div class="content-wrapper col-md-8 col-sm-7">
+                <div class="content-wrapper col-md-9 col-sm-8">
 
                     <div class="page-row content-text">
                         <h1 class="no-margin-top has-divider text-highlight">Dean Message</h1>
+			{% for dean in research_dean_data %}
+                        <p>
+                            <div class="col-md-4 text-center">
+                                <div class="album-cover">
+                                    <!-- <a href="#"> -->
+                                    <img class="img-thumbnail"
+                                        src="{{dean.image.url}}" alt=""
+                                        style="width:330px;height:260px;">
+                                    <!-- </a> -->
+                                    <div class="desc">
+                                        <h5>{{dean.name}}</h5>
+                                        <h6>Dean - Research & Development</h6>
+                                        <h4><small>{{dean.designation}}<br>{{dean.department}}</small>
+                                        </h4>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-8 text-center">
+                                <div class="" style="  text-align: justify;">
+                                    <p>
+                                        {{dean.description|linebreaks}}   
+                                    </p>
+                                </div>
+                                {% if dean.detail %}
+                                <a href="{{dean.detail.url}}"
+                                    class="btn btn-theme view-pdf">Read More</a>
+                                {% else %}
+                                {% endif %}
+                            </div>
+                        </p>
+                        {% endfor %}
                     </div>
                     <!--//page-row-->
                 </div>

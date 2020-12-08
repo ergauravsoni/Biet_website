@@ -146,7 +146,7 @@
                         <div class="row">
 
                             {% for addmission in addmissions %}
-
+			    {% if addmission.CourseWiseSeatMatrix %}
                             <div class="col-md-6">
                                 <h1 class="has-divider text-highlight">Course wise seat matrix</h1>
                                 <dl class="dl-horizontal">
@@ -157,6 +157,8 @@
                                         target="_blank"><i class="fa fa-download"></i>View PDF</a>
                                 </dl>
                             </div>
+			    {% endif %}
+			    {% if addmission.notification %}
                             <div class="col-md-6">
                                 <h1 class="has-divider text-highlight">Notification 2019-2020</h1>
                                 <dl class="dl-horizontal">
@@ -167,6 +169,8 @@
                                         target="_blank"><i class="fa fa-download"></i>View PDF</a>
                                 </dl>
                             </div>
+			    {% endif %}
+			    {% if addmission.application_form %}
                             <div class="col-md-6">
                                 <h1 class="has-divider text-highlight">Application Form</h1>
                                 <dl class="dl-horizontal">
@@ -177,6 +181,8 @@
                                         target="_blank"><i class="fa fa-download"></i>View PDF</a>
                                 </dl>
                             </div>
+			    {% endif %}
+			    {% if addmission.cut_off %}
                             <div class="col-md-6">
                                 <h1 class="has-divider text-highlight">CET Cut off Rank 2019-2020</h1>
                                 <dl class="dl-horizontal">
@@ -187,7 +193,7 @@
                                         target="_blank"><i class="fa fa-download"></i>View PDF</a>
                                 </dl>
                             </div>
-
+			    {% endif %}
                             {% endfor %}
 
                         </div>

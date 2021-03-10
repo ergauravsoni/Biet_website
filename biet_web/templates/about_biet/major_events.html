@@ -9,27 +9,66 @@
     <div class="page-wrapper">
         <header class="page-heading clearfix">
             <strong>
-                <h1 class="heading-title pull-left">Major Events</h1>
+                <h1 class="heading-title pull-left">Distinguished Scientists/Academicians/VIP's visit to the Institute</h1>
             </strong>
         </header>
         <div class="page-content">
-            <div class="row page-row">
-                <article class="welcome col-md-12 col-sm-11">
-                    <section>
-                        <ul class="list-inline">
-                            <li><i class="fa fa-star"></i>During 1984, the BEA has celebrated its silver Jubilee,
-                                <b>Mr.Gyani Jail Singh</b>, then President of India inaugurated the occassion.</li>
-                            <li><i class="fa fa-star"></i>In the year 2012, BEA celebrated its Golden Jubilee. His
-                                excellency <b>Dr.A.P.J.Abdul Kalam</b>, former president of India inaugurated the
-                                function.</li>
-                            <li><i class="fa fa-star"></i>As a part of Golden Jubilee Celebration, every year, Golden
-                                Jubilee Commemoration lectures are being regularly arranged.</li>
-                        </ul>
-                    </section>
-                </article>
-                <!--//page-content-->
+	    {% for event in major_events_data %}
+            <div class="row page-row album-cover" style="padding-top: 20px;">
+            <figure class="thumb col-md-5">
+                <!-- Slideshow container -->
+                <div class="slideshow-container">
+                    {% for image in major_events_photos %}
+                    {% if image.event == event %}
+                    <div class="mySlides{{event.sno}} autoSlides{{event.sno}} fade">
+                        <img class="img-thumbnail img-responsive" src="{{image.image.url}}"
+                        alt="" style="width:450px; height: 250px; object-fit: cover;"/>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                    <script>
+                        var slideIndex{{event.sno}} = 1;
+                        showSlides{{event.sno}}(slideIndex{{event.sno}});
+                        function showSlides{{event.sno}}(n) {
+                            var i;
+                            var slides = document.getElementsByClassName("mySlides{{event.sno}}");
+                            var autoSlides = document.getElementsByClassName("autoSlides{{event.sno}}");
+                            var dots = document.getElementsByClassName("dot{{event.sno}}");
+                            if (n > slides.length) {slideIndex{{event.sno}} = 1}
+                            if (n < 1) {slideIndex{{event.sno}} = slides.length}
+                            for (i = 0; i < slides.length; i++) {
+                                slides[i].style.display = "none";
+                            }
+                            if(autoSlides.length>0){
+                                slideIndex{{event.sno}}++;
+                                if (slideIndex{{event.sno}} > slides.length) {slideIndex{{event.sno}} = 1}
+                            }
+                            for (i = 0; i < dots.length; i++) {
+                                dots[i].className = dots[i].className.replace(" active", "");
+                            }
+                            if(slides.length>0){
+                                slides[slideIndex{{event.sno}}-1].style.display = "block";
+                                if(dots.length>0){
+                                dots[slideIndex{{event.sno}}-1].className += " active";
+                                }
+                            }
+                            if(autoSlides.length>0){
+                                setTimeout(showSlides{{event.sno}}, 4500 + ({{event.sno}}*500)%1500);
+                            }
+                        }
+                    </script>
+                </div>
+            </figure>
+            <div class="container">
+                <div class="row col-md-7" style="text-align: justify;">      
+                    <div style="text-align: center;">
+                        <h3 class="text-highlight">{{event.name}}</h3>
+                    </div>        
+                    <p>{{event.description}}</p>
+                </div>
             </div>
-            <!--//page-row-->
+            </div>
+            {% endfor %}
         </div>
         <!--//page-content-->
     </div>

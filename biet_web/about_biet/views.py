@@ -2,7 +2,7 @@ from django.shortcuts import render
 from .models import Academic_Calender, Office_Staff, Deans, Governing_Body, Nain_Gallery
 from .models import Governing_Council, Recognized_Research_Centres, Honors_And_Awards
 from .models import Nain_Carousel, Research_Dean_Message, Funded_Projects_Department
-from .models import Funded_Projects, kscst
+from .models import Funded_Projects, kscst, Major_Events, Major_Events_Photos, Research_Advisory_Committee
 from placement.models import industrial_collabrations_and_mou
 
 # Create your views here.
@@ -23,7 +23,13 @@ def governing_body(request):
     return render(request,'about_biet/governing_body.html',{'governing_body_data' : governing_body_data})
 
 def major_events(request):
-    return render(request,'about_biet/major_events.html')
+    major_events_data = Major_Events.objects.all().order_by('sno')
+    major_events_photos = Major_Events_Photos.objects.all()
+    
+    content = {'major_events_data':major_events_data,
+        'major_events_photos':major_events_photos,
+        }
+    return render(request,'about_biet/major_events.html',content)
 
 def aishe(request):
     return render(request,'about_biet/aishe.html')
@@ -70,8 +76,8 @@ def research(request):
     return render(request,'about_biet/research.html')
     
 def dean_message(request):
-    research_dean_data = Research_Dean_Message.objects.all()
-    return render(request,'about_biet/research/dean_message.html',{'research_dean_data':research_dean_data})
+    dean = Deans.objects.get(sno=3)
+    return render(request,'about_biet/research/dean_message.html',{'dean':dean})
     
 def recognized_research_centers(request):
     recog_research_data=Recognized_Research_Centres.objects.all().order_by('sno')
@@ -131,3 +137,9 @@ def media_cell(request):
 
 def organisational_chart(request):
     return render(request,'about_biet/organisational_chart.html')
+
+def rac(request):
+    rac_data = Research_Advisory_Committee.objects.all().order_by('sno')
+    
+    content={'rac_data':rac_data};
+    return render(request,'about_biet/research/rac.html',content)

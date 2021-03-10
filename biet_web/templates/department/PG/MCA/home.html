@@ -222,8 +222,10 @@
                                                                     	{{faculty_data.description}}   
                                                                     </p>
                                                                 </div>
+								{% if faculty_data.detail %}
                                                                 <a href="{{faculty_data.detail.url}}"
                                                                     class="btn btn-theme view-pdf">Read More</a>
+								{% endif %}
                                                             </div>
                                                         </div>
 
@@ -281,8 +283,10 @@
 
 
                                                                     <!-- <button type="button" class="btn btn-theme">Theme Button</button> -->
+                                                                    {% if faculty_data.detail %}
                                                                     <a href="{{faculty_data.detail.url}}"
                                                                         class="btn btn-theme view-pdf">Read More</a>
+                                                                    {% endif %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -1016,7 +1020,7 @@
                                                                     <p>{{desc.description}}</p>
                                                                     {% endfor %}
                                                                     <p>The following events are conducted regularly
-                                                                        by CVForum:</p>
+                                                                        by MCAForum:</p>
                                                                     <!-- </article> -->
                                                                 </div>
                                                                 <!--//page-content-->

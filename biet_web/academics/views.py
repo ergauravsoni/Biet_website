@@ -5,7 +5,7 @@ from placement.models import industrial_collabrations_and_mou
 # Create your views here.
 
 def library(request):
-    return render(request,'academics/library.html')
+    return render(request,'academics/library.html',{'home':'active'})
 
 def ranks(request):
     ranks_data=Ranks.objects.all().order_by('sno')
@@ -17,48 +17,48 @@ def ranks(request):
     return render(request,'academics/ranks.html',{'ranks_data':ranks_data, 'setyr':sorted(setyr, reverse=True), 'setct':sorted(setct, reverse=True)})
 
 def layout(request):
-    return render(request,'academics/library/layout.html')
+    return render(request,'academics/library/layout.html',{'layout':'active'})
 
 def staff(request):
-    return render(request,'academics/library/staff.html')
+    return render(request,'academics/library/staff.html',{'staff':'active'})
 
 def resources(request):
-    return render(request,'academics/library/resources.html')
+    return render(request,'academics/library/resources.html',{'resources':'active'})
 
 def membership(request):
-    return render(request,'academics/library/membership.html')
+    return render(request,'academics/library/membership.html',{'membership':'active'})
 
 def rules(request):
-    return render(request,'academics/library/rules.html')
+    return render(request,'academics/library/rules.html',{'rules':'active'})
     
 def biet_rules(request):
     return render(request,'academics/rules.html')
 
 def services(request):
-    return render(request,'academics/library/services.html')
+    return render(request,'academics/library/services.html',{'services':'active'})
 
 def e_resources(request):
-    return render(request,'academics/library/e_resources.html')
+    return render(request,'academics/library/e_resources.html',{'eresources':'active'})
 
 def committee(request):
-    return render(request,'academics/library/committee.html')
+    return render(request,'academics/library/committee.html',{'committee':'active'})
 
 def question_papers(request):
-    return render(request,'academics/library/question_papers.html')
+    return render(request,'academics/library/question_papers.html',{'qp':'active'})
 
 def online_courses(request):
-    return render(request,'academics/library/online_courses.html')
+    return render(request,'academics/library/online_courses.html',{'courses':'active'})
 
 def gallery(request):
     images = Gallary.objects.all()
-    return render(request,'academics/library/gallery.html', {'images' : images})
+    return render(request,'academics/library/gallery.html', {'images' : images, 'gallery':'active'})
 
 def user_manual(request):
     user_manual = Library_User_Manual.objects.all()
-    return render(request,'academics/library/user_manual.html',{'user_manual' : user_manual})
+    return render(request,'academics/library/user_manual.html',{'user_manual' : user_manual,'manual':'active'})
 
 def perography(request):
-    return render(request,'academics/library/perography.html')
+    return render(request,'academics/library/perography.html',{'reprography':'active'})
 
 def industry_collab(request):
     mou_data = industrial_collabrations_and_mou.objects.all().order_by('sno')

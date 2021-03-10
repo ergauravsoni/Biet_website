@@ -1,52 +1,8 @@
-{% extends 'base.html' %}
+{% extends 'library_base.html' %}
 
 {% load static %}
 {% block content %}
 
-<!-- ******CONTENT****** --> 
-<div class="content container bgdata">
-            <div class="page-wrapper">
-                <header class="page-heading clearfix">
-                    <h1 class="heading-title pull-left">Library</h1>
-                    <div class="breadcrumbs pull-right">
-                        <ul class="breadcrumbs-list">
-                            <li class="breadcrumbs-label">You are here:</li>
-                            <li><a href="../index.html">Home</a><i class="fa fa-angle-right"></i></li>
-                            <li><a href="home.php">Academics</a><i class="fa fa-angle-right"></i></li>
-                            <li><a href="home.php">Library</a><i class="fa fa-angle-right"></i></li>
-                            <li class="current">E-Resources</li>
-                        </ul>
-                    </div><!--//breadcrumbs-->
-                </header> 
-                <div class="page-content">
-                    <div class="row page-row">
-                        <aside class="page-sidebar col-md-3 col-sm-4 affix-top">                    
-                            <section class="widget">
-                                <ul class="nav">
-                                    <li><a href="/library">Library Home</a></li>
-                                    <li><a href="/library/layout">Layout of Library</a></li>
-                                    <li><a href="/library/staff">Library Staff</a></li>
-                                    <li><a href="/library/resources">Library Resources</a></li>
-                                    <li><a href="/library/membership">Membership</a></li>
-                                    <li><a href="/library/rules">Library Rules</a></li>
-                                    <li><a href="/library/services">Library Services</a></li>
-                                    <li class="active" ><a href="/library/e_resources">E-Resources</a></li>
-                                    <li><a href="http://www.knimbus.com/user/auth.do" target="_blank">Knimbus(Federal search)</a></li>
-                                    <li><a href="/library/committee">Library Committee</a></li>
-                                    <li><a href="/library/question_papers">VTU Question papers</a></li>
-                                    <li><a href="http://10.201.4.11:1234/easylib/index.php">Library OPAC</a></li>
-                                    <li><a href="https://ndl.iitkgp.ac.in/">National Digital Library</a></li>
-                                    <li><a href="http://www.nptel.ac.in/">NPTEL</a></li>
-                                    <li><a href="/library/online_courses">Online Courses</a></li>
-                                    <li><a href="/library/gallery">Library Gallery</a></li>
-                                    <li><a href="/library/user_manual">Library User Manual</a></li>     
-                                    <li><a href="/facilities/perography">Reprography</a></li>
-
-                                </ul>                  
-                            </section><!--//widget-->
-                        </aside><!--//page-sidebar-->
-                        <div class="content-wrapper col-md-8 col-sm-7">  
-                            
                             <div class="page-row">
                                 <h1 class="no-margin-top has-divider text-highlight">E-Resources</h1>
                             </div><!--//page-row--> 
@@ -63,54 +19,94 @@
                                                     <tr>
                                                         <th>S.No.</th>
                                                         <th>E – Resource</th>
+                                                        <th>Numbers</th>
                                                         <th>URL Address</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                     <tr>
+                                                        <td colspan="4"><center><b>E-Journals</b></center></td>
+                                                    </tr>
+                                                    <tr>
                                                         <td>1</td>
-                                                        <td>IEEE Xplore Digital Library</td>
-                                                        <td><a href="http://ieeexplore.ieee.org/Xplore/home.jsp" target="_blank">http://ieeexplore.ieee.org/Xplore/home.jsp</a></td>
+                                                        <td>Elsevier: E-Journals</td>
+                                                        <td>296</td>
+                                                        <td><a href="http://www.sciencedirect.com" target="_blank">http://www.sciencedirect.com</a></td>
                                                     </tr>
                                                     <tr>
                                                         <td>2</td>
-                                                        <td>ASME e-Journals </td>
-                                                        <td><a href="http://asmedigitalcollection.asme.org/" target="_blank">http://asmedigitalcollection.asme.org/</a></td>
+                                                        <td>Taylor & Francis (E-Journals)</td>
+                                                        <td>555</td>
+                                                        <td><a href="https://www.tandfonline.com" target="_blank">https://www.tandfonline.com</a></td>
                                                     </tr>
                                                     <tr>
                                                         <td>3</td>
-                                                        <td>ASCE Library</td>
-                                                        <td><a href="http://ascelibrary.org/journals" target="_blank">http://ascelibrary.org/journals</a></td>
+                                                        <td>Springer (E-Journals)</td>
+                                                        <td>690</td>
+                                                        <td><a href="https://link.springer.com" target="_blank">https://link.springer.com</a></td>
                                                     </tr>
                                                     <tr>
                                                         <td>4</td>
-                                                        <td>Taylor and Francis Journals</td>
-                                                        <td><a href="http://www.tandfonline.com" target="_blank">http://www.tandfonline.com</a></td>
+                                                        <td>Emerald</td>
+                                                        <td>120</td>
+                                                        <td><a href="https://www.emeraldinsight.com/" target="_blank">https://www.emeraldinsight.com/</a></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="4"><center><b>E-Books</b></center></td>
                                                     </tr>
                                                     <tr>
                                                         <td>5</td>
-                                                        <td>Proquest </td>
-                                                        <td><a href="http://search.proquest.com" target="_blank">http://search.proquest.com</a></td>
+                                                        <td>McGraw Hill Education</td>
+                                                        <td>505</td>
+                                                        <td><a href="http://mcgrawhilleducation.pdn.ipublishcentral.com/" target="_blank">http://mcgrawhilleducation.pdn.ipublishcentral.com/</a></td>
                                                     </tr>
                                                     <tr>
                                                         <td>6</td>
-                                                        <td>Knimbus </td>
-                                                        <td><a href="http://www.knimbus.com/user/auth.do" target="_blank">http://www.knimbus.com/user/auth.do</a></td>
+                                                        <td>Elsevier: E-Books</td>
+                                                        <td>436</td>
+                                                        <td><a href="http://www.sciencedirect.com" target="_blank">http://www.sciencedirect.com</a></td>
                                                     </tr>
                                                     <tr>
                                                         <td>7</td>
-                                                        <td>Kopykitab Virtual –Library</td>
-                                                        <td><a href="http://vtulibrary.kopykitab.com/" target="_blank">http://vtulibrary.kopykitab.com/</a></td>
+                                                        <td>Taylor & Francis (E-Books)</td>
+                                                        <td>4950</td>
+                                                        <td><a href="http://www.taylorfrancis.com/" target="_blank">http://www.taylorfrancis.com/</a></td>
                                                     </tr>
                                                     <tr>
                                                         <td>8</td>
-                                                        <td>Springer Link</td>
-                                                        <td><a href="https://link.springer.com/" target="_blank">https://link.springer.com/</a></td>
+                                                        <td>Springer (E-Books)</td>
+                                                        <td>12846</td>
+                                                        <td><a href="https://link.springer.com" target="_blank">https://link.springer.com</a></td>
                                                     </tr>
                                                     <tr>
                                                         <td>9</td>
-                                                        <td>NetAnalytiks’Sententia(Grammer/writing tool) </td>
-                                                        <td><a href="https://sententia.online/" target="_blank">https://sententia.online/</a></td>
+                                                        <td>New Age International</td>
+                                                        <td>220</td>
+                                                        <td><a href="https://digital.elib4u.com/" target="_blank">https://digital.elib4u.com/</a></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>10</td>
+                                                        <td>Packt</td>
+                                                        <td>5002</td>
+                                                        <td><a href="https://prod.packtpub.com/in/" target="_blank">https://prod.packtpub.com/in/</a></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>11</td>
+                                                        <td>KNimbus Digital Library: Digital Library Platform</td>
+                                                        <td>EB-10000+<br>EJ-5700+</td>
+                                                        <td><a href="https://bieatd.new.knimbus.com/user#/home" target="_blank">https://bieatd.new.knimbus.com/user#/home</a></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>12</td>
+                                                        <td>Turnitin: Plagiarism Software</td>
+                                                        <td>-</td>
+                                                        <td><a href="https://www.turnitin.com/" target="_blank">https://www.turnitin.com/</a></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>13</td>
+                                                        <td>Sententia- An Assistive Tool for formal Writing (NetAnalytiks)</td>
+                                                        <td>-</td>
+                                                        <td><a href="https://sententia.online/signin" target="_blank">https://sententia.online/signin</a></td>
                                                     </tr>
                                                 </tbody>
                                             </table><!--//table-->
@@ -688,43 +684,17 @@
                                                         <td>E-Syllabus (VTU):    </td>
                                                         <td><a href="http://vtu.ac.in/b-e-scheme-syllabus/" target="_blank">http://vtu.ac.in/b-e-scheme-syllabus/</a></td>
                                                     </tr>
-                                                    <tr >
+						    <tr >
                                                         <td>2</td>
-                                                        <td>Knimbus /Fedaral search   </td>
-                                                        <td><a href="http://www.knimbus.com/user/auth.do" target="_blank">http://www.knimbus.com/user/auth.do</a></td>
-                                                    </tr>
-                                                    <tr >
-                                                        <td>3</td>
                                                         <td>VTU Resource</td>
                                                         <td><a href="www.vturesource.com/vtu-question-papers/" target="_blank">www.vturesource.com/vtu-question-papers/</a></td>
                                                     </tr>
                                                     <tr >
-                                                        <td>4</td>
+                                                        <td>3</td>
                                                         <td>Vtuplanet</td>
                                                         <td><a href="http://www.vtuplanet.com/" target="_blank">http://www.vtuplanet.com/</a></td>
-                                                    </tr>
-                                                    <tr >
-                                                        <td>5</td>
-                                                        <td>National Digital Library:      </td>
-                                                        <td><a href="https://ndl.iitkgp.ac.in/" target="_blank">https://ndl.iitkgp.ac.in/</a></td>
-                                                    </tr>
-                                                    <tr >
-                                                        <td>6</td>
-                                                        <td>NPTEL:</td>
-                                                        <td><a href="www.nptel.ac.in/" target="_blank">www.nptel.ac.in/</a></td>
-                                                    </tr>
-                                                    <tr >
-                                                        <td>7</td>
-                                                        <td>Book SC</td>
-                                                        <td><a href="www.booksc.org" target="_blank">www.booksc.org</a></td>
                                                     </tr>
                                                 </tbody>
                                             </table><!--//table-->
                                         </div><!--//table-responsive--> 
-                        </div><!--//content-wrapper-->                    
-                    </div><!--//page-row-->
-                </div><!--//page-content-->
-            </div><!--//page--> 
-        </div><!--//content-->
-    </div><!--//wrapper-->
 {% endblock %}

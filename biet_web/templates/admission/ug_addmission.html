@@ -15,7 +15,6 @@
                         <ul class="nav ug">
                             <li class="active "><a href="/ug_addmission">Under graduate</a></li>
                             <li><a href="/pg_addmission">Post Graduate</a></li>
-                            <li><a href="/reserach">Research</a></li>
 
                         </ul>
                     </section>
@@ -135,7 +134,7 @@
                             {% for addmission in addmissions %}
 			    {% if addmission.addmission_fee %}
                             <div class="col-md-6">
-                                <h1 class="has-divider text-highlight">Fee Structure for B.E Course </h1>
+                                <h1 class="has-divider text-highlight">Fee Structure for B.E. Course </h1>
                                 <dl class="dl-horizontal">
                                     <h3 class="title"></h3>
                                     <p></p>
@@ -157,7 +156,7 @@
 			    {% endif %}
 			    {% if addmission.notification %}
                             <div class="col-md-6">
-                                <h1 class="has-divider text-highlight">Notification 2019-2020</h1>
+                                <h1 class="has-divider text-highlight">Notification</h1>
                                 <dl class="dl-horizontal">
                                     <h3 class="title"></h3>
 				    <p></p>
@@ -188,6 +187,17 @@
                                 </dl>
                             </div>
 			    {% endif %}
+			    {% if addmission.diploma_fee %}
+			    <div class="col-md-6">
+                                <h1 class="has-divider text-highlight">Fee Structure for Diploma Course</h1>
+                                <dl class="dl-horizontal">
+                                    <h3 class="title"></h3>
+                                    <p></p>
+                                    <a class="btn btn-theme view-pdf" href="{{addmission.diploma_fee.url}}"><i
+                                            class="fa fa-download"></i>View PDF</a>
+                                </dl>
+                            </div>
+                    	    {% endif %}
                             {% endfor %}
 
                         </div>

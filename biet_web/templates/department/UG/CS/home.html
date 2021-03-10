@@ -203,12 +203,9 @@
 										<li>Analyze and develop solutions for problems that are complex in nature by applying the
 										knowledge acquired from the core subjects of this program.</li>
                                                                                 <br>
-										<li>To develop secure, Scalable, Resilient and distributed applications for industry and societal
-										requirements.</li>
+										<li>Ability to develop Secure, Scalable, Resilient and distributed applications for industry and societal requirements.</li>
                                                                                 <br>
-										<li>To learn and apply the concepts and construct of emerging technologies like Artificial
-										Intelligence, Machine learning, Deep learning, Big Data Analytics, IOT, Cloud Computing, etc
-										for any real time problems.</li>
+										<li>Ability to learn and apply the concepts and construct of emerging technologies like Artificial Intelligence, Machine learning, Deep learning, Big Data Analytics, IoT, Cloud Computing, etc for any real time problems.</li>
                                                                             </ol>
                                                                         </article>
                                                                         <!--//page-content-->
@@ -276,8 +273,10 @@
 								    	{{faculty_data.description}}
                                                                     </p>
                                                                 </div>
+								{% if faculty_data.detail %}
                                                                 <a href="{{faculty_data.detail.url}}"
                                                                     class="btn btn-theme view-pdf">Read More</a>
+								{% endif %}
                                                             </div>
                                                         </div>
 
@@ -334,8 +333,10 @@
 
 
                                                                     <!-- <button type="button" class="btn btn-theme">Theme Button</button> -->
+                                                                    {% if faculty_data.detail %}
                                                                     <a href="{{faculty_data.detail.url}}"
                                                                         class="btn btn-theme view-pdf">Read More</a>
+                                                                    {% endif %}
                                                                 </div>
                                                             </div>
                                                         </div>

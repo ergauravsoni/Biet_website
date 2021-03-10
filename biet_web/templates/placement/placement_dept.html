@@ -776,17 +776,41 @@
                                         </div>
                                         <!--//panel-->
 
-                                        <div class="panel panel-default">
+					<div class="panel panel-default">
                                             <div class="panel-heading">
                                                 <h4 class="panel-title">
                                                     <a data-toggle="collapse" data-parent="#accordion" class="collapsed"
                                                         href="#collapse-9">
-                                                        Contact Details
+                                                        Media Coverage
                                                     </a>
                                                 </h4>
                                             </div>
                                             <!--//pane-heading-->
                                             <div id="collapse-9" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    {% for image in media_coverage_data %}
+                                                    <a class="prettyphoto col-md-4 col-sm-3 col-xs-6" rel="prettyPhoto[gallery]" title=""
+                                                            href="{{image.image.url}}"><img class="img-responsive img-thumbnail" src="{{image.image.url}}"
+                                                                    alt="" style="height: 250px;" /></a>
+                                                    {% endfor %}
+                                                </div>
+                                                <!--//panel-body-->
+                                            </div>
+                                            <!--//panel-colapse-->
+                                        </div>
+                                        <!--//panel-->
+
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+                                                    <a data-toggle="collapse" data-parent="#accordion" class="collapsed"
+                                                        href="#collapse-10">
+                                                        Contact Details
+                                                    </a>
+                                                </h4>
+                                            </div>
+                                            <!--//pane-heading-->
+                                            <div id="collapse-10" class="panel-collapse collapse">
                                                 <div class="panel-body">
                                                     <div class="row page-row">
 
@@ -822,17 +846,18 @@
                                             <div class="panel-heading">
                                                 <h4 class="panel-title">
                                                     <a data-toggle="collapse" data-parent="#accordion" class="collapsed"
-                                                        href="#collapse-10">
+                                                        href="#collapse-11">
                                                         Glimpses
                                                     </a>
                                                 </h4>
                                             </div>
                                             <!--//pane-heading-->
-                                            <div id="collapse-10" class="panel-collapse collapse">
+                                            <div id="collapse-11" class="panel-collapse collapse">
                                                 <div class="panel-body">
                                                     <ul class="nav nav-tabs">
                                                         <li class="active"><a href="#tab3" data-toggle="tab"><strong>Placement</strong></a></li>
                                                         <li><a href="#tab4" data-toggle="tab"><strong>Pre-Placement Talks</strong></a></li>
+							<li><a href="#tab5" data-toggle="tab"><strong>Students Placed</strong></a></li>
                                                     </ul>
                                                     <div class="tab-content">
                                                         <div class="tab-pane active" id="tab3">
@@ -847,6 +872,15 @@
                                                         <div class="tab-pane" id="tab4">
                                                             <div class="row medical">
                                                                 {% for image in pre_placement_images %}
+                                                                <a class="prettyphoto col-md-3 col-sm-3 col-xs-6" rel="prettyPhoto[gallery]" title=""
+                                                                        href="{{image.image.url}}"><img class="img-responsive img-thumbnail" src="{{image.image.url}}"
+                                                                                alt="" style="height: 150px;" /></a>
+                                                                {% endfor %}
+                                                            </div>
+                                                        </div>
+							<div class="tab-pane" id="tab5">
+                                                            <div class="row medical">
+                                                                {% for image in students_placed_images %}
                                                                 <a class="prettyphoto col-md-3 col-sm-3 col-xs-6" rel="prettyPhoto[gallery]" title=""
                                                                         href="{{image.image.url}}"><img class="img-responsive img-thumbnail" src="{{image.image.url}}"
                                                                                 alt="" style="height: 150px;" /></a>

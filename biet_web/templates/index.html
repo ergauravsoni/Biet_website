@@ -396,14 +396,14 @@
 						<a href="/placement/updates"><img src="{% static 'assets/img/new.jpg' %}" alt=""></a>
 						<div class="blog_date" style="width: auto;">
 							<p class="Blog_month textcolor-announcements ">PLACEMENT <span>Updates</span></p>
-							<p class="blog_year textcolor-announcements">2020</p>
+							<p class="blog_year textcolor-announcements">2021</p>
 						</div>
 					</div>
 					<div class="blog_content"> <br>
 						<MARQUEE style="BACKGROUND-COLOR: transparent" id=Marquee1 onmouseover="this.stop();"
 							onmouseout="this.start();" scrollAmount=3 direction=up height=292>
 							{% for news in placement_updates_data %}
-							{% if news.start_date|date:'Y' == '2020' %}
+							{% if news.start_date|date:'Y' == '2021' %}
 							<div class="event-item">
 								<p class="date-label">
 									<span class="month">{{news.start_date|date:'M'}}</span>

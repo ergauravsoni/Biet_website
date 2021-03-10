@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import staff, infrastructure, infrastructure_gallery, contact, placement_updates
 from .models import placement_glimpses, pre_placement_glimpses, hiring_statistics
 from .models import Slider_Image, training_glimpses, industrial_collabrations_and_mou
+from .models import students_placed_glimpses, media_coverage
 
 # Create your views here.
 
@@ -24,6 +25,8 @@ def placementDepartment(request):
     contacts_data = contact.objects.all().order_by('sno')
     placement_images = placement_glimpses.objects.all()
     pre_placement_images = pre_placement_glimpses.objects.all()
+    students_placed_images = students_placed_glimpses.objects.all()
+    media_coverage_data = media_coverage.objects.all()
     slider_image_data = Slider_Image.objects.all().order_by('sno')
     mou_data = industrial_collabrations_and_mou.objects.all().order_by('sno')
     placement_updates_data = placement_updates.objects.all().order_by('-start_date')
@@ -38,7 +41,9 @@ def placementDepartment(request):
         'pre_placement_images' : pre_placement_images,
 	'slider_image_data' : slider_image_data,
         'mou_data' : mou_data,
-        'placement_updates_data' : placement_updates_data
+        'placement_updates_data' : placement_updates_data,
+        'students_placed_images' : students_placed_images,
+        'media_coverage_data' : media_coverage_data,
     }
     
     return render(request,'placement/placement_dept.html',content)

@@ -10,7 +10,18 @@
 		<div class="page-content">
             <article class="welcome col-md-12 col-sm-11">
                 <div class="row page-row">
+		    {% for prospectus in prospectus_data %}
+                    <div class="col-md-6">
+                        <dl class="dl-horizontal">
+                            <h3 class="title">Click to view Prospectus</h3>
+                            <p></p>
+                            <a class="btn btn-theme" href="{{prospectus.prospectus.url}}"
+                                target="_blank"><i class="fa fa-download"></i>View/Download PDF</a>
+                        </dl>
+                    </div>
+                    {% empty %}
                     <h1 style="text-align: center;">Coming Soon</h1>
+                    {% endfor %}
                 </div>
                 <!--//page-row-->
             </article>

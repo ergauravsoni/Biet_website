@@ -1,0 +1,237 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
+    
+        <!-- ******CONTENT****** --> 
+        <div class="content container bgdata">
+            <div class="page-wrapper">
+                <header class="page-heading clearfix" >
+                    <h1 class="heading-title pull-left">Amrutha Ladies Hostel</h1>
+                </header> 
+                <div class="page-content">
+                    <div class="row page-row">
+                            <div class="course-wrapper col-md-12 col-sm-11">                         
+                                <article class="course-item">
+                                    <!-- <p class="featured-image page-row"><img class="img-responsive" src="assets/images/facilitles/bhostel.JPG" alt=""/></p> -->
+                                    
+                                    
+                                    <!-- <div class="container"> -->
+                                            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                                              <!-- Indicators -->
+						<ol class="carousel-indicators">
+                                                {% for data in slider_data %}
+                                                {% if forloop.counter == 1 %}
+                                                <li data-target="#myCarousel" data-slide-to="{{forloop.counter|add:"-1"}}" class="active"></li>
+                                                {% else %}
+                                                <li data-target="#myCarousel" data-slide-to="{{forloop.counter|add:"-1"}}"></li>
+                                                {% endif %}
+                                                {% endfor %}
+                                              </ol>
+                                          
+                                              <!-- Wrapper for slides -->
+                                              <div class="carousel-inner">
+                                                {% for data in slider_data %}
+                                                {% if forloop.counter == 1 %}
+                                                <div class="item active">
+                                                  <img src="{{data.images.url}}" style="width:100%;">
+                                                </div>
+                                                {% else %}
+                                                <div class="item">
+                                                    <img src="{{data.images.url}}" style="width:100%;">
+                                                </div>
+                                                {% endif %}
+                                                {% endfor %}
+                                              </div>
+                                             
+                                          
+                                              <!-- Left and right controls -->
+                                              <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                                                <span class="glyphicon glyphicon-chevron-left"></span>
+                                                <span class="sr-only">Previous</span>
+                                              </a>
+                                              <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                                                <span class="glyphicon glyphicon-chevron-right"></span>
+                                                <span class="sr-only">Next</span>
+                                              </a>
+                                            </div>
+                                          <!-- </div> -->
+    
+                                          <br><br>
+                                    
+    
+                                    
+                                    <div class="page-row box box-border">
+                                        <ul class="list-unstyled no-margin-bottom">
+                                            <li><strong>Start date:</strong> <em>2008</em></li>
+                                            <li><strong>Blocks: </strong> <em>2</em></li>
+                                            <li><strong>Number of Room: </strong> <em>84</em></li>
+                                            <li><strong>Hostel area: </strong> <em>5029 Sq</em></li>
+                                        </ul>
+                                    </div><!--//page-row-->
+                                    <div class="page-row">
+                                        <p>
+						The Hostel was started in 2008 to accommodate BIET girl students, who come from different parts of the world.  The hostel now has one block with 4 Floors, accommodating about 300 boarders. The rooms are well furnished and the surroundings of hostel is very green and pleasant, which encourages the students to study. The hostel is having two dining halls to cater to the needs of the boarders for their varied taste. Hostel is known for its discipline and well managed by dedicated faculty & staff members. The hostel is spacious with a built up area of 5029 Sq. Mts. with 84 Rooms accommodating 300 students.
+                                        </p>
+                                        <br>
+                                        <p>
+						The Chairman of “AMRUTHA”, Dr.S.S.D.J Ladies Hostel is Dr Prabha Mallikarjun, Member ,BEA,Dvg. The warden of the hostel is Dr S M Chandushaker.  The hostel is well managed by a team of experienced office staff.
+                                        </p>
+                                        <br>
+                                        <p>
+						North Indian & south Indian dishes are prepared in the hostel mess. The hostel mess is managed by the hostel administration itself. Ragging is totally prohibited in the hostel. As an entertainment and refreshment hostel   has indoor shuttle court, and an indoor sports hall which is used for table tennis, chess, carom board and other indoor games. Common TV hall is facilitated to watch some important program in the limited hours.
+                                        </p> 
+                                        <br>
+                                        <p>
+						Stationery shop facility is provided in the hostel premises. A walking track is also laid all around the hostel. All the national festivals are celebrated in the hostel. The hostel is surrounded by a landscaped garden.
+                                        </p> 
+                                        <br>
+                                        <p>
+						The boarders actively participate in the functions such as freshers’day, Ganesh Chaturthi, Holi, Diwali and fare well function which are held in the hostel every year.
+                                        </p>  
+                                    </div><!--//page-row-->
+				    <div class="tabbed-info page-row">             
+                                        <ul class="nav nav-tabs">
+                                          <li class="active"><a href="#tab3" data-toggle="tab"><strong>Room Details</strong> </a></li>
+                                          <!-- <li><a href="#tab2" data-toggle="tab"> <strong>Admission Procedure for Fresh Students</strong> </a></li> -->
+                                          <li><a href="#tab4" data-toggle="tab"><strong>Fee Structure </strong> </a></li>
+                                          <li><a href="#tab5" data-toggle="tab"><strong>Admission Procedure </strong> </a></li>
+					  <li><a href="#tab6" data-toggle="tab"><strong>Contact Details</strong> </a></li>
+                                        </ul>
+                                        <div class="tab-content">
+                                          <div class="tab-pane active active-bg" id="tab3">
+                                                
+                                            <div class="table-responsive">  
+                                                <table class="table table-boxed table-striped">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>S.No.</th>
+                                                            <th>Block</th>
+                                                            <th>No. of Rooms</th>
+                                                            <th>No. of Boarders</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td><b>1.</b></td>
+                                                            <td>AMRUTHA</td>
+                                                            <td>103</td>
+                                                            <td>309</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td><strong>Total</strong></td>
+                                                            <td><strong>103</strong></td>
+                                                            <td><strong>309</strong></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div><!--//table-responsive-->
+                                            </div>
+                                            <div class="tab-pane active-bg" id="tab4">
+                                                
+                                            <div class="table-responsive">  
+                                                <table class="table table-boxed table-striped">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>S.No.</th>
+                                                            <th>Particular</th>
+                                                            <th>Amount</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td><b>1.</b></td>
+                                                            <td>Hostel fee (per year)</td>
+                                                            <td>Rs.30,000.00</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><b>2.</b></td>
+                                                            <td>Deposit (one time)</td>
+                                                            <td>Rs.10,000.00</td>
+                                                           
+                                                        </tr>
+                                                        <tr>
+                                                            <td><b></b></td>
+                                                            <td><strong>Total</strong> </td>
+                                                            <td><strong>Rs.40,000.00</strong></td>
+                                                            
+                                                        </tr>
+                                                        <tr>
+                                                                <td><b>3.</b></td>
+                                                                <td>Mess Charge (monthly)</td>
+                                                                <td>Rs.2,100.00</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div><!--//table-responsive-->
+                                            </div>
+                                            <div class="tab-pane active-bg" id="tab5">
+                                              <ul class="medical">
+                                                <li>The student & parent/guardian should meet the warden along with his <b>C.E.T.</b> identity card & college fee receipt.</li>
+                                                <li>Application form shall be collected in the Hostel Office showing the Warden’s consent letter.</li>
+                                                <li>After duly filling application form the student should get the signature of the admission clerk, Director and the Principal before obtaining the Warden’s signature.</li>
+                                                <li>The duly filled application form along with two passport size photographs & a pay order of <b>Rs.30,000/-</b> from Bapuji Co-op Bank  must be submitted  to the office.</li>
+                                                <li>The pay order shall be taken in the name of the <b>Dr.S.S.D.J Ladies Hostel, Davangere.</b></li>
+                                                <li>Three students will be accommodated in each room.</li>
+                                                <li>Every student will be provided with a Cot,Bed,a Table and a  chair.</li>
+                                                <li>Rooms will be allotted by the Warden/Deputy Warden.</li>
+                                                <li>Students should bring their own bedspread, blanket, mosquito net bucket, and mug.</li>
+                                              </ul>
+                                                <p><br><b>Note:-</b> Students are advised not to keep valuable materials in the room.</p>
+                                            </div>
+                                            <div class="tab-pane active-bg" id="tab6">
+                                                
+                                              <div class="table-responsive">  
+                                                  <table class="table table-boxed table-striped">
+                                                      <thead>
+                                                          <tr>
+                                                              <th>S.No.</th>
+                                                              <th>Name</th>
+                                                              <th>Contact Number</th>
+                                                          </tr>
+                                                      </thead>
+                                                      <tbody>
+                                                          <tr>
+                                                              <td><b>1.</b></td>
+                                                              <td>Prof. Y. Vrushabendrappa (Director) </td>
+                                                              <td>9448393144</td>
+                                                          </tr>
+                                                          <tr>
+                                                              <td><b>2.</b></td>
+                                                              <td>Dr. H.B. Arvind (Principal)</td>
+                                                              <td>9844061789</td>
+                                                          </tr>
+                                                          <tr>
+                                                              <td><b>3.</b></td>
+                                                              <td>Dr. S.M. Chandrashekara (Warden)</td>
+                                                              <td>9844422882</td>
+                                                          </tr>
+                                                          <tr>
+                                                            <td><b>4.</b></td>
+                                                            <td>Dr. Vinutha H.P. (Deputy Warden)</td>
+                                                            <td>9964262478</td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td><b>5.</b></td>
+                                                          <td>Smt. Nirmala G. (Deputy Warden)</td>
+                                                          <td>9964618228</td>
+                                                      </tr>
+                                                      </tbody>
+                                                  </table>
+                                              </div><!--//table-responsive-->
+                                            </div>
+                                        </div>
+                                    </div><!--//tabbed-info-->
+                                </article><!--//course-item-->                                              
+                            </div><!--//course-wrapper-->
+                            
+                        </div><!--//page-row-->
+                    </div><!--//page-content-->
+        </div><!--//page--> 
+    </div>
+
+
+{% endblock %}
+   
+    

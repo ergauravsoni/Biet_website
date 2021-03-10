@@ -36,5 +36,6 @@ urlpatterns = [
     path('other_committees/media_cell',views.media_cell, name='other_committees/media_cell'),
     path('organisational_chart',views.organisational_chart, name='organisational_chart'),
     path('aishe',views.aishe, name='aishe'),
+    path('research/rac',views.rac, name='research/rac'),
 ]
 

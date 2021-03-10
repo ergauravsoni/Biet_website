@@ -102,3 +102,15 @@ class training_glimpses(models.Model):
 
     def __str__(self):
         return '{}'.format(self.image)
+
+class students_placed_glimpses(models.Model):
+    image = models.FileField(upload_to = 'placement/students_placed_glimpses/')
+
+    def __str__(self):
+        return '{}'.format(self.image)
+
+class media_coverage(models.Model):
+    image = models.FileField(upload_to = 'placement/media_coverage/')
+
+    def __str__(self):
+        return '{}'.format(self.image)

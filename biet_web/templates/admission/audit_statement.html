@@ -1,0 +1,34 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<div class="content container bgdata">
+	<div class="page-wrapper">
+		<header class="page-heading clearfix">
+            <strong>
+                <h1 class="heading-title pull-left">Audit Statement</h1>
+            </strong>
+        </header>
+		<div class="page-content">
+            <article class="welcome col-md-12 col-sm-11">
+                <div class="row page-row">
+                    {% for audit in audit_data %}
+                    <div class="col-md-6">
+                        <dl class="dl-horizontal">
+                            <h3 class="title">Audit Statement for the Year: {{audit.year}}</h3>
+                            <p></p>
+                            <a class="btn btn-theme " href="{{audit.audit_statement.url}}"
+                                target="_blank"><i class="fa fa-download"></i>View/Download PDF</a>
+                        </dl>
+                    </div>
+                    {% empty %}
+                    <h1 style="text-align: center;">Coming Soon</h1>
+                    {% endfor %}
+                </div>
+                <!--//page-row-->
+            </article>
+		</div>
+		<!--//page-content-->
+	</div>
+	<!--//page-->
+</div>
+	
+{% endblock %}

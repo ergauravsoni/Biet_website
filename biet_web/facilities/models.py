@@ -28,3 +28,9 @@ class garbageGallary(models.Model):
 class ewasteGallary(models.Model):
     images = models.ImageField(upload_to='facilities/ewasteGallary')
 
+class ladiesHostelSlider(models.Model):
+    sno = models.IntegerField()
+    images = models.ImageField(upload_to='facilities/ladiesHostel/sliderImages')
+    
+    def __str__(self):
+        return str(self.sno) + ". " + str(self.images)

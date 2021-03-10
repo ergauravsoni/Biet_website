@@ -182,7 +182,7 @@
                                                                                     </li>
                                                                                     <br>
                                                                                     <li>
-											Expose to emerging technologies and opportunities to work as team on multidisciplinary projects with effective communication skills and leadership qualities.
+											Adapt to emerging technologies and opportunities to work as team on multidisciplinary projects with effective communication skills and leadership qualities.
                                                                                     </li>
                                                                                 </ol>
                                                                         </article>
@@ -203,7 +203,7 @@
                                                                                 Program Specific Outcomes (PSOs)</h3>
 										<ol class="custom-list-style medical">
                                                                                     <li>
-											Ability to analysis of power systems that efficiently generate, transmit, distribute and utilize electric power.
+											Ability to analyse power systems that efficiently generate, transmit, distribute and utilize electric power.
                                                                                     </li>
                                                                                     <br>
                                                                                     <li>
@@ -283,8 +283,10 @@
                                                                     	{{faculty_data.description}}   	
                                                                     </p>
                                                                 </div>
+								{% if faculty_data.detail %}
                                                                 <a href="{{faculty_data.detail.url}}"
                                                                     class="btn btn-theme view-pdf">Read More</a>
+								{% endif %}
                                                             </div>
                                                         </div>
 
@@ -342,8 +344,10 @@
 
 
                                                                     <!-- <button type="button" class="btn btn-theme">Theme Button</button> -->
+                                                                    {% if faculty_data.detail %}
                                                                     <a href="{{faculty_data.detail.url}}"
                                                                         class="btn btn-theme view-pdf">Read More</a>
+                                                                    {% endif %}
                                                                 </div>
                                                             </div>
                                                         </div>

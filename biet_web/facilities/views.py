@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Sport, auditoriumGallary, sportsGallary, ewasteGallary
 from .models import guestHouseGallary, drinkingWaterGallary, garbageGallary
+from .models import ladiesHostelSlider
 
 # Create your views here.
 
@@ -18,8 +19,15 @@ def sport(request):
 
     return render(request,'facilities/sport.html',{'result' : result, 'sports_images' : sports_images })
 
-def hostel(request):
-    return render(request,'facilities/hostel.html')
+def boys_hostel(request):
+    return render(request,'facilities/boys_hostel.html')
+
+def ladies_hostel(request):
+    slider_data=ladiesHostelSlider.objects.all().order_by('sno')
+    
+    content={'slider_data':slider_data}
+    
+    return render(request,'facilities/ladies_hostel.html',content)
 
 def canteen(request):
     return render(request,'facilities/canteen.html')

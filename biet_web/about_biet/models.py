@@ -115,3 +115,26 @@ class Nain_Gallery(models.Model):
     
     def __str__(self):
         return "Image " + str(self.sno)
+
+class Major_Events(models.Model):
+    sno = models.IntegerField()
+    name = models.CharField(max_length=300)
+    description = models.TextField()
+    
+    def __str__(self):
+        return str(self.sno) + ". " + self.name
+        
+class Major_Events_Photos(models.Model):
+    event = models.ForeignKey(Major_Events, on_delete=models.CASCADE)
+    image = models.ImageField(upload_to='about_biet/Major_Events')
+    
+    def __str__(self):
+        return str(self.event.name) + ": " + '{}'.format(self.image)
+
+class Research_Advisory_Committee(models.Model):
+    sno = models.IntegerField()
+    name = models.CharField(max_length=200)
+    designation = models.CharField(max_length=300)
+    
+    def __str__(self):
+        return str(self.sno) + ". " + str(self.name)

@@ -11,14 +11,34 @@
             <article class="welcome col-md-12 col-sm-11">
                 <div class="row page-row">
 		    <div class="col-md-6">
-                        {% for addmission in ug_addmissions %}
+                    {% for addmission in ug_addmissions %}
+		    {% if addmission.addmission_fee %}
                         <dl class="dl-horizontal">
-                            <h3 class="title">Fee Structure for B.E Course</h3>
+                            <h3 class="title">Fee Structure for B.E. Course</h3>
                             <p></p>
                             <a class="btn btn-theme view-pdf" href="{{addmission.addmission_fee.url}}"
                                 target="_blank"><i class="fa fa-download"></i>View PDF</a>
                         </dl>
-                        {% endfor %}
+		    {% endif %}
+		    {% if addmission.diploma_fee %}
+                        <dl class="dl-horizontal">
+                            <h3 class="title">Fee Structure for Diploma Course</h3>
+                            <p></p>
+                            <a class="btn btn-theme view-pdf" href="{{addmission.diploma_fee.url}}"
+                                target="_blank"><i class="fa fa-download"></i>View PDF</a>
+                        </dl>
+                    {% endif %}
+                    {% endfor %}
+		    {% for addmission in pg_addmissions %}
+		    {% if addmission.addmission_fee %}
+			<dl class="dl-horizontal">
+                            <h3 class="title">Fee Structure for PG Courses</h3>
+                            <p></p>
+                            <a class="btn btn-theme view-pdf" href="{{addmission.addmission_fee.url}}"
+                                target="_blank"><i class="fa fa-download"></i>View PDF</a>
+                        </dl>
+		    {% endif %}
+		    {% endfor %}
                     </div>
                 </div>
                 <!--//page-row-->

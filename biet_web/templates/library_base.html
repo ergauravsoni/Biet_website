@@ -1,0 +1,642 @@
+{% load static %}
+
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1BLZFY4Q58"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-1BLZFY4Q58');
+    </script>
+    <title>BIET</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="{% static 'assets/images/logo/BIET_logo.png' %}">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="{% static 'assets/plugins/bootstrap/css/bootstrap.min.css' %}">
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="{% static 'assets/plugins/font-awesome/css/font-awesome.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/plugins/flexslider/flexslider.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/plugins/pretty-photo/css/prettyPhoto.css' %}">
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="{% static 'assets/css/styles_8.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/style_updates.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/dept_profile.css' %}">
+    <!-- <link rel="stylesheet" href="{% static 'assets/css/update.css' %}"> -->
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Montserrat|Oswald" rel="stylesheet">
+
+
+    
+    <!--Fonts Form Google Web Fonts-->
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,300,400italic,700,900,700italic' rel='stylesheet'
+        type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:500' rel='stylesheet' type='text/css'>
+    <!--Responsive Mobile Menu-->
+    <link rel="stylesheet" href="{% static 'assets/css/slicknav.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/rs-plugin/css/settings.css' %} " />
+    <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/style_6.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/fmenu.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/style6.css' %}" />
+    <!--Revolation Slider-->
+    <!-- <link href="rs-plugin/css/settings.css" rel="stylesheet"> -->
+    <!--Carousel Slider-->
+    <!-- <link href="css/owl.carousel.css" rel="stylesheet"> -->
+    <!--Main Style Css-->
+    <!-- <link href="style.css" rel="stylesheet"> -->
+    <!--Responsive-->
+    <!-- <link href="css/responsive.css" rel="stylesheet"> -->
+
+    <!-- <link href="css/fmenu.css" rel="stylesheet"> -->
+    <script src="{% static 'assets/js/message_1.js' %}"></script>
+    <script src="{% static 'assets/javascript/jquery.min.js' %}"></script>
+    <script src="{% static 'assets/javascript/indexpopup.js' %}"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body class="home-page">
+    <div class="">
+        <!-- ******HEADER****** -->
+        <header class="header">
+            <div class="top-bar">
+                <div class="container">
+                    <!-- <ul class="social-icons col-md-6 col-sm-6 col-xs-12 hidden-xs">
+                        <li><a href="#" ><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#" ><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#" ><i class="fa fa-youtube"></i></a></li>
+                        <li><a href="#" ><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="#" ><i class="fa fa-google-plus"></i></a></li>         
+                        <li class="row-end"><a href="#" ><i class="fa fa-rss"></i></a></li>             
+                    </ul> -->
+                    <!--//social-icons-->
+                </div>
+            </div>
+            <!--//to-bar-->
+            <div class="header-main container">
+                <h1 class="logo col-md-2 col-sm-2">
+                    <a href="/"><img id="logo" src="{% static 'assets/images/logo/BIET_logo.png' %}" alt="Logo"
+                            height="100px;" width="100px;"></a>
+                </h1>
+                <!--//logo-->
+                <div class="col-md-7" style="text-align:center">
+                    <p style="font-family: 'Montserrat', sans-serif; color:#192A56">Bapuji Educational Association
+                        (Regd.)</p>
+                    <h2 style="font-family: 'Bree Serif', serif; font-size: 31px; color:#192A56">Bapuji Institute of
+                        Engineering and
+                        Technology</h2>
+                    <p style="font-family: 'Oswald', sans-serif; color:#192A56">Affiliated to Visvesvaraya Technological
+                        University,
+                        Belgavi, Accredited by NAAC with 'A' grade,<br> Recognized by UGC under 2(F) and 12(B)</p>
+                </div>
+                <div class="info col-md-3 col-sm-3">
+                    <div class="contact pull-right">
+                        <p class="phone" style="color:#192A56"><i class="fa fa-phone"></i>Tel: 91-8192-222245 </p> <br>
+                        <p class="email"><i class="fa fa-envelope"></i><a href="#"
+                                style="color:#192A56">webmaster@bietdvg.edu </a></p>
+                        <br>
+                        <p class="email"><i class="fa fa-envelope"></i><a href="#"
+                                style="color:#192A56">principal@bietdvg.edu </a></p>
+                        <br>
+                        <p class="email"><i class="fa fa-fax"></i><a href="#" style="color:#192A56">08192 - 223261 </a>
+                        </p>
+                        <br>
+                        <p class="email"><a href="https://login.bluehost.in/hosting/webmail" style="color:#ffffff"
+                                class="btn btn-theme"> <i class="fa fa-globe" style="color:#ffffff"></i> Webmail </a>
+                        </p>
+
+                    </div>
+                    <!--//contact-->
+                </div>
+                <!--//info-->
+            </div>
+            <!--//header-main-->
+        </header>
+        <!--//header-->
+
+        <!-- ******NAV****** -->
+        <nav class="main-nav" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!--//nav-toggle-->
+                </div>
+                <!--//navbar-header-->
+                <div class="navbar-collapse collapse" id="navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <!-- <li class="active nav-item"><a href="index.html">ABOUT US</a></li> -->
+                        <li class="nav-item dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0"
+                                href="/home">HOME <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/Vision_Mission_Quality_Policies" class="text-uppercase">Vision/Mission/Quality Policy</a>
+                                </li>
+                                <li><a href="/Bapuji_educational_association" class="text-uppercase">Bapuji Educational
+                                        Association</a></li>
+                                <li><a href="/governing_body">GOVERNING BODY</a></li>
+                                <li><a href="/chairman_msg">CHAIRMAN'S MESSAGE</a></li>
+                                <li><a href="/principal_msg">PRINCIPAL'S MESSAGE</a></li>
+                                <li><a href="/director_msg">DIRECTOR'S MESSAGE</a></li>
+                                <li><a href="/deans">DEANS</a></li>
+                                <li><a href="/organisational_chart">ORGANISATIONAL CHART</a></li>
+                                <li class="dropdown-submenu">
+                                    <a class="trigger" tabindex="-1" href="#">ACCREDITATION / RANKING
+                                        <i class="fa fa-angle-right"></i></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="/aicte">AICTE</a></li>
+                                        <li><a href="/naac">NAAC</a></li>
+                                        <li><a href="/nirf">NIRF</a></li>
+                                        <li><a href="/nba">NBA</a></li>
+					<li><a href="/aishe">AISHE</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="/research"> RESEARCH</a></li>
+                                <li class="dropdown-submenu">
+                                    <a class="trigger" tabindex="-1" href="#">INCUBATION<i
+                                            class="fa fa-angle-right"></i></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="/nain">NAIN</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="/major_events">MAJOR EVENTS</a></li>
+                                <li class="dropdown-submenu">
+                                    <a class="trigger" tabindex="-1" href="#">OTHER COMMITTEES<i
+                                            class="fa fa-angle-right"></i></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="/other_committees/anti_ragging">ANTIRAGGING SQUAD</a></li>
+                                        <li><a href="/other_committees/grievance_redressal">GRIEVANCE REDRESSAL COMMITTEE</a></li>
+                                        <li><a href="/other_committees/sc_st_obc_cell">SC, ST & OBC CELL</a></li>
+                                        <li><a href="/other_committees/skill_cell">SKILL DEVELOPMENT CELL</a></li>
+                                        <li><a href="/other_committees/ipr_cell">IPR CELL</a></li>
+                                        <li><a href="/other_committees/startup_cell">STARTUP/INNOVATION CELL</a></li>
+                                        <li><a href="/other_committees/media_cell">COMMUNICATION & MEDIA CELL</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="/office">OFFICE</a></li>                            
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0"
+                                data-close-others="false" href="#">ACADEMICS <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <!-- <li><a href="#">DEPARTMENT</a></li>  -->
+                                <li class="dropdown-submenu">
+                                    <a class="trigger" tabindex="-1" href="#"> DEPARTMENT<i
+                                            class="fa fa-angle-right"></i></a>
+                                    <ul class="dropdown-menu" style="min-width: 250px;">
+
+                                        <li class="dropdown-submenu">
+                                            <a class="trigger" href="#"> UNDERGRADUATE <i
+                                                    class="fa fa-angle-right"></i></a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="/department/UG/CV/home">Civil Engineering (CV)</a></li>
+                                                <li><a href="/department/UG/ME/home">Mechanical Engineering (ME)</a>
+                                                </li>
+                                                <li><a href="/department/UG/EE/home">Electrical & Electronics Engineering (EE)</a></li>
+                                                <li><a href="/department/UG/EC/home">Electronics & Communication
+                                                        Engineering (EC)</a></li>
+                                                <li><a href="/department/UG/CH/home">Chemical Engineering (CH)</a></li>
+                                                <li><a href="/department/UG/EI/home">Electronics & Instrumentation
+                                                        Engineering (E&IE)</a></li>
+                                                <li><a href="/department/UG/CS/home">Computer Science & Engineering
+                                                        (CS)</a></li>
+                                                <li><a href="/department/UG/IS/home">Information Science & Engineering
+                                                        (IS)</a></li>
+                                                <li><a href="/department/UG/TX/home">Textile Technology (TX)</a></li>
+                                                <li><a href="/department/UG/BT/home">Bio Technology (BT)</a></li>
+                                                
+                                                <li class="dropdown-submenu">
+                                                    <a class="trigger" href="#"> Basic Science & Humanities <i
+                                                            class="fa fa-angle-right"></i></a>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a href="/department/UG/PHY/home">Department of Physics</a></li>
+                                                        <li><a href="/department/UG/CHE/home">Department of Chemistry</a></li>
+                                                        <li><a href="/department/UG/MAT/home">Department of Mathematics</a></li>
+                                                    </ul
+						</li>
+                                            </ul>
+                                        </li>
+
+                                        <li class="dropdown-submenu">
+                                            <a class="trigger" href="#"> POSTGRADUATE <i
+                                                    class="fa fa-angle-right"></i></a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="/department/PG/MCA/home">Master of Computer Applications
+                                                        (MCA)</a></li>
+                                                <li><a href="/department/PG/ENV/home">Environmental Engineering</a></li>
+                                                <li><a href="https://www.bapuji-mba.org/">Master of Business Administration
+                                                        (MBA)</a></li>
+                                                <li><a href="/department/UG/CV/home">Structural Engineering</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown-submenu">
+                                            <a class="trigger" href="#"> RESEARCH & DEVELOPMENT <i
+                                                    class="fa fa-angle-right"></i></a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="/department/UG/CV/home">Civil Engineering (CV)</a></li>
+                                                <li><a href="/department/UG/ME/home">Mechanical Engineering (ME)</a>
+                                                </li>
+                                                <li><a href="">Electrical & Electronics Engineering (EE)</a></li>
+                                                <li><a href="/department/UG/EC/home">Electronics & Communication
+                                                        Engineering (EC)</a></li>
+                                                <li><a href="/department/UG/CH/home">Chemical Engineering (CH)</a></li>
+                                                <li><a href="/department/UG/CS/home">Computer Science & Engineering
+                                                        (CS)</a></li>
+                                                <li><a href="/department/UG/IS/home">Information Science & Engineering
+                                                        (IS)</a></li>
+                                                <li><a href="/department/UG/TX/home">Textile Technology (TX)</a></li>
+                                                <li><a href="/department/UG/BT/home">Bio Technology (BT)</a></li>
+                                                <li><a href="/department/UG/PHY/home">Department of Physics</a></li>
+                                                <li><a href="/department/UG/CHE/home">Department of Chemistry</a></li>
+                                                <li><a href="/department/UG/MAT/home">Department of Mathematics</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <!-- <li><a href="/library">LIBRARY</a></li>  -->
+                                <li><a href="/academics/industry_collab">INDUSTRY COLLABRATIONS AND MOUs</a></li>
+                                <li><a href="/academics/consultancy">CONSULTANCY</a></li>
+                                <li><a href="/academics/ranks">RANKS</a></li>
+                                <li><a href="/academics/rules">RULES AND REGULATIONS</a></li>
+                                <li><a href="/academic_calender">ACADEMIC CALENDAR</a></li>
+
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0"
+                                data-close-others="false" href="#">ADMISSIONS <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+
+                                <li class="dropdown-submenu">
+                                    <a class="trigger" tabindex="-1" href="#"> PROGRAMS OFFERED<i
+                                            class="fa fa-angle-right"></i></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="/ug_addmission">UNDER GRADUATE</a></li>
+                                        <li><a href="/pg_addmission">POST GRADUATE</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="/admission/prospectus">PROSPECTUS</a></li>
+                                <li><a href="/admission/fee_structure">FEE STRUCTURE</a></li>
+                                <li><a href="/facilities/scholarship">SCHOLARSHIPS</a></li>
+				<li><a href="/admission/audit_statement">AUDIT STATEMENT</a></li>
+				<li><a href="/admission/contact">CONTACT</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a href="/library">LIBRARY</a></li>
+
+
+
+                        <li class="nav-item dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0"
+                                data-close-others="false" href="#">FACILITIES <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/facilities/auditorium">AUDITORIUM</a></li>
+                                <!-- <li><a href="/facilities/sport">SPORTS</a></li> -->
+				<li class="dropdown-submenu">
+                                    <a class="trigger" tabindex="-1" href="#">HOSTEL
+                                        <i class="fa fa-angle-right"></i></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="/facilities/boys_hostel">BOYS HOSTEL</a></li>
+                                        <li><a href="/facilities/ladies_hostel">LADIES HOSTEL</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="/facilities/ladies_rest_room">LADIES REST ROOM</a></li>
+                                <li><a href="/facilities/canteen">CANTEEN / CAFETERIA</a></li>
+                                <li><a href="/facilities/dispensary">DISPENSARY</a></li>
+                                <li><a href="/facilities/guest_house" class="text-upper">GUEST HOUSE</a></li>
+                                <li><a href="/facilities/redcross">RED CROSS</a></li>
+				<li><a href="/facilities/ncc">NCC</a></li>
+                                <li><a href="/facilities/nss">NSS</a></li>
+                                <li><a href="/facilities/internet">INTERNET</a></li>
+                                <!-- <li><a href="/facilities/transportation">TRANSPORTATION</a></li> -->
+                                <li><a href="/facilities/elearning">ELEARNING</a></li>
+                                <li><a href="/facilities/language_lab">LANGUAGE LAB</a></li>
+                                <li class="dropdown-submenu">
+                                    <a class="trigger" tabindex="-1" href="#">OTHERS<i
+                                            class="fa fa-angle-right"></i></a>
+                                    <ul class="dropdown-menu">
+                                        <li class="dropdown-submenu">
+                                            <a href="/facilities/drinking_water"> DRINKING WATER</i></a>
+                                        </li>
+                                        <li class="dropdown-submenu">
+                                            <a href="/facilities/garbage"> GARBAGE MANAGEMENT </i></a>
+                                        </li>
+                                        <li class="dropdown-submenu">
+                                            <a href="/facilities/ewaste"> E-WASTE MANAGEMENT </i></a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <!--//dropdown-->
+                        <li class="nav-item dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0"
+                                data-close-others="false" href="#">PLACEMENTS <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+				<li><a href="/placement/placement_dept">PLACEMENT</a>
+                                <li><a href="/placement/training_program">TRAINING</a>
+                            </ul>
+                        </li>
+                        <!-- <li class="nav-item dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false" href="#">PLACEMENTS <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="typography.html"><i class="fa fa-file-text"></i> Typography</a></li>
+                                <li><a href="tables.html"><i class="fa fa-table"></i> Tables</a></li>
+                                <li><a href="buttons.html"><i class="fa fa-star"></i> Buttons</a></li>
+                                <li><a href="components.html"><i class="fa fa-rocket"></i> Components</a></li> 
+                                <li><a href="icons.html"><i class="fa fa-heart"></i> Icons</a></li>                                                 
+                            </ul>
+                        </li>
+                        dropdown-->
+                        <li class="nav-item dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0"
+                                data-close-others="false" href="#">Campus Life <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <!-- <li><a href="/campus_life/naac">NAAC</a></li>
+                                <li><a href="/campus_life/nirf">NIRF</a></li>
+                                <li><a href="/campus_life/nain">NAIN</a></li> -->
+                                <!-- <li><a href="/campus_life/redcross">RED CROSS</a></li> -->
+                                <li><a href="/campus_life/green_campus">GREEN CAMPUS</a></li>
+                                <li><a href="/campus_life/sac">STUDENT ACADEMIC COUNCIL</a></li>
+                                <li><a href="/campus_life/gym">GYM</a></li>
+                                <li><a href="/campus_life/graduation_day">GRADUANDS' DAY</a></li>
+                                <li><a href="/campus_life/btech_technowav">BIETECH VOICE / TECHNOWAVE</a></li>
+                                <li><a href="/facilities/sport">SPORTS</a></li>
+                                <!-- <li><a href="news-single-2.html">IBM COE</a></li> -->
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0"
+                                data-close-others="false" href="#">Alumni <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/alumini/alumni_association" class="text-uppercase">Alumni Association</a>
+                                </li>
+                                <li><a href="https://forms.gle/K3S34yxtJN49r3bK9" class="text-uppercase">alumni
+                                        registration</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0"
+                                data-close-others="false" href="#">NOTIFICATION <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="https://vtu.ac.in/en/category/administration-circulars/">VTU NOTIFICATIONS</a></li>
+                                <li><a href="/notification">INSTITUTE NOTIFICATIONS</a></li>
+
+
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a href="/gallery">GALLERY</a></li>
+                        <li class="nav-item"><a href="https://www.bietdvg.edu/feedback/" target="_blank">FEEDBACK</a>
+                        </li>
+
+                    </ul>
+                    <!--//nav-->
+                </div>
+                <!--//navabr-collapse-->
+            </div>
+            <!--//container-->
+        </nav>
+        <!--//main-nav-->
+        <!-- </div> -->
+        <!--//wrapper-->
+
+        <div>
+
+	    <!-- ******CONTENT****** -->
+            <div class="content container bgdata">
+                <div class="page-wrapper">
+                    <header class="page-heading clearfix">
+                        <h1 class="heading-title pull-left">Library</h1>
+                        <!-- <div class="breadcrumbs pull-right">
+                            <ul class="breadcrumbs-list">
+                                <li class="breadcrumbs-label">You are here:</li>
+                                <li><a href="../index.html">Home</a><i class="fa fa-angle-right"></i></li>
+                                <li><a href="home.php">Academics</a><i class="fa fa-angle-right"></i></li>
+                                <li><a href="home.php">Library</a><i class="fa fa-angle-right"></i></li>
+                                <li class="current">Library Home</li>
+                            </ul>
+                        </div> -->
+                        <!--//breadcrumbs-->
+                    </header>
+                    <div class="page-content">
+                        <div class="row page-row">
+                            <aside class="page-sidebar col-md-3 col-sm-4 affix-top">
+                                <section class="widget">
+                                    <ul class="nav">
+                                        <li class="{{home}}"><a href="/library">Library Home</a></li>
+                                        <li class="{{layout}}"><a href="/library/layout">Layout of Library</a></li>
+                                        <li class="{{staff}}"><a href="/library/staff">Library Staff</a></li>
+                                        <li class="{{resources}}"><a href="/library/resources">Library Resources</a></li>
+                                        <li class="{{membership}}"><a href="/library/membership">Membership</a></li>
+                                        <li class="{{rules}}"><a href="/library/rules">Library Rules</a></li>
+                                        <li class="{{services}}"><a href="/library/services">Library Services</a></li>
+                                        <li class="{{eresources}}"><a href="/library/e_resources">E-Resources</a></li>
+                                        <li><a href="http://www.knimbus.com/user/auth.do" target="_blank">Knimbus(Federal
+                                                search)</a></li>
+                                        <li class="{{committee}}"><a href="/library/committee">Library Committee</a></li>
+                                        <li class="{{qp}}"><a href="/library/question_papers">VTU Question papers</a></li>
+                                        <li><a href="http://10.201.4.11:8088/easylib/" target="_blank">Library OPAC</a></li>
+                                        <li><a href="https://ndl.iitkgp.ac.in/" target="_blank">National Digital Library</a></li>
+                                        <li class="dropdown">
+                                            <a class="dropdown-toggle" data-toggle="dropdown" data-delay="0"
+                                            data-close-others="false" href="#"> NPTEL <i class="fa fa-angle-right"></i></a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="http://www.nptel.ac.in/" target="_blank">Direct Access</a></li>
+                                                <li><a href="http://10.201.4.237/LocalGuru/" target="_blank">Local Access</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="{{courses}}"><a href="/library/online_courses">Online Courses</a></li>
+                                        <li class="{{gallery}}"><a href="/library/gallery">Library Gallery</a></li>
+                                        <li class="{{manual}}"><a href="/library/user_manual">Library User Manual</a></li>
+                                        <li class="{{reprography}}"><a href="/facilities/perography">Reprography</a></li>
+                                    </ul>
+                                </section>
+                                <!--//widget-->
+                            </aside>
+                            <!--//page-sidebar-->
+                            <div class="content-wrapper col-md-8 col-sm-7">
+                                {% block content %}
+
+
+
+                                {% endblock %}
+                            </div>
+                            <!--//content-wrapper-->
+                        </div>
+                        <!--//page-row-->
+                    </div>
+                    <!--//page-content-->
+                </div>
+                <!--//page-->
+            </div>
+            <!--//content-->
+            </div>
+            <!--//wrapper-->
+
+        </div>
+
+
+
+
+
+
+
+        <!-- ******FOOTER****** -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="container">
+                    <div class="row">
+                        <div class="footer-col col-md-1 col-sm-10 about text-center">
+                            <!-- <h3>About us</h3> -->
+
+                        </div>
+                        <div class="footer-col col-md-5 col-sm-10 about text-center">
+
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3863.725050337043!2d75.89939131478727!3d14.443002539903063!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bba2561b45cd815%3A0x4736841a4844a2a0!2sBIET%2C%20Davanagere%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1590003699523!5m2!1sen!2sin"
+                                width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen=""
+                                aria-hidden="false" tabindex="0"></iframe>
+
+                            <ul>
+                                <!-- <li><a href="about.html"><i class="fa fa-caret-right"></i>About us</a></li>
+                            <li><a href="contact.html"><i class="fa fa-caret-right"></i>Contact us</a></li>
+                            <li><a href="privacy.html"><i class="fa fa-caret-right"></i>Privacy policy</a></li>
+                            <li><a href="terms-and-conditions.html"><i class="fa fa-caret-right"></i>Terms & Conditions</a></li> -->
+                            </ul>
+                        </div>
+                        <!--//foooter-col-->
+                        <!-- <div class="footer-col col-md-5 col-sm-8 newsletter">
+                    <div class="footer-col-inner">
+                        
+                        
+                    </div>
+                </div> -->
+                        <div class="footer-col col-md-4 col-sm-12 contact">
+                            <div class="footer-col-inner">
+                                <h3>Contact us</h3>
+                                <div class="row">
+                                    <p class="adr clearfix col-md-12 col-sm-4">
+                                        <!-- <i class="fa fa-map-marker pull-left"></i>         -->
+                                        <span class="adr-group pull-left">
+                                            <span class="street-address">Bapuji Institute of Engineering &
+                                                Technology</span><br>
+                                            <span class="region">P.O.Box No. 325, Shamanur Road</span><br>
+                                            <span class="postal-code">Davangere</span><br>
+                                            <span class="country-name">Karnataka</span><br>
+                                            <samp>577004</samp>
+                                        </span>
+                                    </p>
+                                    <p class="tel col-md-12 col-sm-4"><i class="fa fa-phone"></i>Tel: +08192-222245</p>
+                                    <br>
+                                    <p class="tel col-md-12 col-sm-4"><i class="fa fa-phone"></i>Tel: +08192-222245</p>
+                                    <p class="email col-md-12 col-sm-4"><i class="fa fa-envelope"></i><a href="#">Email:
+                                            webmaster@bietdvg.edu</a></p>
+                                    <br>
+                                    <p class="email col-md-12 col-sm-4"><i class="fa fa-envelope"></i><a href="#">Email:
+                                            principal@bietdvg.edu</a></p>
+                                    <br>
+
+                                    <p class="email col-md-12 col-sm-4"><i class="fa fa-fax"></i><a href="#">Fax:
+                                            08192 - 223261</a> </p>
+                                    <br>
+
+
+
+
+
+                                </div>
+                            </div>
+                            <!--//footer-col-inner-->
+                        </div>
+                        <!--//foooter-col-->
+                    </div>
+                </div>
+            </div>
+            <!--//footer-content-->
+            <div class="bottom-bar">
+                <div class="container">
+                    <div class="row">
+                        <small class="copyright col-md-6 col-sm-12 col-xs-12">Copyright © 2020 - All Rights Reserved -
+                            <a href="" style="color: #ffff">webmaster@bietdvg.edu</a>
+			    <img style="margin-left: 10px;" src="https://hitwebcounter.com/counter/counter.php?page=7733442&style=0025&nbdigits=7&type=ip&initCount=11269" title="Counter" Alt="web counter"   border="0" />
+			</small>
+                        <ul class="social pull-right col-md-6 col-sm-12 col-xs-12">
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="https://www.facebook.com/BapujiInstituteOfEngineeringTechnology"><i
+                                        class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                            <li><a
+                                    href="https://www.linkedin.com/school/bapuji-institute-of-engineering-&-technology-davanagere/"><i
+                                        class="fa fa-linkedin"></i></a></li>
+                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                            <li><a href="#"><i class="fa fa-skype"></i></a></li>
+                            <li><a href="#"><i class="fa fa-rss"></i></a></li>
+			    <li class="row-end"><a href="/developers"><i class="fa fa-code" style="font-weight: 900;"></i></a></li>
+                        </ul>
+                        <!--//social-->
+                    </div>
+                    <!--//row-->
+                </div>
+                <!--//container-->
+            </div>
+            <!--//bottom-bar-->
+        </footer>
+        <!--//footer-->
+
+
+
+        <!-- Javascript -->
+
+        <script type="text/javascript" src="{% static 'assets/plugins/jquery-1.12.3.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'assets/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'assets/plugins/bootstrap-hover-dropdown.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'assets/plugins/back-to-top.js' %}"></script>
+        <script type="text/javascript"
+            src="{% static 'assets/plugins/jquery-placeholder/jquery.placeholder.js' %}"></script>
+        <script type="text/javascript"
+            src="{% static 'assets/plugins/pretty-photo/js/jquery.prettyPhoto.js' %}"></script>
+        <script type="text/javascript" src="{% static 'assets/plugins/flexslider/jquery.flexslider-min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'assets/plugins/jflickrfeed/jflickrfeed.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'assets/js/main.js' %}"></script>
+        <script type="text/javascript" src="{% static 'assets/js/dept_profile.js' %}"></script>
+        <script type="text/javascript"
+            src="{% static 'assets/rs-plugin/js/jquery.themepunch.plugins.min.js' %}"></script>
+        <script type="text/javascript"
+            src="{% static 'assets/rs-plugin/js/jquery.themepunch.revolution.min.js' %}"></script>
+        <!--Carousel Slider-->
+        <script type="text/javascript" src="{% static 'assets/javascript/owl.carousel.min.js' %}"></script>
+        <!--Mobile Menu Js-->
+        <script type="text/javascript" src="{% static 'assets/javascript/jquery.slicknav.min.js' %}"></script>
+        <!--Active jQuery-->
+        <script type="text/javascript" src="{% static 'assets/javascript/main.js' %}"></script>
+</body>
+
+</html>

@@ -2,6 +2,7 @@ from django.contrib import admin
 from .models import staff, infrastructure, infrastructure_gallery, contact, placement_updates
 from .models import placement_glimpses, pre_placement_glimpses, hiring_statistics
 from .models import Slider_Image, training_glimpses, industrial_collabrations_and_mou
+from .models import students_placed_glimpses, media_coverage
 
 # Register your models here.
 admin.site.register(Slider_Image)
@@ -15,3 +16,5 @@ admin.site.register(placement_glimpses)
 admin.site.register(pre_placement_glimpses)
 admin.site.register(training_glimpses)
 admin.site.register(industrial_collabrations_and_mou)
+admin.site.register(students_placed_glimpses)
+admin.site.register(media_coverage)

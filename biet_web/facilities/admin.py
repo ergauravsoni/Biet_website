@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import Sport, auditoriumGallary, sportsGallary, ewasteGallary
 from .models import guestHouseGallary, drinkingWaterGallary, garbageGallary
+from .models import ladiesHostelSlider
 
 # Register your models here.
 admin.site.register(Sport)
@@ -10,4 +11,4 @@ admin.site.register(guestHouseGallary)
 admin.site.register(drinkingWaterGallary)
 admin.site.register(garbageGallary)
 admin.site.register(ewasteGallary)
-
+admin.site.register(ladiesHostelSlider)
